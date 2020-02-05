@@ -15,7 +15,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
         getHolder().addCallback(this);
 
-        thread = new MainThread();
+        thread = new MainThread(getHolder(), this);
 
         setFocusable(true);
     }
@@ -45,7 +45,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
-    Override
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
         return super.onTouchEvent(event);
     }
