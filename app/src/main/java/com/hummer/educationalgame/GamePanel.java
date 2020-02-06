@@ -68,14 +68,9 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void draw(Canvas canvas) {
         AssetManager am = context.getAssets();
-        String[] ams = new String[1000000];
-        try {
-            ams = am.list("/");
-        } catch(Exception e ) {e.printStackTrace();}
-        System.out.println(ams[0].toString());
         super.draw(canvas);
         canvas.drawColor(Color.WHITE);
-        Typeface summer = Typeface.createFromAsset(am, "font/summerfont_light.ttf");
+        Typeface summer = Typeface.createFromAsset(am, "font/summerfont_light.otf");
         Paint paint = new Paint();
         paint.setTextSize(100);
         paint.setTypeface(summer);
