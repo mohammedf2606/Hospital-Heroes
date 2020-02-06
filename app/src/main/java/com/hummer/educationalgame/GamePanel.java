@@ -76,7 +76,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         int cWidth = r.width();
         paint.getTextBounds(text, 0, text.length(), r);
         float x = cWidth / 2f - r.width() / 2f - r.left;
-        float y = cHeight / 4f + r.height() / 4f - r.bottom;
+        float y = cHeight / 5f + r.height() / 5f - r.bottom;
         canvas.drawText(text, x, y, paint);
     }
 }
