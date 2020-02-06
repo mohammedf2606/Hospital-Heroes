@@ -69,12 +69,12 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas) {
         super.draw(canvas);
         canvas.drawColor(Color.WHITE);
-        Typeface summer = Typeface.create("summerfont_light", Typeface.NORMAL);
+        Typeface summer = Typeface.create("casual", Typeface.NORMAL);
         Paint paint = new Paint();
-        paint.setTextSize(100);
+        paint.setTextSize(50);
         paint.setTypeface(summer);
         paint.setColor(Color.BLUE);
-        drawCentreText(canvas, paint, "HELLO");
+        drawCentreText(canvas, paint, "Tap To Start!");
     }
 
     private void drawCentreText(Canvas canvas, Paint paint, String text) {
@@ -84,7 +84,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         int cWidth = r.width();
         paint.getTextBounds(text, 0, text.length(), r);
         float x = cWidth / 2f - r.width() / 2f - r.left;
-        float y = cHeight / 5f + r.height() / 5f - r.bottom;
+        float y = 4*cHeight / 5f + 4*r.height() / 5f - r.bottom;
         canvas.drawText(text, x, y, paint);
     }
 }
