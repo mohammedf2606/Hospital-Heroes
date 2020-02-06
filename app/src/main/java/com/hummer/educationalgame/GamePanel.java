@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
@@ -11,6 +12,8 @@ import android.view.SurfaceHolder;
 class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
     private MainThread thread;
+    private Rect r = new Rect();
+
 
     public GamePanel(Context context) {
         super(context);
@@ -61,6 +64,7 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         super.draw(canvas);
         canvas.drawColor(Color.WHITE);
         Paint paint = new Paint();
+        paint.setTextSize(100);
         paint.setColor(Color.BLUE);
         canvas.drawText("HELLO", 300, 620, paint);
     }
