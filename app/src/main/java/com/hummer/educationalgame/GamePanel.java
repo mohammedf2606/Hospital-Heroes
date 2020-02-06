@@ -1,10 +1,12 @@
 package com.hummer.educationalgame;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
@@ -14,9 +16,13 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
     private Rect r = new Rect();
 
+    private Context context;
+
 
     public GamePanel(Context context) {
         super(context);
+
+        this.context = context;
 
         getHolder().addCallback(this);
 
@@ -63,8 +69,10 @@ class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas) {
         super.draw(canvas);
         canvas.drawColor(Color.WHITE);
+        Typeface summer = Typeface.createFromAsset(context.getAssets(), "fonts/SummerFont-Light.ttf");
         Paint paint = new Paint();
         paint.setTextSize(100);
+        paint.setTypeface(summer);
         paint.setColor(Color.BLUE);
         drawCentreText(canvas, paint, "HELLO");
     }

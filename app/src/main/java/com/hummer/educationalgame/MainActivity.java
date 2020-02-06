@@ -1,6 +1,8 @@
 package com.hummer.educationalgame;
 
 import android.app.Activity;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
