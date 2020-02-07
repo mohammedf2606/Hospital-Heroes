@@ -6,30 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <Button
+        android:id="@+id/buttonFood"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_bright"
         android:fontFamily="casual"
-        android:text="@string/game_name"
-        android:textSize="80sp"
+        android:text="image of a kid eating"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintVertical_bias="0.17" />
 
-    <TextView
-        android:id="@+id/tap_to_start"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/buttonInjection"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_bright"
         android:fontFamily="casual"
-        android:text="@string/tap_to_start"
-        android:textSize="40sp"
+        android:text="image of a nurse with needless injection"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.873" />
-
+        app:layout_constraintVertical_bias="0.83" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
