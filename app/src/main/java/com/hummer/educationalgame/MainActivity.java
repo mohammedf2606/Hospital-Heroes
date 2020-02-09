@@ -1,16 +1,18 @@
 package com.hummer.educationalgame;
 
 import android.app.Activity;
-import android.content.res.AssetManager;
-import android.graphics.Typeface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
+
+    Button tap_screen_start;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,12 @@ public class MainActivity extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         blinkTapToStart();
+
+        tap_screen_start = (Button) findViewById(R.id.tap_screen_start);
+
+        tap_screen_start.setOnClickListener(this);
     }
+
     private void blinkTapToStart() {
         final Handler handler = new Handler();
         new Thread(new Runnable() {
@@ -44,4 +51,13 @@ public class MainActivity extends Activity {
         }).start();
     }
 
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.tap_screen_start:
+                Intent menu_page = new Intent(MainActivity.this, MainMenu.class);
+                startActivity(menu_page);
+                break;
+        }
+    }
 }
