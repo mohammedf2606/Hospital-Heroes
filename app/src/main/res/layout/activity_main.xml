@@ -36,6 +36,11 @@
         android:id="@+id/tap_screen_start"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent"/>
+        android:alpha="0.25"
+        android:background="@drawable/ripple_on_tap"
+        tools:layout_editor_absoluteX="-316dp"
+        tools:layout_editor_absoluteY="-113dp" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

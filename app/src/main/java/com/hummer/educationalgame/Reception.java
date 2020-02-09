@@ -1,10 +1,9 @@
 package com.hummer.educationalgame;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.os.Bundle;
 
-public class Reception extends AppCompatActivity {
+public class Reception extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,7 +1,6 @@
 package com.hummer.educationalgame;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-public class MainMenu extends AppCompatActivity implements View.OnClickListener {
+public class MainMenu extends Activity implements View.OnClickListener {
 
     ImageButton nurse, girl_eating;
 
