@@ -21,7 +21,7 @@
             android:id="@+id/halo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ffc107"
+            android:background="@drawable/smooth_rectangle"
             android:alpha="0.1">
         </LinearLayout>
 
@@ -48,8 +48,8 @@
             android:id="@+id/halo2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ffc107"
-            android:alpha="0.1">
+            android:alpha="0.1"
+            android:background="@drawable/smooth_rectangle">
         </LinearLayout>
 
         <ImageButton

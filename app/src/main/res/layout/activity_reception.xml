@@ -6,4 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".Reception">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/reception"
+        android:scaleType="fitXY"
+        tools:layout_editor_absoluteX="-1094dp"
+        tools:layout_editor_absoluteY="-30dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="312dp"
+        android:layout_height="437dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/nurse"
+        tools:layout_editor_absoluteX="585dp"
+        tools:layout_editor_absoluteY="143dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
