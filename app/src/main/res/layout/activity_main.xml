@@ -7,17 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/front_of_hospital"
+        android:scaleType="fitXY"
+        android:alpha="0.7"
+        tools:layout_editor_absoluteX="439dp"
+        tools:layout_editor_absoluteY="233dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
         android:text="@string/game_name"
+        android:textColor="#0064bb"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1.5"
         android:textSize="80sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.119" />
+
 
     <TextView
         android:id="@+id/tap_to_start"
@@ -25,13 +42,18 @@
         android:layout_height="wrap_content"
         android:fontFamily="casual"
         android:text="@string/tap_to_start"
+        android:textColor="@android:color/white"
         android:textSize="40sp"
+        android:textStyle="bold"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.873" />
-
+        app:layout_constraintVertical_bias="0.809" />
 
     <Button
         android:id="@+id/tap_screen_start"
