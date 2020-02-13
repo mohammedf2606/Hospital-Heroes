@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class Reception extends Activity {
+public class Character extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,5 +15,5 @@ public class Reception extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_reception);
     }
-
+    
 }

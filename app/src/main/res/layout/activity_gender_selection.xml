@@ -22,6 +22,7 @@
             app:srcCompat="@drawable/male"
             android:contentDescription="@string/male_symbol" />
         <Button
+            android:id="@+id/male_gender_sign"
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:background="@android:color/transparent"/>
@@ -42,6 +43,7 @@
             app:srcCompat="@drawable/female"
             android:contentDescription="@string/female_symbol" />
         <Button
+            android:id="@+id/female_gender_sign"
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:background="@android:color/transparent"/>
