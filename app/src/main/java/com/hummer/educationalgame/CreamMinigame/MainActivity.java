@@ -1,11 +1,13 @@
-package com.hummer.educationalgame;
+package com.hummer.educationalgame.CreamMinigame;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class CreamMinigame extends Activity {
+import com.hummer.educationalgame.R;
+
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,6 +15,6 @@ public class CreamMinigame extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.nurse);
+        setContentView(R.layout.creamminigamebackground);
     }
 }
