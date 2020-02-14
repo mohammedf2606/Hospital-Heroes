@@ -9,7 +9,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/girl1"
+            android:id="@+id/boy1"
             android:layout_width="300dp"
             android:layout_height="250dp"
             app:srcCompat="@drawable/boy_character" />
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1">
         <ImageView
-            android:id="@+id/girl2"
+            android:id="@+id/boy2"
             android:layout_width="300dp"
             android:layout_height="250dp"
             app:srcCompat="@drawable/boy_character" />
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1">
         <ImageView
-            android:id="@+id/girl3"
+            android:id="@+id/boy3"
             android:layout_width="300dp"
             android:layout_height="250dp"
             app:srcCompat="@drawable/boy_character" />
@@ -69,7 +69,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0">
         <ImageView
-            android:id="@+id/girl4"
+            android:id="@+id/boy4"
             android:layout_width="300dp"
             android:layout_height="250dp"
             app:srcCompat="@drawable/boy_character" />

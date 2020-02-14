@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".GenderSelection">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
         <ImageView
             android:layout_width="300dp"
             android:layout_height="200dp"
-            app:srcCompat="@drawable/male"
+            android:src="@drawable/male"
             android:contentDescription="@string/male_symbol" />
         <Button
             android:id="@+id/male_gender_sign"
@@ -40,7 +40,7 @@
         <ImageView
             android:layout_width="300dp"
             android:layout_height="200dp"
-            app:srcCompat="@drawable/female"
+            android:src="@drawable/female"
             android:contentDescription="@string/female_symbol" />
         <Button
             android:id="@+id/female_gender_sign"

@@ -63,7 +63,7 @@ public class MainMenu extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent menu_page = new Intent(MainMenu.this, MainActivity.class);
-        startActivity(menu_page);
+        Intent main_page = new Intent(MainMenu.this, MainActivity.class);
+        startActivity(main_page);
     }
 }

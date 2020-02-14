@@ -30,6 +30,9 @@
         <activity
             android:name=".GenderSelection"
             android:noHistory="true" />
+        <activity
+            android:name=".CharacterSelection"
+            android:noHistory="true"/>
     </application>
 
 </manifest>
