@@ -31,7 +31,10 @@
             android:name=".GenderSelection"
             android:noHistory="true" />
         <activity
-            android:name=".CharacterSelection"
+            android:name=".MaleCharSelection"
+            android:noHistory="true"/>
+        <activity
+            android:name=".FemaleCharSelection"
             android:noHistory="true"/>
     </application>
 

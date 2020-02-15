@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class CharacterSelection extends Activity {
+public class MaleCharSelection extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -31,11 +31,11 @@ public class GenderSelection extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.male_gender_sign:
-                Intent male_characters = new Intent(GenderSelection.this, CharacterSelection.class);
+                Intent male_characters = new Intent(GenderSelection.this, MaleCharSelection.class);
                 startActivity(male_characters);
                 break;
             case R.id.female_gender_sign:
-                Intent female_characters = new Intent(GenderSelection.this, CharacterSelection.class);
+                Intent female_characters = new Intent(GenderSelection.this, FemaleCharSelection.class);
                 startActivity(female_characters);
                 break;
         }
