@@ -10,6 +10,11 @@ public class Injection implements InjectionGameObject
     private Rect injection;
     private int color;
 
+    public Rect getInjection()
+    {
+        return injection;
+    }
+
     public Injection(Rect injection, int color)
     {
         this.injection = injection;
