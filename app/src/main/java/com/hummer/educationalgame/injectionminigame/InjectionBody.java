@@ -4,12 +4,12 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-public class Body implements InjectionGameObject
+public class InjectionBody implements InjectionGameObject
 {
     private Rect body;
     private int color;
 
-    public Body(Rect body, int color)
+    public InjectionBody(Rect body, int color)
     {
         this.body = body;
         this.color = color;
