@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.hummer.educationalgame.CreamMinigame.*;
+
 public class MainActivity extends Activity implements View.OnClickListener {
 
     Button tap_screen_start;
@@ -57,7 +59,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.tap_screen_start:
-                Intent menu_page = new Intent(MainActivity.this, Reception.class);
+                Intent menu_page = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(menu_page);
                 break;
         }

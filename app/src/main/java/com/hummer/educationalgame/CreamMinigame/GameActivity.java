@@ -7,7 +7,7 @@ import android.view.WindowManager;
 
 import com.hummer.educationalgame.R;
 
-public class MainActivity extends Activity {
+public class GameActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +15,6 @@ public class MainActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.creamminigamebackground);
+        setContentView(new GameView((this)));
     }
 }

@@ -19,6 +19,6 @@ public class CharacterArmSprite {
     }
 
     public void update() {
-
+        yCoord++;
     }
 }

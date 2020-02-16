@@ -3,6 +3,8 @@ package com.hummer.educationalgame.CreamMinigame;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.SurfaceView;
@@ -54,11 +56,22 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         characterArmSprite.update();
     }
 
+//    @Override
+//    public void draw(Canvas canvas) {
+//        super.draw(canvas);
+//        if(canvas != null) {
+//            characterArmSprite.draw(canvas);
+//        }
+//    }
+
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
-        if(canvas != null) {
-            characterArmSprite.draw(canvas);
+        if (canvas != null) {
+            canvas.drawColor(Color.WHITE);
+            Paint paint = new Paint();
+            paint.setColor(Color.rgb(250, 0, 0));
+            canvas.drawRect(100, 100, 200, 200, paint);
         }
     }
 

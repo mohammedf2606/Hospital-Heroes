@@ -18,6 +18,7 @@ public class MainThread extends Thread {
     @Override
     public void run() {
         while(running) {
+            canvas = null;
             try {
                 canvas = this.surfaceHolder.lockCanvas();
                 synchronized (surfaceHolder) {
