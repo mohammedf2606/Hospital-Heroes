@@ -14,6 +14,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".Reception"/>
         <activity android:name=".MainActivity" />
+        <activity android:name=".CreamMinigame.MainMenuForGame"/>
         <activity android:name=".CreamMinigame.GameActivity"/>
         <activity android:name=".MainMenu">
             <intent-filter>

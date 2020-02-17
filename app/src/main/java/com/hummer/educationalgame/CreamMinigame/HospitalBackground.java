@@ -3,15 +3,28 @@ package com.hummer.educationalgame.CreamMinigame;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 
 import com.hummer.educationalgame.R;
 
 public class HospitalBackground {
-    private int xCoord = 0, yCoord = 0;
-    private Bitmap background;
+    private Bitmap image;
+    private int xCoord;
+    private int yCoord;
 
     public HospitalBackground(int x, int y, Resources resources) {
-        background = BitmapFactory.decodeResource(resources, R.drawable.hospitalroom);
-        background = Bitmap.createScaledBitmap(background, x, y, false);
+        xCoord = x;
+        yCoord = y;
+        image = BitmapFactory.decodeResource(resources, R.drawable.hospitalroom);
+        image = Bitmap.createScaledBitmap(image, x, y, false);
+
+    }
+
+    public void draw(Canvas canvas) {
+        canvas.drawBitmap(image, 0, 0, null);
+    }
+
+    public void update() {
+
     }
 }

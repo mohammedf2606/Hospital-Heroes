@@ -16,12 +16,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     private MainThread thread;
     private CharacterArmSprite characterArmSprite;
-    private HospitalBackground b1, b2;
+    private HospitalBackground b1;
+    private int xOfScreen, yOfScreen;
+//    private float screenRatioX, screenRatioY;
 
-    public GameView(Context context) {
+    public GameView(Context context, int xOfScreen, int yOfScreen) {
         super(context);
 
-//        b1 = new HospitalBackground(xOfScreen, yOfScreen, getResources());
+        this.xOfScreen = xOfScreen;
+        this.yOfScreen = yOfScreen;
+//        screenRatioX = 1024f / xOfScreen;
+//        screenRatioY = 600f / yOfScreen;
 
         getHolder().addCallback(this);
 
@@ -36,7 +41,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        characterArmSprite = new CharacterArmSprite(BitmapFactory.decodeResource(getResources(), R.drawable.arm));
+        b1 = new HospitalBackground(xOfScreen, yOfScreen, getResources());
+        characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
         thread.setRunning(true);
         thread.start();
     }
@@ -63,20 +69,19 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas) {
         super.draw(canvas);
         if(canvas != null) {
+            b1.draw(canvas);
             characterArmSprite.draw(canvas);
         }
     }
 
-//    @Override
-//    public void draw(Canvas canvas) {
-//        super.draw(canvas);
-//        if (canvas != null) {
-//            canvas.drawColor(Color.WHITE);
-//            Paint paint = new Paint();
-//            paint.setColor(Color.rgb(250, 0, 0));
-//            canvas.drawRect(100, 100, 200, 200, paint);
-//        }
-//    }
+    private void sleep() {
+        try {
+            Thread.sleep(17);
+        } catch(InterruptedException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
