@@ -16,9 +16,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     private MainThread thread;
     private CharacterArmSprite characterArmSprite;
+    private HospitalBackground b1, b2;
 
     public GameView(Context context) {
         super(context);
+
+//        b1 = new HospitalBackground(xOfScreen, yOfScreen, getResources());
 
         getHolder().addCallback(this);
 
@@ -56,24 +59,24 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         characterArmSprite.update();
     }
 
-//    @Override
-//    public void draw(Canvas canvas) {
-//        super.draw(canvas);
-//        if(canvas != null) {
-//            characterArmSprite.draw(canvas);
-//        }
-//    }
-
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
-        if (canvas != null) {
-            canvas.drawColor(Color.WHITE);
-            Paint paint = new Paint();
-            paint.setColor(Color.rgb(250, 0, 0));
-            canvas.drawRect(100, 100, 200, 200, paint);
+        if(canvas != null) {
+            characterArmSprite.draw(canvas);
         }
     }
+
+//    @Override
+//    public void draw(Canvas canvas) {
+//        super.draw(canvas);
+//        if (canvas != null) {
+//            canvas.drawColor(Color.WHITE);
+//            Paint paint = new Paint();
+//            paint.setColor(Color.rgb(250, 0, 0));
+//            canvas.drawRect(100, 100, 200, 200, paint);
+//        }
+//    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
