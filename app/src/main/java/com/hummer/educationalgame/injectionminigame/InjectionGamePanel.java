@@ -3,8 +3,10 @@ package com.hummer.educationalgame.injectionminigame;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.provider.SyncStateContract;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -15,6 +17,11 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
     private Injection injection;
     private Point injectionPoint;
+    private InjectionBody injectionBody;
+
+    private boolean movingInjection = false;
+
+    private boolean gameOver = false;
 
     public InjectionGamePanel(Context context)
     {
@@ -25,7 +32,10 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         thread = new InjectionMainThread(getHolder(), this);
 
         injection = new Injection(new Rect(100,100,200,200), Color.rgb(255,0,0));
-        injectionPoint = new Point(150,150);
+        injectionPoint = new Point(3*InjectionConstants.SCREEN_WIDTH/4, InjectionConstants.SCREEN_HEIGHT/4);
+        injection.update(injectionPoint);
+
+        injectionBody = new InjectionBody(new Rect(200,200,400,400), Color.BLACK);
 
         setFocusable(true);
     }
@@ -70,8 +80,20 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         switch (event.getAction())
         {
             case MotionEvent.ACTION_DOWN:
+                if(!gameOver && injection.getInjection().contains((int)event.getX(), (int)event.getY()))
+                {
+                    movingInjection = true;
+                }
+                break;
             case MotionEvent.ACTION_MOVE:
-                injectionPoint.set((int)event.getX(), (int)event.getY());
+                if(!gameOver && movingInjection)
+                {
+                    injectionPoint.set((int) event.getX(), (int) event.getY());
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                movingInjection = false;
+                break;
         }
 
         return true;
@@ -80,7 +102,16 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
     public void update()
     {
-        injection.update(injectionPoint);
+        if(!gameOver)
+        {
+            injection.update(injectionPoint);
+            injectionBody.update();
+        }
+
+        if(injectionBody.injectionCollide(injection))
+        {
+            gameOver = true;
+        }
     }
 
     @Override
@@ -91,5 +122,15 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         canvas.drawColor(Color.WHITE);
 
         injection.draw(canvas);
+        injectionBody.draw(canvas);
+
+        if(gameOver)
+        {
+            Paint paint = new Paint();
+            paint.setTextSize(100);
+            paint.setColor(Color.MAGENTA);
+            paint.setTextAlign(Paint.Align.CENTER);
+            canvas.drawText("WELL DONE!", InjectionConstants.SCREEN_WIDTH/2, InjectionConstants.SCREEN_HEIGHT/2, paint);
+        }
     }
 }

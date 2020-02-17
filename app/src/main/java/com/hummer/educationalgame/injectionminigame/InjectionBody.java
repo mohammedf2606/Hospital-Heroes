@@ -22,14 +22,7 @@ public class InjectionBody implements InjectionGameObject
 
     public boolean injectionCollide(Injection injection)
     {
-        if(body.contains(injection.getInjection().left, injection.getInjection().top)
-        || body.contains(injection.getInjection().right, injection.getInjection().top)
-        || body.contains(injection.getInjection().left, injection.getInjection().bottom)
-        || body.contains(injection.getInjection().right, injection.getInjection().bottom))
-        {
-            return true;
-        }
-        return false;
+        return Rect.intersects(body, injection.getInjection());
     }
 
     @Override
