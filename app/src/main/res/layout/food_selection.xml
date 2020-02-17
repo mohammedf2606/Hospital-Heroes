@@ -19,31 +19,10 @@
         <ImageView
             android:layout_width="300dp"
             android:layout_height="200dp"
-            android:src=""
+            android:src="@drawable/milk"
             android:contentDescription="@string/milk" />
         <Button
             android:id="@+id/milk"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:background="@android:color/transparent"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
-        <ImageView
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:src=""
-            android:contentDescription="@string/beans" />
-        <Button
-            android:id="@+id/beans"
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:background="@android:color/transparent"/>
@@ -61,7 +40,7 @@
         <ImageView
             android:layout_width="300dp"
             android:layout_height="200dp"
-            android:src=""
+            android:src="@drawable/hashbrown"
             android:contentDescription="@string/hash_browns" />
 
         <Button

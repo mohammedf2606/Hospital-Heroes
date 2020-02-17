@@ -53,11 +53,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.tap_screen_start:
-                Intent reception = new Intent(MainActivity.this, Reception.class);
-                startActivity(reception);
-                break;
-        }
+        Intent reception = new Intent(MainActivity.this, Reception.class);
+        startActivity(reception);
     }
 }
