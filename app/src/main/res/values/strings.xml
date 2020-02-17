@@ -8,4 +8,7 @@
     <string name="boy_character_2">Boy Character 2</string>
     <string name="boy_character_1">Boy Character 1</string>
     <string name="boy_character_4">Boy Character 4</string>
+    <string name="milk">Milk</string>
+    <string name="beans">Beans</string>
+    <string name="hash_browns">Hash Browns</string>
 </resources>

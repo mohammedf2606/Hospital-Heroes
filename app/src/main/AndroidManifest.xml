@@ -36,6 +36,9 @@
         <activity
             android:name=".FemaleCharSelection"
             android:noHistory="true"/>
+        <activity
+            android:name=".FoodSelection"
+            android:noHistory="true"/>
     </application>
 
 </manifest>
