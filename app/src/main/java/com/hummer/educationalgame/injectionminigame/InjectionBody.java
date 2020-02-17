@@ -9,6 +9,11 @@ public class InjectionBody implements InjectionGameObject
     private Rect body;
     private int color;
 
+    public Rect getInjectionBody()
+    {
+        return body;
+    }
+
     public InjectionBody(Rect body, int color)
     {
         this.body = body;
