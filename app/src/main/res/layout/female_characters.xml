@@ -18,7 +18,8 @@
             android:id="@+id/girl1"
             android:layout_width="300dp"
             android:layout_height="250dp"
-            android:src="@drawable/girl_character" />
+            android:src="@drawable/girl_character"
+            android:contentDescription="@string/girl_character_1" />
         <Button
             android:layout_width="300dp"
             android:layout_height="250dp"
@@ -38,7 +39,8 @@
             android:id="@+id/girl2"
             android:layout_width="300dp"
             android:layout_height="250dp"
-            android:src="@drawable/girl_character" />
+            android:src="@drawable/girl_character"
+            android:contentDescription="@string/girl_character_2" />
         <Button
             android:layout_width="300dp"
             android:layout_height="250dp"
@@ -58,7 +60,8 @@
             android:id="@+id/girl3"
             android:layout_width="300dp"
             android:layout_height="250dp"
-            android:src="@drawable/girl_character" />
+            android:src="@drawable/girl_character"
+            android:contentDescription="@string/girl_character_3" />
         <Button
             android:layout_width="300dp"
             android:layout_height="250dp"
@@ -78,7 +81,8 @@
             android:id="@+id/girl4"
             android:layout_width="300dp"
             android:layout_height="250dp"
-            android:src="@drawable/girl_character" />
+            android:src="@drawable/girl_character"
+            android:contentDescription="@string/girl_character_4" />
         <Button
             android:layout_width="300dp"
             android:layout_height="250dp"
