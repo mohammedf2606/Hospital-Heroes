@@ -18,7 +18,7 @@ public class FoodSelection extends Activity implements View.OnClickListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.male_characters);
+        setContentView(R.layout.food_selection);
 
         milk = (Button) findViewById(R.id.milk);
         milk.setOnClickListener(this);
