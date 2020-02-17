@@ -1,12 +1,14 @@
 package com.hummer.educationalgame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.hummer.educationalgame.foodminigame.*;
 
 public class FoodSelection extends Activity implements View.OnClickListener {
 
@@ -31,9 +33,11 @@ public class FoodSelection extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.milk:
+//            case R.id.milk:
 
             case R.id.hash_browns:
+                Intent food_game = new Intent(FoodSelection.this, MainGameActivity.class);
+                startActivity(food_game);
         }
     }
 }

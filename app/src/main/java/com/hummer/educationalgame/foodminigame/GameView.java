@@ -1,12 +1,16 @@
 package com.hummer.educationalgame.foodminigame;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 
+import com.hummer.educationalgame.R;
+
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
+    private FoodSprite foodSprite;
 
     public GameView(Context context){
         super(context);
@@ -18,6 +22,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
+        foodSprite = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown));
         thread.setRunning(true);
         thread.start();
         
@@ -35,10 +40,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
 
     public void update() {
+        foodSprite.update();
     }
 
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
+        if(canvas != null){
+            foodSprite.draw(canvas);
+        }
     }
 }
