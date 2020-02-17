@@ -23,9 +23,6 @@ public class FoodSelection extends Activity implements View.OnClickListener {
         milk = (Button) findViewById(R.id.milk);
         milk.setOnClickListener(this);
 
-        beans = (Button) findViewById(R.id.beans);
-        beans.setOnClickListener(this);
-
         hash_brown = (Button) findViewById(R.id.hash_browns);
         hash_brown.setOnClickListener(this);
 
@@ -35,8 +32,6 @@ public class FoodSelection extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.milk:
-
-            case R.id.beans:
 
             case R.id.hash_browns:
         }
