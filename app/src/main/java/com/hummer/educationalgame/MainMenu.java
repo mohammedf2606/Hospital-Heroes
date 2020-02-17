@@ -63,6 +63,14 @@ public class MainMenu extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.nurse:
+                Constants.setIsFood(false);
+                break;
+            case R.id.girl_eating:
+                Constants.setIsFood(true);
+                break;
+        }
         Intent main_page = new Intent(MainMenu.this, MainActivity.class);
         startActivity(main_page);
     }
