@@ -39,6 +39,7 @@
         <activity
             android:name=".FoodSelection"
             android:noHistory="true"/>
+        <activity android:name=".InjectionRoom" />
     </application>
 
 </manifest>

@@ -53,9 +53,9 @@ public class MaleCharSelection extends Activity implements View.OnClickListener 
             Intent food_selection = new Intent(MaleCharSelection.this, FoodSelection.class);
             startActivity(food_selection);
         }
-//        else {
-//            Intent food_selection = new Intent(MaleCharSelection.this, FoodSelection.class);
-//            startActivity(food_selection);
-//        }
+        else {
+            Intent injection_room = new Intent(MaleCharSelection.this, InjectionRoom.class);
+            startActivity(injection_room);
+        }
     }
 }
