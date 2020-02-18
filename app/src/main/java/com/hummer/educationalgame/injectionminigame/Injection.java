@@ -1,9 +1,13 @@
 package com.hummer.educationalgame.injectionminigame;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
+
+import com.hummer.educationalgame.R;
 
 public class Injection implements InjectionGameObject
 {
@@ -19,6 +23,9 @@ public class Injection implements InjectionGameObject
     {
         this.injection = injection;
         this.color = color;
+
+        BitmapFactory bf = new BitmapFactory();
+        Bitmap injectionImg = bf.decodeResource(InjectionConstants.CURRENT_CONTEXT.getResources(), R.drawable.injection);
     }
 
     @Override

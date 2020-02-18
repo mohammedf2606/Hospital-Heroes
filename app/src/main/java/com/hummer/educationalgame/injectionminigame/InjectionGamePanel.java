@@ -23,6 +23,8 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
         getHolder().addCallback(this);
 
+        InjectionConstants.CURRENT_CONTEXT = context;
+
         thread = new InjectionMainThread(getHolder(), this);
 
         manager = new InjectionSceneManager();
