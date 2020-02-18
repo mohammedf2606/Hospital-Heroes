@@ -15,8 +15,8 @@ public class FoodSprite {
 
     public FoodSprite(Bitmap hashBrown){
         this.hashBrown = hashBrown;
-        X = 100;
-        Y = 100;
+        X = 50;
+        Y = 0;
     }
 
     public void draw(Canvas canvas){
@@ -24,13 +24,14 @@ public class FoodSprite {
     }
 
     public void update(){
-        X +=xVelocity;
-        Y +=yVelocity;
-        if((X > screenWidth - hashBrown.getWidth()) || (X <0)){
-            xVelocity = xVelocity*-1;
-        }
-        if((X > screenHeight - hashBrown.getHeight()) || (X <0)){
-            yVelocity = yVelocity*-1;
-        }
+        Y++;
+//        X +=xVelocity;
+//        Y +=yVelocity;
+//        if((X > screenWidth - hashBrown.getWidth()) || (X <0)){
+//            xVelocity = xVelocity*-1;
+//        }
+//        if((Y > screenHeight - hashBrown.getHeight()) || (Y <0)){
+//            yVelocity = yVelocity*-1;
+//        }
     }
 }
