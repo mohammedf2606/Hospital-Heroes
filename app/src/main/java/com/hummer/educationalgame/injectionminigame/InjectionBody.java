@@ -1,8 +1,13 @@
 package com.hummer.educationalgame.injectionminigame;
 
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+
+import com.hummer.educationalgame.R;
 
 public class InjectionBody implements InjectionGameObject
 {
@@ -18,6 +23,9 @@ public class InjectionBody implements InjectionGameObject
     {
         this.body = body;
         this.color = color;
+
+        BitmapFactory bf = new BitmapFactory();
+        Bitmap injectionBodyImg = bf.decodeResource(InjectionConstants.CURRENT_CONTEXT.getResources(), R.drawable.arm);
     }
 
     public boolean injectionCollide(Injection injection)
