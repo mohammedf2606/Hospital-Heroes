@@ -13,12 +13,13 @@ public class CharacterArmSprite {
     private int xCoord;
     private int yCoord;
 
+
     public CharacterArmSprite(int x, int y, Resources resources) {
-        xCoord = x;
-        yCoord = y;
+        xCoord = 0;
+        yCoord = y/3;
         try {
             image = BitmapFactory.decodeResource(resources, R.drawable.arm);
-//            image = Bitmap.createScaledBitmap(image, x, y, false);
+            image = Bitmap.createScaledBitmap(image, x, yCoord, false);
             Matrix matrix = new Matrix();
             matrix.preScale(-1.0f, 1.0f);
             image = Bitmap.createBitmap(image, 0, 0, image.getWidth(), image.getHeight(), matrix, false);
@@ -28,10 +29,26 @@ public class CharacterArmSprite {
     }
 
     public void draw(Canvas canvas) {
-        canvas.drawBitmap(image, 0, 0, null);
+        canvas.drawBitmap(image, xCoord, yCoord, null);
     }
 
     public void update() {
 
+    }
+
+    public int getX() {
+        return xCoord;
+    }
+
+    public int getY() {
+        return yCoord;
+    }
+
+    public int getHeight() {
+        return image.getHeight();
+    }
+
+    public int getWidth() {
+        return image.getWidth();
     }
 }

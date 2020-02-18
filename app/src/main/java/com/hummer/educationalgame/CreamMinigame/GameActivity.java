@@ -3,6 +3,7 @@ package com.hummer.educationalgame.CreamMinigame;
 import android.app.Activity;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 

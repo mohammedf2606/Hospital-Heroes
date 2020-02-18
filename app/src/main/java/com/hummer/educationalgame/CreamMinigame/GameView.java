@@ -1,6 +1,7 @@
 package com.hummer.educationalgame.CreamMinigame;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -17,7 +18,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
     private CharacterArmSprite characterArmSprite;
     private HospitalBackground b1;
+//    private CreamSprite splat;
     private int xOfScreen, yOfScreen;
+    private Canvas canvas;
+    private int xCoord, yCoord;
 //    private float screenRatioX, screenRatioY;
 
     public GameView(Context context, int xOfScreen, int yOfScreen) {
@@ -43,6 +47,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceCreated(SurfaceHolder holder) {
         b1 = new HospitalBackground(xOfScreen, yOfScreen, getResources());
         characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
+//        splat = new CreamSprite(xOfScreen, yOfScreen, getResources());
         thread.setRunning(true);
         thread.start();
     }
@@ -67,10 +72,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void draw(Canvas canvas) {
+        this.canvas = canvas;
         super.draw(canvas);
         if(canvas != null) {
             b1.draw(canvas);
             characterArmSprite.draw(canvas);
+            CreamSprite splat = new CreamSprite(0,0, getResources());
+            splat.draw(canvas, xCoord-50, yCoord-50);
         }
     }
 
@@ -90,6 +98,36 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         int Y = (int) event.getY();
         int eventAction = event.getAction();
 
+        switch(eventAction){
+            case MotionEvent.ACTION_DOWN:
+                if (X >= characterArmSprite.getX() && X < (characterArmSprite.getX() + characterArmSprite.getWidth())
+                        && Y >= characterArmSprite.getY() && Y < (characterArmSprite.getY() + characterArmSprite.getHeight())) {
+                    // stuff for making cream appear here
+                    xCoord = X;
+                    yCoord = Y;
+                    System.out.println(xCoord);
+                    System.out.println(yCoord);
+//                    CreamSprite splat = new CreamSprite(xCoord, yCoord, getResources());
+//                    drawBitmap(splat.getBitmap(), xCoord, yCoord);
+//                    System.out.println("Touched hand");
+                }
+                break;
+            case MotionEvent.ACTION_MOVE:
+                if (X >= characterArmSprite.getX() && X < (characterArmSprite.getX() + characterArmSprite.getWidth())
+                        && Y >= characterArmSprite.getY() && Y < (characterArmSprite.getY() + characterArmSprite.getHeight())) {
+                    xCoord = X;
+                    yCoord = Y;
+                }
+        }
         return true;
     }
+
+    public void drawBitmap(Bitmap bmp, int x, int y) {
+        Paint paint = new Paint();
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.YELLOW);
+        paint.setStrokeWidth(3);
+        canvas.drawCircle(100, 100, 5, paint);
+    }
+
 }
