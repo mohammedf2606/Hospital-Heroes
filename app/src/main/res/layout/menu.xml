@@ -40,6 +40,7 @@
             android:layout_height="400dp"
             android:scaleType="fitXY"
             android:src="@drawable/girl_empty_plate"
+            android:background="@android:color/transparent"
             android:layout_centerInParent="true"
             android:contentDescription="@string/girl_eating" />
     </RelativeLayout>
@@ -69,6 +70,7 @@
             android:layout_height="400dp"
             android:scaleType="fitXY"
             android:src="@drawable/nurse"
+            android:background="@android:color/transparent"
             android:layout_centerInParent="true"
             android:contentDescription="@string/nurse" />
 

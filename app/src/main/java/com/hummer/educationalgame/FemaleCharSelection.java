@@ -7,10 +7,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class FemaleCharSelection extends Activity implements View.OnClickListener {
 
-    Button female1, female2, female3, female4;
+    ImageButton female1, female2, female3, female4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +21,16 @@ public class FemaleCharSelection extends Activity implements View.OnClickListene
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.female_characters);
 
-        female1 = (Button) findViewById(R.id.girl1);
+        female1 = findViewById(R.id.girl1);
         female1.setOnClickListener(this);
 
-        female2 = (Button) findViewById(R.id.girl2);
+        female2 = findViewById(R.id.girl2);
         female2.setOnClickListener(this);
 
-        female3 = (Button) findViewById(R.id.girl3);
+        female3 = findViewById(R.id.girl3);
         female3.setOnClickListener(this);
 
-        female4 = (Button) findViewById(R.id.girl4);
+        female4 = findViewById(R.id.girl4);
         female4.setOnClickListener(this);
 
     }
@@ -38,16 +39,17 @@ public class FemaleCharSelection extends Activity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.girl1:
-                Constants.setPlayerCharacter(R.id.girl1);
+
+                Constants.setPlayerCharacter(R.drawable.girl_character);
                 break;
             case R.id.girl2:
-                Constants.setPlayerCharacter(R.id.girl2);
+                Constants.setPlayerCharacter(R.drawable.girl_character);
                 break;
             case R.id.girl3:
-                Constants.setPlayerCharacter(R.id.girl3);
+                Constants.setPlayerCharacter(R.drawable.girl_character);
                 break;
             case R.id.girl4:
-                Constants.setPlayerCharacter(R.id.girl4);
+                Constants.setPlayerCharacter(R.drawable.girl_character);
                 break;
         }
         if(Constants.isFood()) {
