@@ -52,12 +52,4 @@ public class CharacterArmSprite {
     public int getWidth() {
         return image.getWidth();
     }
-
-    public Rect getHitbox() {
-        return new Rect(xCoord + 100, yCoord, xCoord + getWidth(), yCoord + getHeight());
-    }
-//
-//    public Rect getHitbox2() {
-//        return new Rect();
-//    }
 }

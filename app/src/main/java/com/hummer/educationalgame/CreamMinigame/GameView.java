@@ -21,7 +21,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private CharacterArmSprite characterArmSprite;
     private HospitalBackground b1;
     private CreamSprite splat;
-//    private CreamSprite splat;
+    private CreamApplicationLocation location1, location2;
     private int xOfScreen, yOfScreen;
     private Canvas canvas;
     private int xCoord, yCoord;
@@ -58,6 +58,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         path = new Path();
         b1 = new HospitalBackground(xOfScreen, yOfScreen, getResources());
         characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
+        location1 = new CreamApplicationLocation(xOfScreen/8 - 20, yOfScreen/3 + 50, getResources());
+        location2 = new CreamApplicationLocation(xOfScreen/2 + 100, yOfScreen/3 + 60, getResources());
         splat = new CreamSprite(getResources());
         thread.setRunning(true);
         thread.start();
@@ -78,10 +80,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     public void update() {
-        System.out.println("running");
-        if(Rect.intersects(characterArmSprite.getHitbox(), splat.getHitbox()) && isTouchingScreen == true) {
-            System.out.println("they are touching");
-
+        if(Rect.intersects(location1.getHitbox(), splat.getHitbox()) && isTouchingScreen == true) {
+            System.out.println("touching box 1");
+        } else if(Rect.intersects(location2.getHitbox(), splat.getHitbox()) && isTouchingScreen == true) {
+            System.out.println("touching box 2");
         }
     }
 
@@ -92,6 +94,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         if(canvas != null) {
             b1.draw(canvas);
             characterArmSprite.draw(canvas);
+            location1.draw(canvas);
+            location2.draw(canvas);
             if(!(xCoord == 0 || yCoord == 0)) {
                 int x2 = xCoord;
                 int y2 = yCoord - splat.getHeight();

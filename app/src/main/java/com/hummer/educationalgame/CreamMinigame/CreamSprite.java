@@ -43,7 +43,7 @@ public class CreamSprite {
     }
 
     public Rect getHitbox() {
-        return new Rect(x, y, x + width, y + height);
+        return new Rect(x, y + height - 10, x + 10, y + height);
     }
 
 }
