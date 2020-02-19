@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageButton;
 
-public class Reception extends Activity implements View.OnClickListener{
+public class SittingChair extends Activity implements View.OnClickListener {
 
-    Button receptionist;
+    ImageButton cream;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,16 +18,16 @@ public class Reception extends Activity implements View.OnClickListener{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_reception);
+        setContentView(R.layout.sitting_chair);
 
-        receptionist = (Button) findViewById(R.id.receptionist);
-        receptionist.setOnClickListener(this);
+        cream = findViewById(R.id.cream);
+        cream.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        Intent gender_selection = new Intent(Reception.this, GenderSelection.class);
-        startActivity(gender_selection);
+        // TODO: Jawad, fill in the gap marked with #
+        // Intent cream_minigame = new Intent(SittingChair.this, #);
+        // startActivity(cream_minigame);
     }
-
 }

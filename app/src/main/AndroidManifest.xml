@@ -12,17 +12,43 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Reception"/>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".CreamMinigame.MainMenuForGame"/>
-        <activity android:name=".CreamMinigame.GameActivity"/>
-        <activity android:name=".MainMenu">
+        <activity
+            android:name=".Reception"
+            android:noHistory="true"/>
+        <activity
+            android:name=".MainActivity"
+            android:noHistory="true"/>
+        <activity android:name=".CreamMinigame.MainMenuForGame"
+            android:noHistory="true"/>
+        <activity android:name=".CreamMinigame.GameActivity"
+            android:noHistory="true"/>
+        <activity
+            android:name=".MainMenu"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".GenderSelection"
+            android:noHistory="true" />
+        <activity
+            android:name=".MaleCharSelection"
+            android:noHistory="true"/>
+        <activity
+            android:name=".FemaleCharSelection"
+            android:noHistory="true"/>
+        <activity
+            android:name=".FoodSelection"
+            android:noHistory="true"/>
+        <activity
+            android:name=".InjectionRoom"
+            android:noHistory="true"/>
+        <activity
+            android:name=".SittingChair"
+            android:noHistory="true"/>
     </application>
 
 </manifest>

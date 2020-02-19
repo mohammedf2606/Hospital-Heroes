@@ -1,16 +1,16 @@
 package com.hummer.educationalgame;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class Reception extends Activity implements View.OnClickListener{
 
-    Button receptionist;
+public class FoodSelection extends Activity implements View.OnClickListener {
+
+    Button milk, hash_brown, beans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,16 +18,22 @@ public class Reception extends Activity implements View.OnClickListener{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_reception);
+        setContentView(R.layout.food_selection);
 
-        receptionist = (Button) findViewById(R.id.receptionist);
-        receptionist.setOnClickListener(this);
+        milk = (Button) findViewById(R.id.milk);
+        milk.setOnClickListener(this);
+
+        hash_brown = (Button) findViewById(R.id.hash_browns);
+        hash_brown.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
-        Intent gender_selection = new Intent(Reception.this, GenderSelection.class);
-        startActivity(gender_selection);
-    }
+        switch (v.getId()) {
+            case R.id.milk:
 
+            case R.id.hash_browns:
+        }
+    }
 }
