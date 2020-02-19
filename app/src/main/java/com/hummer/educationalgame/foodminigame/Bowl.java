@@ -19,6 +19,7 @@ public class Bowl {
 
 
     public Bowl(Bitmap bowlImage, int viewWidth, int viewHeight) {
+        this.bowlImage = bowlImage;
         mX = viewWidth / 2;
         mY = (viewHeight * 4) / 5;
     }
