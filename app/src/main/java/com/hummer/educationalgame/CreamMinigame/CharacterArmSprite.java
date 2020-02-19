@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
+import android.graphics.Rect;
 
 import com.hummer.educationalgame.R;
 
@@ -50,5 +51,9 @@ public class CharacterArmSprite {
 
     public int getWidth() {
         return image.getWidth();
+    }
+
+    public Rect getHitbox() {
+        return new Rect(xCoord, yCoord, xCoord + getWidth(), yCoord + getHeight());
     }
 }
