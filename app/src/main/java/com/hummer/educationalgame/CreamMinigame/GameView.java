@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.SurfaceView;
@@ -22,6 +23,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private int xOfScreen, yOfScreen;
     private Canvas canvas;
     private int xCoord, yCoord;
+    private Path path;
+    private Paint paint;
 //    private float screenRatioX, screenRatioY;
 
     public GameView(Context context, int xOfScreen, int yOfScreen) {
@@ -45,6 +48,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
+        paint = new Paint();
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setColor(Color.YELLOW);
+        paint.setStrokeWidth(10);
+        path = new Path();
         b1 = new HospitalBackground(xOfScreen, yOfScreen, getResources());
         characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
 //        splat = new CreamSprite(xOfScreen, yOfScreen, getResources());
@@ -67,7 +75,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     public void update() {
-        characterArmSprite.update();
+
     }
 
     @Override
@@ -77,8 +85,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         if(canvas != null) {
             b1.draw(canvas);
             characterArmSprite.draw(canvas);
-            CreamSprite splat = new CreamSprite(0,0, getResources());
-            splat.draw(canvas, xCoord-50, yCoord-50);
+            if(!(xCoord == 0 || yCoord == 0)) {
+                CreamSprite splat = new CreamSprite(getResources());
+                int x2 = xCoord;
+                int y2 = yCoord - splat.getHeight();
+                splat.draw(canvas, x2, y2);
+                canvas.drawCircle(x2, yCoord, 5, paint);
+            }
+            canvas.drawPath(path, new Paint());
         }
     }
 
@@ -105,29 +119,20 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     // stuff for making cream appear here
                     xCoord = X;
                     yCoord = Y;
-                    System.out.println(xCoord);
-                    System.out.println(yCoord);
-//                    CreamSprite splat = new CreamSprite(xCoord, yCoord, getResources());
-//                    drawBitmap(splat.getBitmap(), xCoord, yCoord);
-//                    System.out.println("Touched hand");
-                }
+                    path.moveTo(X, Y);}
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (X >= characterArmSprite.getX() && X < (characterArmSprite.getX() + characterArmSprite.getWidth())
                         && Y >= characterArmSprite.getY() && Y < (characterArmSprite.getY() + characterArmSprite.getHeight())) {
                     xCoord = X;
                     yCoord = Y;
-                }
+                    path.moveTo(X, Y);}
+                break;
+            case MotionEvent.ACTION_UP:
+                xCoord = 0;
+                yCoord = 0;
+                break;
         }
         return true;
     }
-
-    public void drawBitmap(Bitmap bmp, int x, int y) {
-        Paint paint = new Paint();
-        paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.YELLOW);
-        paint.setStrokeWidth(3);
-        canvas.drawCircle(100, 100, 5, paint);
-    }
-
 }

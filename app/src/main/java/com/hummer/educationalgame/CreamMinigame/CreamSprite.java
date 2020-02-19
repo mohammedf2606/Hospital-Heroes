@@ -9,13 +9,13 @@ import com.hummer.educationalgame.R;
 
 public class CreamSprite {
     private Bitmap image;
-    private int x, y;
+    private int height, width;
 
-    public CreamSprite(int x, int y, Resources resources) {
-        this.x = x;
-        this.y = y;
-        image = BitmapFactory.decodeResource(resources, R.drawable.creamsplat);
+    public CreamSprite(Resources resources) {
+        image = BitmapFactory.decodeResource(resources, R.drawable.creamtube);
         image = Bitmap.createScaledBitmap(image, 100, 100, false);
+        height = image.getHeight();
+        width = image.getWidth();
     }
 
     public void draw(Canvas canvas, int xCoord, int yCoord) {
@@ -28,6 +28,14 @@ public class CreamSprite {
 
     public Bitmap getBitmap() {
         return image;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
     }
 
 }
