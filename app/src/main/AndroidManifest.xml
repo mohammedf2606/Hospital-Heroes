@@ -45,6 +45,9 @@
         <activity
             android:name=".SittingChair"
             android:noHistory="true"/>
+        <activity
+            android:name=".WaitingRoom"
+            android:noHistory="true"/>
     </application>
 
 </manifest>

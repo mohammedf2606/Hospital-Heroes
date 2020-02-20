@@ -38,15 +38,19 @@ public class MaleCharSelection extends Activity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.boy1:
+                Constants.setPlayerSitting(R.drawable.boy_chair);
                 Constants.setPlayerCharacter(R.drawable.boy_character);
                 break;
             case R.id.boy2:
+                Constants.setPlayerSitting(R.drawable.boy_chair);
                 Constants.setPlayerCharacter(R.drawable.boy_character);
                 break;
             case R.id.boy3:
+                Constants.setPlayerSitting(R.drawable.boy_chair);
                 Constants.setPlayerCharacter(R.drawable.boy_character);
                 break;
             case R.id.boy4:
+                Constants.setPlayerSitting(R.drawable.boy_chair);
                 Constants.setPlayerCharacter(R.drawable.boy_character);
                 break;
         }

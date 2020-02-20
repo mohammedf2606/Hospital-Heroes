@@ -20,4 +20,6 @@
     <string name="nurse">Nurse</string>
     <string name="hospital_front">Hospital front</string>
     <string name="reception">Reception</string>
+    <string name="timer">Timer</string>
+    <string name="chair_with_character">Chair with character</string>
 </resources>

@@ -26,8 +26,7 @@ public class SittingChair extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        // TODO: Jawad, fill in the gap marked with #
-        // Intent cream_minigame = new Intent(SittingChair.this, #);
-        // startActivity(cream_minigame);
+        Intent waiting_room = new Intent(SittingChair.this, WaitingRoom.class);
+        startActivity(waiting_room);
     }
 }
