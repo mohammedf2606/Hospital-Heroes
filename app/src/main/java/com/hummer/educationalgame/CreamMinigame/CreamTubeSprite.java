@@ -14,8 +14,8 @@ public class CreamTubeSprite {
     private int x, y;
 
     public CreamTubeSprite(Resources resources) {
-        image = BitmapFactory.decodeResource(resources, R.drawable.creamtubenew);
-        image = Bitmap.createScaledBitmap(image, 100, 100, false);
+        image = BitmapFactory.decodeResource(resources, R.drawable.creamtube);
+//        image = Bitmap.createScaledBitmap(image, 100, 100, false);
         height = image.getHeight();
         width = image.getWidth();
     }

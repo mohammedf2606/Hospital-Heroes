@@ -27,8 +27,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Paint paint;
     private boolean isTouchingScreen;
     private int progress1, progress2;
-    private boolean partiallyAppliedCreamOnPos1, considerablyAppliedCreamOnPos1, fullyAppliedCreamOnPos1;
-    private boolean partiallyAppliedCreamOnPos2, considerablyAppliedCreamOnPos2, fullyAppliedCreamOnPos2;
+    private boolean slightlyAppliedCreamOnPos1, considerablyAppliedCreamOnPos1, fullyAppliedCreamOnPos1;
+    private boolean slightlyAppliedCreamOnPos2, considerablyAppliedCreamOnPos2, fullyAppliedCreamOnPos2;
 //    private float screenRatioX, screenRatioY;
 
     public GameView(Context context, int xOfScreen, int yOfScreen) {
@@ -84,7 +84,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         if(Rect.intersects(location1.getHitbox(), creamTube.getHitbox()) && isTouchingScreen == true) {
             progress1++;
             switch(progress1) {
-                case 100: partiallyAppliedCreamOnPos1 = true;
+                case 100: slightlyAppliedCreamOnPos1 = true;
                 break;
                 case 200: considerablyAppliedCreamOnPos1 = true;
                 break;
@@ -94,7 +94,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         } else if(Rect.intersects(location2.getHitbox(), creamTube.getHitbox()) && isTouchingScreen == true) {
             progress2++;
             switch(progress2) {
-                case 100: partiallyAppliedCreamOnPos2 = true;
+                case 100: slightlyAppliedCreamOnPos2 = true;
                 break;
                 case 200: considerablyAppliedCreamOnPos2 = true;
                 break;
@@ -119,7 +119,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 splat1.draw(canvas, xOfScreen/8 - 20, yOfScreen/3 + 50);
             } else if(considerablyAppliedCreamOnPos1) {
                 splat2.draw(canvas, xOfScreen/8 - 20, yOfScreen/3 + 50);
-            } else if(partiallyAppliedCreamOnPos1) {
+            } else if(slightlyAppliedCreamOnPos1) {
                 splat3.draw(canvas,  xOfScreen/8 - 20, yOfScreen/3 + 50);
             }
 
@@ -127,7 +127,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 splat1.draw(canvas, xOfScreen/2 + 100, yOfScreen/3 + 60);
             } else if(considerablyAppliedCreamOnPos2) {
                 splat2.draw(canvas, xOfScreen/2 + 100, yOfScreen/3 + 60);
-            } else if(partiallyAppliedCreamOnPos2) {
+            } else if(slightlyAppliedCreamOnPos2) {
                 splat3.draw(canvas,  xOfScreen/2 + 100, yOfScreen/3 + 60);
             }
 
