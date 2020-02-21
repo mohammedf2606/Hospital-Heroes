@@ -14,19 +14,50 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".Reception"
-            android:noHistory="true"/>
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".MainActivity"
-            android:noHistory="true"/>
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".MainMenu"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".GenderSelection"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".MaleCharSelection"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".FemaleCharSelection"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".FoodSelection"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".InjectionRoom"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".SittingChair"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".WaitingRoom"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
