@@ -10,6 +10,8 @@ import android.view.SurfaceHolder;
 
 import com.hummer.educationalgame.R;
 
+import java.util.ArrayList;
+
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
     private FoodSprite foodSprite;
@@ -18,7 +20,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public GameView(Context context){
         super(context);
         getHolder().addCallback(this);
-
         thread = new MainThread(getHolder(), this);
         setFocusable(true);
     }
@@ -27,8 +28,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceCreated(SurfaceHolder holder) {
         int width = Resources.getSystem().getDisplayMetrics().widthPixels;
         int height = Resources.getSystem().getDisplayMetrics().heightPixels;
-        foodSprite = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown));
-        bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.milk), width, height);
+        bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
+        foodSprite = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans));
         thread.setRunning(true);
         thread.start();
         
