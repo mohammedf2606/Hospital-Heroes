@@ -25,7 +25,6 @@ public class InjectionGameplayScene implements InjectionScene
 
         injectionBody = new InjectionBody(new Rect(200,200,400,400), Color.BLACK);
 
-
     }
 
     @Override
