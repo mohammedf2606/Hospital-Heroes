@@ -8,13 +8,13 @@ import android.graphics.Rect;
 
 import com.hummer.educationalgame.R;
 
-public class CreamSprite {
+public class CreamTubeSprite {
     private Bitmap image;
     private int height, width;
     private int x, y;
 
-    public CreamSprite(Resources resources) {
-        image = BitmapFactory.decodeResource(resources, R.drawable.creamtube);
+    public CreamTubeSprite(Resources resources) {
+        image = BitmapFactory.decodeResource(resources, R.drawable.creamtubenew);
         image = Bitmap.createScaledBitmap(image, 100, 100, false);
         height = image.getHeight();
         width = image.getWidth();
