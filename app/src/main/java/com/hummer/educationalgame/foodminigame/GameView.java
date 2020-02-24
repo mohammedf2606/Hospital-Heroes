@@ -29,7 +29,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         int width = Resources.getSystem().getDisplayMetrics().widthPixels;
         int height = Resources.getSystem().getDisplayMetrics().heightPixels;
         bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
-        foodSprite = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans));
+        foodSprite = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), BitmapFactory.decodeResource(getResources(), R.drawable.beans));
         thread.setRunning(true);
         thread.start();
         
@@ -57,7 +57,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas){
         super.draw(canvas);
         if(canvas != null){
-            foodSprite.draw(canvas);
+            foodSprite.drawHashBrown(canvas);
+            foodSprite.drawBeans(canvas);
             bowl.draw(canvas);
         }
     }
