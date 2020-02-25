@@ -39,16 +39,19 @@ public class FemaleCharSelection extends Activity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.girl1:
-
+                Constants.setPlayerSitting(R.drawable.girl_chair);
                 Constants.setPlayerCharacter(R.drawable.girl_character);
                 break;
             case R.id.girl2:
+                Constants.setPlayerSitting(R.drawable.girl_chair);
                 Constants.setPlayerCharacter(R.drawable.girl_character);
                 break;
             case R.id.girl3:
+                Constants.setPlayerSitting(R.drawable.girl_chair);
                 Constants.setPlayerCharacter(R.drawable.girl_character);
                 break;
             case R.id.girl4:
+                Constants.setPlayerSitting(R.drawable.girl_chair);
                 Constants.setPlayerCharacter(R.drawable.girl_character);
                 break;
         }
