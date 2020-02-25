@@ -7,9 +7,11 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.media.MediaPlayer;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
+import com.hummer.educationalgame.R;
 
 import com.hummer.educationalgame.MainMenu;
 import com.hummer.educationalgame.WaitingRoom;
@@ -33,6 +35,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Paint paint;
     private EndGameSticker sticker;
     private boolean isTouchingScreen;
+    private MediaPlayer mediaPlayer;
     private int progress1, progress2;
     private boolean slightlyAppliedCreamOnPos1, considerablyAppliedCreamOnPos1, fullyAppliedCreamOnPos1;
     private boolean slightlyAppliedCreamOnPos2, considerablyAppliedCreamOnPos2, fullyAppliedCreamOnPos2;
@@ -48,8 +51,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         thread = new MainThread(getHolder(), this);
         setFocusable(true);
 
-        paint = new Paint();
-        path = new Path();
         background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
         characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
         location1 = new CreamApplicationLocation(xOfScreen/8 - 20, yOfScreen/3 + 50, getResources());
@@ -59,6 +60,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         splat2 = new CreamSplatter2(getResources());
         splat3 = new CreamSplatter3(getResources());
         sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
+        paint = new Paint();
+        path = new Path();
     }
 
     @Override
@@ -113,8 +116,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
 
         if(fullyAppliedCreamOnPos1 && fullyAppliedCreamOnPos2) {
-            // Minigame ends
+            // Minigame ends/ sticker appears.
             gameFinished = true;
+//            mediaPlayer = MediaPlayer.create(gameActivity, R.raw.successchime);
+//            mediaPlayer.start();
         }
     }
 
@@ -145,20 +150,20 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 splat3.draw(canvas,  xOfScreen/2 + 100, yOfScreen/3 + 60);
             }
 
+            if(!(xCoord == 0 || yCoord == 0 || gameFinished)) {
+                int x2 = xCoord;
+                int y2 = yCoord - creamTube.getHeight();
+                creamTube.draw(canvas, x2, y2);
+                canvas.drawCircle(x2, yCoord, 5, paint);
+            }
+            canvas.drawPath(path, paint);
+
             if(gameFinished) {
                 int value = sticker.drawAnimation(canvas);
                 if(value == 400) {
                     // go to next scene
                     gameActivity.nextScene();
                 }
-            }
-
-            if(!(xCoord == 0 || yCoord == 0 || gameFinished)) {
-                int x2 = xCoord;
-                int y2 = yCoord - creamTube.getHeight();
-                creamTube.draw(canvas, x2, y2);
-                canvas.drawCircle(x2, yCoord, 5, paint);
-                canvas.drawPath(path, paint);
             }
         }
     }
