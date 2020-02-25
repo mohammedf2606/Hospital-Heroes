@@ -1,6 +1,7 @@
 package com.hummer.educationalgame.CreamMinigame;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,6 +10,9 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
+
+import com.hummer.educationalgame.MainMenu;
+import com.hummer.educationalgame.WaitingRoom;
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
@@ -22,6 +26,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private CreamSplatter3 splat3;
     private int xOfScreen, yOfScreen;
     private boolean gameFinished;
+    private GameActivity gameActivity;
     private Canvas canvas;
     private int xCoord, yCoord;
     private Path path;
@@ -144,6 +149,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 int value = sticker.drawAnimation(canvas);
                 if(value == 400) {
                     // go to next scene
+                    gameActivity.nextScene();
                 }
             }
 
@@ -190,5 +196,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 break;
         }
         return true;
+    }
+
+    public void setGameActivity(GameActivity activity) {
+        gameActivity = activity;
     }
 }
