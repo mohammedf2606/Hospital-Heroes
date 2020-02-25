@@ -14,17 +14,19 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     private MainThread thread;
     private CharacterArmSprite characterArmSprite;
-    private HospitalBackground b1;
+    private HospitalBackground background;
     private CreamTubeSprite creamTube;
     private CreamApplicationLocation location1, location2;
     private CreamSplatter1 splat1;
     private CreamSplatter2 splat2;
     private CreamSplatter3 splat3;
     private int xOfScreen, yOfScreen;
+    private boolean gameFinished;
     private Canvas canvas;
     private int xCoord, yCoord;
     private Path path;
     private Paint paint;
+    private EndGameSticker sticker;
     private boolean isTouchingScreen;
     private int progress1, progress2;
     private boolean slightlyAppliedCreamOnPos1, considerablyAppliedCreamOnPos1, fullyAppliedCreamOnPos1;
@@ -40,6 +42,18 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         thread = new MainThread(getHolder(), this);
         setFocusable(true);
+
+        paint = new Paint();
+        path = new Path();
+        background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
+        characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
+        location1 = new CreamApplicationLocation(xOfScreen/8 - 20, yOfScreen/3 + 50, getResources());
+        location2 = new CreamApplicationLocation(xOfScreen/2 + 100, yOfScreen/3 + 60, getResources());
+        creamTube = new CreamTubeSprite(getResources());
+        splat1 = new CreamSplatter1(getResources());
+        splat2 = new CreamSplatter2(getResources());
+        splat3 = new CreamSplatter3(getResources());
+        sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
     }
 
     @Override
@@ -49,19 +63,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(Color.YELLOW);
         paint.setStrokeWidth(10);
-        path = new Path();
-        b1 = new HospitalBackground(xOfScreen, yOfScreen, getResources());
-        characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
-        location1 = new CreamApplicationLocation(xOfScreen/8 - 20, yOfScreen/3 + 50, getResources());
-        location2 = new CreamApplicationLocation(xOfScreen/2 + 100, yOfScreen/3 + 60, getResources());
-        creamTube = new CreamTubeSprite(getResources());
-        splat1 = new CreamSplatter1(getResources());
-        splat2 = new CreamSplatter2(getResources());
-        splat3 = new CreamSplatter3(getResources());
         thread.setRunning(true);
         thread.start();
     }
@@ -102,6 +106,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 break;
             }
         }
+
+        if(fullyAppliedCreamOnPos1 && fullyAppliedCreamOnPos2) {
+            // Minigame ends
+            gameFinished = true;
+        }
     }
 
     @Override
@@ -110,7 +119,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         this.canvas = canvas;
         if(canvas != null) {
 
-            b1.draw(canvas);
+            background.draw(canvas);
             characterArmSprite.draw(canvas);
             location1.draw(canvas);
             location2.draw(canvas);
@@ -131,13 +140,20 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 splat3.draw(canvas,  xOfScreen/2 + 100, yOfScreen/3 + 60);
             }
 
-            if(!(xCoord == 0 || yCoord == 0)) {
+            if(gameFinished) {
+                int value = sticker.drawAnimation(canvas);
+                if(value == 400) {
+                    // go to next scene
+                }
+            }
+
+            if(!(xCoord == 0 || yCoord == 0 || gameFinished)) {
                 int x2 = xCoord;
                 int y2 = yCoord - creamTube.getHeight();
                 creamTube.draw(canvas, x2, y2);
                 canvas.drawCircle(x2, yCoord, 5, paint);
+                canvas.drawPath(path, paint);
             }
-            canvas.drawPath(path, paint);
         }
     }
 
