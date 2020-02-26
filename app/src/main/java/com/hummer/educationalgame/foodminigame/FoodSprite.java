@@ -12,7 +12,7 @@ class FoodSprite {
 
     private Bitmap hashBrown;
     private Bitmap beans;
-    private int X, Y;
+    private int X, Y, X1;
     private int xVelocity = 10;
     private int yVelocity = 5;
 
@@ -21,6 +21,7 @@ class FoodSprite {
         this.beans = beans;
         X = 50;
         Y = 0;
+        X1 = 100;
     }
 
     int getX() {
@@ -31,20 +32,17 @@ class FoodSprite {
         canvas.drawBitmap(hashBrown, X, Y, null);
     }
     void drawBeans(Canvas canvas) {
-        canvas.drawBitmap(beans, 800, Y, null);
+        canvas.drawBitmap(beans, X1, Y, null);
     }
 
     void update(int bowlX) {
-  //      Y++;
-
- //       X +=xVelocity;
-        Y +=yVelocity;
-//        if ((X > screenWidth - hashBrown.getWidth()) || (X < 0)) {
-//            xVelocity = xVelocity * -1;
-//        }
-        if ((Y > Constants.SCREEN_HEIGHT - hashBrown.getHeight()) || (Y < 0)) {
-            yVelocity = yVelocity * -1;
+        Y++;
+        if(Y == 610){
+            double randomFactor = Math.random();
+            X = (int) randomFactor * 1024;
+            Y = -40;
         }
-    }
-}
+     }
+ }
+
 

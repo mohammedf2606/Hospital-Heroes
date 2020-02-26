@@ -60,9 +60,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas){
         super.draw(canvas);
         if(canvas != null){
+            bowl.draw(canvas);
             foodSprite.drawHashBrown(canvas);
             foodSprite.drawBeans(canvas);
-            bowl.draw(canvas);
+
         }
     }
 
