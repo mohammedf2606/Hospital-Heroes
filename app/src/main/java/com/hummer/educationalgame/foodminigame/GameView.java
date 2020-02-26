@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 
+import com.hummer.educationalgame.Constants;
 import com.hummer.educationalgame.R;
 
 import java.util.ArrayList;
@@ -46,11 +47,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     public void update() {
-        foodSprite.update();
+        foodSprite.update(bowl.getX());
     }
 
     private void updateFrame(int newX, int newY) {
-        bowl.update(newX, newY);
+        if (newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
+            bowl.update(newX - 125, newY);
+        }
     }
 
     @Override
