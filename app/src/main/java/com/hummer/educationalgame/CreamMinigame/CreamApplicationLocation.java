@@ -26,4 +26,12 @@ public class CreamApplicationLocation {
     public Rect getHitbox() {
         return new Rect(xCoord, yCoord, xCoord + image.getWidth(), yCoord + image.getHeight());
     }
+
+    public int getXCoord() {
+        return xCoord;
+    }
+
+    public int getYCoord() {
+        return yCoord;
+    }
 }

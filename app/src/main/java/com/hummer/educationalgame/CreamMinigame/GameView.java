@@ -1,7 +1,6 @@
 package com.hummer.educationalgame.CreamMinigame;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -12,9 +11,6 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 import com.hummer.educationalgame.R;
-
-import com.hummer.educationalgame.MainMenu;
-import com.hummer.educationalgame.WaitingRoom;
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
@@ -39,7 +35,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private int progress1, progress2;
     private boolean slightlyAppliedCreamOnPos1, considerablyAppliedCreamOnPos1, fullyAppliedCreamOnPos1;
     private boolean slightlyAppliedCreamOnPos2, considerablyAppliedCreamOnPos2, fullyAppliedCreamOnPos2;
-//    private float screenRatioX, screenRatioY;
 
     public GameView(Context context, int xOfScreen, int yOfScreen) {
         super(context);
@@ -135,19 +130,19 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             location2.draw(canvas);
 
             if(fullyAppliedCreamOnPos1) {
-                splat1.draw(canvas, xOfScreen/8 - 20, yOfScreen/3 + 50);
+                splat1.draw(canvas, location1.getXCoord(), location1.getYCoord());
             } else if(considerablyAppliedCreamOnPos1) {
-                splat2.draw(canvas, xOfScreen/8 - 20, yOfScreen/3 + 50);
+                splat2.draw(canvas, location1.getXCoord(), location1.getYCoord());
             } else if(slightlyAppliedCreamOnPos1) {
-                splat3.draw(canvas,  xOfScreen/8 - 20, yOfScreen/3 + 50);
+                splat3.draw(canvas, location1.getXCoord(), location1.getYCoord());
             }
 
             if(fullyAppliedCreamOnPos2) {
-                splat1.draw(canvas, xOfScreen/2 + 100, yOfScreen/3 + 60);
+                splat1.draw(canvas, location2.getXCoord(), location2.getYCoord());
             } else if(considerablyAppliedCreamOnPos2) {
-                splat2.draw(canvas, xOfScreen/2 + 100, yOfScreen/3 + 60);
+                splat2.draw(canvas, location2.getXCoord(), location2.getYCoord());
             } else if(slightlyAppliedCreamOnPos2) {
-                splat3.draw(canvas,  xOfScreen/2 + 100, yOfScreen/3 + 60);
+                splat3.draw(canvas, location2.getXCoord(), location2.getYCoord());
             }
 
             if(!(xCoord == 0 || yCoord == 0 || gameFinished)) {
@@ -159,6 +154,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             canvas.drawPath(path, paint);
 
             if(gameFinished) {
+                background.drawDarkenedImage(canvas);
+                characterArmSprite.drawDarkenedImage(canvas);
+                splat1.drawDarkenedImage(canvas, location1.getXCoord(), location1.getYCoord());
+                splat1.drawDarkenedImage(canvas, location2.getXCoord(), location2.getYCoord());
                 int value = sticker.drawAnimation(canvas);
                 if(value == 400) {
                     // go to next scene
