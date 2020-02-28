@@ -20,10 +20,10 @@
             android:name=".MainActivity"
             android:noHistory="true"/>
         <activity android:name=".CreamMinigame.MainMenuForGame"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape"
             android:noHistory="true"/>
         <activity android:name=".CreamMinigame.GameActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape"
             android:noHistory="true"/>
         <activity
             android:name=".MainMenu"
