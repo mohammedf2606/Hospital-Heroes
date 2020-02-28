@@ -6,41 +6,44 @@ import android.graphics.Canvas;
 
 import com.hummer.educationalgame.Constants;
 
+import java.util.Random;
+
 import static com.hummer.educationalgame.foodminigame.MainThread.canvas;
 
 class FoodSprite {
 
-    private Bitmap hashBrown;
-    private Bitmap beans;
-    private int X, Y, X1;
-    private int xVelocity = 10;
-    private int yVelocity = 5;
+    private Bitmap food;
+    private int X, Y;
+    Random rand = new Random();
 
-    FoodSprite(Bitmap hashBrown, Bitmap beans) {
-        this.hashBrown = hashBrown;
-        this.beans = beans;
-        X = 50;
+    FoodSprite(Bitmap foodImg, boolean delay) {
+        this.food = foodImg;
+        double randomFactor = Math.random();
+        X = rand.nextInt(Constants.SCREEN_WIDTH - 100);
         Y = 0;
-        X1 = 100;
+        if (delay) Y = -300;
     }
 
     int getX() {
         return X;
     }
 
-    void drawHashBrown(Canvas canvas) {
-        canvas.drawBitmap(hashBrown, X, Y, null);
-    }
-    void drawBeans(Canvas canvas) {
-        canvas.drawBitmap(beans, X1, Y, null);
+    void drawFood(Canvas canvas) {
+        canvas.drawBitmap(food, X, Y, null);
     }
 
-    void update(int bowlX) {
-        Y++;
-        if(Y == 610){
-            double randomFactor = Math.random();
-            X = (int) randomFactor * 1024;
-            Y = -40;
+    void update(int bowlX, int bowlY) {
+        int speed = 4;
+        Y += speed; //SLOW DOWN 250 166
+        if ((Y > bowlY && Y < bowlY + 150) && (X > bowlX && X < bowlX + 250)) {
+            GameView.score++;
+            System.out.println("Score: "+GameView.score);
+            X = rand.nextInt(Constants.SCREEN_WIDTH - 100);
+            Y = -90;
+        }
+        else if(Y >= Constants.SCREEN_HEIGHT){
+            X = rand.nextInt(Constants.SCREEN_WIDTH - 100);
+            Y = -60;
         }
      }
  }

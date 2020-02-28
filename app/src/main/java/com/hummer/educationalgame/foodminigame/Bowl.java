@@ -7,7 +7,6 @@ class Bowl {
     private Bitmap bowlImage;//bowl later
     private int mX;
     private int mY;
-    private int mRadius;
 
     int getX() {
         return mX;

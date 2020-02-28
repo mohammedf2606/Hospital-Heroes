@@ -15,8 +15,10 @@ import java.util.ArrayList;
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
-    private FoodSprite foodSprite;
+    private FoodSprite hashbrown;
+    private FoodSprite beans;
     private Bowl bowl;
+    static int score = 0;
 
     public GameView(Context context){
         super(context);
@@ -30,7 +32,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         int width = Resources.getSystem().getDisplayMetrics().widthPixels;
         int height = Resources.getSystem().getDisplayMetrics().heightPixels;
         bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
-        foodSprite = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), BitmapFactory.decodeResource(getResources(), R.drawable.beans));
+        hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), false);
+        beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);
         thread.setRunning(true);
         thread.start();
         
@@ -47,7 +50,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     public void update() {
-        foodSprite.update(bowl.getX());
+        hashbrown.update(bowl.getX(), bowl.getY());
+        beans.update(bowl.getX(), bowl.getY());
     }
 
     private void updateFrame(int newX, int newY) {
@@ -61,9 +65,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         super.draw(canvas);
         if(canvas != null){
             bowl.draw(canvas);
-            foodSprite.drawHashBrown(canvas);
-            foodSprite.drawBeans(canvas);
-
+            hashbrown.drawFood(canvas);
+            beans.drawFood(canvas);
         }
     }
 
