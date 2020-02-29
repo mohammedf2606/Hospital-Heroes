@@ -7,6 +7,13 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.MotionEvent;
 
+/**
+ * InjectionGameplayScene is the class of the game that represents the gameplay scene. It builds
+ * and displays the gameplay scene and intialises all other components.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class InjectionGameplayScene implements InjectionScene
 {
     private Injection injection;
