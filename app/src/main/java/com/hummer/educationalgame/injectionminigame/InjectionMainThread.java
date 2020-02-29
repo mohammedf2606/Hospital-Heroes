@@ -3,6 +3,13 @@ package com.hummer.educationalgame.injectionminigame;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
+/**
+ * InjectionMainThread is the class of the game that represents the main thread. It builds
+ * and displays the main thread and intialises all other components.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class InjectionMainThread extends Thread
 {
     public static final int MAX_FPS = 30;
