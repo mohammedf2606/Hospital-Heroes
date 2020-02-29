@@ -11,6 +11,13 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+/**
+ * InjectionGamePanel is the class of the game that represents the game panel. It builds
+ * and displays the game panel and initialises all other components.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Callback
 {
     private InjectionMainThread thread;
