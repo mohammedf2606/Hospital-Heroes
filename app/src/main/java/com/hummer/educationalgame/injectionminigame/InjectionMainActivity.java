@@ -6,6 +6,13 @@ import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
 
+/**
+ * InjectionMainActivity is the class of the game that represents the main activity. It builds
+ * and displays the main activity and all other components.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class InjectionMainActivity extends Activity
 {
 
