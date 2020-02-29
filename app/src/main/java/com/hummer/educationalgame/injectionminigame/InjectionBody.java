@@ -9,6 +9,13 @@ import android.graphics.Rect;
 
 import com.hummer.educationalgame.R;
 
+/**
+ * InjectionBody is the class of the game that represents the body part. It builds
+ * and displays the body part and its components.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class InjectionBody implements InjectionGameObject
 {
     private Rect body;
