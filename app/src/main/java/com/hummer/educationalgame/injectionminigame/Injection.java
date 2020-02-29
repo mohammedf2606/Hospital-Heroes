@@ -9,6 +9,13 @@ import android.graphics.Rect;
 
 import com.hummer.educationalgame.R;
 
+/**
+ * Injection is the class of the game that represents the injection. It builds
+ * and displays the injection and its components.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class Injection implements InjectionGameObject
 {
     private Rect injection;
