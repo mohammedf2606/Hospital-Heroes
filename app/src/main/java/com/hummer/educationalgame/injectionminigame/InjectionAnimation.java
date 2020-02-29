@@ -5,6 +5,13 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
+/**
+ * InjectionAnimation is the animation class of the game. It builds
+ * and displays the animation for all components.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class InjectionAnimation
 {
     private Bitmap[] frames;
