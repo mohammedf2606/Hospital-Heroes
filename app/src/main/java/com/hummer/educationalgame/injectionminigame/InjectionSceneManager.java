@@ -5,6 +5,13 @@ import android.view.MotionEvent;
 
 import java.util.ArrayList;
 
+/**
+ * InjectionSceneManager is the class of the game that represents the scene manager. It builds
+ * and displays the scene manager and intialises all other components.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class InjectionSceneManager
 {
     private ArrayList<InjectionScene> scenes = new ArrayList<>();
