@@ -10,6 +10,8 @@ import android.media.MediaPlayer;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
+
+import com.hummer.educationalgame.MainActivity;
 import com.hummer.educationalgame.R;
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
@@ -91,21 +93,21 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         if(Rect.intersects(location1.getHitbox(), creamTube.getHitbox()) && isTouchingScreen == true) {
             progress1++;
             switch(progress1) {
-                case 100: slightlyAppliedCreamOnPos1 = true;
+                case 75: slightlyAppliedCreamOnPos1 = true;
                 break;
-                case 200: considerablyAppliedCreamOnPos1 = true;
+                case 150: considerablyAppliedCreamOnPos1 = true;
                 break;
-                case 300: fullyAppliedCreamOnPos1 = true;
+                case 225: fullyAppliedCreamOnPos1 = true;
                 break;
             }
         } else if(Rect.intersects(location2.getHitbox(), creamTube.getHitbox()) && isTouchingScreen == true) {
             progress2++;
             switch(progress2) {
-                case 100: slightlyAppliedCreamOnPos2 = true;
+                case 75: slightlyAppliedCreamOnPos2 = true;
                 break;
-                case 200: considerablyAppliedCreamOnPos2 = true;
+                case 150: considerablyAppliedCreamOnPos2 = true;
                 break;
-                case 300: fullyAppliedCreamOnPos2 = true;
+                case 225: fullyAppliedCreamOnPos2 = true;
                 break;
             }
         }
@@ -113,7 +115,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         if(fullyAppliedCreamOnPos1 && fullyAppliedCreamOnPos2) {
             // Minigame ends/ sticker appears.
             gameFinished = true;
-//            mediaPlayer = MediaPlayer.create(gameActivity, R.raw.successchime);
+//            mediaPlayer = MediaPlayer.create(gameActivity, R.raw.success_chime);
 //            mediaPlayer.start();
         }
     }
