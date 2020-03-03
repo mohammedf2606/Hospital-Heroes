@@ -1,6 +1,7 @@
 package com.hummer.educationalgame.injectionminigame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Window;
@@ -29,5 +30,10 @@ public class InjectionMainActivity extends Activity
         InjectionConstants.SCREEN_HEIGHT = dm.heightPixels;
 
         setContentView(new InjectionGamePanel(this));
+    }
+
+    public void nextScene()
+    {
+        Intent waitingRoom = new Intent(InjectionMainActivity.this, Pre)
     }
 }

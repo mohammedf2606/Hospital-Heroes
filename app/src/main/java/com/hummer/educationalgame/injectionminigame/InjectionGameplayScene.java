@@ -1,5 +1,6 @@
 package com.hummer.educationalgame.injectionminigame;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -24,13 +25,18 @@ public class InjectionGameplayScene implements InjectionScene
 
     private boolean gameOver = false;
 
-    public InjectionGameplayScene()
+    private InjectionMainActivity gameActivity;
+    private InjectionGameOver sticker;
+
+    public InjectionGameplayScene(Context context)
     {
         injection = new Injection(new Rect(100,100,200,200), Color.rgb(255,0,0));
         injectionPoint = new Point(3*InjectionConstants.SCREEN_WIDTH/4, InjectionConstants.SCREEN_HEIGHT/4);
         injection.update(injectionPoint);
 
         injectionBody = new InjectionBody(new Rect(200,200,400,400), Color.BLACK);
+
+        sticker = new InjectionGameOver(InjectionConstants.SCREEN_WIDTH/2, InjectionConstants.SCREEN_HEIGHT/2, context.getResources());
 
     }
 
@@ -77,7 +83,11 @@ public class InjectionGameplayScene implements InjectionScene
             paint.setTextSize(100);
             paint.setColor(Color.MAGENTA);
             paint.setTextAlign(Paint.Align.CENTER);
-            canvas.drawText("WELL DONE!", InjectionConstants.SCREEN_WIDTH/2, InjectionConstants.SCREEN_HEIGHT/2, paint);
+            int value = sticker.drawAnimation(canvas);
+            if(value == 400)
+            {
+
+            }
         }
     }
 
