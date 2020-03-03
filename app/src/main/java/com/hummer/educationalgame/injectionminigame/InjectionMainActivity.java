@@ -1,12 +1,14 @@
 package com.hummer.educationalgame.injectionminigame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.hummer.educationalgame.MusicService;
+import com.hummer.educationalgame.PreScan;
 
 /**
  * InjectionMainActivity is the class of the game that represents the main activity. It builds
@@ -33,5 +35,10 @@ public class InjectionMainActivity extends Activity
         MusicService.pause();
 
         setContentView(new InjectionGamePanel(this));
+    }
+
+    public void nextScene() {
+        Intent pre_scan = new Intent(InjectionMainActivity.this, PreScan.class);
+        startActivity(pre_scan);
     }
 }

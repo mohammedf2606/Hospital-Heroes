@@ -1,5 +1,7 @@
 package com.hummer.educationalgame.injectionminigame;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -75,12 +77,20 @@ public class InjectionGameplayScene implements InjectionScene
 
         if(gameOver)
         {
-            SoundEffects.playSound(0);
-            Paint paint = new Paint();
-            paint.setTextSize(100);
-            paint.setColor(Color.MAGENTA);
-            paint.setTextAlign(Paint.Align.CENTER);
-            canvas.drawText("WELL DONE!", InjectionConstants.SCREEN_WIDTH/2, InjectionConstants.SCREEN_HEIGHT/2, paint);
+            endGame(canvas);
+        }
+    }
+
+    private static void endGame(Canvas canvas) {
+        Paint paint = new Paint();
+        paint.setTextSize(100);
+        paint.setColor(Color.MAGENTA);
+        paint.setTextAlign(Paint.Align.CENTER);
+        canvas.drawText("WELL DONE!", InjectionConstants.SCREEN_WIDTH/2, InjectionConstants.SCREEN_HEIGHT/2, paint);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
