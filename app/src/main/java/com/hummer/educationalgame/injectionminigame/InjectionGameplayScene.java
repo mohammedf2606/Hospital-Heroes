@@ -1,11 +1,15 @@
 package com.hummer.educationalgame.injectionminigame;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.MotionEvent;
+
+import com.hummer.educationalgame.PreScan;
 
 /**
  * InjectionGameplayScene is the class of the game that represents the gameplay scene. It builds
@@ -73,11 +77,20 @@ public class InjectionGameplayScene implements InjectionScene
 
         if(gameOver)
         {
-            Paint paint = new Paint();
-            paint.setTextSize(100);
-            paint.setColor(Color.MAGENTA);
-            paint.setTextAlign(Paint.Align.CENTER);
-            canvas.drawText("WELL DONE!", InjectionConstants.SCREEN_WIDTH/2, InjectionConstants.SCREEN_HEIGHT/2, paint);
+            endGame(canvas);
+        }
+    }
+
+    private static void endGame(Canvas canvas) {
+        Paint paint = new Paint();
+        paint.setTextSize(100);
+        paint.setColor(Color.MAGENTA);
+        paint.setTextAlign(Paint.Align.CENTER);
+        canvas.drawText("WELL DONE!", InjectionConstants.SCREEN_WIDTH/2, InjectionConstants.SCREEN_HEIGHT/2, paint);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
