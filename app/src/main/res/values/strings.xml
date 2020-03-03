@@ -22,4 +22,6 @@
     <string name="reception">Reception</string>
     <string name="timer">Timer</string>
     <string name="chair_with_character">Chair with character</string>
+    <string name="hospital_room">Hospital Room</string>
+    <string name="play">Play</string>
 </resources>
