@@ -161,7 +161,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 splat1.drawDarkenedImage(canvas, location1.getXCoord(), location1.getYCoord());
                 splat1.drawDarkenedImage(canvas, location2.getXCoord(), location2.getYCoord());
                 int value = sticker.drawAnimation(canvas);
-                if(value == 400) {
+                if(value == sticker.getWidth()) {
                     // go to next scene
                     gameActivity.nextScene();
                 }

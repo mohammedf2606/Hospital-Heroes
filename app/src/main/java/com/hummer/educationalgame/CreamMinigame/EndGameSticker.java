@@ -16,7 +16,7 @@ public class EndGameSticker {
     public EndGameSticker(int x, int y, Resources resources) {
         xCoord = x;
         yCoord = y;
-        image = BitmapFactory.decodeResource(resources, R.drawable.sticker);
+        image = BitmapFactory.decodeResource(resources, R.drawable.successbadge);
         image = Bitmap.createScaledBitmap(image, 400, 400, false);
     }
 
@@ -25,13 +25,21 @@ public class EndGameSticker {
     }
 
     public int drawAnimation(Canvas canvas) {
-        width+=2;
-        height+=2;
-        if(width > 400) {
-            width = 400;
-            height = 400;
+        width+= getWidth() / 150;
+        height+= getHeight() / 150;
+        if(width > getWidth()) {
+            width = getWidth();
+            height = getHeight();
         }
         canvas.drawBitmap(Bitmap.createScaledBitmap(image, width, height, false), xCoord/2 - (width/2), yCoord/2 - (height/2), null);
         return width;
+    }
+
+    public int getWidth() {
+        return image.getWidth();
+    }
+
+    public int getHeight() {
+        return image.getHeight();
     }
 }
