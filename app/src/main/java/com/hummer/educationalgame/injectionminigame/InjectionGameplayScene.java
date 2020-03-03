@@ -9,6 +9,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.MotionEvent;
 
+import com.hummer.educationalgame.MusicService;
 import com.hummer.educationalgame.SoundEffects;
 
 /**
@@ -82,6 +83,7 @@ public class InjectionGameplayScene implements InjectionScene
     }
 
     private static void endGame(Canvas canvas) {
+        SoundEffects.playSound(0);
         Paint paint = new Paint();
         paint.setTextSize(100);
         paint.setColor(Color.MAGENTA);
