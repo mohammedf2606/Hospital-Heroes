@@ -58,6 +58,7 @@
             android:name=".WaitingRoom"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
+        <activity android:name=".injectionminigame.InjectionMainActivity" />
     </application>
 
 </manifest>
