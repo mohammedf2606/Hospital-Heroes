@@ -59,6 +59,8 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity android:name=".injectionminigame.InjectionMainActivity" />
+
+        <service android:name=".MusicService" />
     </application>
 
 </manifest>

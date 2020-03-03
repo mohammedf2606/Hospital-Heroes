@@ -60,10 +60,6 @@ public class MainMenu extends Activity implements View.OnClickListener {
         });
 
         animatorSet.start();
-
-        MediaPlayer player = MediaPlayer.create(this,R.raw.background_music);
-        player.setLooping(true);
-        player.start();
     }
 
     @Override
@@ -77,6 +73,7 @@ public class MainMenu extends Activity implements View.OnClickListener {
                 break;
         }
         Intent main_page = new Intent(MainMenu.this, MainActivity.class);
+        startService(new Intent(MainMenu.this, MusicService.class));
         startActivity(main_page);
     }
 }
