@@ -59,7 +59,11 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity android:name=".injectionminigame.InjectionMainActivity" />
+<<<<<<< HEAD
         <activity android:name=".injectionminigame.InjectionMainMenu" />
+=======
+        <activity android:name=".PreScan" />
+>>>>>>> 1ad2b40d3fc71b0d315b9c64827f803a55e93d36
     </application>
 
 </manifest>

@@ -7,6 +7,8 @@ import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.hummer.educationalgame.PreScan;
+
 /**
  * InjectionMainActivity is the class of the game that represents the main activity. It builds
  * and displays the main activity and all other components.
@@ -32,8 +34,8 @@ public class InjectionMainActivity extends Activity
         setContentView(new InjectionGamePanel(this));
     }
 
-    public void nextScene()
-    {
-        Intent waitingRoom = new Intent(InjectionMainActivity.this, Pre)
+    public void nextScene() {
+        Intent pre_scan = new Intent(InjectionMainActivity.this, PreScan.class);
+        startActivity(pre_scan);
     }
 }
