@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class MusicService extends Service {
 
-    private MediaPlayer player;
+    private static MediaPlayer player;
 
     @Nullable
     @Override
@@ -21,8 +21,13 @@ public class MusicService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         player = MediaPlayer.create(this,R.raw.background_music);
         player.setLooping(true);
+        player.setVolume(0.5f, 0.5f);
         player.start();
         return START_STICKY;
+    }
+
+    public static void pause() {
+        player.pause();
     }
 
     @Override

@@ -6,6 +6,8 @@ import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.hummer.educationalgame.MusicService;
+
 /**
  * InjectionMainActivity is the class of the game that represents the main activity. It builds
  * and displays the main activity and all other components.
@@ -27,6 +29,8 @@ public class InjectionMainActivity extends Activity
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         InjectionConstants.SCREEN_WIDTH = dm.widthPixels;
         InjectionConstants.SCREEN_HEIGHT = dm.heightPixels;
+
+        MusicService.pause();
 
         setContentView(new InjectionGamePanel(this));
     }
