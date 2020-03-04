@@ -22,4 +22,5 @@
     <string name="reception">Reception</string>
     <string name="timer">Timer</string>
     <string name="chair_with_character">Chair with character</string>
+    <string name="pre_scan_room">Pre-scan room</string>
 </resources>
