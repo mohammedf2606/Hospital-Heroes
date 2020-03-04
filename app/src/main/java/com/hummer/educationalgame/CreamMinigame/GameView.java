@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
-import android.media.MediaPlayer;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
@@ -41,7 +40,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Paint paint;
     private EndGameSticker sticker;
     private boolean isTouchingScreen;
-    private MediaPlayer mediaPlayer;
     private int progress1, progress2;
     private boolean slightlyAppliedCreamOnPos1, considerablyAppliedCreamOnPos1, fullyAppliedCreamOnPos1;
     private boolean slightlyAppliedCreamOnPos2, considerablyAppliedCreamOnPos2, fullyAppliedCreamOnPos2;
@@ -119,7 +117,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 break;
             }
         }
-
         if(fullyAppliedCreamOnPos1 && fullyAppliedCreamOnPos2) {
             // Minigame ends/ sticker appears.
             gameFinished = true;
@@ -166,10 +163,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 characterArmSprite.drawDarkenedImage(canvas);
                 bigSplat.drawDarkenedImage(canvas, location1.getXCoord(), location1.getYCoord());
                 bigSplat.drawDarkenedImage(canvas, location2.getXCoord(), location2.getYCoord());
+
+                //stuff that happens when game is complete
                 int value = sticker.drawAnimation(canvas);
+
                 if(soundPlayedAlready == false) {
                     playVictorySound();
                 }
+
                 if(value == sticker.getWidth()) {
                     // go to next scene
                     gameActivity.nextScene();
