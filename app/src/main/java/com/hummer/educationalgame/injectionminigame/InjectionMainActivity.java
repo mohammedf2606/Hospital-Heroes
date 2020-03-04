@@ -30,7 +30,6 @@ public class InjectionMainActivity extends Activity
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         InjectionConstants.SCREEN_WIDTH = dm.widthPixels;
         InjectionConstants.SCREEN_HEIGHT = dm.heightPixels;
-
         setContentView(new InjectionGamePanel(this));
     }
 

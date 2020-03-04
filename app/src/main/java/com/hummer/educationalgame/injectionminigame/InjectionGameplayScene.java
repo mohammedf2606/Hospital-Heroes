@@ -1,11 +1,8 @@
 package com.hummer.educationalgame.injectionminigame;
 
-<<<<<<< HEAD
 import android.content.Context;
-=======
 import android.app.Activity;
 import android.content.Intent;
->>>>>>> 1ad2b40d3fc71b0d315b9c64827f803a55e93d36
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -43,7 +40,7 @@ public class InjectionGameplayScene implements InjectionScene
 
         injectionBody = new InjectionBody(new Rect(200,200,400,400), Color.BLACK);
 
-        sticker = new InjectionGameOver(InjectionConstants.SCREEN_WIDTH/2, InjectionConstants.SCREEN_HEIGHT/2, context.getResources());
+        sticker = new InjectionGameOver(4 * InjectionConstants.SCREEN_WIDTH/4, 4 * InjectionConstants.SCREEN_HEIGHT/4, context.getResources());
 
     }
 
@@ -90,7 +87,8 @@ public class InjectionGameplayScene implements InjectionScene
             paint.setTextAlign(Paint.Align.CENTER);
             int value = sticker.drawAnimation(canvas);
             if (value == 400) {
-
+                System.out.println("no u");
+                gameActivity.nextScene();
             }
         }
     }
@@ -111,4 +109,7 @@ public class InjectionGameplayScene implements InjectionScene
         }
     }
 
+    public void setGameActivity(InjectionMainActivity gameActivity) {
+        this.gameActivity = gameActivity;
+    }
 }
