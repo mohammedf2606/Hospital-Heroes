@@ -11,8 +11,6 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 
-import com.hummer.educationalgame.MainActivity;
-import com.hummer.educationalgame.R;
 import com.hummer.educationalgame.SoundEffects;
 
 /**
@@ -31,9 +29,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private HospitalBackground background;
     private CreamTubeSprite creamTube;
     private CreamApplicationLocation location1, location2;
-    private CreamSplatter1 splat1;
-    private CreamSplatter2 splat2;
-    private CreamSplatter3 splat3;
+    private BigCreamSplatter bigSplat;
+    private MediumCreamSplatter mediumSplat;
+    private SmallCreamSplatter smallSplat;
     private int xOfScreen, yOfScreen;
     private boolean gameFinished, soundPlayedAlready;
     private GameActivity gameActivity;
@@ -63,9 +61,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         location1 = new CreamApplicationLocation(xOfScreen/8 - 20, yOfScreen/3 + 50, getResources());
         location2 = new CreamApplicationLocation(xOfScreen/2 + 100, yOfScreen/3 + 60, getResources());
         creamTube = new CreamTubeSprite(getResources());
-        splat1 = new CreamSplatter1(getResources());
-        splat2 = new CreamSplatter2(getResources());
-        splat3 = new CreamSplatter3(getResources());
+        bigSplat = new BigCreamSplatter(getResources());
+        mediumSplat = new MediumCreamSplatter(getResources());
+        smallSplat = new SmallCreamSplatter(getResources());
         sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
         paint = new Paint();
         path = new Path();
@@ -140,19 +138,19 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             location2.draw(canvas);
 
             if(fullyAppliedCreamOnPos1) {
-                splat1.draw(canvas, location1.getXCoord(), location1.getYCoord());
+                bigSplat.draw(canvas, location1.getXCoord(), location1.getYCoord());
             } else if(considerablyAppliedCreamOnPos1) {
-                splat2.draw(canvas, location1.getXCoord(), location1.getYCoord());
+                mediumSplat.draw(canvas, location1.getXCoord(), location1.getYCoord());
             } else if(slightlyAppliedCreamOnPos1) {
-                splat3.draw(canvas, location1.getXCoord(), location1.getYCoord());
+                smallSplat.draw(canvas, location1.getXCoord(), location1.getYCoord());
             }
 
             if(fullyAppliedCreamOnPos2) {
-                splat1.draw(canvas, location2.getXCoord(), location2.getYCoord());
+                bigSplat.draw(canvas, location2.getXCoord(), location2.getYCoord());
             } else if(considerablyAppliedCreamOnPos2) {
-                splat2.draw(canvas, location2.getXCoord(), location2.getYCoord());
+                mediumSplat.draw(canvas, location2.getXCoord(), location2.getYCoord());
             } else if(slightlyAppliedCreamOnPos2) {
-                splat3.draw(canvas, location2.getXCoord(), location2.getYCoord());
+                smallSplat.draw(canvas, location2.getXCoord(), location2.getYCoord());
             }
 
             if(!(xCoord == 0 || yCoord == 0 || gameFinished)) {
@@ -166,8 +164,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             if(gameFinished) {
                 background.drawDarkenedImage(canvas);
                 characterArmSprite.drawDarkenedImage(canvas);
-                splat1.drawDarkenedImage(canvas, location1.getXCoord(), location1.getYCoord());
-                splat1.drawDarkenedImage(canvas, location2.getXCoord(), location2.getYCoord());
+                bigSplat.drawDarkenedImage(canvas, location1.getXCoord(), location1.getYCoord());
+                bigSplat.drawDarkenedImage(canvas, location2.getXCoord(), location2.getYCoord());
                 int value = sticker.drawAnimation(canvas);
                 if(soundPlayedAlready == false) {
                     playVictorySound();

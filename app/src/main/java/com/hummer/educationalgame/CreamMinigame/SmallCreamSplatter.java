@@ -12,20 +12,19 @@ import android.graphics.Paint;
 import com.hummer.educationalgame.R;
 
 /**
- * CreamSplatter1 is the class that represents the bitmap that is shown when
- * the player applies the full amount of cream. The methods consist of draw which draws
+ * CreamSplatter3 is the class that represents the bitmap that is shown when
+ * the player applies a slight amount of cream. The methods consist of draw which draws
  * the bitmap onto the canvas (screen) and drawDarkenedImage which draws a darker version
  * of the image onto the canvas.
  *
  * @author Jawad Zeidan
  * @version 1.0
  */
-
-public class CreamSplatter1 {
+public class SmallCreamSplatter {
     private Bitmap image;
 
-    public CreamSplatter1(Resources res) {
-        image = BitmapFactory.decodeResource(res, R.drawable.cream1);
+    public SmallCreamSplatter(Resources res) {
+        image = BitmapFactory.decodeResource(res, R.drawable.cream3);
         image = Bitmap.createScaledBitmap(image, 100, 100, false);
     }
 
@@ -39,5 +38,4 @@ public class CreamSplatter1 {
         p.setColorFilter(filter);
         canvas.drawBitmap(image, x, y, p);
     }
-
 }
