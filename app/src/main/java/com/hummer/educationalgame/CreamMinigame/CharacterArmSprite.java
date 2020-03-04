@@ -13,6 +13,16 @@ import android.graphics.Rect;
 
 import com.hummer.educationalgame.R;
 
+/**
+ * CharacterArmSprite is the class that contains the 'arm' bitmap sprite
+ * which is to have the cream applied onto. The class contains methods such as
+ * 'draw' which draws the bitmap onto the canvas (screen) and accessor methods such as
+ * get height of image and get width.
+ *
+ * @author Jawad Zeidan
+ * @version 1.0
+ */
+
 public class CharacterArmSprite {
     private Bitmap image;
     private int xCoord;

@@ -10,6 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.hummer.educationalgame.R;
 
+/**
+ * MainMenuForGame represents the class that acts as the 'main menu' for
+ * the game. In other words, it is the screen that appears before the game starts
+ * and it showcases how the game works and sets the scene.
+ *
+ * @author Jawad Zeidan
+ * @version 1.0
+ */
+
 public class MainMenuForGame extends AppCompatActivity {
 
     @Override

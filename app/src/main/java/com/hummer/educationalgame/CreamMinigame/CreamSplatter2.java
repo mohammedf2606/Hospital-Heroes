@@ -11,6 +11,16 @@ import android.graphics.Paint;
 
 import com.hummer.educationalgame.R;
 
+/**
+ * CreamSplatter2 is the class that represents the bitmap that is shown when
+ * the player applies a partial amount of cream. The methods consist of draw which draws
+ * the bitmap onto the canvas (screen) and drawDarkenedImage which draws a darker version
+ * of the image onto the canvas.
+ *
+ * @author Jawad Zeidan
+ * @version 1.0
+ */
+
 public class CreamSplatter2 {
     private Bitmap image;
 

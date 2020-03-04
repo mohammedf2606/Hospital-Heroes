@@ -8,6 +8,16 @@ import android.graphics.Rect;
 
 import com.hummer.educationalgame.R;
 
+/**
+ * CreamTubeSprite represents the image that is shown when the player
+ * touches the screen, more specifically the 'arm' sprite. The image is
+ * a tube of 'magic cream'. Once the tube makes contact with the cream application
+ * locations, animations are processed.
+ *
+ * @author Jawad Zeidan
+ * @version 1.0
+ */
+
 public class CreamTubeSprite {
     private Bitmap image;
     private int height, width;

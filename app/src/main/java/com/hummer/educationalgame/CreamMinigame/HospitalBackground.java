@@ -11,6 +11,15 @@ import android.graphics.Paint;
 
 import com.hummer.educationalgame.R;
 
+/**
+ * HospitalBackground represents the background image of the 'cream minigame'
+ * It is supposed to be the hospital room the child is to be sat in once the cream
+ * is to be applied. It is in the form of a full screen bitmap which is drawn.
+ *
+ * @author Jawad Zeidan
+ * @version 1.0
+ */
+
 public class HospitalBackground {
     private Bitmap image;
 

@@ -8,6 +8,16 @@ import android.graphics.Rect;
 
 import com.hummer.educationalgame.R;
 
+/**
+ * CreamApplicationLocation is the class that contains the bitmap for the dotted
+ * line that represents the area to apply the cream onto. The methods contained
+ * consist of 'draw' which draws the bitmap onto the canvas (screen) and getHitBox which
+ * returns a rectangle representing the image itself (used for collisions).
+ *
+ * @author Jawad Zeidan
+ * @version 1.0
+ */
+
 public class CreamApplicationLocation {
     private Bitmap image;
     private int xCoord, yCoord;

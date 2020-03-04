@@ -12,6 +12,15 @@ import com.hummer.educationalgame.MainMenu;
 import com.hummer.educationalgame.R;
 import com.hummer.educationalgame.WaitingRoom;
 
+/**
+ * GameActivity represents the class which contains the activity
+ * the game runs in. An activity is a 'screen' which is interactive.
+ * The XML for the activity is empty since the background images and
+ * sprites are drawn using the GameView class.
+ *
+ * @author Jawad Zeidan
+ * @version 1.0
+ */
 public class GameActivity extends Activity {
 
     private GameView gameView;

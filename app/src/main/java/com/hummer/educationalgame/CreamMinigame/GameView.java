@@ -13,6 +13,16 @@ import android.view.SurfaceHolder;
 
 import com.hummer.educationalgame.MainActivity;
 import com.hummer.educationalgame.R;
+import com.hummer.educationalgame.SoundEffects;
+
+/**
+ * GameView represents the powerhouse class of the package. All
+ * the processes and logic are processed here, including drawing bitmaps,
+ * checking conditions and evaluating expressions.
+ *
+ * @author Jawad Zeidan
+ * @version 1.0
+ */
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
@@ -25,7 +35,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private CreamSplatter2 splat2;
     private CreamSplatter3 splat3;
     private int xOfScreen, yOfScreen;
-    private boolean gameFinished;
+    private boolean gameFinished, soundPlayedAlready;
     private GameActivity gameActivity;
     private Canvas canvas;
     private int xCoord, yCoord;
@@ -115,8 +125,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         if(fullyAppliedCreamOnPos1 && fullyAppliedCreamOnPos2) {
             // Minigame ends/ sticker appears.
             gameFinished = true;
-//            mediaPlayer = MediaPlayer.create(gameActivity, R.raw.success_chime);
-//            mediaPlayer.start();
         }
     }
 
@@ -161,6 +169,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 splat1.drawDarkenedImage(canvas, location1.getXCoord(), location1.getYCoord());
                 splat1.drawDarkenedImage(canvas, location2.getXCoord(), location2.getYCoord());
                 int value = sticker.drawAnimation(canvas);
+                if(soundPlayedAlready == false) {
+                    playVictorySound();
+                }
                 if(value == sticker.getWidth()) {
                     // go to next scene
                     gameActivity.nextScene();
@@ -206,5 +217,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     public void setGameActivity(GameActivity activity) {
         gameActivity = activity;
+    }
+
+    public void playVictorySound() {
+        soundPlayedAlready = true;
+        SoundEffects.playSound(0);
     }
 }
