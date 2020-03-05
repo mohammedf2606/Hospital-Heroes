@@ -47,9 +47,6 @@ public class MusicService extends Service {
                 player.start();
                 if (playlist.size() > i+1) {
                     playNext();
-                } else {
-                    i = -1;
-                    playNext();
                 }
             }
         }, player.getDuration()+100);
