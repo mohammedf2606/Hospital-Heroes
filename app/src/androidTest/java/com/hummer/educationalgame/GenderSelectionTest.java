@@ -25,7 +25,7 @@ public class GenderSelectionTest
     @Rule
     public ActivityTestRule<GenderSelection> mActivityTestRule = new ActivityTestRule<GenderSelection>(GenderSelection.class);
     private GenderSelection mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MaleCharSelection.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception

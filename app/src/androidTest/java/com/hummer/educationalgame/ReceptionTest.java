@@ -25,7 +25,7 @@ public class ReceptionTest
     @Rule
     public ActivityTestRule<Reception> mActivityTestRule = new ActivityTestRule<Reception>(Reception.class);
     private Reception mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(GenderSelection.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception

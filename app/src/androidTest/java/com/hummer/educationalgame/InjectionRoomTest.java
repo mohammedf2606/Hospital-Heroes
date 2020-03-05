@@ -25,7 +25,7 @@ public class InjectionRoomTest
     @Rule
     public ActivityTestRule<InjectionRoom> mActivityTestRule = new ActivityTestRule<InjectionRoom>(InjectionRoom.class);
     private InjectionRoom mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(SittingChair.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception

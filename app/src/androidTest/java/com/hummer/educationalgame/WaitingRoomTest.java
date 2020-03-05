@@ -25,7 +25,7 @@ public class WaitingRoomTest
     @Rule
     public ActivityTestRule<WaitingRoom> mActivityTestRule = new ActivityTestRule<WaitingRoom>(WaitingRoom.class);
     private WaitingRoom mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(SittingChair.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception

@@ -25,7 +25,7 @@ public class MainActivityTest
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
     private MainActivity mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(Reception.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception

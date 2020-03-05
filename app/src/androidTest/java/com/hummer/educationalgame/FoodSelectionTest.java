@@ -25,7 +25,7 @@ public class FoodSelectionTest
     @Rule
     public ActivityTestRule<FoodSelection> mActivityTestRule = new ActivityTestRule<FoodSelection>(FoodSelection.class);
     private FoodSelection mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(WaitingRoom.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
