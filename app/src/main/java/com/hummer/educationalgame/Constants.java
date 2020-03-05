@@ -5,6 +5,11 @@ public class Constants {
     private static int playerCharacter;
     private static int playerSitting;
 
+    public Constants()
+    {
+
+    }
+
     public static boolean isFood() {
         return isFood;
     }
