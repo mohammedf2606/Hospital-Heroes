@@ -36,7 +36,7 @@ public class GenderSelectionTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.male_gender_sign);
+        View view = mActivity.findViewById(R.id.female_gender_sign);
         assertNotNull(view);
     }
 

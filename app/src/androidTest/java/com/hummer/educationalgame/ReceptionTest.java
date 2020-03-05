@@ -43,8 +43,8 @@ public class ReceptionTest
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.reception));
-        onView(withId(R.id.reception)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.receptionist));
+        onView(withId(R.id.receptionist)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();

@@ -25,7 +25,7 @@ public class FemaleCharSelectionTest
     @Rule
     public ActivityTestRule<FemaleCharSelection> mActivityTestRule = new ActivityTestRule<FemaleCharSelection>(FemaleCharSelection.class);
     private FemaleCharSelection mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(FoodSelection.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(InjectionRoom.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
@@ -36,7 +36,7 @@ public class FemaleCharSelectionTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.girl1);
+        View view = mActivity.findViewById(R.id.girl2);
         assertNotNull(view);
     }
 

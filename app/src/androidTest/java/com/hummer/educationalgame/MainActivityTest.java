@@ -43,8 +43,8 @@ public class MainActivityTest
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.tap_to_start));
-        onView(withId(R.id.tap_to_start)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.tap_screen_start));
+        onView(withId(R.id.tap_screen_start)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();

@@ -36,15 +36,15 @@ public class InjectionRoomTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.halo);
+        View view = mActivity.findViewById(R.id.nurse);
         assertNotNull(view);
     }
 
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.halo));
-        onView(withId(R.id.halo)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.chair));
+        onView(withId(R.id.chair)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();

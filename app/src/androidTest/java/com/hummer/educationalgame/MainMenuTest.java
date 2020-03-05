@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 
 /*
  MainMenu, MainActivity, Reception, GenderSelection, (Fe)MaleCharSelection,
- FoodSelection, WaitingRoom, InjectionRoom, SittingChair, PreScan
+ FoodSelection/InjectionRoom, WaitingRoom, SittingChair, PreScan
 */
 public class MainMenuTest
 {
@@ -44,8 +44,8 @@ public class MainMenuTest
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.girl_eating));
-        onView(withId(R.id.girl_eating)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.nurse));
+        onView(withId(R.id.nurse)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();

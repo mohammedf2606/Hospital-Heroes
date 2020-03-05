@@ -25,7 +25,7 @@ public class SittingChairTest
     @Rule
     public ActivityTestRule<SittingChair> mActivityTestRule = new ActivityTestRule<SittingChair>(SittingChair.class);
     private SittingChair mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(WaitingRoom.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
@@ -36,15 +36,15 @@ public class SittingChairTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.chair);
+        View view = mActivity.findViewById(R.id.nurse);
         assertNotNull(view);
     }
 
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.chair));
-        onView(withId(R.id.chair)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.cream));
+        onView(withId(R.id.cream)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();

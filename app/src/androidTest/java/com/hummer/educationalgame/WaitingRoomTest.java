@@ -40,16 +40,6 @@ public class WaitingRoomTest
         assertNotNull(view);
     }
 
-    @Test
-    public void onClick()
-    {
-        assertNotNull(mActivity.findViewById(R.id.timer));
-        onView(withId(R.id.timer)).perform(click());
-        Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
-        assertNotNull(nextScene);
-        nextScene.finish();
-    }
-
     @After
     public void tearDown() throws Exception
     {
