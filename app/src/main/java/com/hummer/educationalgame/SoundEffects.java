@@ -18,9 +18,10 @@ public class SoundEffects {
                 .setLegacyStreamType(AudioManager.STREAM_MUSIC).build();
         soundPool = new SoundPool.Builder().setMaxStreams(6)
                 .setAudioAttributes(audioAttributes).build();
-        sounds = new int[1];
+        sounds = new int[2];
 
         sounds[0] = soundPool.load(context, R.raw.success_major, 1);
+        sounds[1] = soundPool.load(context, R.raw.splattersound, 2);
 
         amg = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
 

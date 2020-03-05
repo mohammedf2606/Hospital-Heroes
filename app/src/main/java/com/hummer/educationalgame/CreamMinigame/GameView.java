@@ -195,6 +195,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     xCoord = X;
                     yCoord = Y;
                     path.moveTo(X, Y);
+                    SoundEffects.playSound(1);
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
