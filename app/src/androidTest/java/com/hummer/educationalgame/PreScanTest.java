@@ -1,4 +1,4 @@
-package com.hummer.educationalgame.injectionminigame;
+package com.hummer.educationalgame;
 
 import android.app.Activity;
 import android.app.Instrumentation;
@@ -20,11 +20,11 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
-public class InjectionMainActivityTest
+public class PreScanTest
 {
     @Rule
-    public ActivityTestRule<InjectionMainActivity> mActivityTestRule = new ActivityTestRule<InjectionMainActivity>(InjectionMainActivity.class);
-    private InjectionMainActivity mActivity = null;
+    public ActivityTestRule<PreScan> mActivityTestRule = new ActivityTestRule<PreScan>(PreScan.class);
+    private PreScan mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
 
     @Before
@@ -36,18 +36,8 @@ public class InjectionMainActivityTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.textView2);
+        View view = mActivity.findViewById(R.id.pre_scan_room);
         assertNotNull(view);
-    }
-
-    @Test
-    public void nextScene()
-    {
-        assertNotNull(mActivity.findViewById(R.id.scan_door));
-        onView(withId(R.id.scan_door)).perform(click());
-        Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
-        assertNotNull(nextScene);
-        nextScene.finish();
     }
 
     @After

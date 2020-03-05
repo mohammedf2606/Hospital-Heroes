@@ -1,4 +1,4 @@
-package com.hummer.educationalgame.injectionminigame;
+package com.hummer.educationalgame;
 
 import android.app.Activity;
 import android.app.Instrumentation;
@@ -20,11 +20,11 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
-public class InjectionMainActivityTest
+public class MainMenuTest
 {
     @Rule
-    public ActivityTestRule<InjectionMainActivity> mActivityTestRule = new ActivityTestRule<InjectionMainActivity>(InjectionMainActivity.class);
-    private InjectionMainActivity mActivity = null;
+    public ActivityTestRule<MainMenu> mActivityTestRule = new ActivityTestRule<MainMenu>(MainMenu.class);
+    private MainMenu mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
 
     @Before
@@ -36,15 +36,15 @@ public class InjectionMainActivityTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.textView2);
+        View view = mActivity.findViewById(R.id.girl_eating);
         assertNotNull(view);
     }
 
     @Test
-    public void nextScene()
+    public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.scan_door));
-        onView(withId(R.id.scan_door)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.girl_eating));
+        onView(withId(R.id.girl_eating)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
