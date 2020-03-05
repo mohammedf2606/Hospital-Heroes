@@ -6,6 +6,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * The test class ConstantsTest.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class ConstantsTest
 {
 
@@ -19,6 +25,9 @@ public class ConstantsTest
     {
     }
 
+    /**
+     * Test that the food is correctly initialised.
+     */
     @Test
     public void foodTest()
     {
@@ -27,6 +36,9 @@ public class ConstantsTest
         assertEquals(true, constantsTest.isFood());
     }
 
+    /**
+     * Test that the character is correctly initialised.
+     */
     @Test
     public void playerCharacterTest()
     {
@@ -35,6 +47,9 @@ public class ConstantsTest
         assertEquals(1, constantsTest.getPlayerCharacter());
     }
 
+    /**
+     * Test that the sitting is correctly initialised.
+     */
     @Test
     public void playerSittingTest()
     {
