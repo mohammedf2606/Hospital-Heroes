@@ -20,12 +20,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
-public class InjectionMainActivityTest
+public class InjectionMainMenuTest
 {
     @Rule
-    public ActivityTestRule<InjectionMainActivity> mActivityTestRule = new ActivityTestRule<InjectionMainActivity>(InjectionMainActivity.class);
-    private InjectionMainActivity mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
+    public ActivityTestRule<InjectionMainMenu> mActivityTestRule = new ActivityTestRule<InjectionMainMenu>(InjectionMainMenu.class);
+    private InjectionMainMenu mActivity = null;
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(InjectionMainActivity.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception

@@ -9,7 +9,8 @@ import android.view.WindowManager;
 
 import com.hummer.educationalgame.R;
 
-public class InjectionMainMenu extends Activity {
+public class InjectionMainMenu extends Activity
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

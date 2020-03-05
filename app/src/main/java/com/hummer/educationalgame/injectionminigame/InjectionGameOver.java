@@ -8,7 +8,8 @@ import android.widget.ImageView;
 
 import com.hummer.educationalgame.R;
 
-public class InjectionGameOver {
+public class InjectionGameOver
+{
     private Bitmap image;
     private int xCoord, yCoord;
     private int width, height;
