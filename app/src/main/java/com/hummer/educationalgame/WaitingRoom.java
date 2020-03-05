@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.hummer.educationalgame.injectionminigame.InjectionMainActivity;
+import com.hummer.educationalgame.rocketminigame.MainMenu;
 
 import java.util.ArrayList;
 
@@ -21,9 +23,13 @@ public class WaitingRoom extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         setContentView(R.layout.waiting_room);
 
         timers.add(0, R.drawable.timer_15);
@@ -47,7 +53,7 @@ public class WaitingRoom extends Activity {
                 }
                 else {
                     // TODO: Fareed replace the 2nd parameter below with your MainActivity
-                    Intent injection_minigame = new Intent(WaitingRoom.this, InjectionMainActivity.class);
+                    Intent injection_minigame = new Intent(WaitingRoom.this, MainMenu.class);
                     startActivity(injection_minigame);
                 }
             }

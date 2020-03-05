@@ -66,6 +66,9 @@
             android:name=".PreScan"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
+        <activity android:name=".rocketminigame.MainMenu" />
+        <activity android:name=".rocketminigame.GameActivity" />
+
         <service android:name=".MusicService" />
     </application>
 

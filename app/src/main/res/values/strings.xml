@@ -23,4 +23,7 @@
     <string name="timer">Timer</string>
     <string name="chair_with_character">Chair with character</string>
     <string name="pre_scan_room">Pre-scan room</string>
+    <string name="star_background">Star background</string>
+    <string name="fly_the_rocket">Fly the rocket!</string>
+    <string name="play">Play</string>
 </resources>

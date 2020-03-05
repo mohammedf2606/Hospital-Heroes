@@ -1,5 +1,6 @@
 package com.hummer.educationalgame.rocketminigame;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,17 +20,18 @@ import com.hummer.educationalgame.R;
  * @version 1.0
  */
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-        setContentView(R.layout.creamminigamebackground);
+        setContentView(R.layout.rocketminigamebackground);
 
         findViewById(R.id.playButton).setOnClickListener(new View.OnClickListener() {
             @Override
