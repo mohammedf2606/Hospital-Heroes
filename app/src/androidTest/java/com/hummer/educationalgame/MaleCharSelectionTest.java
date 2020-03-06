@@ -6,16 +6,21 @@ import android.view.View;
 
 import com.hummer.educationalgame.PreScan;
 import com.hummer.educationalgame.R;
+import com.hummer.educationalgame.injectionminigame.Injection;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import androidx.test.espresso.Espresso;
+import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.intent.Intents.intended;
+import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
@@ -48,6 +53,14 @@ public class MaleCharSelectionTest
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
+    }
+
+    @Test
+    public void launch()
+    {
+        Intents.init();
+        Espresso.onView(withId(R.id.boy3)).perform(click());
+        intended(hasComponent(Injection.class.getName()));
     }
 
     @After
