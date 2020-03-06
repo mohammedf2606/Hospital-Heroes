@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import com.hummer.educationalgame.R;
 
 /**
- * CreamApplicationLocation is the class that contains the bitmap for the dotted
+ * CreamOutline is the class that contains the bitmap for the dotted
  * line that represents the area to apply the cream onto. The methods contained
  * consist of 'draw' which draws the bitmap onto the canvas (screen) and getHitBox which
  * returns a rectangle representing the image itself (used for collisions).
@@ -18,14 +18,14 @@ import com.hummer.educationalgame.R;
  * @version 1.0
  */
 
-public class CreamApplicationLocation {
+public class CreamOutline {
     private Bitmap image;
     private int xCoord, yCoord;
 
-    public CreamApplicationLocation(int x, int y, Resources res) {
+    public CreamOutline(int x, int y, Resources res) {
         xCoord = x;
         yCoord = y;
-        image = BitmapFactory.decodeResource(res, R.drawable.creamapplicationlocation);
+        image = BitmapFactory.decodeResource(res, R.drawable.creamoutlinescaled);
         image = Bitmap.createScaledBitmap(image, 100, 100, false);
     }
 

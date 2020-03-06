@@ -27,8 +27,8 @@ public class EndGameSticker {
     public EndGameSticker(int x, int y, Resources resources) {
         xCoord = x;
         yCoord = y;
-        image = BitmapFactory.decodeResource(resources, R.drawable.successbadge);
-        image = Bitmap.createScaledBitmap(image, 400, 400, false);
+        image = BitmapFactory.decodeResource(resources, R.drawable.badgesquare);
+//        image = Bitmap.createScaledBitmap(image, 400, 400, false);
     }
 
     public void draw(Canvas canvas) {
