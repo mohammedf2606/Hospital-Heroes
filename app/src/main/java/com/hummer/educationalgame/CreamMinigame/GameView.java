@@ -36,7 +36,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private GameActivity gameActivity;
     private Canvas canvas;
     private int xCoord, yCoord;
-    private Path path;
+//    private Path path;
     private Paint paint;
     private EndGameSticker sticker;
     private boolean isTouchingScreen;
@@ -53,18 +53,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         thread = new MainThread(getHolder(), this);
         setFocusable(true);
-
-        background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
-        characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
-        location1 = new CreamApplicationLocation(xOfScreen/8 - 20, yOfScreen/3 + 50, getResources());
-        location2 = new CreamApplicationLocation(xOfScreen/2 + 100, yOfScreen/3 + 60, getResources());
-        creamTube = new CreamTubeSprite(getResources());
-        bigSplat = new BigCreamSplatter(getResources());
-        mediumSplat = new MediumCreamSplatter(getResources());
-        smallSplat = new SmallCreamSplatter(getResources());
-        sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
-        paint = new Paint();
-        path = new Path();
     }
 
     @Override
@@ -74,9 +62,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.YELLOW);
-        paint.setStrokeWidth(10);
+        initializeObjects();
+        initializePaint();
         thread.setRunning(true);
         thread.start();
     }
@@ -129,10 +116,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         this.canvas = canvas;
         if(canvas != null) {
 
-            background.draw(canvas);
-            characterArmSprite.draw(canvas);
-            location1.draw(canvas);
-            location2.draw(canvas);
+            drawInitialImages();
 
             if(fullyAppliedCreamOnPos1) {
                 bigSplat.draw(canvas, location1.getXCoord(), location1.getYCoord());
@@ -156,7 +140,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 creamTube.draw(canvas, x2, y2);
                 canvas.drawCircle(x2, yCoord, 5, paint);
             }
-            canvas.drawPath(path, paint);
+//            canvas.drawPath(path, paint);
 
             if(gameFinished) {
                 background.drawDarkenedImage(canvas);
@@ -194,7 +178,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     isTouchingScreen = true;
                     xCoord = X;
                     yCoord = Y;
-                    path.moveTo(X, Y);
+//                    path.moveTo(event.getX(), event.getY());
                     SoundEffects.playSound(1);
                 }
                 break;
@@ -203,7 +187,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                         && Y >= characterArmSprite.getY() && Y < (characterArmSprite.getY() + characterArmSprite.getHeight())) {
                     xCoord = X;
                     yCoord = Y;
-                    path.moveTo(X, Y);
+//                    path.moveTo(event.getX(), event.getY());
                 }
                 break;
             case MotionEvent.ACTION_UP:
@@ -222,5 +206,32 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void playVictorySound() {
         soundPlayedAlready = true;
         SoundEffects.playSound(0);
+    }
+
+    public void initializeObjects() {
+        background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
+        characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
+        location1 = new CreamApplicationLocation(xOfScreen/8 - 20, yOfScreen/3 + 50, getResources());
+        location2 = new CreamApplicationLocation(xOfScreen/2 + 100, yOfScreen/3 + 60, getResources());
+        creamTube = new CreamTubeSprite(getResources());
+        bigSplat = new BigCreamSplatter(getResources());
+        mediumSplat = new MediumCreamSplatter(getResources());
+        smallSplat = new SmallCreamSplatter(getResources());
+        sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
+//        path = new Path();
+    }
+
+    public void initializePaint() {
+        paint = new Paint();
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(Color.YELLOW);
+        paint.setStrokeWidth(10);
+    }
+
+    public void drawInitialImages() {
+        background.draw(canvas);
+        characterArmSprite.draw(canvas);
+        location1.draw(canvas);
+        location2.draw(canvas);
     }
 }
