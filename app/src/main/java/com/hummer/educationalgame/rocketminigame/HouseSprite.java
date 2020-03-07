@@ -24,7 +24,7 @@ public class HouseSprite {
     }
 
     public Rect getHitBox() {
-        return new Rect(xCoord, yCoord, xCoord + image.getWidth(), yCoord + image.getHeight());
+        return new Rect(xCoord + 80, yCoord + 80, xCoord + image.getWidth() - 80, yCoord + image.getHeight() - 80);
     }
 
     public int getXCoord() {

@@ -25,7 +25,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private GameActivity gameActivity;
     private int xOfScreen, yOfScreen;
     private boolean soundPlayedAlready, isTouchingScreen;
-    private boolean gameFinished = false;
+    private boolean gameFinished, legalToMove, drawn;
     private StarBackground starBackground;
     private RocketSprite rocket;
     private HouseSprite house;
@@ -41,11 +41,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         this.yOfScreen = yOfScreen;
         getHolder().addCallback(this);
 
-        starBackground = new StarBackground(xOfScreen, yOfScreen, getResources());
-        rocket = new RocketSprite(getResources());
-        house = new HouseSprite(getResources());
-        asteroidManager = new AsteroidManager(getResources());
-        sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
+        initializeResources();
 
         thread = new MainThread(getHolder(), this);
         setFocusable(true);
@@ -78,17 +74,19 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     public void update() {
-        if(Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(0).getHitbox())){
-            reset = true;
-        }
-        else if(Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(1).getHitbox())){
-            reset = true;
-        }
-        else if(Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(2).getHitbox())){
-            reset = true;
-        }
-        else if(Rect.intersects(rocket.getHitbox(), house.getHitBox())){
-            gameFinished = true;
+        if(drawn == true) {
+            if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(0).getHitbox())) {
+                reset = true;
+            } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(1).getHitbox())) {
+                reset = true;
+            } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(2).getHitbox())) {
+                reset = true;
+            } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(3).getHitbox())) {
+                reset = true;
+            } else if (Rect.intersects(rocket.getHitbox(), house.getHitBox())) {
+                System.out.println("intersecting");
+                gameFinished = true;
+            }
         }
     }
 
@@ -101,13 +99,23 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             rocket.draw(xOfScreen/16, yOfScreen/4 - rocket.getHeight(), canvas);
             asteroidManager.draw(canvas);
             reset = false;
+            legalToMove = false;
         }
         else if(canvas != null){
             starBackground.draw(canvas);
             house.draw(xOfScreen - xOfScreen/4 + 30, yOfScreen/2 + house.getHeight()/2 - 20, canvas);
-            rocket.draw(xCoord, yCoord, canvas);
+
+            if(xCoord == 0 && yCoord == 0) {
+                rocket.draw(xOfScreen/16, yOfScreen/4 - rocket.getHeight(), canvas);
+            } else if(legalToMove == true) {
+                rocket.draw(xCoord - rocket.getWidth()/2, yCoord - rocket.getHeight()/2, canvas);
+            } else {
+                rocket.draw(xOfScreen/16, yOfScreen/4 - rocket.getHeight(), canvas);
+            }
+
             asteroidManager.draw(canvas);
-            if(gameFinished) {
+
+            if(gameFinished) { // stuff for game ending
                 starBackground.drawDarkenedImage(canvas);
                 int value = sticker.drawAnimation(canvas);
                 if(!soundPlayedAlready) {
@@ -118,6 +126,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 }
             }
         }
+        drawn = true;
     }
 
     @Override
@@ -135,6 +144,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     isTouchingScreen = true;
                     xCoord = X;
                     yCoord = Y;
+                    if(rocket.getHitbox().contains(xCoord, yCoord)) {
+                        legalToMove = true;
+                    }
 //                }
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -148,6 +160,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 xCoord = 0;
                 yCoord = 0;
                 isTouchingScreen = false;
+                legalToMove = false;
                 break;
         }
         return true;
@@ -160,5 +173,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void playVictorySound() {
         soundPlayedAlready = true;
         SoundEffects.playSound(0);
+    }
+
+    public void initializeResources() {
+        starBackground = new StarBackground(xOfScreen, yOfScreen, getResources());
+        rocket = new RocketSprite(getResources());
+        house = new HouseSprite(getResources());
+        asteroidManager = new AsteroidManager(getResources());
+        sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
     }
 }

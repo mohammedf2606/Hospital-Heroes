@@ -74,8 +74,8 @@ public class MainMenu extends Activity implements View.OnClickListener {
                 break;
         }
         Intent main_page = new Intent(MainMenu.this, MainActivity.class);
-        SoundEffects.initSounds(MainMenu.this);
-        startService(new Intent(MainMenu.this, MusicService.class));
+//        SoundEffects.initSounds(MainMenu.this);
+//        startService(new Intent(MainMenu.this, MusicService.class));
         startActivity(main_page);
     }
 }

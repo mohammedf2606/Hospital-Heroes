@@ -39,6 +39,6 @@ public class Asteroid {
     }
 
     public Rect getHitbox() {
-        return new Rect(x, y, x + image.getWidth(), y + image.getHeight());
+        return new Rect(x + 20, y + 20, x + image.getWidth() - 20, y + image.getHeight() - 20);
     }
 }
