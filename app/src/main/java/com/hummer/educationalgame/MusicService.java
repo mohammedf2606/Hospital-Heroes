@@ -61,6 +61,7 @@ public class MusicService extends Service {
         super.onDestroy();
         timer.cancel();
         player.stop();
+        player.release();
     }
 
 

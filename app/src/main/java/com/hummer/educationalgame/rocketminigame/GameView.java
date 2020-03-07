@@ -24,7 +24,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
     private GameActivity gameActivity;
     private int xOfScreen, yOfScreen;
-    private boolean soundPlayedAlready, isTouchingScreen, gameFinished;
+    private boolean soundPlayedAlready, isTouchingScreen;
+    private boolean gameFinished = false;
     private StarBackground starBackground;
     private RocketSprite rocket;
     private HouseSprite house;
