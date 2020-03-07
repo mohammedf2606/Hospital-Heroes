@@ -108,13 +108,19 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
             drawInitialImages();
 
-            if(progress1 > 0) {
+            if(progress1 > 0 && progress1 < 255) {
+                location1.draw(canvas);
+                creamSplatter.draw(canvas, location1.getXCoord(), location1.getYCoord(), alphaPaint);
+            } else if(progress1 > 0) {
                 creamSplatter.draw(canvas, location1.getXCoord(), location1.getYCoord(), alphaPaint);
             } else {
                 location1.draw(canvas);
             }
 
-            if(progress2 > 0) {
+            if(progress2 > 0 && progress2 < 255) {
+                location2.draw(canvas);
+                creamSplatter.draw(canvas, location2.getXCoord(), location2.getYCoord(), betaPaint);
+            } else if(progress2 > 0) {
                 creamSplatter.draw(canvas, location2.getXCoord(), location2.getYCoord(), betaPaint);
             } else {
                 location2.draw(canvas);
@@ -158,23 +164,15 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         switch(eventAction){
             case MotionEvent.ACTION_DOWN:
-                if (X >= characterArmSprite.getX() && X < (characterArmSprite.getX() + characterArmSprite.getWidth())
-                        && Y >= characterArmSprite.getY() && Y < (characterArmSprite.getY() + characterArmSprite.getHeight())) {
                     // stuff for making cream appear here
                     isTouchingScreen = true;
                     xCoord = X;
                     yCoord = Y;
-//                    path.moveTo(event.getX(), event.getY());
-                    SoundEffects.playSound(1);
-                }
+
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (X >= characterArmSprite.getX() && X < (characterArmSprite.getX() + characterArmSprite.getWidth())
-                        && Y >= characterArmSprite.getY() && Y < (characterArmSprite.getY() + characterArmSprite.getHeight())) {
                     xCoord = X;
                     yCoord = Y;
-//                    path.moveTo(event.getX(), event.getY());
-                }
                 break;
             case MotionEvent.ACTION_UP:
                 xCoord = 0;
@@ -197,8 +195,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void initializeObjects() {
         background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
         characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
-        location1 = new CreamOutline(xOfScreen/8 - 20, yOfScreen/3 + 50, getResources());
-        location2 = new CreamOutline(xOfScreen/2 + 100, yOfScreen/3 + 60, getResources());
+        location1 = new CreamOutline(xOfScreen/8 - 20, yOfScreen/3 - 20, getResources());
+        location2 = new CreamOutline(xOfScreen/2 + 100, yOfScreen/3 + 90, getResources());
         creamTube = new CreamTubeSprite(getResources());
         sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
         creamSplatter = new CreamSplatter(getResources());

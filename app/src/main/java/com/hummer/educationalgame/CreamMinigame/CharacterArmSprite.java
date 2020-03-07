@@ -30,8 +30,6 @@ public class CharacterArmSprite {
 
 
     public CharacterArmSprite(int x, int y, Resources resources) {
-        xCoord = 0;
-        yCoord = y/3;
         try {
             image = BitmapFactory.decodeResource(resources, R.drawable.characterarm);
             image = Bitmap.createScaledBitmap(image, x, y, false);
@@ -41,6 +39,8 @@ public class CharacterArmSprite {
         } catch(Exception ex) {
             ex.printStackTrace();
         }
+        xCoord = 0;
+        yCoord = y/3  - image.getHeight()/2;
     }
 
     public void draw(Canvas canvas) {
