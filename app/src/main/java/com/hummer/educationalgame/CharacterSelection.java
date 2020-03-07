@@ -15,9 +15,10 @@ public class CharacterSelection extends Activity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         setContentView(R.layout.character_selection);
 
         boy1 = (Button) findViewById(R.id.boy1);
@@ -27,7 +28,7 @@ public class CharacterSelection extends Activity implements View.OnClickListener
         boy2.setOnClickListener(this);
 
         girl1 = (Button) findViewById(R.id.girl1);
-        boy1.setOnClickListener(this);
+        girl1.setOnClickListener(this);
 
         girl2 = (Button) findViewById(R.id.girl2);
         girl2.setOnClickListener(this);

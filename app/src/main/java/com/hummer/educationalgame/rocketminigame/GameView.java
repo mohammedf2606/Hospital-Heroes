@@ -3,6 +3,7 @@ package com.hummer.educationalgame.rocketminigame;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
@@ -74,7 +75,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     public void update() {
-        if(drawn == true) {
+        if(drawn) {
             if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(0).getHitbox())) {
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(1).getHitbox())) {
@@ -84,7 +85,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(3).getHitbox())) {
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), house.getHitBox())) {
-                System.out.println("intersecting");
+//                System.out.println("intersecting");
                 gameFinished = true;
             }
         }
@@ -96,7 +97,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         if(canvas != null && reset) {
             starBackground.draw(canvas);
             house.draw(xOfScreen - xOfScreen/4 + 30, yOfScreen/2 + house.getHeight()/2 - 20, canvas);
-            rocket.draw(xOfScreen/16, yOfScreen/4 - rocket.getHeight(), canvas);
+            rocket.draw(xOfScreen/16, 2*yOfScreen/5 - rocket.getHeight(), canvas);
             asteroidManager.draw(canvas);
             reset = false;
             legalToMove = false;
@@ -106,11 +107,16 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             house.draw(xOfScreen - xOfScreen/4 + 30, yOfScreen/2 + house.getHeight()/2 - 20, canvas);
 
             if(xCoord == 0 && yCoord == 0) {
-                rocket.draw(xOfScreen/16, yOfScreen/4 - rocket.getHeight(), canvas);
-            } else if(legalToMove == true) {
-                rocket.draw(xCoord - rocket.getWidth()/2, yCoord - rocket.getHeight()/2, canvas);
+                rocket.draw(xOfScreen/16, 2*yOfScreen/5 - rocket.getHeight(), canvas);
+            } else if(legalToMove) {
+                int diffX = rocket.getxCoord() - xCoord;
+                int diffY = rocket.getyCoord() - yCoord;
+                int angle = (int) (Math.atan2(diffY, diffX) * 180/Math.PI);
+                Matrix matrix = new Matrix();
+                matrix.setRotate(-angle, rocket.getxCoord(), rocket.getyCoord());
+                rocket.draw(xCoord - rocket.getWidth()/2, yCoord - rocket.getHeight()/2, matrix, canvas);
             } else {
-                rocket.draw(xOfScreen/16, yOfScreen/4 - rocket.getHeight(), canvas);
+                rocket.draw(xOfScreen/16, 2*yOfScreen/5 - rocket.getHeight(), canvas);
             }
 
             asteroidManager.draw(canvas);
