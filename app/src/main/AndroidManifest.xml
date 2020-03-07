@@ -31,15 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GenderSelection"
-            android:noHistory="true"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name=".MaleCharSelection"
-            android:noHistory="true"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name=".FemaleCharSelection"
+            android:name=".CharacterSelection"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity

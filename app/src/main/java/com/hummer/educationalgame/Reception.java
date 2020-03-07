@@ -27,7 +27,7 @@ public class Reception extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Intent gender_selection = new Intent(Reception.this, GenderSelection.class);
+        Intent gender_selection = new Intent(Reception.this, CharacterSelection.class);
         startActivity(gender_selection);
     }
 
