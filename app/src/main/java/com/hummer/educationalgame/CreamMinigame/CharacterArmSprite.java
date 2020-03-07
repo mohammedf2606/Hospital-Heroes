@@ -33,11 +33,11 @@ public class CharacterArmSprite {
         xCoord = 0;
         yCoord = y/3;
         try {
-            image = BitmapFactory.decodeResource(resources, R.drawable.arm);
-            image = Bitmap.createScaledBitmap(image, x, yCoord, false);
-            Matrix matrix = new Matrix();
-            matrix.preScale(-1.0f, 1.0f);
-            image = Bitmap.createBitmap(image, 0, 0, image.getWidth(), image.getHeight(), matrix, false);
+            image = BitmapFactory.decodeResource(resources, R.drawable.characterarm);
+            image = Bitmap.createScaledBitmap(image, x, y, false);
+//            Matrix matrix = new Matrix();
+//            matrix.preScale(-1.0f, 1.0f);
+//            image = Bitmap.createBitmap(image, 0, 0, image.getWidth(), image.getHeight(), matrix, false);
         } catch(Exception ex) {
             ex.printStackTrace();
         }
