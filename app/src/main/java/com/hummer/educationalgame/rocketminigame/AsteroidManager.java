@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class AsteroidManager {
 
-    private ArrayList<Asteroid> asteroids;
+    ArrayList<Asteroid> asteroids;
     private Resources res;
 
     public AsteroidManager(Resources res) {
