@@ -7,9 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.LightingColorFilter;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Rect;
 
 import com.hummer.educationalgame.R;
 
@@ -29,16 +27,13 @@ public class CharacterArmSprite {
     private int yCoord;
 
 
-    public CharacterArmSprite(int x, int y, Resources resources) {
-        try {
-            image = BitmapFactory.decodeResource(resources, R.drawable.characterarm);
-            image = Bitmap.createScaledBitmap(image, x, y, false);
-//            Matrix matrix = new Matrix();
-//            matrix.preScale(-1.0f, 1.0f);
-//            image = Bitmap.createBitmap(image, 0, 0, image.getWidth(), image.getHeight(), matrix, false);
-        } catch(Exception ex) {
-            ex.printStackTrace();
+    public CharacterArmSprite(int x, int y, Resources resources, boolean whiteArm) {
+        if(whiteArm) {
+            image = BitmapFactory.decodeResource(resources, R.drawable.whitearm);
+        } else {
+            image = BitmapFactory.decodeResource(resources, R.drawable.blackarm);
         }
+//            image = Bitmap.createScaledBitmap(image, x, y, false);
         xCoord = 0;
         yCoord = y/3  - image.getHeight()/2;
     }

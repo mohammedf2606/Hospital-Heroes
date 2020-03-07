@@ -29,7 +29,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private CreamOutline location1, location2;
     private CreamSplatter creamSplatter;
     private int xOfScreen, yOfScreen;
-    private boolean gameFinished, soundPlayedAlready;
+    private boolean gameFinished, soundPlayedAlready, isWhiteCharacter;
     private GameActivity gameActivity;
     private Canvas canvas;
     private int xCoord, yCoord;
@@ -42,6 +42,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     public GameView(Context context, int xOfScreen, int yOfScreen) {
         super(context);
+
+//        isWhiteCharacter = ;
 
         this.xOfScreen = xOfScreen;
         this.yOfScreen = yOfScreen;
@@ -194,9 +196,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     public void initializeObjects() {
         background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
-        characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources());
+        characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources(), isWhiteCharacter);
         location1 = new CreamOutline(xOfScreen/8 - 20, yOfScreen/3 - 20, getResources());
-        location2 = new CreamOutline(xOfScreen/2 + 100, yOfScreen/3 + 90, getResources());
+        location2 = new CreamOutline(xOfScreen/2 + 100, yOfScreen/3 + 100, getResources());
         creamTube = new CreamTubeSprite(getResources());
         sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
         creamSplatter = new CreamSplatter(getResources());
