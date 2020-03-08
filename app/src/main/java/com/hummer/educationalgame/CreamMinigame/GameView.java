@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 
+import com.hummer.educationalgame.Constants;
 import com.hummer.educationalgame.SoundEffects;
 
 /**
@@ -43,7 +44,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public GameView(Context context, int xOfScreen, int yOfScreen) {
         super(context);
 
-//        isWhiteCharacter = ;
+        isWhiteCharacter = !Constants.isBlack();
 
         this.xOfScreen = xOfScreen;
         this.yOfScreen = yOfScreen;
