@@ -30,7 +30,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private CreamOutline location1, location2;
     private CreamSplatter creamSplatter;
     private int xOfScreen, yOfScreen;
-    private boolean gameFinished, soundPlayedAlready, isWhiteCharacter;
+    private boolean gameFinished, dingSoundPlayedAlready, victorySoundPlayedAlready, isWhiteCharacter;
     private GameActivity gameActivity;
     private Canvas canvas;
     private int xCoord, yCoord;
@@ -88,6 +88,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             if(progress1 > 255) {
                 alphaPaint.setAlpha(255);
                 fullyAppliedCreamOnPos1 = true;
+                if(dingSoundPlayedAlready == false) {
+                    playDingSound();
+                }
             }
         } else if(Rect.intersects(location2.getHitbox(), creamTube.getHitbox()) && isTouchingScreen == true) {
             progress2+=2;
@@ -95,6 +98,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             if(progress2 > 255) {
                 betaPaint.setAlpha(255);
                 fullyAppliedCreamOnPos2 = true;
+                if(dingSoundPlayedAlready == false) {
+                    playDingSound();
+                }
             }
         }
         if(fullyAppliedCreamOnPos1 && fullyAppliedCreamOnPos2) {
@@ -146,7 +152,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 //stuff that happens when game is complete
                 int value = sticker.drawAnimation(canvas);
 
-                if(soundPlayedAlready == false) {
+                if(victorySoundPlayedAlready == false) {
                     playVictorySound();
                 }
 
@@ -191,8 +197,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     public void playVictorySound() {
-        soundPlayedAlready = true;
+        victorySoundPlayedAlready = true;
         SoundEffects.playSound(0);
+    }
+
+    public void playDingSound() {
+        dingSoundPlayedAlready = true;
+        SoundEffects.playSound(3);
     }
 
     public void initializeObjects() {
