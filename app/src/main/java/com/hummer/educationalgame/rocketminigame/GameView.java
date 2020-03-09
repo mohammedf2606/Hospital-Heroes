@@ -77,12 +77,16 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void update() {
         if(drawn) {
             if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(0).getHitbox())) {
+                playCrashSound();
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(1).getHitbox())) {
+                playCrashSound();
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(2).getHitbox())) {
+                playCrashSound();
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(3).getHitbox())) {
+                playCrashSound();
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), house.getHitBox())) {
 //                System.out.println("intersecting");
@@ -162,6 +166,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     public void setGameActivity(GameActivity activity) {
         gameActivity = activity;
+    }
+
+    public void playCrashSound() {
+        SoundEffects.playSound(2);
     }
 
     public void playVictorySound() {
