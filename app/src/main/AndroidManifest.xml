@@ -63,7 +63,9 @@
             android:name=".PreScan"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
+
         <service android:name=".MusicService" />
+        <activity android:name=".injectionminigame.InjectionMainMenu" />
     </application>
 
 </manifest>

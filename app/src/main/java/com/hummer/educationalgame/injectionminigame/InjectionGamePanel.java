@@ -34,7 +34,7 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
         thread = new InjectionMainThread(getHolder(), this);
 
-        manager = new InjectionSceneManager();
+        manager = new InjectionSceneManager(context);
 
         setFocusable(true);
     }
