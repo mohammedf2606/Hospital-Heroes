@@ -15,7 +15,7 @@ public class RocketSprite {
 
     public RocketSprite(Resources res) {
         image = BitmapFactory.decodeResource(res, R.drawable.rocket);
-        image = Bitmap.createScaledBitmap(image, 50, 100, false);
+        image = Bitmap.createScaledBitmap(image, 75, 150, false);
         Matrix matrix = new Matrix();
         matrix.postRotate(90);
         image = Bitmap.createBitmap(image, 0, 0, getWidth(), getHeight(), matrix, false);
