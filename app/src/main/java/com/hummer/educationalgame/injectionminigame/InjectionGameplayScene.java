@@ -19,7 +19,8 @@ import com.hummer.educationalgame.PreScan;
  * @author Fareed Faisal
  * @version 1.0
  */
-public class InjectionGameplayScene implements InjectionScene
+public class
+InjectionGameplayScene implements InjectionScene
 {
     private Injection injection;
     private Point injectionPoint;
