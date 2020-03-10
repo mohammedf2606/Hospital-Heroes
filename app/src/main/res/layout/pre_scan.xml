@@ -2,10 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Reception">
+    android:layout_height="match_parent">
 
 
     <RelativeLayout
@@ -26,11 +24,13 @@
             android:scaleType="fitXY"
             android:src="@drawable/pre_scan" />
 
-        <Button
+        <ImageButton
             android:id="@+id/scan_door"
             android:layout_width="253dp"
             android:layout_height="437dp"
             android:background="@android:color/transparent"
+            android:src="@drawable/closed_door"
+            android:scaleType="fitXY"
             android:translationX="250dp"
             android:translationY="80dp" />
 

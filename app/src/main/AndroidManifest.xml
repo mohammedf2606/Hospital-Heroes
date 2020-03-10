@@ -58,8 +58,22 @@
             android:name=".WaitingRoom"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
-        <activity android:name=".injectionminigame.InjectionMainActivity" />
-        <activity android:name=".PreScan" />
+        <activity
+            android:name=".injectionminigame.InjectionMainActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PreScan"
+            android:noHistory="true"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ScanRoom"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".StrapToChair"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
