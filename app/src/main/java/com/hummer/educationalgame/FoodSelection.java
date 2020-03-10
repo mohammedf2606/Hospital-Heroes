@@ -8,7 +8,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.hummer.educationalgame.foodminigame.*;
+import com.hummer.educationalgame.foodminigame.MainGameActivity;
+
 
 public class FoodSelection extends Activity implements View.OnClickListener {
 

@@ -31,9 +31,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".foodminigame.FoodMiniGame"
-            android:noHistory="true"/>
-        <activity
             android:name=".GenderSelection"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
@@ -51,6 +48,10 @@
             android:screenOrientation="landscape"/>
         <activity
             android:name=".foodminigame.MainGameActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".foodminigame.PlateActivity"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity

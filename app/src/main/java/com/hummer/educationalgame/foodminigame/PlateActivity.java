@@ -9,9 +9,9 @@ import android.view.WindowManager;
 import com.hummer.educationalgame.R;
 import com.hummer.educationalgame.WaitingRoom;
 
-public class MainGameActivity extends Activity {
+public class PlateActivity extends Activity {
 
-    private GameView gameView;
+    private PlateView plateView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +19,7 @@ public class MainGameActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        gameView = (GameView) findViewById(R.id.game_view);
-        setContentView(R.layout.food_minigame);
-//        Intent myIntent = new Intent(getBaseContext(),   WaitingRoom.class);
-//        startActivity(myIntent);
+        plateView = (PlateView) findViewById(R.id.plate_view);
+        setContentView(R.layout.plate_minigame);
     }
 }

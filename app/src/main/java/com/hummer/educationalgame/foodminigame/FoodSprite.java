@@ -33,7 +33,7 @@ class FoodSprite {
     }
 
     void update(int bowlX, int bowlY) {
-        int speed = 4;
+        int speed = 8;
         Y += speed; //SLOW DOWN 250 166
         if ((Y > bowlY && Y < bowlY + 150) && (X > bowlX && X < bowlX + 250)) {
             GameView.score++;
