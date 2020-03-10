@@ -50,8 +50,17 @@
             android:name=".WaitingRoom"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
-        <activity android:name=".injectionminigame.InjectionMainActivity" />
-        <activity android:name=".PreScan" />
+        <activity
+            android:name=".injectionminigame.InjectionMainActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".PreScan"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <service
+          android:name=".MusicService" 
+          android:stopWithTask="true"/>
     </application>
 
 </manifest>
