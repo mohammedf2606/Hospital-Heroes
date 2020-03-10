@@ -66,7 +66,9 @@
             android:name=".PreScan"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
-        <service android:name=".MusicService" />
+        <service
+          android:name=".MusicService" 
+          android:stopWithTask="true"/>
     </application>
 
 </manifest>
