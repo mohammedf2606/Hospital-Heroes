@@ -35,6 +35,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private int xCoord, yCoord;
     private boolean reset = true;
 
+    /**
+     * Constructor for class 'GameView'
+     * @param context where the object is being created
+     * @param xOfScreen the centre x-coordinate of the screen
+     * @param yOfScreen the centre y-coordinate of the screen
+     */
     public GameView(Context context, int xOfScreen, int yOfScreen) {
         super(context);
 
@@ -74,6 +80,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /**
+     * Checks for collisions with hitboxs for reset and ending game
+     */
     public void update() {
         if(drawn) {
             if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(0).getHitbox())) {
@@ -89,7 +98,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 playCrashSound();
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), house.getHitBox())) {
-//                System.out.println("intersecting");
                 gameFinished = true;
             }
         }
@@ -164,19 +172,33 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         return true;
     }
 
+    /**
+     * Setter for gameActivity field
+     * @param activity the activity the object is associated to
+     */
     public void setGameActivity(GameActivity activity) {
         gameActivity = activity;
     }
 
+    /**
+     * Plays the sound played at collision with asteroids
+     */
     public void playCrashSound() {
         SoundEffects.playSound(2);
     }
 
+    /**
+     * Plays the victory sound for when the game is completed
+     * When the rocket touches the house, the game ends
+     */
     public void playVictorySound() {
         soundPlayedAlready = true;
         SoundEffects.playSound(0);
     }
 
+    /**
+     * Initialises all sprites needed for the game
+     */
     public void initializeResources() {
         starBackground = new StarBackground(xOfScreen, yOfScreen, getResources());
         rocket = new RocketSprite(getResources());
