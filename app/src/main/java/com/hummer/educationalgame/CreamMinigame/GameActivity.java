@@ -42,6 +42,9 @@ public class GameActivity extends Activity {
         gameView.setGameActivity(this);
     }
 
+    /**
+     * Proceeds to the next scene (activity)
+     */
     public void nextScene() {
         Intent waiting_room = new Intent(GameActivity.this, WaitingRoom.class);
         startActivity(waiting_room);

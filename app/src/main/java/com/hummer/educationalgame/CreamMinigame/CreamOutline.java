@@ -22,6 +22,12 @@ public class CreamOutline {
     private Bitmap image;
     private int xCoord, yCoord;
 
+    /**
+     * The constructor for the class 'CreamOutline'
+     * @param x The x coordinate of the area to be drawn onto
+     * @param y The y coordinate of the area to be drawn onto
+     * @param res The resources associated with the package
+     */
     public CreamOutline(int x, int y, Resources res) {
         xCoord = x;
         yCoord = y;

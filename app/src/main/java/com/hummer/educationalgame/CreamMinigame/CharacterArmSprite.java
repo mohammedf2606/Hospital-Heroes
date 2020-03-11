@@ -27,6 +27,13 @@ public class CharacterArmSprite {
     private int yCoord;
 
 
+    /**
+     * The constructor for the class 'CharacterArmSprite'
+     * @param x The width of the screen
+     * @param y The height of the screen
+     * @param resources The resources associated with the package
+     * @param whiteArm Boolean stating whether the arm of the character is white or not
+     */
     public CharacterArmSprite(int x, int y, Resources resources, boolean whiteArm) {
         if(whiteArm) {
             image = BitmapFactory.decodeResource(resources, R.drawable.whitearm);
