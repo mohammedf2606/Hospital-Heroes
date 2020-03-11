@@ -22,7 +22,7 @@ public class Constants
      * The value for the sitting of the player
      */
     private static int playerSitting;
-
+    private static boolean isBlack;
     public Constants()
     {
 
@@ -67,5 +67,13 @@ public class Constants
      */
     public static void setPlayerSitting(int character) {
         playerSitting = character;
+    }
+
+    public static void setIsBlack ( boolean b){
+        isBlack = b;
+    }
+
+    public static boolean isBlack() {
+        return isBlack;
     }
 }

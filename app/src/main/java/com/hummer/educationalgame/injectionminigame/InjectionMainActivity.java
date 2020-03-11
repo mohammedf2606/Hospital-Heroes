@@ -33,8 +33,4 @@ public class InjectionMainActivity extends Activity
         setContentView(new InjectionGamePanel(this));
     }
 
-    public void nextScene() {
-        Intent pre_scan = new Intent(InjectionMainActivity.this, PreScan.class);
-        startActivity(pre_scan);
-    }
 }

@@ -6,6 +6,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -72,6 +73,8 @@ public class MainMenu extends Activity implements View.OnClickListener {
                 break;
         }
         Intent main_page = new Intent(MainMenu.this, MainActivity.class);
+        SoundEffects.initSounds(MainMenu.this);
+        startService(new Intent(MainMenu.this, MusicService.class));
         startActivity(main_page);
     }
 }
