@@ -1,7 +1,7 @@
 package com.hummer.educationalgame;
 
 public class Constants {
-    private static boolean isFood;
+    private static boolean isFood, isBlack;
     private static int playerCharacter;
     private static int playerSitting;
 
@@ -27,5 +27,13 @@ public class Constants {
 
     public static int getPlayerSitting() {
         return playerSitting;
+    }
+
+    public static void setIsBlack(boolean b) {
+        isBlack = b;
+    }
+
+    public static boolean isBlack() {
+        return isBlack;
     }
 }
