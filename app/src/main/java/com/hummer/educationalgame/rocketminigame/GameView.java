@@ -77,12 +77,16 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void update() {
         if(drawn) {
             if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(0).getHitbox())) {
+                playCrashSound();
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(1).getHitbox())) {
+                playCrashSound();
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(2).getHitbox())) {
+                playCrashSound();
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), asteroidManager.asteroids.get(3).getHitbox())) {
+                playCrashSound();
                 reset = true;
             } else if (Rect.intersects(rocket.getHitbox(), house.getHitBox())) {
 //                System.out.println("intersecting");
@@ -109,12 +113,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             if(xCoord == 0 && yCoord == 0) {
                 rocket.draw(xOfScreen/16, 2*yOfScreen/5 - rocket.getHeight(), canvas);
             } else if(legalToMove) {
-                int diffX = rocket.getxCoord() - xCoord;
-                int diffY = rocket.getyCoord() - yCoord;
-                int angle = (int) (Math.atan2(diffY, diffX) * 180/Math.PI);
-                Matrix matrix = new Matrix();
-                matrix.setRotate(-angle, rocket.getxCoord(), rocket.getyCoord());
-                rocket.draw(xCoord - rocket.getWidth()/2, yCoord - rocket.getHeight()/2, matrix, canvas);
+                rocket.draw(xCoord - rocket.getWidth()/2, yCoord - rocket.getHeight()/2, canvas);
             } else {
                 rocket.draw(xOfScreen/16, 2*yOfScreen/5 - rocket.getHeight(), canvas);
             }
@@ -144,23 +143,16 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         switch(eventAction){
             case MotionEvent.ACTION_DOWN:
-//                if (X >= characterArmSprite.getX() && X < (characterArmSprite.getX() + characterArmSprite.getWidth())
-//                        && Y >= characterArmSprite.getY() && Y < (characterArmSprite.getY() + characterArmSprite.getHeight())) {
-                    // stuff for making cream appear here
-                    isTouchingScreen = true;
-                    xCoord = X;
-                    yCoord = Y;
-                    if(rocket.getHitbox().contains(xCoord, yCoord)) {
-                        legalToMove = true;
-                    }
-//                }
+                isTouchingScreen = true;
+                xCoord = X;
+                yCoord = Y;
+                if(rocket.getHitbox().contains(xCoord, yCoord)) {
+                    legalToMove = true;
+                }
                 break;
             case MotionEvent.ACTION_MOVE:
-//                if (X >= characterArmSprite.getX() && X < (characterArmSprite.getX() + characterArmSprite.getWidth())
-//                        && Y >= characterArmSprite.getY() && Y < (characterArmSprite.getY() + characterArmSprite.getHeight())) {
-                    xCoord = X;
-                    yCoord = Y;
-//                }
+                xCoord = X;
+                yCoord = Y;
                 break;
             case MotionEvent.ACTION_UP:
                 xCoord = 0;
@@ -174,6 +166,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     public void setGameActivity(GameActivity activity) {
         gameActivity = activity;
+    }
+
+    public void playCrashSound() {
+        SoundEffects.playSound(2);
     }
 
     public void playVictorySound() {
