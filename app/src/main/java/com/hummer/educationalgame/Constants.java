@@ -11,18 +11,19 @@ public class Constants
     /**
      * The flag for whether the character will have the food procedure or not
      */
-    private static boolean isFood;
+    private static boolean isFood, isBlack;
 
     /**
      * The character selected by the player
      */
+
     private static int playerCharacter;
 
     /**
      * The value for the sitting of the player
      */
     private static int playerSitting;
-    private static boolean isBlack;
+
     public Constants()
     {
 
@@ -69,7 +70,7 @@ public class Constants
         playerSitting = character;
     }
 
-    public static void setIsBlack ( boolean b){
+    public static void setIsBlack(boolean b) {
         isBlack = b;
     }
 

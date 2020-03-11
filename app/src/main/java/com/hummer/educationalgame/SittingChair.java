@@ -8,6 +8,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
+import com.hummer.educationalgame.CreamMinigame.*;
+
 public class SittingChair extends Activity implements View.OnClickListener {
 
     ImageButton cream;
@@ -26,7 +28,7 @@ public class SittingChair extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent waiting_room = new Intent(SittingChair.this, WaitingRoom.class);
-        startActivity(waiting_room);
+         Intent cream_minigame = new Intent(SittingChair.this, MainMenuForGame.class);
+         startActivity(cream_minigame);
     }
 }

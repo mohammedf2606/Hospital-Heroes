@@ -2,6 +2,8 @@ package com.hummer.educationalgame.injectionminigame;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -14,6 +16,7 @@ import android.view.SurfaceView;
 
 import com.hummer.educationalgame.MainMenu;
 import com.hummer.educationalgame.PreScan;
+import com.hummer.educationalgame.R;
 
 /**
  * InjectionGamePanel is the class of the game that represents the game panel. It builds
@@ -51,6 +54,13 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         thread = new InjectionMainThread(getHolder(), this);
+
+        int width = Resources.getSystem().getDisplayMetrics().widthPixels;
+        int height = Resources.getSystem().getDisplayMetrics().heightPixels;
+        injection = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.), width, height);
+        hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), false);
+        beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);
+
         thread.setRunning(true);
         thread.start();
     }
