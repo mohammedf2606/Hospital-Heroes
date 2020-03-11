@@ -10,11 +10,22 @@ import android.widget.ImageView;
 
 import com.hummer.educationalgame.R;
 
+/**
+ * Class for Astroid objects in the Rocket Minigame
+ * @author Fahim Mohammed, Jawad Zeidan
+ * @version 1.0
+ */
 public class Asteroid {
 
     private Bitmap image;
     private int x, y;
 
+    /**
+     * Constructor for Asteroid objects
+     * @param res Resources object to generate bitmap image
+     * @param x the x-coordinate where the asteroid will placed
+     * @param y the y-coordinate where the asteroid will placed
+     */
     public Asteroid(Resources res, int x, int y) {
         this.x = x;
         this.y = y;
@@ -22,6 +33,10 @@ public class Asteroid {
         image = Bitmap.createScaledBitmap(image, 200,200, false);
     }
 
+    /**
+     * Draw method that draws the asteroid picture on the given canvas
+     * @param canvas the canvas to be drawn on
+     */
     public void draw(Canvas canvas) {
         canvas.drawBitmap(image, x, y, null);
     }

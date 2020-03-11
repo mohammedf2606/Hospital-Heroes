@@ -7,11 +7,19 @@ import android.graphics.Rect;
 
 import java.util.ArrayList;
 
+/**
+ * Class that handles Asteroid objects in the Rocket Minigame
+ * @author Fahim Mohammed, Jawad Zeidan
+ */
 public class AsteroidManager {
 
     ArrayList<Asteroid> asteroids;
     private Resources res;
 
+    /**
+     * Constructor for AsteroidManager
+     * @param res Resources object to be used by Asteroid class to generate Bitmap image
+     */
     public AsteroidManager(Resources res) {
         this.res = res;
 
@@ -19,7 +27,9 @@ public class AsteroidManager {
 
         populateAsteroids();
     }
-
+    /**
+     * Creates asteroid objects and adds them to ArrayList
+     */
     private void populateAsteroids() {
         Asteroid asteroid1 = new Asteroid(res, 50, 380);
         Asteroid asteroid2 = new Asteroid(res, 300, 70);
@@ -31,6 +41,10 @@ public class AsteroidManager {
         asteroids.add(asteroid4);
     }
 
+    /**
+     * Draw method that draws all the asteroids
+     * @param canvas the canvas to be drawn on
+     */
     public void draw(Canvas canvas) {
         for(Asteroid ast : asteroids) {
             ast.draw(canvas);
