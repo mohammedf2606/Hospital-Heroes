@@ -38,10 +38,20 @@ public class CharacterArmSprite {
         yCoord = y/3  - image.getHeight()/2;
     }
 
+    /**
+     * Draw the bitmap onto the canvas.
+     *
+     * @param  canvas   the canvas to be drawn on
+     */
     public void draw(Canvas canvas) {
         canvas.drawBitmap(image, xCoord, yCoord, null);
     }
 
+    /**
+     * Draw a darkened version of the bitmap onto the canvas.
+     *
+     * @param  canvas the canvas to be drawn on
+     */
     public void drawDarkenedImage(Canvas canvas) {
         Paint p = new Paint(Color.RED);
         ColorFilter filter = new LightingColorFilter(0xFF7F7F7F, 0x00000000);    // darken
@@ -49,18 +59,38 @@ public class CharacterArmSprite {
         canvas.drawBitmap(image, xCoord, yCoord, p);
     }
 
+    /**
+     * Return the x coordinate of the bitmap
+     *
+     * @return  xCoord  the value of x
+     */
     public int getX() {
         return xCoord;
     }
 
+    /**
+     * Return the y coordinate of the bitmap
+     *
+     * @return  yCoord  the value of y
+     */
     public int getY() {
         return yCoord;
     }
 
+    /**
+     * Return the height of the bitmap image
+     *
+     * @return  image.getHeight()  the value of the height of the image
+     */
     public int getHeight() {
         return image.getHeight();
     }
 
+    /**
+     * Return the width of the bitmap image
+     *
+     * @return  image.getWidth()  the value of the width of the image
+     */
     public int getWidth() {
         return image.getWidth();
     }

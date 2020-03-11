@@ -177,7 +177,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     isTouchingScreen = true;
                     xCoord = X;
                     yCoord = Y;
-
+                    SoundEffects.playSound(1);
                 break;
             case MotionEvent.ACTION_MOVE:
                     xCoord = X;
