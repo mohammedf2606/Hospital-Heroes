@@ -25,7 +25,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
     private GameActivity gameActivity;
     private int xOfScreen, yOfScreen;
-    private boolean soundPlayedAlready, isTouchingScreen;
+    private boolean soundPlayedAlready;
     private boolean gameFinished, legalToMove, drawn;
     private StarBackground starBackground;
     private RocketSprite rocket;
@@ -151,7 +151,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         switch(eventAction){
             case MotionEvent.ACTION_DOWN:
-                isTouchingScreen = true;
                 xCoord = X;
                 yCoord = Y;
                 if(rocket.getHitbox().contains(xCoord, yCoord)) {
@@ -165,7 +164,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             case MotionEvent.ACTION_UP:
                 xCoord = 0;
                 yCoord = 0;
-                isTouchingScreen = false;
                 legalToMove = false;
                 break;
         }
