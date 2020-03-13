@@ -26,6 +26,7 @@ public class Injection implements InjectionGameObject
     public Injection(Resources resources)
     {
         image = BitmapFactory.decodeResource(resources, R.drawable.butterfly);
+        image = Bitmap.createScaledBitmap(image, 150,150,false);
         height = image.getHeight();
         width = image.getWidth();
     }
