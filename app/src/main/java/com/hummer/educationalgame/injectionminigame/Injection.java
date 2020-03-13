@@ -1,5 +1,6 @@
 package com.hummer.educationalgame.injectionminigame;
 
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -18,29 +19,23 @@ import com.hummer.educationalgame.R;
  */
 public class Injection implements InjectionGameObject
 {
-    private Rect injection;
-    private int color;
+    private Bitmap image;
+    private int height, width;
+    private int x, y;
 
-    public Rect getInjection()
+    public Injection(Resources resources)
     {
-        return injection;
-    }
-
-    public Injection(Rect injection, int color)
-    {
-        this.injection = injection;
-        this.color = color;
-
-        BitmapFactory bf = new BitmapFactory();
-        Bitmap injectionImg = bf.decodeResource(InjectionConstants.CURRENT_CONTEXT.getResources(), R.drawable.injection);
+        image = BitmapFactory.decodeResource(resources, R.drawable.butterfly);
+        height = image.getHeight();
+        width = image.getWidth();
     }
 
     @Override
-    public void draw(Canvas canvas)
+    public void draw(Canvas canvas, int xCoord, int yCoord)
     {
-        Paint paint = new Paint();
-        paint.setColor(color);
-        canvas.drawRect(injection, paint);
+        x = xCoord;
+        y = yCoord;
+        canvas.drawBitmap(image, xCoord, yCoord, null);
     }
 
     @Override
@@ -51,7 +46,25 @@ public class Injection implements InjectionGameObject
 
     public void update(Point point)
     {
-        injection.set(point.x - injection.width()/2, point.y - injection.height()/2, point.x + injection.width()/2, point.y + injection.height()/2);
+    //    injection.set(point.x - injection.width()/2, point.y - injection.height()/2, point.x + injection.width()/2, point.y + injection.height()/2);
     }
+
+    public Bitmap getBitmap() {
+        return image;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public Rect getHitbox() {
+        return new Rect(x, y + height - 10, x + 10, y + height);
+    }
+
+    //public Rect getInjection() { return injection; }
 
 }

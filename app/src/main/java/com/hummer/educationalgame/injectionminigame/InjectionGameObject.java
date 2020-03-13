@@ -10,7 +10,7 @@ import android.graphics.Canvas;
  */
 public interface InjectionGameObject
 {
-    public void draw(Canvas canvas);
+    public void draw(Canvas canvas, int xCoord, int yCoord);
 
     public void update();
 

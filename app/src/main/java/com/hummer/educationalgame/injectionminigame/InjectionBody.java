@@ -16,7 +16,7 @@ import com.hummer.educationalgame.R;
  * @author Fareed Faisal
  * @version 1.0
  */
-public class InjectionBody implements InjectionGameObject
+public class InjectionBody
 {
     private Rect body;
     private int color;
@@ -37,10 +37,10 @@ public class InjectionBody implements InjectionGameObject
 
     public boolean injectionCollide(Injection injection)
     {
-        return Rect.intersects(body, injection.getInjection());
+        return Rect.intersects(body, injection.getHitbox());
     }
 
-    @Override
+
     public void draw(Canvas canvas)
     {
         Paint paint = new Paint();
@@ -48,7 +48,6 @@ public class InjectionBody implements InjectionGameObject
         canvas.drawRect(body, paint);
     }
 
-    @Override
     public void update()
     {
 

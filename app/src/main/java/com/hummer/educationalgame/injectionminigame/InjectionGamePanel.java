@@ -14,6 +14,10 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import com.hummer.educationalgame.Constants;
+import com.hummer.educationalgame.CreamMinigame.CharacterArmSprite;
+import com.hummer.educationalgame.CreamMinigame.EndGameSticker;
+import com.hummer.educationalgame.CreamMinigame.HospitalBackground;
 import com.hummer.educationalgame.MainMenu;
 import com.hummer.educationalgame.PreScan;
 import com.hummer.educationalgame.R;
@@ -27,42 +31,45 @@ import com.hummer.educationalgame.R;
  */
 public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private Context mContext;
-    private InjectionMainThread thread;
-    private Injection injection;
-    private Point injectionPoint;
-    private InjectionBody injectionBody;
-    private boolean movingInjection = false;
-    private boolean gameOver = false;
-    private long gameOverTime;
-    private InjectionMainActivity gameActivity;
-    private InjectionGameOver sticker;
 
-    public InjectionGamePanel(Context context) {
+    private InjectionMainThread thread;
+    private HospitalBackground background;
+    private CharacterArmSprite injectionArm;
+    private Injection injection;
+
+    private int xOfScreen, yOfScreen;
+    private boolean gameOver = false;
+    private boolean isWhiteCharacter;
+    private boolean movingInjection = false;
+
+    private InjectionMainActivity gameActivity;
+    private Canvas canvas;
+    private int xCoord, yCoord;
+
+    private EndGameSticker sticker;
+
+    private InjectionBody injectionBody;
+    private Point injectionPoint;
+
+
+    public InjectionGamePanel(Context context, int xOfScreen, int yOfScreen) {
         super(context);
         this.mContext = context;
         InjectionConstants.CURRENT_CONTEXT = this.mContext;
+
+        isWhiteCharacter = !Constants.isBlack();
+
+        this.xOfScreen = xOfScreen;
+        this.yOfScreen = yOfScreen;
         getHolder().addCallback(this);
+
         thread = new InjectionMainThread(getHolder(), this);
-        injection = new Injection(new Rect(100, 100, 200, 200), Color.rgb(255, 0, 0));
-        injectionPoint = new Point(3 * InjectionConstants.SCREEN_WIDTH / 4, InjectionConstants.SCREEN_HEIGHT / 4);
-        injection.update(injectionPoint);
+
+        //injection = new Injection(new Rect(100, 100, 200, 200), Color.rgb(255, 0, 0));
         injectionBody = new InjectionBody(new Rect(200, 200, 400, 400), Color.BLACK);
-        sticker = new InjectionGameOver(4 * InjectionConstants.SCREEN_WIDTH / 4, 4 * InjectionConstants.SCREEN_HEIGHT / 4, context.getResources());
+        //sticker = new InjectionGameOver(4 * InjectionConstants.SCREEN_WIDTH / 4, 4 * InjectionConstants.SCREEN_HEIGHT / 4, context.getResources());
+
         setFocusable(true);
-    }
-
-    @Override
-    public void surfaceCreated(SurfaceHolder holder) {
-        thread = new InjectionMainThread(getHolder(), this);
-
-        int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-        int height = Resources.getSystem().getDisplayMetrics().heightPixels;
-        injection = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.), width, height);
-        hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), false);
-        beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);
-
-        thread.setRunning(true);
-        thread.start();
     }
 
     @Override
@@ -71,45 +78,50 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
     }
 
     @Override
-    public void surfaceDestroyed(SurfaceHolder holder) {
+    public void surfaceCreated(SurfaceHolder holder) {
+        background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
+        injectionArm = new CharacterArmSprite(xOfScreen, yOfScreen, getResources(), isWhiteCharacter);
+        injection = new Injection(getResources());
+        sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
 
+        //injectionPoint = new Point(3 * InjectionConstants.SCREEN_WIDTH / 4, InjectionConstants.SCREEN_HEIGHT / 4);
+
+        thread.setRunning(true);
+        thread.start();
     }
 
-    public void update() {
-        injection.update(injectionPoint);
-        injectionBody.update();
-        if (!gameOver) {
-            injection.update(injectionPoint);
-            injectionBody.update();
-        }
-        if (injectionBody.injectionCollide(injection)) {
-            gameOver = true;
-            gameOverTime = System.currentTimeMillis();
-        }
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+
     }
 
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
+        this.canvas = canvas;
         if (canvas != null) {
-            canvas.drawColor(Color.WHITE);
-            injection.draw(canvas);
-            injectionBody.draw(canvas);
+
+            background.draw(canvas);
+            injectionArm.draw(canvas);
+
+            //if(!(xCoord == 0 || yCoord == 0 || gameOver)) {
+                int x2 = xCoord;
+                int y2 = yCoord - injection.getHeight();
+                injection.draw(canvas, x2, y2);
+            //}
+
             if (gameOver) {
-                //  Paint paint = new Paint();
-                //  paint.setTextSize(100);
-                //  paint.setColor(Color.MAGENTA);
-                //  paint.setTextAlign(Paint.Align.CENTER);
+                background.drawDarkenedImage(canvas);
                 int value = sticker.drawAnimation(canvas);
-                if (value == 400)
+                if (value == sticker.getWidth())
                 {
-                try {
-                    thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                Intent nextScene = new Intent(mContext, PreScan.class);
-                mContext.startActivity(nextScene);
+                    try {
+                        thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Intent nextScene = new Intent(mContext, PreScan.class);
+                    mContext.startActivity(nextScene);
                 }
             }
         }
@@ -117,21 +129,51 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
+
+        int X = (int) event.getX();
+        int Y = (int) event.getY();
+        int eventAction = event.getAction();
+
+        switch (eventAction) {
             case MotionEvent.ACTION_DOWN:
-                if (!gameOver && injection.getInjection().contains((int) event.getX(), (int) event.getY())) {
+                //if (!gameOver && injection.getHitbox().contains((int) event.getX(), (int) event.getY())) {
                     movingInjection = true;
-                }
+                    xCoord = X;
+                    yCoord = Y;
+                //}
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (!gameOver && movingInjection) {
-                    injectionPoint.set((int) event.getX(), (int) event.getY());
-                }
+                //if (!gameOver && movingInjection) {
+                  //  injectionPoint.set((int) event.getX(), (int) event.getY());
+                    xCoord = X;
+                    yCoord = Y;
+                //}
                 break;
             case MotionEvent.ACTION_UP:
+                xCoord = 0;
+                yCoord = 0;
                 movingInjection = false;
                 break;
         }
         return true;
+    }
+
+    public void update() {
+        //if(Rect.intersects(injectionBody.getHitbox(), injection.getHitbox()) && movingInjection == true)
+        //if(injectionBody.injectionCollide(injection))
+        //    gameOver = true;
+        //injection.update(injectionPoint);
+        injectionBody.update();
+        if (!gameOver) {
+            //injection.update(injectionPoint);
+            injectionBody.update();
+        }
+        if (injectionBody.injectionCollide(injection)) {
+            gameOver = true;
+        }
+    }
+
+    public void setGameActivity(InjectionMainActivity activity) {
+        gameActivity = activity;
     }
 }
