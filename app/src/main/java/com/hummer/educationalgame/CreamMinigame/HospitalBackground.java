@@ -30,7 +30,7 @@ public class HospitalBackground {
      * @param resources The resources associated with the package
      */
     public HospitalBackground(int x, int y, Resources resources) {
-        image = BitmapFactory.decodeResource(resources, R.drawable.hospitalroom);
+        image = BitmapFactory.decodeResource(resources, R.drawable.injectionroombackground);
         image = Bitmap.createScaledBitmap(image, x, y, false);
     }
 

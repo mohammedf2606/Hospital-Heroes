@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
         android:visibility="visible"
-        app:srcCompat="@drawable/hospitalroom"
+        app:srcCompat="@drawable/injectionroombackground"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
