@@ -11,36 +11,41 @@ import java.util.Random;
 
 class PlateFood {
     private int X, Y;
-    private int left, top, right, bottom;
-    private int stage;
-    private Bitmap food;
-    private Paint paint;
+    private Bitmap food0, food1, food2, food3;
+    private int state = 0;
 
 
-    PlateFood(Bitmap foodImg) {
-        Y = 0;
-        X = 0;
-        this.food = foodImg;
-        food.setHeight(500);
-        food.setWidth(500);
-        paint = new Paint();
-        paint.setColor(Color.GRAY);
-
-        left = 0;
-        top = 0;
-        right = 500;
-        bottom = 500;
+    PlateFood(Bitmap food0, Bitmap food1, Bitmap food2, Bitmap food3) {
+        Y = Constants.SCREEN_HEIGHT/2 - 200;
+        X = Constants.SCREEN_WIDTH/2 - 200;
+        this.food0 = Bitmap.createScaledBitmap(food0, 400, 400, false);
+        this.food1 = Bitmap.createScaledBitmap(food1, 400, 400, false);
+        this.food2 = Bitmap.createScaledBitmap(food2, 400, 400, false);
+        this.food3 = Bitmap.createScaledBitmap(food3, 400, 400, false);
     }
 
-    void drawFood(Canvas canvas) {
-        canvas.drawBitmap(food, X, Y, null);
-        canvas.drawArc(left,top,right,bottom, 0F, 90F, true, paint);
-
+    boolean drawFood(Canvas canvas) {
+        switch (state) {
+            case 0:
+                canvas.drawBitmap(food0, X, Y, null);
+                break;
+            case 1:
+                canvas.drawBitmap(food1, X, Y, null);
+                break;
+            case 2:
+                canvas.drawBitmap(food2, X, Y, null);
+                break;
+            case 3:
+                canvas.drawBitmap(food3, X, Y, null);
+                break;
+            default:
+                return true;
+        }
+        return false;
     }
 
     void update() {
-        Y++;
-
+        state++;
     }
  }
 

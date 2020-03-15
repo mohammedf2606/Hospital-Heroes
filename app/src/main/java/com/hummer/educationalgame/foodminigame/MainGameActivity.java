@@ -19,9 +19,7 @@ public class MainGameActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        gameView = (GameView) findViewById(R.id.game_view);
+        gameView = findViewById(R.id.game_view);
         setContentView(R.layout.food_minigame);
-//        Intent myIntent = new Intent(getBaseContext(),   WaitingRoom.class);
-//        startActivity(myIntent);
     }
 }
