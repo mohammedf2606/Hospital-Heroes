@@ -21,6 +21,7 @@ import com.hummer.educationalgame.CreamMinigame.HospitalBackground;
 import com.hummer.educationalgame.MainMenu;
 import com.hummer.educationalgame.PreScan;
 import com.hummer.educationalgame.R;
+import com.hummer.educationalgame.SoundEffects;
 
 /**
  * InjectionGamePanel is the class of the game that represents the game panel. It builds
@@ -42,7 +43,7 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
     private boolean gameOver = false;
     private boolean isWhiteCharacter;
     private boolean movingInjection = false;
-
+    private boolean victorySoundPlayedAlready;
     private InjectionMainActivity gameActivity;
     private Canvas canvas;
     private int xCoord, yCoord;
@@ -114,6 +115,9 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
             if (gameOver) {
                 background.drawDarkenedImage(canvas);
+                if(victorySoundPlayedAlready == false) {
+                    playVictorySound();
+                }
                 int value = sticker.drawAnimation(canvas);
                 if (value == sticker.getWidth())
                 {
@@ -177,5 +181,10 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
     public void setGameActivity(InjectionMainActivity activity) {
         gameActivity = activity;
+    }
+
+    public void playVictorySound() {
+        victorySoundPlayedAlready = true;
+        SoundEffects.playSound(0);
     }
 }
