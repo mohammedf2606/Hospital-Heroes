@@ -36,6 +36,7 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
     private HospitalBackground background;
     private CharacterArmSprite injectionArm;
     private Injection injection;
+    private InjectionBody injectionBody;
 
     private int xOfScreen, yOfScreen;
     private boolean gameOver = false;
@@ -48,7 +49,6 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
     private EndGameSticker sticker;
 
-    private InjectionBody injectionBody;
     private Point injectionPoint;
 
 
@@ -66,7 +66,7 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         thread = new InjectionMainThread(getHolder(), this);
 
         //injection = new Injection(new Rect(100, 100, 200, 200), Color.rgb(255, 0, 0));
-        injectionBody = new InjectionBody(new Rect(200, 200, 400, 400), Color.BLACK);
+        //injectionBody = new InjectionBody(new Rect(200, 200, 400, 400), Color.BLACK);
         //sticker = new InjectionGameOver(4 * InjectionConstants.SCREEN_WIDTH / 4, 4 * InjectionConstants.SCREEN_HEIGHT / 4, context.getResources());
 
         setFocusable(true);
@@ -82,6 +82,7 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
         injectionArm = new CharacterArmSprite(xOfScreen, yOfScreen, getResources(), isWhiteCharacter);
         injection = new Injection(getResources());
+        injectionBody = new InjectionBody(xOfScreen/8 - 20, yOfScreen/3 - 20, getResources());
         sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
 
         //injectionPoint = new Point(3 * InjectionConstants.SCREEN_WIDTH / 4, InjectionConstants.SCREEN_HEIGHT / 4);
@@ -103,6 +104,7 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
             background.draw(canvas);
             injectionArm.draw(canvas);
+            injectionBody.draw(canvas);
 
             //if(!(xCoord == 0 || yCoord == 0 || gameOver)) {
                 int x2 = xCoord;
@@ -163,12 +165,12 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         //if(injectionBody.injectionCollide(injection))
         //    gameOver = true;
         //injection.update(injectionPoint);
-        injectionBody.update();
+        //injectionBody.update();
         if (!gameOver) {
             //injection.update(injectionPoint);
-            injectionBody.update();
+          //  injectionBody.update();
         }
-        if (injectionBody.injectionCollide(injection)) {
+        if (Rect.intersects(injectionBody.getHitbox(), injection.getHitbox()) && movingInjection == true) {
             gameOver = true;
         }
     }
