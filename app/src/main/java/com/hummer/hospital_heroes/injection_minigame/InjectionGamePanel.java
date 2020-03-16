@@ -2,21 +2,19 @@ package com.hummer.hospital_heroes.injection_minigame;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import com.hummer.educationalgame.Constants;
-import com.hummer.educationalgame.CreamMinigame.CharacterArmSprite;
-import com.hummer.educationalgame.CreamMinigame.EndGameSticker;
-import com.hummer.educationalgame.CreamMinigame.HospitalBackground;
-import com.hummer.educationalgame.MainMenu;
-import com.hummer.educationalgame.PreScan;
-import com.hummer.educationalgame.R;
-import com.hummer.educationalgame.SoundEffects;
+import com.hummer.hospital_heroes.Constants;
+import com.hummer.hospital_heroes.cream_minigame.CharacterArmSprite;
+import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
+import com.hummer.hospital_heroes.cream_minigame.HospitalBackground;
+import com.hummer.hospital_heroes.PreScan;
+import com.hummer.hospital_heroes.SoundEffects;
 
 /**
  * InjectionGamePanel is the class of the game that represents the game panel. It builds
