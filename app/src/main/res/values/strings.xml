@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Educational Game</string>
-    <string name="game_name">Game Name!</string>
+    <string name="game_name">Hospital Heroes</string>
     <string name="tap_to_start">Tap To Start!</string>
     <string name="male_symbol">Male symbol</string>
     <string name="female_symbol">Female symbol</string>
@@ -26,4 +26,5 @@
     <string name="play">Play</string>
     <string name="pre_scan_room">Pre-scan room</string>
     <string name="drag_the_butterfly">Drag the butterfly!</string>
+    <string name="waiting_room">Waiting Room</string>
     #</resources>
