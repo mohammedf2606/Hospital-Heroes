@@ -47,14 +47,14 @@ public class WaitingRoom extends Activity {
                 if(i < 9) {
                     waiting_room.setImageResource(timers.get(i));
                     i++;
-                    handler.postDelayed(this, 1000);
+                    handler.postDelayed(this, 500);
                 }
                 else {
                     Intent injection_minigame = new Intent(WaitingRoom.this, InjectionMainMenu.class);
                     startActivity(injection_minigame);
                 }
             }
-        }, 1000);
+        }, 2000);
     }
 
 
