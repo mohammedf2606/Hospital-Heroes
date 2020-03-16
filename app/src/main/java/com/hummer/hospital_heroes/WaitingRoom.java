@@ -38,7 +38,6 @@ public class WaitingRoom extends Activity {
         timers.add(9, R.drawable.waiting_room_40);
 
         waiting_room = findViewById(R.id.waiting_room);
-        waiting_room.setImageResource(Constants.getPlayerSitting());
 
         final Handler handler = new Handler();
 
