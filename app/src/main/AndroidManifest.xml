@@ -13,67 +13,69 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name="com.hummer.hospital_heroes.Reception"
+            android:name=".Reception"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="com.hummer.hospital_heroes.MainActivity"
+            android:name=".MainActivity"
             android:noHistory="true"/>
-        <activity android:name="com.hummer.hospital_heroes.cream_minigame.MainMenuForGame"
-            android:screenOrientation="landscape"
-            android:noHistory="true"/>
-        <activity android:name="com.hummer.hospital_heroes.cream_minigame.GameActivity"
+        <activity
+            android:name=".cream_minigame.MainMenuForGame"
             android:screenOrientation="landscape"
             android:noHistory="true"/>
         <activity
-            android:name="com.hummer.hospital_heroes.MainMenu"
+            :name=".cream_minigame.GameActivity"
+            android:screenOrientation="landscape"
+            android:noHistory="true"/>
+        <activity
+            android:name=".MainMenu"
             android:noHistory="true"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.hummer.hospital_heroes.CharacterSelection"
+            android:name=".CharacterSelection"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="com.hummer.hospital_heroes.FoodSelection"
+            android:name=".FoodSelection"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="com.hummer.hospital_heroes.InjectionRoom"
+            android:name=".InjectionRoom"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="com.hummer.hospital_heroes.SittingChair"
+            android:name=".SittingChair"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="com.hummer.hospital_heroes.food_minigame.MainGameActivity"
+            android:name=".food_minigame.MainGameActivity"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="com.hummer.hospital_heroes.plate_minigame.PlateActivity"
+            android:name=".plate_minigame.PlateActivity"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="com.hummer.hospital_heroes.WaitingRoom"
+            android:name=".WaitingRoom"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="com.hummer.hospital_heroes.injection_minigame.InjectionMainActivity"
+            android:name=".injection_minigame.InjectionMainActivity"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="com.hummer.hospital_heroes.PreScan"
+            android:name=".PreScan"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
-
-        <activity android:name="injection_minigame.InjectionMainMenu" />
-
+        <activity
+            android:name="injection_minigame.InjectionMainMenu"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
         <service
             android:name=".MusicService"
             android:stopWithTask="true"/>
