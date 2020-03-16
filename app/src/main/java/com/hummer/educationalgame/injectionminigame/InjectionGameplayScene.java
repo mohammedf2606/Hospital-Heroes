@@ -1,5 +1,6 @@
 package com.hummer.educationalgame.injectionminigame;
 
+import android.content.Context;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -29,13 +30,18 @@ public class InjectionGameplayScene implements InjectionScene
 
     private boolean gameOver = false;
 
-    public InjectionGameplayScene()
+    private InjectionMainActivity gameActivity;
+    private InjectionGameOver sticker;
+
+    public InjectionGameplayScene(Context context)
     {
         injection = new Injection(new Rect(100,100,200,200), Color.rgb(255,0,0));
         injectionPoint = new Point(3*InjectionConstants.SCREEN_WIDTH/4, InjectionConstants.SCREEN_HEIGHT/4);
         injection.update(injectionPoint);
 
         injectionBody = new InjectionBody(new Rect(200,200,400,400), Color.BLACK);
+
+        sticker = new InjectionGameOver(4 * InjectionConstants.SCREEN_WIDTH/4, 4 * InjectionConstants.SCREEN_HEIGHT/4, context.getResources());
 
     }
 
@@ -69,30 +75,22 @@ public class InjectionGameplayScene implements InjectionScene
     }
 
     @Override
-    public void draw(Canvas canvas)
-    {
+    public void draw(Canvas canvas) {
         canvas.drawColor(Color.WHITE);
 
         injection.draw(canvas);
         injectionBody.draw(canvas);
 
-        if(gameOver)
-        {
-            endGame(canvas);
-        }
-    }
-
-    private static void endGame(Canvas canvas) {
-        SoundEffects.playSound(0);
-        Paint paint = new Paint();
-        paint.setTextSize(100);
-        paint.setColor(Color.MAGENTA);
-        paint.setTextAlign(Paint.Align.CENTER);
-        canvas.drawText("WELL DONE!", InjectionConstants.SCREEN_WIDTH/2, InjectionConstants.SCREEN_HEIGHT/2, paint);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if (gameOver) {
+            Paint paint = new Paint();
+            paint.setTextSize(100);
+            paint.setColor(Color.MAGENTA);
+            paint.setTextAlign(Paint.Align.CENTER);
+            int value = sticker.drawAnimation(canvas);
+            if (value == 400) {
+                System.out.println("no u");
+                gameActivity.nextScene();
+            }
         }
     }
 
@@ -111,4 +109,7 @@ public class InjectionGameplayScene implements InjectionScene
         }
     }
 
+    public void setGameActivity(InjectionMainActivity gameActivity) {
+        this.gameActivity = gameActivity;
+    }
 }

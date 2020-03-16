@@ -1,5 +1,6 @@
 package com.hummer.educationalgame.injectionminigame;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 
@@ -17,10 +18,10 @@ public class InjectionSceneManager
     private ArrayList<InjectionScene> scenes = new ArrayList<>();
     public static int ACTIVE_SCENE;
 
-    public InjectionSceneManager()
+    public InjectionSceneManager(Context context)
     {
         ACTIVE_SCENE = 0;
-        scenes.add(new InjectionGameplayScene());
+        scenes.add(new InjectionGameplayScene(context));
     }
 
     public void receiveTouch(MotionEvent event)

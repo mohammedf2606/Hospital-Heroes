@@ -22,5 +22,8 @@
     <string name="reception">Reception</string>
     <string name="timer">Timer</string>
     <string name="chair_with_character">Chair with character</string>
+    <string name="hospital_room">Hospital Room</string>
+    <string name="play">Play</string>
     <string name="pre_scan_room">Pre-scan room</string>
-</resources>
+    <string name="drag_the_butterfly">Drag the butterfly!</string>
+    #</resources>

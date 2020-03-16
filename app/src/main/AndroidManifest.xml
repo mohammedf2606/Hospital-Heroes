@@ -18,8 +18,13 @@
             android:screenOrientation="landscape"/>
         <activity
             android:name=".MainActivity"
-            android:noHistory="true"
-            android:screenOrientation="landscape"/>
+            android:noHistory="true"/>
+        <activity android:name=".CreamMinigame.MainMenuForGame"
+            android:screenOrientation="landscape"
+            android:noHistory="true"/>
+        <activity android:name=".CreamMinigame.GameActivity"
+            android:screenOrientation="landscape"
+            android:noHistory="true"/>
         <activity
             android:name=".MainMenu"
             android:noHistory="true"
@@ -66,6 +71,9 @@
             android:name=".PreScan"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
+
+        <activity android:name=".injectionminigame.InjectionMainMenu" />
+
         <service
             android:name=".MusicService"
             android:stopWithTask="true"/>

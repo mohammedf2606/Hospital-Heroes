@@ -10,6 +10,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.hummer.educationalgame.CreamMinigame.*;
+
 public class MainActivity extends Activity implements View.OnClickListener {
 
     Button tap_screen_start;
