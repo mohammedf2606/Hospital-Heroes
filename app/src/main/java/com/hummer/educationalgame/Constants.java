@@ -64,18 +64,18 @@ public class Constants
         return playerSitting;
     }
 
+    /**
+     * @param character the character sitting of the player.
+     */
+    public static void setPlayerSitting(int character) {
+        playerSitting = character;
+    }
+
     public static void setIsBlack(boolean b) {
         isBlack = b;
     }
 
     public static boolean isBlack() {
         return isBlack;
-    }
-
-    /**
-     * @param character the character sitting of the player.
-     */
-    public static void setPlayerSitting(int character) {
-        playerSitting = character;
     }
 }

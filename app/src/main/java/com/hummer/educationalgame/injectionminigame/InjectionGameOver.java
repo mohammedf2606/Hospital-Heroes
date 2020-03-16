@@ -17,7 +17,7 @@ public class InjectionGameOver
     public InjectionGameOver(int x, int y, Resources resources) {
         xCoord = x;
         yCoord = y;
-        image = BitmapFactory.decodeResource(resources, R.drawable.sticker);
+        image = BitmapFactory.decodeResource(resources, R.drawable.badgesquare);
         image = Bitmap.createScaledBitmap(image, 400, 400, false);
     }
 

@@ -1,6 +1,7 @@
 package com.hummer.educationalgame.injectionminigame;
 
 
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -16,41 +17,33 @@ import com.hummer.educationalgame.R;
  * @author Fareed Faisal
  * @version 1.0
  */
-public class InjectionBody implements InjectionGameObject
+public class InjectionBody
 {
-    private Rect body;
-    private int color;
+    private Bitmap image;
+    private int xCoord, yCoord;
 
-    public Rect getInjectionBody()
+
+    public InjectionBody(int x, int y, Resources res)
     {
-        return body;
+        xCoord = x;
+        yCoord = y;
+        image = BitmapFactory.decodeResource(res, R.drawable.creamoutlinescaled);
+        image = Bitmap.createScaledBitmap(image, 100, 100, false);
     }
 
-    public InjectionBody(Rect body, int color)
-    {
-        this.body = body;
-        this.color = color;
-
-        BitmapFactory bf = new BitmapFactory();
-        Bitmap injectionBodyImg = bf.decodeResource(InjectionConstants.CURRENT_CONTEXT.getResources(), R.drawable.whitearm);
+    public void draw(Canvas canvas) {
+        canvas.drawBitmap(image, xCoord, yCoord, null);
     }
 
-    public boolean injectionCollide(Injection injection)
-    {
-        return Rect.intersects(body, injection.getInjection());
+    public Rect getHitbox() {
+        return new Rect(xCoord, yCoord, xCoord + image.getWidth(), yCoord + image.getHeight());
     }
 
-    @Override
-    public void draw(Canvas canvas)
-    {
-        Paint paint = new Paint();
-        paint.setColor(color);
-        canvas.drawRect(body, paint);
+    public int getXCoord() {
+        return xCoord;
     }
 
-    @Override
-    public void update()
-    {
-
+    public int getYCoord() {
+        return yCoord;
     }
 }

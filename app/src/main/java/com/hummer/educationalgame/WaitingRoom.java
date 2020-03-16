@@ -47,7 +47,6 @@ public class WaitingRoom extends Activity {
                     handler.postDelayed(this, 2000);
                 }
                 else {
-                    // TODO: Fareed replace the 2nd parameter below with your MainActivity
                     Intent injection_minigame = new Intent(WaitingRoom.this, InjectionMainMenu.class);
                     startActivity(injection_minigame);
                 }

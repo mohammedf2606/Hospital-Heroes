@@ -71,9 +71,7 @@
             android:name=".PreScan"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
-
         <activity android:name=".injectionminigame.InjectionMainMenu" />
-
         <service
             android:name=".MusicService"
             android:stopWithTask="true"/>
