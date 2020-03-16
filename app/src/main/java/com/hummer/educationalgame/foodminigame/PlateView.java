@@ -29,10 +29,11 @@ public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        plateFood = new PlateFood(BitmapFactory.decodeResource(getResources(), R.drawable.beans),
-                BitmapFactory.decodeResource(getResources(), R.drawable.bowl),
-                BitmapFactory.decodeResource(getResources(), R.drawable.milk),
-                BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown));
+        plateFood = new PlateFood(BitmapFactory.decodeResource(getResources(), R.drawable.food0),
+                BitmapFactory.decodeResource(getResources(), R.drawable.food1),
+                BitmapFactory.decodeResource(getResources(), R.drawable.food2),
+                BitmapFactory.decodeResource(getResources(), R.drawable.food3),
+                BitmapFactory.decodeResource(getResources(), R.drawable.food4));
         
     }
 

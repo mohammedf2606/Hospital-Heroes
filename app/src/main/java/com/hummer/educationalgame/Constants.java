@@ -4,7 +4,7 @@ import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
 public class Constants {
-    private static boolean isFood;
+    private static boolean isFood, isBlack;
     private static int playerCharacter;
     private static int playerSitting;
     public final static int SCREEN_HEIGHT = Resources.getSystem().getDisplayMetrics().heightPixels;
@@ -32,5 +32,13 @@ public class Constants {
 
     static int getPlayerSitting() {
         return playerSitting;
+    }
+
+    public static void setIsBlack(boolean b) {
+        isBlack = b;
+    }
+
+    public static boolean isBlack() {
+        return isBlack;
     }
 }

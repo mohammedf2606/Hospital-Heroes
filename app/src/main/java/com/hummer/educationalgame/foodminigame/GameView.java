@@ -67,7 +67,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     private void updateFrame(int newX, int newY) {
-        if (score < 2 && newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
+        if (score < 11 && newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
             bowl.update(newX - 125, newY);
         }
     }
@@ -80,7 +80,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             hashbrown.drawFood(canvas);
             beans.drawFood(canvas);
 
-            if (score >= 1) {
+            if (score >= 10) {
                 //Bitmap sticker = BitmapFactory.decodeResource(getResources(), R.drawable.sticker_gif);
                 //EndSticker endSticker = new EndSticker(sticker, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
                 //endSticker.draw(canvas);
