@@ -27,7 +27,7 @@ public class InjectionBody
     {
         xCoord = x;
         yCoord = y;
-        image = BitmapFactory.decodeResource(res, R.drawable.creamoutlinescaled);
+        image = BitmapFactory.decodeResource(res, R.drawable.creamoutline);
         image = Bitmap.createScaledBitmap(image, 100, 100, false);
     }
 
