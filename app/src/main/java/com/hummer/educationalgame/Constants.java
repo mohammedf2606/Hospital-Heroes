@@ -1,31 +1,36 @@
 package com.hummer.educationalgame;
 
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
+
 public class Constants {
     private static boolean isFood, isBlack;
     private static int playerCharacter;
     private static int playerSitting;
+    public final static int SCREEN_HEIGHT = Resources.getSystem().getDisplayMetrics().heightPixels;
+    public final static int SCREEN_WIDTH = Resources.getSystem().getDisplayMetrics().widthPixels;
 
-    public static boolean isFood() {
+    static boolean isFood() {
         return isFood;
     }
 
-    public static void setIsFood(boolean food) {
+    static void setIsFood(boolean food) {
         isFood = food;
     }
 
-    public static void setPlayerCharacter(int character) {
+    static void setPlayerCharacter(int character) {
         playerCharacter = character;
     }
 
-    public static void setPlayerSitting(int character) {
+    static void setPlayerSitting(int character) {
         playerSitting = character;
     }
 
-    public static int getPlayerCharacter() {
+    static int getPlayerCharacter() {
         return playerCharacter;
     }
 
-    public static int getPlayerSitting() {
+    static int getPlayerSitting() {
         return playerSitting;
     }
 
