@@ -25,6 +25,16 @@ public class MusicService extends Service {
     }
 
     @Override
+    public boolean onUnbind(Intent intent) {
+        timer.cancel();
+        player.stop();
+        player.release();
+        return super.onUnbind(intent);
+    }
+
+
+
+    @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         playlist = new ArrayList<>();
         playlist.add(R.raw.background_music);
@@ -61,6 +71,7 @@ public class MusicService extends Service {
         super.onDestroy();
         timer.cancel();
         player.stop();
+        player.release();
     }
 
 

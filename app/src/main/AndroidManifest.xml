@@ -72,10 +72,10 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
 
-        <activity android:name="com.hummer.hospital_heroes.injection_minigame.InjectionMainMenu" />
+        <activity android:name="injection_minigame.InjectionMainMenu" />
 
         <service
-            android:name="com.hummer.hospital_heroes.MusicService"
+            android:name=".MusicService"
             android:stopWithTask="true"/>
     </application>
 
