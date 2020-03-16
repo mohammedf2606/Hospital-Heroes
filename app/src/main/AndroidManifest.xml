@@ -24,7 +24,7 @@
             android:screenOrientation="landscape"
             android:noHistory="true"/>
         <activity
-            :name=".cream_minigame.GameActivity"
+            android:name=".cream_minigame.GameActivity"
             android:screenOrientation="landscape"
             android:noHistory="true"/>
         <activity
