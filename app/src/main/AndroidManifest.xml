@@ -52,6 +52,14 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
+            android:name=".foodminigame.MainGameActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".foodminigame.PlateActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
             android:name=".WaitingRoom"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
@@ -64,8 +72,11 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
 
-        <service android:name=".MusicService" />
         <activity android:name=".injectionminigame.InjectionMainMenu" />
+
+        <service
+            android:name=".MusicService"
+            android:stopWithTask="true"/>
     </application>
 
 </manifest>

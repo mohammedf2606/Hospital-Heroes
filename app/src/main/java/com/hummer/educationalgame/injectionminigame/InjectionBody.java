@@ -32,7 +32,8 @@ public class InjectionBody implements InjectionGameObject
         this.color = color;
 
         BitmapFactory bf = new BitmapFactory();
-        Bitmap injectionBodyImg = bf.decodeResource(InjectionConstants.CURRENT_CONTEXT.getResources(), R.drawable.whitearm);
+//        Bitmap injectionBodyImg = bf.decodeResource(InjectionConstants.CURRENT_CONTEXT.getResources(), R.drawable.whitearm);
+        Bitmap injectionBodyImg = bf.decodeResource(InjectionConstants.CURRENT_CONTEXT.getResources(), R.drawable.arm_white);
     }
 
     public boolean injectionCollide(Injection injection)

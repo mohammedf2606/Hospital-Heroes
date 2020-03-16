@@ -1,16 +1,19 @@
 package com.hummer.educationalgame;
 
+import android.content.res.Resources;
 /**
  * Represents constants of the characters
  *
- * @author
+ * @author Fahim Mohammed
  * @version 1.0
  */
+
 public class Constants
 {
     /**
      * The flag for whether the character will have the food procedure or not
      */
+
     private static boolean isFood, isBlack;
 
     /**
@@ -23,11 +26,8 @@ public class Constants
      * The value for the sitting of the player
      */
     private static int playerSitting;
-
-    public Constants()
-    {
-
-    }
+    public final static int SCREEN_HEIGHT = Resources.getSystem().getDisplayMetrics().heightPixels;
+    public final static int SCREEN_WIDTH = Resources.getSystem().getDisplayMetrics().widthPixels;
 
     /**
      * @return the procedure of the player (food or not i.e. injection).
@@ -60,6 +60,7 @@ public class Constants
      * @return the sitting of the player.
      */
     public static int getPlayerSitting() {
+
         return playerSitting;
     }
 
