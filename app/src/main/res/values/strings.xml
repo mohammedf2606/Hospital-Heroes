@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Educational Game</string>
-</resources>
+    <string name="game_name">Hospital Heroes</string>
+    <string name="tap_to_start">Tap To Start!</string>
+    <string name="male_symbol">Male symbol</string>
+    <string name="female_symbol">Female symbol</string>
+    <string name="boy_character_3">Boy Character 3</string>
+    <string name="boy_character_2">Boy Character 2</string>
+    <string name="boy_character_1">Boy Character 1</string>
+    <string name="boy_character_4">Boy Character 4</string>
+    <string name="girl_character_3">Girl Character 3</string>
+    <string name="girl_character_2">Girl Character 2</string>
+    <string name="girl_character_1">Girl Character 1</string>
+    <string name="girl_character_4">Girl Character 4</string>
+    <string name="milk">Milk</string>
+    <string name="beans">Beans</string>
+    <string name="hash_browns">Hash Browns</string>
+    <string name="ripple">Ripple</string>
+    <string name="girl_eating">Girl eating</string>
+    <string name="nurse">Nurse</string>
+    <string name="hospital_front">Hospital front</string>
+    <string name="reception">Reception</string>
+    <string name="timer">Timer</string>
+    <string name="chair_with_character">Chair with character</string>
+    <string name="hospital_room">Hospital Room</string>
+    <string name="play">Play</string>
+    <string name="pre_scan_room">Pre-scan room</string>
+    <string name="drag_the_butterfly">Drag the butterfly!</string>
+    <string name="waiting_room">Waiting Room</string>
+    #</resources>
