@@ -73,7 +73,7 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="injection_minigame.InjectionMainMenu"
+            android:name=".injection_minigame.InjectionMainMenu"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <service
