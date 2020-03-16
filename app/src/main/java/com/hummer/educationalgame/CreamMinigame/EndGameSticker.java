@@ -24,6 +24,12 @@ public class EndGameSticker {
     private int xCoord, yCoord;
     private int width, height;
 
+    /**
+     * The constructor for the class 'EndGameSticker'
+     * @param x The width of the screen
+     * @param y The height of the screen
+     * @param resources The resources associated with the package
+     */
     public EndGameSticker(int x, int y, Resources resources) {
         xCoord = x;
         yCoord = y;
@@ -31,10 +37,21 @@ public class EndGameSticker {
 //        image = Bitmap.createScaledBitmap(image, 400, 400, false);
     }
 
+    /**
+     * Draws the bitmap image onto the canvas.
+     *
+     * @param  canvas  the canvas the bitmap is to be drawn on
+     */
     public void draw(Canvas canvas) {
         canvas.drawBitmap(image, xCoord/2 - (image.getWidth()/2), yCoord/2 - (image.getHeight()/2), null);
     }
 
+    /**
+     * Draws the animation of the sticker increasing in size.
+     *
+     * @param  canvas  the canvas the bitmap is to be drawn on
+     * @return  width  the maximum width of the sticker
+     */
     public int drawAnimation(Canvas canvas) {
         width+=10;
         height+=10;
@@ -46,10 +63,20 @@ public class EndGameSticker {
         return width;
     }
 
+    /**
+     * Returns the width of the bitmap image
+     *
+     * @return  image.getWidth()  the width of the bitmap image
+     */
     public int getWidth() {
         return image.getWidth();
     }
 
+    /**
+     * Returns the height of the bitmap image
+     *
+     * @return  image.getHeight()  the height of the bitmap image
+     */
     public int getHeight() {
         return image.getHeight();
     }

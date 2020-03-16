@@ -34,13 +34,18 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private GameActivity gameActivity;
     private Canvas canvas;
     private int xCoord, yCoord;
-//    private Path path;
     private Paint creamPaint, alphaPaint, betaPaint;
     private EndGameSticker sticker;
     private boolean isTouchingScreen;
     private int progress1, progress2;
     private boolean fullyAppliedCreamOnPos1, fullyAppliedCreamOnPos2;
 
+    /**
+     *  The constructor for the class 'GameView'
+     * @param context The Context the view is associated with
+     * @param xOfScreen The width of the screen
+     * @param yOfScreen The height of the screen
+     */
     public GameView(Context context, int xOfScreen, int yOfScreen) {
         super(context);
 
@@ -81,6 +86,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /**
+     * This method runs every frame and computes the logic for the game,
+     * including whether hitboxes collide, and hence evaluating boolean expressions
+     */
     public void update() {
         if(Rect.intersects(location1.getHitbox(), creamTube.getHitbox()) && isTouchingScreen == true) {
             progress1+=2;
@@ -141,13 +150,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 creamTube.draw(canvas, x2, y2);
                 canvas.drawCircle(x2, yCoord, 5, creamPaint);
             }
-//            canvas.drawPath(path, paint);
 
             if(gameFinished) {
                 background.drawDarkenedImage(canvas);
-//                characterArmSprite.drawDarkenedImage(canvas);
-//                creamSplatter.drawDarkenedImage(canvas, location1.getXCoord(), location1.getYCoord());
-//                creamSplatter.drawDarkenedImage(canvas, location2.getXCoord(), location2.getYCoord());
 
                 //stuff that happens when game is complete
                 int value = sticker.drawAnimation(canvas);
@@ -177,7 +182,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     isTouchingScreen = true;
                     xCoord = X;
                     yCoord = Y;
-
+                    SoundEffects.playSound(1);
                 break;
             case MotionEvent.ACTION_MOVE:
                     xCoord = X;
@@ -192,20 +197,35 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         return true;
     }
 
+    /**
+     * Set the current GameActivity to the one parameterised.
+     *
+     * @param  activity  the GameActivity to be set
+     */
     public void setGameActivity(GameActivity activity) {
         gameActivity = activity;
     }
 
+    /**
+     * Plays the 'victory chime' sound whenever called. Only plays it once.
+     */
     public void playVictorySound() {
         victorySoundPlayedAlready = true;
         SoundEffects.playSound(0);
     }
 
+    /**
+     * Plays the 'ding' sound whenever called. Only plays it once.
+     */
     public void playDingSound() {
         dingSoundPlayedAlready = true;
         SoundEffects.playSound(3);
     }
 
+    /**
+     * Creates and initialises all objects, usually the stuff that should be
+     * in the constructor
+     */
     public void initializeObjects() {
         background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
         characterArmSprite = new CharacterArmSprite(xOfScreen, yOfScreen, getResources(), isWhiteCharacter);
@@ -214,9 +234,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         creamTube = new CreamTubeSprite(getResources());
         sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
         creamSplatter = new CreamSplatter(getResources());
-//        path = new Path();
     }
 
+    /**
+     * Creates and initialises the paint that is used to change
+     * the opacity of the cream splatter
+     */
     public void initializePaint() {
         creamPaint = new Paint();
         creamPaint.setStyle(Paint.Style.STROKE);
@@ -230,6 +253,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         betaPaint.setAlpha(0);
     }
 
+    /**
+     * Draws the background of the game and the characters arm
+     */
     public void drawInitialImages() {
         background.draw(canvas);
         characterArmSprite.draw(canvas);

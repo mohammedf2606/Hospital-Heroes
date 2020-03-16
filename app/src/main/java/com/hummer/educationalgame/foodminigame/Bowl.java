@@ -1,0 +1,33 @@
+package com.hummer.educationalgame.foodminigame;
+
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+
+class Bowl {
+    private Bitmap bowlImage;
+    private int mX;
+    private int mY;
+
+    int getX() {
+        return mX;
+    }
+
+    int getY() {
+        return mY;
+    }
+
+
+    Bowl(Bitmap bowlImage, int viewWidth, int viewHeight) {
+        this.bowlImage = bowlImage;
+        mX = viewWidth / 2;
+        mY = viewHeight - 166;
+    }
+
+    void update(int newX, int newY) {
+        mX = newX;
+    }
+
+    void draw(Canvas canvas){
+        canvas.drawBitmap(bowlImage, mX, mY, null);
+    }
+}

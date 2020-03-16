@@ -20,6 +20,11 @@ public class MainThread extends Thread {
     private boolean running;
     public static Canvas canvas;
 
+    /**
+     * The constructor for the class 'MainThread'
+     * @param surfaceHolder The SurfaceHolder the thread is associated with
+     * @param gameView The GameView object the thread works for
+     */
     public MainThread(SurfaceHolder surfaceHolder, GameView gameView) {
         super();
         this.surfaceHolder = surfaceHolder;
@@ -51,6 +56,11 @@ public class MainThread extends Thread {
         }
     }
 
+    /**
+     * Sets the boolean 'running' to the parameter.
+     *
+     * @param  isRunning  the boolean, true if the thread is running.
+     */
     public void setRunning(boolean isRunning) {
         running = isRunning;
     }

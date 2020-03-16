@@ -23,23 +23,35 @@ import com.hummer.educationalgame.R;
 public class HospitalBackground {
     private Bitmap image;
 
+    /**
+     *  The constructor for the class 'HospitalBackground'
+     * @param x The width of the screen
+     * @param y The height of the screen
+     * @param resources The resources associated with the package
+     */
     public HospitalBackground(int x, int y, Resources resources) {
-        image = BitmapFactory.decodeResource(resources, R.drawable.hospitalroom);
+        image = BitmapFactory.decodeResource(resources, R.drawable.injectionroombackground);
         image = Bitmap.createScaledBitmap(image, x, y, false);
     }
 
+    /**
+     * Draws the bitmap image onto the canvas
+     *
+     * @param  canvas  the canvas the image is to be drawn onto
+     */
     public void draw(Canvas canvas) {
         canvas.drawBitmap(image, 0, 0, null);
     }
 
+    /**
+     * Draws a darkened version of the image onto the canvas
+     *
+     * @param  canvas  the canvas the image is to be drawn onto
+     */
     public void drawDarkenedImage(Canvas canvas) {
         Paint p = new Paint(Color.RED);
         ColorFilter filter = new LightingColorFilter(0xFF7F7F7F, 0x00000000);    // darken
         p.setColorFilter(filter);
         canvas.drawBitmap(image, 0, 0, p);
-    }
-
-    public void update() {
-
     }
 }
