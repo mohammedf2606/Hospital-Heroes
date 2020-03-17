@@ -82,7 +82,7 @@
         <ImageView
             android:layout_width="300dp"
             android:layout_height="200dp"
-            android:src="@drawable/girl_character"
+            android:src="@drawable/girl_2"
             android:contentDescription="@string/girl_character_2" />
         <Button
             android:id="@+id/girl2"
