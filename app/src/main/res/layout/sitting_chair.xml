@@ -49,12 +49,12 @@
 
         <ImageButton
             android:id="@+id/cream"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/hashbrown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:background="@android:color/transparent"
-            android:layout_centerInParent="true" />
+            android:scaleType="fitXY"
+            android:src="@drawable/creamtube" />
 
     </RelativeLayout>
 
@@ -73,7 +73,6 @@
             android:layout_width="300dp"
             android:layout_height="400dp"
             android:scaleType="fitXY"
-            android:src="@drawable/hashbrown"
             android:background="@android:color/transparent"
             android:layout_centerInParent="true" />
 

@@ -30,10 +30,9 @@ public class InjectionRoom extends Activity implements View.OnClickListener {
         setContentView(R.layout.injection_room);
 
         character = findViewById(R.id.character);
-        character.setImageResource(Constants.getPlayerCharacter());
+        character.setImageResource(Constants.getPlayerStanding());
 
         chair = (ImageButton) findViewById(R.id.chair);
-
         chair.setOnClickListener(this);
 
         halo = (LinearLayout) findViewById(R.id.halo);

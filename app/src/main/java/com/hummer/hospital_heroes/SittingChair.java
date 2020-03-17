@@ -7,12 +7,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.hummer.hospital_heroes.cream_minigame.*;
 
 public class SittingChair extends Activity implements View.OnClickListener {
 
     ImageButton cream;
+    ImageView chair;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,9 @@ public class SittingChair extends Activity implements View.OnClickListener {
 
         cream = findViewById(R.id.cream);
         cream.setOnClickListener(this);
+
+        chair = findViewById(R.id.chair);
+        chair.setImageResource(Constants.getPlayerChair());
     }
 
     @Override
