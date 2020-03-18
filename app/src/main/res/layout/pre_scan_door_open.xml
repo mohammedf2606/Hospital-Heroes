@@ -22,16 +22,7 @@
             android:layout_height="match_parent"
             android:contentDescription="@string/pre_scan_room"
             android:scaleType="fitXY"
-            android:src="@drawable/pre_scan" />
-
-        <Button
-            android:id="@+id/scan_door"
-            android:layout_width="165dp"
-            android:layout_height="373dp"
-            android:background="@android:color/transparent"
-            android:scaleType="fitXY"
-            android:translationX="200dp"
-            android:translationY="130dp" />
+            android:src="@drawable/pre_scan_1" />
 
     </RelativeLayout>
 

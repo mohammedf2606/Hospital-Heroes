@@ -11,12 +11,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class ScanRoom extends Activity implements View.OnClickListener {
 
     ImageButton scanner;
-    LinearLayout halo;
+    ImageView halo_right, halo_left;
     AnimatorSet animatorSet;
 
     @Override
@@ -31,16 +32,22 @@ public class ScanRoom extends Activity implements View.OnClickListener {
 
         scanner.setOnClickListener(this);
 
-        halo = (LinearLayout) findViewById(R.id.halo);
+        halo_right = (ImageView) findViewById(R.id.halo_right);
+        halo_left = (ImageView) findViewById(R.id.halo_left);
         animatorSet = new AnimatorSet();
 
-        ObjectAnimator fadeAway = ObjectAnimator.ofFloat(halo, "alpha",0.5f,0.1f);
+        ObjectAnimator fadeAway = ObjectAnimator.ofFloat(halo_right, "alpha",0.5f,0.1f);
         fadeAway.setDuration(500);
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(halo_right, "alpha",0.1f,0.5f);
+        fadeIn.setDuration(500);
 
-        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(halo, "alpha",0.1f,0.5f);
+        ObjectAnimator fadeAway2 = ObjectAnimator.ofFloat(halo_left, "alpha",0.5f,0.1f);
+        fadeAway.setDuration(500);
+        ObjectAnimator fadeIn2 = ObjectAnimator.ofFloat(halo_left, "alpha",0.1f,0.5f);
         fadeIn.setDuration(500);
 
         animatorSet.play(fadeIn).after(fadeAway);
+        animatorSet.play(fadeIn2).after(fadeAway2);
 
         animatorSet.addListener(new AnimatorListenerAdapter() {
             @Override

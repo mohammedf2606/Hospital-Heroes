@@ -31,7 +31,7 @@
             android:layout_width="312dp"
             android:layout_height="437dp"
             android:scaleType="fitXY"
-            android:src="@drawable/nurse"
+            android:src="@drawable/nurse_2"
             tools:layout_editor_absoluteX="585dp"
             tools:layout_editor_absoluteY="143dp"
             android:contentDescription="@string/nurse" />

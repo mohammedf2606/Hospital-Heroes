@@ -11,9 +11,49 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/scanning_room"
+        android:src="@drawable/scanner_room_background"
         tools:layout_editor_absoluteX="366dp"
         tools:layout_editor_absoluteY="223dp" />
+
+    <RelativeLayout
+        android:layout_width="940dp"
+        android:layout_height="547dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <ImageView
+            android:id="@+id/halo_left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.9"
+            android:orientation="horizontal"
+            android:scaleType="fitXY"
+            android:src="@drawable/scanner_halo_left" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="938dp"
+        android:layout_height="525dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <ImageView
+            android:id="@+id/halo_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.9"
+            android:orientation="horizontal"
+            android:scaleType="fitXY"
+            android:src="@drawable/scanner_halo_right" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="900dp"
@@ -23,23 +63,20 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <LinearLayout
-            android:id="@+id/halo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.1"
-            android:background="@drawable/smooth_rectangle"
-            android:orientation="horizontal"/>
 
         <ImageButton
             android:id="@+id/scanner"
-            android:layout_width="847dp"
-            android:layout_height="452dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:scaleType="fitXY"
             android:src="@drawable/scanner"
             android:background="@android:color/transparent"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

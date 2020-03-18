@@ -23,7 +23,7 @@
             android:layout_width="300dp"
             android:layout_height="400dp"
             android:scaleType="fitXY"
-            android:src="@drawable/nurse"
+            android:src="@drawable/nurse_2"
             android:background="@android:color/transparent"
             android:layout_centerInParent="true" />
 
