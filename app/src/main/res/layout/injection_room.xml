@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.1"
-            android:background="@drawable/smooth_rectangle"
+            android:background="@drawable/injection_chair_halo"
             android:orientation="horizontal"/>
 
         <ImageButton
