@@ -7,6 +7,8 @@ import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.hummer.hospital_heroes.R;
+
 
 /**
  * InjectionMainActivity is the class of the game that represents the main activity. It builds
@@ -36,6 +38,8 @@ public class InjectionMainActivity extends Activity
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         InjectionConstants.SCREEN_WIDTH = dm.widthPixels;
         InjectionConstants.SCREEN_HEIGHT = dm.heightPixels;
+
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
 
         setContentView(gamePanel);
         gamePanel.setGameActivity(this);

@@ -20,6 +20,8 @@ public class InjectionMainMenu extends Activity
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.injectionminigame);
 
         findViewById(R.id.playButton).setOnClickListener(new View.OnClickListener() {
