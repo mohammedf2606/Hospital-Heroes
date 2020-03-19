@@ -18,6 +18,9 @@ public class PlateActivity extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         plateView = (PlateView) findViewById(R.id.plate_view);
+
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
+
         setContentView(R.layout.plate_minigame);
     }
 }

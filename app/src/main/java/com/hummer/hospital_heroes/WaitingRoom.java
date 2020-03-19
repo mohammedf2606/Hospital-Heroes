@@ -24,6 +24,9 @@ public class WaitingRoom extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.waiting_room);
 
         timers.add(0, R.drawable.waiting_room_00);

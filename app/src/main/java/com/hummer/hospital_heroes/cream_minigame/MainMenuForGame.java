@@ -29,6 +29,8 @@ public class MainMenuForGame extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.creamminigamebackground);
 
         findViewById(R.id.playButton).setOnClickListener(new View.OnClickListener() {
