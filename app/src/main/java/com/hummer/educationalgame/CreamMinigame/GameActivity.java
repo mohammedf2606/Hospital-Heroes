@@ -38,6 +38,8 @@ public class GameActivity extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
+
         setContentView(gameView);
         gameView.setGameActivity(this);
     }
