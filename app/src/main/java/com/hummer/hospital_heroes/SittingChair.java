@@ -17,7 +17,7 @@ import com.hummer.hospital_heroes.cream_minigame.*;
 public class SittingChair extends Activity implements View.OnClickListener {
 
     ImageButton cream;
-    ImageView chair;
+    ImageView chair, parent;
     private AnimatorSet animatorSet;
     private LinearLayout halo;
 
@@ -41,6 +41,13 @@ public class SittingChair extends Activity implements View.OnClickListener {
 
         chair = findViewById(R.id.chair);
         chair.setImageResource(Constants.getPlayerChair());
+
+        parent = (ImageView) findViewById(R.id.parent);
+        if(Constants.isBlack()) {
+            parent.setImageResource(R.drawable.mother_black);
+        } else {
+            parent.setImageResource(R.drawable.mother_white);
+        }
 
         halo = (LinearLayout) findViewById(R.id.halo);
         animatorSet = new AnimatorSet();

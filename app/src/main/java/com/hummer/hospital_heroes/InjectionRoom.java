@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 public class InjectionRoom extends Activity implements View.OnClickListener {
 
     ImageButton chair;
-    ImageView character;
+    ImageView character, parent;
     LinearLayout halo;
     AnimatorSet animatorSet;
 
@@ -39,6 +39,13 @@ public class InjectionRoom extends Activity implements View.OnClickListener {
 
         chair = (ImageButton) findViewById(R.id.chair);
         chair.setOnClickListener(this);
+
+        parent = (ImageView) findViewById(R.id.parent);
+        if(Constants.isBlack()) {
+            parent.setImageResource(R.drawable.mother_black);
+        } else {
+            parent.setImageResource(R.drawable.mother_white);
+        }
 
         halo = (LinearLayout) findViewById(R.id.halo);
         animatorSet = new AnimatorSet();

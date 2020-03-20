@@ -29,4 +29,5 @@
     <string name="waiting_room">Waiting Room</string>
     <string name="injection_room">Injection Room</string>
     <string name="chair">Chair</string>
+    <string name="parent">parent</string>
     #</resources>

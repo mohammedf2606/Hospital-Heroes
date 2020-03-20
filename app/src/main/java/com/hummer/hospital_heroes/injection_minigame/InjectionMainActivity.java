@@ -6,12 +6,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 
-<<<<<<< HEAD
-import com.hummer.hospital_heroes.cream_minigame.GameView;
-=======
 import com.hummer.hospital_heroes.R;
-
->>>>>>> 6d080cd10476dda82d1f8f6c93f0e48c6c56ddf9
 
 /**
  * InjectionMainActivity is the class of the game that represents the main activity. It builds
