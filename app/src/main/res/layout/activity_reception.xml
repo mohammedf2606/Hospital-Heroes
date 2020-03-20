@@ -30,10 +30,10 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/nurse"
+            android:contentDescription="@string/nurse"
+            android:src="@drawable/receptionist"
             tools:layout_editor_absoluteX="585dp"
-            tools:layout_editor_absoluteY="143dp"
-            android:contentDescription="@string/nurse" />
+            tools:layout_editor_absoluteY="143dp" />
 
         <Button
             android:id="@+id/receptionist"

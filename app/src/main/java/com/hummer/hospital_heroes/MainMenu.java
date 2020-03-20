@@ -1,12 +1,10 @@
 package com.hummer.hospital_heroes;
 
-import android.animation.AnimatorSet;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 
 public class MainMenu extends Activity implements View.OnClickListener {
 
