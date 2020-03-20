@@ -3,8 +3,6 @@ package com.hummer.hospital_heroes.food_minigame;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.hummer.hospital_heroes.R;
 
