@@ -8,7 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class CharacterSelection extends Activity implements View.OnClickListener{
+public class CharacterSelection extends AppActivity implements View.OnClickListener{
 
     Button boy1, boy2, girl1, girl2;
 

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class MainMenu extends Activity implements View.OnClickListener {
+public class MainMenu extends AppActivity implements View.OnClickListener {
 
     ImageButton injection_menu, food_menu;
 

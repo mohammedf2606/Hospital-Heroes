@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-public class PreScan extends Activity {
+public class PreScan extends AppActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

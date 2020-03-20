@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +13,7 @@ import android.widget.LinearLayout;
 
 import com.hummer.hospital_heroes.cream_minigame.*;
 
-public class SittingChair extends Activity implements View.OnClickListener {
+public class SittingChair extends AppActivity implements View.OnClickListener {
 
     ImageButton cream;
     ImageView chair, parent;

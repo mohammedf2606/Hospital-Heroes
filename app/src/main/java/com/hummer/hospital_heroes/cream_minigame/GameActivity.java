@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 
+import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.R;
 import com.hummer.hospital_heroes.WaitingRoom;
 
@@ -19,7 +20,7 @@ import com.hummer.hospital_heroes.WaitingRoom;
  * @author Jawad Zeidan
  * @version 1.0
  */
-public class GameActivity extends Activity {
+public class GameActivity extends AppActivity {
 
     private GameView gameView;
 

@@ -11,7 +11,7 @@ import android.widget.Button;
 import com.hummer.hospital_heroes.food_minigame.MainGameActivity;
 
 
-public class FoodSelection extends Activity implements View.OnClickListener {
+public class FoodSelection extends AppActivity implements View.OnClickListener {
 
     Button milk, hash_brown, beans;
 

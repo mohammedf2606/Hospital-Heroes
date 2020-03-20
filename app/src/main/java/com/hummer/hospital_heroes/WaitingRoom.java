@@ -11,7 +11,7 @@ import com.hummer.hospital_heroes.injection_minigame.InjectionMainMenu;
 
 import java.util.ArrayList;
 
-public class WaitingRoom extends Activity {
+public class WaitingRoom extends AppActivity {
 
     ImageView waiting_room, character;
     ArrayList<Integer> timers = new ArrayList<>();

@@ -4,9 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.R;
 
-public class MainGameActivity extends Activity {
+public class MainGameActivity extends AppActivity {
 
     private GameView gameView;
 

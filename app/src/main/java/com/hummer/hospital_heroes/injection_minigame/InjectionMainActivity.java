@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 
+import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.R;
 
 /**
@@ -15,7 +16,7 @@ import com.hummer.hospital_heroes.R;
  * @author Fareed Faisal
  * @version 1.0
  */
-public class InjectionMainActivity extends Activity
+public class InjectionMainActivity extends AppActivity
 {
     private InjectionGamePanel gamePanel;
 

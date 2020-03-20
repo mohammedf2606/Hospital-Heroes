@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class InjectionRoom extends Activity implements View.OnClickListener {
+public class InjectionRoom extends AppActivity implements View.OnClickListener {
 
     ImageButton chair;
     ImageView character, parent;

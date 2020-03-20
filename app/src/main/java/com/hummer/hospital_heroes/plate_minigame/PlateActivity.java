@@ -4,9 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.R;
 
-public class PlateActivity extends Activity {
+public class PlateActivity extends AppActivity {
 
     private PlateView plateView;
 

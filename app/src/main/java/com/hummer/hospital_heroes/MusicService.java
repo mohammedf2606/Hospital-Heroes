@@ -52,6 +52,11 @@ public class MusicService extends Service {
         }, player.getDuration()+100);
     }
 
+    public static void stop() {
+        player.stop();
+        player.release();
+    }
+
     @Override
     public void onDestroy() {
         super.onDestroy();

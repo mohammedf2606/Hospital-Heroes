@@ -7,9 +7,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.R;
 
-public class InjectionMainMenu extends Activity
+public class InjectionMainMenu extends AppActivity
 {
 
     @Override
