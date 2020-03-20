@@ -27,4 +27,7 @@
     <string name="pre_scan_room">Pre-scan room</string>
     <string name="drag_the_butterfly">Drag the butterfly!</string>
     <string name="waiting_room">Waiting Room</string>
+    <string name="injection_room">Injection Room</string>
+    <string name="chair">Chair</string>
+    <string name="parent">parent</string>
     #</resources>
