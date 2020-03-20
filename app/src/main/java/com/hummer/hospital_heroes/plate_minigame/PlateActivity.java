@@ -21,6 +21,9 @@ public class PlateActivity extends Activity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         plateView = (PlateView) findViewById(R.id.plate_view);
+
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
+
         setContentView(R.layout.plate_minigame);
     }
 }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 
+import com.hummer.hospital_heroes.R;
 import com.hummer.hospital_heroes.WaitingRoom;
 
 /**
@@ -38,6 +39,8 @@ public class GameActivity extends Activity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
 
         setContentView(gameView);
         gameView.setGameActivity(this);

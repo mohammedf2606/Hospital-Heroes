@@ -11,8 +11,6 @@ import android.widget.LinearLayout;
 public class MainMenu extends Activity implements View.OnClickListener {
 
     ImageButton injection_menu, food_menu;
-    LinearLayout halo,halo2;
-    AnimatorSet animatorSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +22,9 @@ public class MainMenu extends Activity implements View.OnClickListener {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.menu);
 
         injection_menu = (ImageButton) findViewById(R.id.injection_menu);

@@ -27,6 +27,9 @@ public class WaitingRoom extends Activity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.waiting_room);
 
         timers.add(0, R.drawable.waiting_room_00);

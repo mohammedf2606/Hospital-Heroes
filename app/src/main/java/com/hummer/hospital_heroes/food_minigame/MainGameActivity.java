@@ -21,6 +21,9 @@ public class MainGameActivity extends Activity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         gameView = findViewById(R.id.game_view);
+
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
+
         setContentView(R.layout.food_minigame);
     }
 }

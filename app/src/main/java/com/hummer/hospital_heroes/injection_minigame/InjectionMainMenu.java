@@ -24,6 +24,8 @@ public class InjectionMainMenu extends Activity
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.injectionminigame);
 
         findViewById(R.id.playButton).setOnClickListener(new View.OnClickListener() {
