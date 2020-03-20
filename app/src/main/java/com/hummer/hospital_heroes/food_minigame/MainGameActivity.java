@@ -18,6 +18,9 @@ public class MainGameActivity extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         gameView = findViewById(R.id.game_view);
+
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
+
         setContentView(R.layout.food_minigame);
     }
 }

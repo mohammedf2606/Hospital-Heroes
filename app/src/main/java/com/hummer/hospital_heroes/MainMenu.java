@@ -26,6 +26,9 @@ public class MainMenu extends Activity implements View.OnClickListener {
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.menu);
 
         nurse = (ImageButton) findViewById(R.id.nurse);

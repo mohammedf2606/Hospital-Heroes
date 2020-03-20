@@ -19,6 +19,9 @@ public class CharacterSelection extends Activity implements View.OnClickListener
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.character_selection);
 
         boy1 = (Button) findViewById(R.id.boy1);

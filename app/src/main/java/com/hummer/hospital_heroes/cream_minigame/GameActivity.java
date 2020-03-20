@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.hummer.hospital_heroes.R;
 import com.hummer.hospital_heroes.WaitingRoom;
 
 /**
@@ -34,6 +35,8 @@ public class GameActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
 
         setContentView(gameView);
         gameView.setGameActivity(this);
