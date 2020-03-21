@@ -21,27 +21,11 @@ public abstract class AppActivity extends Activity {
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        ActivityManager activityManager = (ActivityManager) getApplicationContext()
-                .getSystemService(Context.ACTIVITY_SERVICE);
-
-        activityManager.moveTaskToFront(getTaskId(), 0);
-        MusicService.pause();
-    }
-
-    @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
         if (level == TRIM_MEMORY_UI_HIDDEN) {
             MusicService.stop();
         }
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        MusicService.resume();
     }
 
     @Override
