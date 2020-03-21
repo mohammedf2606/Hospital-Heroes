@@ -19,11 +19,15 @@ public class MusicService extends Service {
     private int i = 0;
 
     public static void pause() {
-        player.pause();
+        if(player != null) {
+            player.pause();
+        }
     }
 
     public static void resume() {
-        player.start();
+        if(player != null) {
+            player.start();
+        }
     }
 
     @Nullable
