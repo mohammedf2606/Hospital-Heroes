@@ -35,6 +35,8 @@ public class GameActivity extends AppActivity {
 
         overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
 
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
+
         setContentView(gameView);
         gameView.setGameActivity(this);
     }
