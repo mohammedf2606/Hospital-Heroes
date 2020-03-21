@@ -4,9 +4,10 @@ import android.app.Activity;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.View;
 
+import com.hummer.hospital_heroes.AppActivity;
+import com.hummer.hospital_heroes.R;
 
 /**
  * InjectionMainActivity is the class of the game that represents the main activity. It builds
@@ -15,7 +16,7 @@ import android.view.WindowManager;
  * @author Fareed Faisal
  * @version 1.0
  */
-public class InjectionMainActivity extends Activity
+public class InjectionMainActivity extends AppActivity
 {
     private InjectionGamePanel gamePanel;
 
@@ -24,18 +25,17 @@ public class InjectionMainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
 
-        Point point = new Point();
-        getWindowManager().getDefaultDisplay().getSize(point);
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
 
-        gamePanel = new InjectionGamePanel(this, point.x, point.y);
-
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        gamePanel = new InjectionGamePanel(this, displayMetrics.widthPixels, displayMetrics.heightPixels);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         InjectionConstants.SCREEN_WIDTH = dm.widthPixels;
         InjectionConstants.SCREEN_HEIGHT = dm.heightPixels;
+
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
 
         setContentView(gamePanel);
         gamePanel.setGameActivity(this);

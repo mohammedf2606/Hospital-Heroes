@@ -16,8 +16,8 @@
         android:contentDescription="@string/ripple" />
 
     <RelativeLayout
-        android:layout_width="475dp"
-        android:layout_height="425dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -25,29 +25,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0">
 
-        <LinearLayout
-            android:id="@+id/halo"
+        <ImageButton
+            android:id="@+id/food_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/smooth_rectangle"
-            android:alpha="0.1"
-            android:orientation="horizontal">
-        </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/girl_eating"
-            android:layout_width="450dp"
-            android:layout_height="400dp"
             android:scaleType="fitXY"
-            android:src="@drawable/girl_empty_plate"
+            android:src="@drawable/food_menu"
             android:background="@android:color/transparent"
             android:layout_centerInParent="true"
             android:contentDescription="@string/girl_eating" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="475dp"
-        android:layout_height="425dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -55,32 +46,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1">
 
-        <LinearLayout
-            android:id="@+id/halo2"
+        <ImageButton
+            android:id="@+id/injection_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:alpha="0.1"
-            android:background="@drawable/smooth_rectangle"
-            android:orientation="horizontal">
-        </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/nurse"
-            android:layout_width="450dp"
-            android:layout_height="400dp"
             android:scaleType="fitXY"
-            android:src="@drawable/nurse"
+            android:src="@drawable/injection_menu"
             android:background="@android:color/transparent"
             android:layout_centerInParent="true"
             android:contentDescription="@string/nurse" />
 
     </RelativeLayout>
-
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
