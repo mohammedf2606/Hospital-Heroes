@@ -33,4 +33,6 @@
     <string name="dialog_enter_password">Enter password to leave</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="password">Password</string>
+    <string name="login">login</string>
     #</resources>

@@ -18,6 +18,14 @@ public class MusicService extends Service {
     private Timer timer;
     private int i = 0;
 
+    public static void pause() {
+        player.pause();
+    }
+
+    public static void resume() {
+        player.start();
+    }
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
