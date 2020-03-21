@@ -7,76 +7,117 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="325dp"
-        android:layout_height="425dp"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/injection_room"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+        android:contentDescription="@string/injection_room" />
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8">
 
         <ImageView
             android:id="@+id/character"
-            android:layout_width="300dp"
-            android:layout_height="400dp"
-            android:scaleType="fitXY"
-            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:contentDescription="@string/nurse" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="325dp"
-        android:layout_height="425dp"
+        android:layout_width="225dp"
+        android:layout_height="325dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintVertical_bias="0.85">
 
         <LinearLayout
             android:id="@+id/halo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.1"
-            android:background="@drawable/smooth_rectangle"
+            android:background="@drawable/injection_chair_halo"
             android:orientation="horizontal"/>
-
-        <ImageButton
-            android:id="@+id/chair"
-            android:layout_width="300dp"
-            android:layout_height="400dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/hashbrown"
-            android:background="@android:color/transparent"
-            android:layout_centerInParent="true" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="325dp"
-        android:layout_height="425dp"
+        android:layout_width="225dp"
+        android:layout_height="325dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintVertical_bias="0.85">
+
+        <ImageButton
+            android:id="@+id/chair"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/injection_chair"
+            android:background="@android:color/transparent"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/chair" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="225dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95">
 
 
         <ImageButton
             android:id="@+id/nurse"
-            android:layout_width="300dp"
-            android:layout_height="400dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/nurse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
             android:background="@android:color/transparent"
-            android:layout_centerInParent="true"
-            android:contentDescription="@string/nurse" />
+            android:contentDescription="@string/nurse"
+            android:src="@drawable/radiologist" />
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9">
+
+        <ImageView
+            android:id="@+id/parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/parent" />
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

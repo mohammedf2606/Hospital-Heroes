@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.hummer.educationalgame">
+    package="com.hummer.hospital_heroes">
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
 
     <application
         android:allowBackup="true"
@@ -19,10 +20,12 @@
         <activity
             android:name=".MainActivity"
             android:noHistory="true"/>
-        <activity android:name=".CreamMinigame.MainMenuForGame"
+        <activity
+            android:name=".cream_minigame.MainMenuForGame"
             android:screenOrientation="landscape"
             android:noHistory="true"/>
-        <activity android:name=".CreamMinigame.GameActivity"
+        <activity
+            android:name=".cream_minigame.GameActivity"
             android:screenOrientation="landscape"
             android:noHistory="true"/>
         <activity
@@ -31,8 +34,9 @@
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -52,20 +56,32 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
+            android:name=".food_minigame.MainGameActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".plate_minigame.PlateActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
             android:name=".WaitingRoom"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name=".injectionminigame.InjectionMainActivity"
+            android:name=".injection_minigame.InjectionMainActivity"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
             android:name=".PreScan"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
-
-        <service android:name=".MusicService" />
-        <activity android:name=".injectionminigame.InjectionMainMenu" />
+        <activity
+            android:name=".injection_minigame.InjectionMainMenu"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <service
+            android:name=".MusicService"
+            android:stopWithTask="true"/>
     </application>
 
 </manifest>
