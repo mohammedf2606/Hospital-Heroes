@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 
+import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.R;
 
 /**
@@ -15,7 +16,7 @@ import com.hummer.hospital_heroes.R;
  * @author Fareed Faisal
  * @version 1.0
  */
-public class InjectionMainActivity extends Activity
+public class InjectionMainActivity extends AppActivity
 {
     private InjectionGamePanel gamePanel;
 
@@ -28,14 +29,6 @@ public class InjectionMainActivity extends Activity
         getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
 
         gamePanel = new InjectionGamePanel(this, displayMetrics.widthPixels, displayMetrics.heightPixels);
-
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
