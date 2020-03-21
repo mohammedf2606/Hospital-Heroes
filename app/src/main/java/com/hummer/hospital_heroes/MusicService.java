@@ -61,8 +61,10 @@ public class MusicService extends Service {
     }
 
     public static void stop() {
-        player.stop();
-        player.release();
+        if(player != null) {
+            player.stop();
+            player.release();
+        }
     }
 
     @Override

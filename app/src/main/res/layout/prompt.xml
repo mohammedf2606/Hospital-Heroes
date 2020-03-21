@@ -25,7 +25,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/dialog_login_loginBtn"
