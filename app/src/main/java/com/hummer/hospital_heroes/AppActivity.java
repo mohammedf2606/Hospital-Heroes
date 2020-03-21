@@ -1,8 +1,11 @@
 package com.hummer.hospital_heroes;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 
 public abstract class AppActivity extends Activity {
 
@@ -21,6 +24,17 @@ public abstract class AppActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
         MusicService.stop();
+    }
+
+    @Override
+    protected void onUserLeaveHint() {
+        super.onUserLeaveHint();
+        onBackPressed();
     }
 }

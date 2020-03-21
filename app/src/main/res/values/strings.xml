@@ -30,4 +30,7 @@
     <string name="injection_room">Injection Room</string>
     <string name="chair">Chair</string>
     <string name="parent">parent</string>
+    <string name="dialog_enter_password">Enter password to leave</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
     #</resources>
