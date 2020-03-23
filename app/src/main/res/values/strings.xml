@@ -25,11 +25,15 @@
     <string name="hospital_room">Hospital Room</string>
     <string name="play">Play</string>
     <string name="pre_scan_room">Pre-scan room</string>
-<<<<<<< HEAD
     <string name="pre_scan_room_entering_door" />
-</resources>
-=======
     <string name="drag_the_butterfly">Drag the butterfly!</string>
     <string name="waiting_room">Waiting Room</string>
-    #</resources>
->>>>>>> bd5f39c38d640068efccf61b9a9bac265ac6b6a4
+    <string name="injection_room">Injection Room</string>
+    <string name="chair">Chair</string>
+    <string name="parent">parent</string>
+    <string name="dialog_enter_password">Enter password to leave</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="password">Password</string>
+    <string name="login">login</string>
+    </resources>

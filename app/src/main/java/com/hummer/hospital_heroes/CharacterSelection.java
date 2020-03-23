@@ -8,16 +8,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class CharacterSelection extends Activity implements View.OnClickListener{
+public class CharacterSelection extends AppActivity implements View.OnClickListener{
 
     Button boy1, boy2, girl1, girl2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.character_selection);
 
         boy1 = (Button) findViewById(R.id.boy1);
@@ -27,7 +27,7 @@ public class CharacterSelection extends Activity implements View.OnClickListener
         boy2.setOnClickListener(this);
 
         girl1 = (Button) findViewById(R.id.girl1);
-        boy1.setOnClickListener(this);
+        girl1.setOnClickListener(this);
 
         girl2 = (Button) findViewById(R.id.girl2);
         girl2.setOnClickListener(this);
@@ -38,23 +38,27 @@ public class CharacterSelection extends Activity implements View.OnClickListener
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.boy1:
-                Constants.setPlayerCharacter(R.drawable.boy_1);
-                Constants.setPlayerSitting(R.drawable.boy_chair);
+                Constants.setPlayerStanding(R.drawable.boy_1_stand);
+                Constants.setPlayerChair(R.drawable.boy_1_chair);
+                Constants.setPlayerSitting(R.drawable.boy_1_sit);
                 Constants.setIsBlack(false);
                 break;
             case R.id.boy2:
-                Constants.setPlayerCharacter(R.drawable.boy_2);
-                Constants.setPlayerSitting(R.drawable.boy_chair);
+                Constants.setPlayerStanding(R.drawable.boy_2_stand);
+                Constants.setPlayerChair(R.drawable.boy_2_chair);
+                Constants.setPlayerSitting(R.drawable.boy_2_sit);
                 Constants.setIsBlack(true);
                 break;
             case R.id.girl1:
-                Constants.setPlayerCharacter(R.drawable.girl_1);
-                Constants.setPlayerSitting(R.drawable.girl_chair);
+                Constants.setPlayerStanding(R.drawable.girl_1_stand);
+                Constants.setPlayerChair(R.drawable.girl_1_chair);
+                Constants.setPlayerSitting(R.drawable.girl_1_sit);
                 Constants.setIsBlack(false);
                 break;
             case R.id.girl2:
-                Constants.setPlayerCharacter(R.drawable.girl_2);
-                Constants.setPlayerSitting(R.drawable.girl_chair);
+                Constants.setPlayerStanding(R.drawable.girl_2_stand);
+                Constants.setPlayerChair(R.drawable.girl_2_chair);
+                Constants.setPlayerSitting(R.drawable.girl_2_sit);
                 Constants.setIsBlack(true);
                 break;
         }

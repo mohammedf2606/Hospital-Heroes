@@ -3,6 +3,7 @@ package com.hummer.hospital_heroes;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.os.Handler;
 import android.view.View;
 import android.view.Window;
@@ -18,13 +19,18 @@ public class PreScan extends Activity implements View.OnClickListener{
 
     Button scan_room;
     int i = 0;
+=======
+import android.view.View;
+
+public class PreScan extends AppActivity {
+>>>>>>> 34882dc653dd04d3f38ae561a0bc34adc9590a59
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.pre_scan);
 
 

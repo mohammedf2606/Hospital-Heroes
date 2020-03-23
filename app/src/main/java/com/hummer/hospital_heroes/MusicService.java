@@ -18,21 +18,23 @@ public class MusicService extends Service {
     private Timer timer;
     private int i = 0;
 
+    public static void pause() {
+        if(player != null) {
+            player.pause();
+        }
+    }
+
+    public static void resume() {
+        if(player != null) {
+            player.start();
+        }
+    }
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
-
-    @Override
-    public boolean onUnbind(Intent intent) {
-        timer.cancel();
-        player.stop();
-        player.release();
-        return super.onUnbind(intent);
-    }
-
-
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -62,8 +64,11 @@ public class MusicService extends Service {
         }, player.getDuration()+100);
     }
 
-    public static void pause() {
-        player.pause();
+    public static void stop() {
+        if(player != null) {
+            player.stop();
+            player.release();
+        }
     }
 
     @Override
