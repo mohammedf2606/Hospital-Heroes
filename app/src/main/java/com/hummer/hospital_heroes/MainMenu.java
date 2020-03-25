@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.hummer.hospital_heroes.injection_minigame.InjectionMainMenu;
+
 public class MainMenu extends AppActivity implements View.OnClickListener {
 
     ImageButton injection_menu, food_menu;
@@ -35,7 +37,7 @@ public class MainMenu extends AppActivity implements View.OnClickListener {
                 Constants.setIsFood(true);
                 break;
         }
-        Intent main_page = new Intent(MainMenu.this, MainActivity.class);
+        Intent main_page = new Intent(MainMenu.this, InjectionMainMenu.class);
         SoundEffects.initSounds(MainMenu.this);
         startService(new Intent(MainMenu.this, MusicService.class));
         startActivity(main_page);
