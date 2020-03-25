@@ -76,7 +76,7 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
         injectionArm = new CharacterArmSprite(xOfScreen, yOfScreen, getResources(), isWhiteCharacter);
         injection = new Injection(getResources());
-        injectionBody = new InjectionBody(xOfScreen/8 - 20, yOfScreen/3 - 20, getResources());
+        injectionBody = new InjectionBody(xOfScreen/2 + 100, yOfScreen/3 + 100, getResources());
         sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
 
         //injectionPoint = new Point(3 * InjectionConstants.SCREEN_WIDTH / 4, InjectionConstants.SCREEN_HEIGHT / 4);
@@ -103,8 +103,15 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
             //if(!(xCoord == 0 || yCoord == 0 || gameOver)) {
                 int x2 = xCoord;
                 int y2 = yCoord - injection.getHeight();
-                injection.draw(canvas, x2, y2);
+                //injection.draw(canvas, x2, y2);
             //}
+            if(xCoord == 0 && yCoord == 0) {
+                injection.draw(canvas, xOfScreen/16, 2*yOfScreen/5 - injection.getHeight());
+            } else if(movingInjection) {
+                injection.draw(canvas,xCoord - injection.getWidth()/2, yCoord - injection.getHeight()/2);
+            } else {
+                injection.draw(canvas,xOfScreen/16, 2*yOfScreen/5 - injection.getHeight());
+            }
 
             if (gameOver) {
                 background.drawDarkenedImage(canvas);
