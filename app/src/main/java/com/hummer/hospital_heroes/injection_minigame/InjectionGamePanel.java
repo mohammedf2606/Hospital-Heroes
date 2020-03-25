@@ -87,7 +87,16 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-
+        boolean retry = true;
+        while(retry) {
+            try {
+                thread.setRunning(false);
+                thread.join();
+            } catch(InterruptedException ex) {
+                ex.printStackTrace();
+            }
+            retry = false;
+        }
     }
 
     @Override
