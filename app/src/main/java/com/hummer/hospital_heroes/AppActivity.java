@@ -1,6 +1,8 @@
 package com.hummer.hospital_heroes;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,8 +21,16 @@ public abstract class AppActivity extends Activity {
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        MusicService.stop();
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+        if (level == TRIM_MEMORY_UI_HIDDEN) {
+            MusicService.stop();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        LoginToApp loginToApp = LoginToApp.newInstance();
+        loginToApp.show(getFragmentManager(), LoginToApp.TAG);
     }
 }

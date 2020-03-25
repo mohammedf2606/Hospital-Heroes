@@ -23,11 +23,18 @@
     <string name="timer">Timer</string>
     <string name="chair_with_character">Chair with character</string>
     <string name="hospital_room">Hospital Room</string>
-    <string name="play">Play</string>
     <string name="pre_scan_room">Pre-scan room</string>
     <string name="drag_the_butterfly">Drag the butterfly!</string>
     <string name="waiting_room">Waiting Room</string>
     <string name="injection_room">Injection Room</string>
     <string name="chair">Chair</string>
     <string name="parent">parent</string>
+    <string name="dialog_enter_password">Enter password to leave</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="password">Password</string>
+    <string name="login">login</string>
+    <string name="background">Background</string>
+    <string name="apply_the_cream">Apply the cream!</string>
+    <string name="play">Play</string>
     #</resources>
