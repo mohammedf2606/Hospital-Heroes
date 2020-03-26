@@ -1,6 +1,9 @@
 package com.hummer.hospital_heroes;
 
 import android.content.res.Resources;
+
+import java.util.ArrayList;
+
 /**
  * Represents constants of the characters
  *
@@ -27,6 +30,8 @@ public class Constants
      * The value for the player sitting on the injection chair
      */
     private static int playerChair;
+
+    private static ArrayList<Integer> playerGettingStrapped = new ArrayList<>();
 
     public final static int SCREEN_HEIGHT = Resources.getSystem().getDisplayMetrics().heightPixels;
     public final static int SCREEN_WIDTH = Resources.getSystem().getDisplayMetrics().widthPixels;
@@ -65,6 +70,8 @@ public class Constants
         return playerChair;
     }
 
+    public static ArrayList getPlayerStraps(){ return playerGettingStrapped; }
+
     /**
      * @param playerChair the player sitting in a chair.
      */
@@ -90,7 +97,10 @@ public class Constants
         isBlack = b;
     }
 
+    public static void setPlayerGettingStrapped(int index, int strap) { playerGettingStrapped.add(index, strap); }
+
     public static boolean isBlack() {
         return isBlack;
     }
+
 }

@@ -1,10 +1,8 @@
 package com.hummer.hospital_heroes;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.hummer.hospital_heroes.injection_minigame.InjectionMainMenu;
@@ -52,6 +50,7 @@ public class WaitingRoom extends AppActivity {
                     handler.postDelayed(this, 500);
                 }
                 else {
+
                     try {
                         Thread.sleep(500);
                     } catch (InterruptedException e) {

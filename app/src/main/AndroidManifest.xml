@@ -74,6 +74,14 @@
         <activity
             android:name=".PreScan"
             android:noHistory="true"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ScanRoom"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".StrapToChair"
+            android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
             android:name=".injection_minigame.InjectionMainMenu"
