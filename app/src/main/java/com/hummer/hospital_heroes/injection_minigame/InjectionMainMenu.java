@@ -7,18 +7,17 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.R;
 
-public class InjectionMainMenu extends Activity
+public class InjectionMainMenu extends AppActivity
 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 
         setContentView(R.layout.injectionminigame);
 

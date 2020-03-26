@@ -8,16 +8,18 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class CharacterSelection extends Activity implements View.OnClickListener{
+import java.util.ArrayList;
+
+public class CharacterSelection extends AppActivity implements View.OnClickListener{
 
     Button boy1, boy2, girl1, girl2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
         setContentView(R.layout.character_selection);
 
         boy1 = (Button) findViewById(R.id.boy1);
@@ -27,7 +29,7 @@ public class CharacterSelection extends Activity implements View.OnClickListener
         boy2.setOnClickListener(this);
 
         girl1 = (Button) findViewById(R.id.girl1);
-        boy1.setOnClickListener(this);
+        girl1.setOnClickListener(this);
 
         girl2 = (Button) findViewById(R.id.girl2);
         girl2.setOnClickListener(this);
@@ -38,24 +40,48 @@ public class CharacterSelection extends Activity implements View.OnClickListener
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.boy1:
-                Constants.setPlayerCharacter(R.drawable.boy_1);
-                Constants.setPlayerSitting(R.drawable.boy_chair);
+                Constants.setPlayerStanding(R.drawable.boy_1_stand);
+                Constants.setPlayerChair(R.drawable.boy_1_chair);
+                Constants.setPlayerSitting(R.drawable.boy_1_sit);
                 Constants.setIsBlack(false);
+                Constants.setPlayerGettingStrapped(0,R.drawable.scanner_boyc1_0);
+                Constants.setPlayerGettingStrapped(1,R.drawable.scanner_boyc1_1);
+                Constants.setPlayerGettingStrapped(2,R.drawable.scanner_boyc1_2);
+                Constants.setPlayerGettingStrapped(3,R.drawable.scanner_boyc1_3);
+                Constants.setPlayerGettingStrapped(4,R.drawable.scanner_boyc1_4);
                 break;
             case R.id.boy2:
-                Constants.setPlayerCharacter(R.drawable.boy_2);
-                Constants.setPlayerSitting(R.drawable.boy_chair);
+                Constants.setPlayerStanding(R.drawable.boy_2_stand);
+                Constants.setPlayerChair(R.drawable.boy_2_chair);
+                Constants.setPlayerSitting(R.drawable.boy_2_sit);
                 Constants.setIsBlack(true);
+                Constants.setPlayerGettingStrapped(0,R.drawable.scanner_boyc2_0);
+                Constants.setPlayerGettingStrapped(1,R.drawable.scanner_boyc2_1);
+                Constants.setPlayerGettingStrapped(2,R.drawable.scanner_boyc2_2);
+                Constants.setPlayerGettingStrapped(3,R.drawable.scanner_boyc2_3);
+                Constants.setPlayerGettingStrapped(4,R.drawable.scanner_boyc2_4);
                 break;
             case R.id.girl1:
-                Constants.setPlayerCharacter(R.drawable.girl_1);
-                Constants.setPlayerSitting(R.drawable.girl_chair);
+                Constants.setPlayerStanding(R.drawable.girl_1_stand);
+                Constants.setPlayerChair(R.drawable.girl_1_chair);
+                Constants.setPlayerSitting(R.drawable.girl_1_sit);
                 Constants.setIsBlack(false);
+                Constants.setPlayerGettingStrapped(0,R.drawable.scanner_girlc1_0);
+                Constants.setPlayerGettingStrapped(1,R.drawable.scanner_girlc1_1);
+                Constants.setPlayerGettingStrapped(2,R.drawable.scanner_girlc1_2);
+                Constants.setPlayerGettingStrapped(3,R.drawable.scanner_girlc1_3);
+                Constants.setPlayerGettingStrapped(4,R.drawable.scanner_girlc1_4);
                 break;
             case R.id.girl2:
-                Constants.setPlayerCharacter(R.drawable.girl_2);
-                Constants.setPlayerSitting(R.drawable.girl_chair);
+                Constants.setPlayerStanding(R.drawable.girl_2_stand);
+                Constants.setPlayerChair(R.drawable.girl_2_chair);
+                Constants.setPlayerSitting(R.drawable.girl_2_sit);
                 Constants.setIsBlack(true);
+                Constants.setPlayerGettingStrapped(0,R.drawable.scanner_girlc2_0);
+                Constants.setPlayerGettingStrapped(1,R.drawable.scanner_girlc2_1);
+                Constants.setPlayerGettingStrapped(2,R.drawable.scanner_girlc2_2);
+                Constants.setPlayerGettingStrapped(3,R.drawable.scanner_girlc2_3);
+                Constants.setPlayerGettingStrapped(4,R.drawable.scanner_girlc2_4);
                 break;
         }
         if(Constants.isFood()) {
@@ -67,4 +93,5 @@ public class CharacterSelection extends Activity implements View.OnClickListener
             startActivity(injection_room);
         }
     }
+
 }
