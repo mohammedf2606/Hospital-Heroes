@@ -84,9 +84,22 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
+            android:name=".rocket_minigame.MainMenu"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".rocket_minigame.GameActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
             android:name=".injection_minigame.InjectionMainMenu"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
+        <activity
+            android:name=".EndScreen"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+
         <service
             android:name=".MusicService"
             android:stopWithTask="true"/>

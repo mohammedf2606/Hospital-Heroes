@@ -70,7 +70,7 @@ public class Constants
         return playerChair;
     }
 
-    public static ArrayList getPlayerStraps(){ return playerGettingStrapped; }
+    public static ArrayList<Integer> getPlayerStraps(){ return playerGettingStrapped; }
 
     /**
      * @param playerChair the player sitting in a chair.

@@ -50,17 +50,11 @@ public class WaitingRoom extends AppActivity {
                     handler.postDelayed(this, 500);
                 }
                 else {
-
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                     Intent injection_minigame = new Intent(WaitingRoom.this, InjectionMainMenu.class);
                     startActivity(injection_minigame);
                 }
             }
-        }, 500);
+        }, 0);
     }
 
 

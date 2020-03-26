@@ -131,7 +131,7 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
                 if (value == sticker.getWidth())
                 {
                     try {
-                        thread.sleep(3000);
+                        Thread.sleep(3000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
