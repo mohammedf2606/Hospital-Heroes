@@ -37,7 +37,7 @@ public class MainMenu extends AppActivity implements View.OnClickListener {
                 Constants.setIsFood(true);
                 break;
         }
-        Intent main_page = new Intent(MainMenu.this, InjectionMainMenu.class);
+        Intent main_page = new Intent(MainMenu.this, MainMenu.class);
         SoundEffects.initSounds(MainMenu.this);
         startService(new Intent(MainMenu.this, MusicService.class));
         startActivity(main_page);
