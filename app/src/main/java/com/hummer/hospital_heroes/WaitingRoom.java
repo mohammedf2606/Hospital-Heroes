@@ -3,14 +3,9 @@ package com.hummer.hospital_heroes;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-<<<<<<< HEAD
-import android.view.View;
-=======
->>>>>>> 851128b6d01fc059033cf7d83d54ad790b3ac364
 import android.widget.ImageView;
 
 import com.hummer.hospital_heroes.injection_minigame.InjectionMainMenu;
-
 
 import java.util.ArrayList;
 
@@ -55,17 +50,11 @@ public class WaitingRoom extends AppActivity {
                     handler.postDelayed(this, 500);
                 }
                 else {
-
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                     Intent injection_minigame = new Intent(WaitingRoom.this, InjectionMainMenu.class);
                     startActivity(injection_minigame);
                 }
             }
-        }, 500);
+        }, 0);
     }
 
 

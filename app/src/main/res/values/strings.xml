@@ -23,16 +23,11 @@
     <string name="chair_with_character">Chair with character</string>
     <string name="hospital_room">Hospital Room</string>
     <string name="pre_scan_room">Pre-scan room</string>
-<<<<<<< HEAD
     <string name="star_background">Star background</string>
     <string name="fly_the_rocket">Fly the rocket!</string>
     <string name="drag_the_butterfly">Drag the butterfly!</string>
     <string name="waiting_room">Waiting Room</string>
-</resources>
-=======
     <string name="pre_scan_room_entering_door" />
-    <string name="drag_the_butterfly">Drag the butterfly!</string>
-    <string name="waiting_room">Waiting Room</string>
     <string name="injection_room">Injection Room</string>
     <string name="chair">Chair</string>
     <string name="parent">parent</string>
@@ -44,5 +39,4 @@
     <string name="background">Background</string>
     <string name="apply_the_cream">Apply the cream!</string>
     <string name="play">Play</string>
-    </resources>
->>>>>>> 851128b6d01fc059033cf7d83d54ad790b3ac364
+</resources>

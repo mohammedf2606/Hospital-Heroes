@@ -2,15 +2,9 @@ package com.hummer.hospital_heroes;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-=======
 import android.os.Handler;
-import android.view.View;
 import android.widget.Button;
->>>>>>> 851128b6d01fc059033cf7d83d54ad790b3ac364
 
 public class PreScan extends AppActivity implements View.OnClickListener{
 
@@ -52,7 +46,7 @@ public class PreScan extends AppActivity implements View.OnClickListener{
                     startActivity(scanRoom);
                 }
             }
-        }, 0000);
+        }, 0);
 
     }
 }

@@ -1,6 +1,5 @@
 package com.hummer.hospital_heroes;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,13 +14,6 @@ public class MainActivity extends AppActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-=======
->>>>>>> 851128b6d01fc059033cf7d83d54ad790b3ac364
 
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 

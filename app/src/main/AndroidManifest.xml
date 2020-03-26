@@ -95,6 +95,11 @@
             android:name=".injection_minigame.InjectionMainMenu"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
+        <activity
+            android:name=".EndScreen"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+
         <service
             android:name=".MusicService"
             android:stopWithTask="true"/>

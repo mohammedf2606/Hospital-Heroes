@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.hummer.hospital_heroes.rocket_minigame.MainMenu;
+
 import java.util.ArrayList;
 
 public class StrapToChair extends Activity implements View.OnClickListener {
@@ -30,7 +32,6 @@ public class StrapToChair extends Activity implements View.OnClickListener {
         strapping = (ImageButton) findViewById(R.id.strapping);
         strapping.setImageResource(differentStrap.get(i));
         strapping.setOnClickListener(this);
-
     }
 
 

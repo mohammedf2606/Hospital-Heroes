@@ -1,12 +1,12 @@
 package com.hummer.hospital_heroes.rocket_minigame;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.View;
 
-import com.hummer.hospital_heroes.WaitingRoom;
+import com.hummer.hospital_heroes.AppActivity;
+import com.hummer.hospital_heroes.EndScreen;
+import com.hummer.hospital_heroes.R;
 
 /**
  * GameActivity represents the class which contains the activity
@@ -17,7 +17,7 @@ import com.hummer.hospital_heroes.WaitingRoom;
  * @author Jawad Zeidan, Fahim Mohammed
  * @version 1.0
  */
-public class GameActivity extends Activity {
+public class GameActivity extends AppActivity {
 
     private GameView gameView;
 
@@ -25,13 +25,10 @@ public class GameActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
+
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
-
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
         gameView = new GameView(this, displayMetrics.widthPixels, displayMetrics.heightPixels);
 
@@ -43,7 +40,7 @@ public class GameActivity extends Activity {
      * Function used to move to next Activity
      */
     public void nextScene() {
-        Intent waiting_room = new Intent(GameActivity.this, WaitingRoom.class);
-        startActivity(waiting_room);
+        Intent end_screen = new Intent(GameActivity.this, EndScreen.class);
+        startActivity(end_screen);
     }
 }
