@@ -1,4 +1,4 @@
-package com.hummer.educationalgame;
+package com.hummer.hospital_heroes;
 
 import android.app.Activity;
 import android.os.Bundle;

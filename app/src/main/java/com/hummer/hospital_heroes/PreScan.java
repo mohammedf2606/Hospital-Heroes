@@ -1,29 +1,15 @@
 package com.hummer.hospital_heroes;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.os.Handler;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 
-import com.hummer.educationalgame.injectionminigame.InjectionMainActivity;
-
-import java.util.ArrayList;
-
-public class PreScan extends Activity implements View.OnClickListener{
+public class PreScan extends AppActivity implements View.OnClickListener{
 
     Button scan_room;
     int i = 0;
-=======
-import android.view.View;
-
-public class PreScan extends AppActivity {
->>>>>>> 34882dc653dd04d3f38ae561a0bc34adc9590a59
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

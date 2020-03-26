@@ -1,10 +1,8 @@
 package com.hummer.hospital_heroes;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.hummer.hospital_heroes.injection_minigame.InjectionMainMenu;
@@ -52,20 +50,13 @@ public class WaitingRoom extends AppActivity {
                     handler.postDelayed(this, 500);
                 }
                 else {
-<<<<<<< HEAD
-<<<<<<< HEAD:app/src/main/java/com/hummer/educationalgame/WaitingRoom.java
-                    // TODO: Fareed replace the 2nd parameter below with your MainActivity
-                    Intent injection_minigame = new Intent(WaitingRoom.this, PreScan.class);
-=======
-=======
+
                     try {
                         Thread.sleep(500);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
->>>>>>> 34882dc653dd04d3f38ae561a0bc34adc9590a59
                     Intent injection_minigame = new Intent(WaitingRoom.this, InjectionMainMenu.class);
->>>>>>> bd5f39c38d640068efccf61b9a9bac265ac6b6a4:app/src/main/java/com/hummer/hospital_heroes/WaitingRoom.java
                     startActivity(injection_minigame);
                 }
             }
