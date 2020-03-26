@@ -11,17 +11,13 @@ import android.widget.Button;
 import com.hummer.hospital_heroes.food_minigame.MainGameActivity;
 
 
-public class FoodSelection extends Activity implements View.OnClickListener {
+public class FoodSelection extends AppActivity implements View.OnClickListener {
 
     Button milk, hash_brown, beans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 

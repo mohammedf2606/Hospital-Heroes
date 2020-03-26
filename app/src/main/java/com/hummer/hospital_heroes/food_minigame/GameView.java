@@ -82,7 +82,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 //EndSticker endSticker = new EndSticker(sticker, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
                 //endSticker.draw(canvas);
                 try {
-                    thread.sleep(3000);
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

@@ -3,11 +3,8 @@ package com.hummer.hospital_heroes.cream_minigame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.R;
 
 /**
@@ -19,15 +16,11 @@ import com.hummer.hospital_heroes.R;
  * @version 1.0
  */
 
-public class MainMenuForGame extends AppCompatActivity {
+public class MainMenuForGame extends AppActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 
