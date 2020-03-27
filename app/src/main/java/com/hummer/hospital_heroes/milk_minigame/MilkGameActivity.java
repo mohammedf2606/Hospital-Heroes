@@ -1,18 +1,18 @@
-package com.hummer.hospital_heroes.food_minigame;
+package com.hummer.hospital_heroes.milk_minigame;
 
 import android.os.Bundle;
 import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.R;
 
-public class MainGameActivity extends AppActivity {
+public class MilkGameActivity extends AppActivity {
 
-    private GameView gameView;
+    private MilkGameView milkGameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        gameView = findViewById(R.id.game_view);
+        milkGameView = (MilkGameView) findViewById(R.id.milk_game_view);
         overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
-        setContentView(R.layout.food_minigame);
+        setContentView(R.layout.milk_minigame);
     }
 }

@@ -64,6 +64,10 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
+            android:name=".milk_minigame.MilkGameActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
             android:name=".WaitingRoom"
             android:noHistory="true"
             android:screenOrientation="landscape"/>

@@ -1,51 +1,49 @@
-package com.hummer.hospital_heroes.food_minigame;
+package com.hummer.hospital_heroes.milk_minigame;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.SurfaceView;
 import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.widget.ImageView;
 
-//import com.bumptech.glide.Glide;
 import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.R;
+import com.hummer.hospital_heroes.food_minigame.Bowl;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
 
-public class GameView extends SurfaceView implements SurfaceHolder.Callback {
+public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback {
     private Context mContext;
-    private MainThread thread;
-    private FoodSprite hashbrown;
-    private FoodSprite beans;
+    private MilkMainThread thread;
+    private MilkCarton milk;
     private Bowl bowl;
     private Bitmap background;
-    private ImageView imageView;
     static int score = 0;
 
-    public GameView(Context context, AttributeSet attributeSet){
+    public MilkGameView(Context context, AttributeSet attributeSet){
         super(context, attributeSet);
         this.mContext = context;
         getHolder().addCallback(this);
-        thread = new MainThread(getHolder(), this);
+        thread = new MilkMainThread(getHolder(), this);
         setFocusable(true);
+        System.out.println("Milk created");
     }
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        int width = Constants.SCREEN_WIDTH; //1024
-        int height = Constants.SCREEN_HEIGHT; //552
+        int width = Constants.SCREEN_WIDTH;
+        int height = Constants.SCREEN_HEIGHT;
         bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
-        hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), false);
-        beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);
+        milk = new MilkCarton(BitmapFactory.decodeResource(getResources(), R.drawable.milk2),
+                BitmapFactory.decodeResource(getResources(), R.drawable.milk_droplet));
         background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background_food), width, height,false);
 
-        thread.start();
         thread.setRunning(true);
+        thread.start();
         
     }
 
@@ -61,8 +59,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     public void update() {
         if (score < 11) {
-            hashbrown.update(bowl.getX(), bowl.getY());
-            beans.update(bowl.getX(), bowl.getY());
+            milk.update(bowl.getX(), bowl.getY());
         }
     }
 
@@ -78,8 +75,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         if(canvas != null){
             canvas.drawBitmap(background, 0, 0, null);
             bowl.draw(canvas);
-            hashbrown.drawFood(canvas);
-            beans.drawFood(canvas);
+            milk.drawFood(canvas);
 
             if (score >= 10) {
                 //Bitmap sticker = BitmapFactory.decodeResource(getResources(), R.drawable.sticker_gif);

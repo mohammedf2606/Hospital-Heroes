@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.hummer.hospital_heroes.food_minigame.MainGameActivity;
+import com.hummer.hospital_heroes.milk_minigame.MilkGameActivity;
 
 
 public class FoodSelection extends AppActivity implements View.OnClickListener {
@@ -34,11 +35,14 @@ public class FoodSelection extends AppActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-//            case R.id.milk:
-
+            case R.id.milk:
+                Intent milk_game = new Intent(FoodSelection.this, MilkGameActivity.class);
+                startActivity(milk_game);
+                break;
             case R.id.hash_browns:
                 Intent food_game = new Intent(FoodSelection.this, MainGameActivity.class);
                 startActivity(food_game);
+                break;
         }
     }
 }
