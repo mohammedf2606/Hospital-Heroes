@@ -1,11 +1,8 @@
 package com.hummer.hospital_heroes;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 
 import com.hummer.hospital_heroes.food_minigame.MainGameActivity;
@@ -23,10 +20,10 @@ public class FoodSelection extends AppActivity implements View.OnClickListener {
 
         setContentView(R.layout.food_selection);
 
-        milk = (Button) findViewById(R.id.milk_game);
+        milk = (Button) findViewById(R.id.milk);
         milk.setOnClickListener(this);
 
-        hash_brown = (Button) findViewById(R.id.food_game);
+        hash_brown = (Button) findViewById(R.id.hash_browns);
         hash_brown.setOnClickListener(this);
 
     }
@@ -36,7 +33,7 @@ public class FoodSelection extends AppActivity implements View.OnClickListener {
         switch (v.getId()) {
 //            case R.id.milk:
 
-            case R.id.food_game:
+            case R.id.hash_browns:
                 Intent food_game = new Intent(FoodSelection.this, MainGameActivity.class);
                 startActivity(food_game);
         }
