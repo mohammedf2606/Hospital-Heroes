@@ -42,15 +42,15 @@ public class MainMenuTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.girl_eating);
+        View view = mActivity.findViewById(R.id.food_menu);
         assertNotNull(view);
     }
 
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.nurse));
-        onView(withId(R.id.nurse)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.injection_menu));
+        onView(withId(R.id.injection_menu)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
@@ -60,7 +60,7 @@ public class MainMenuTest
     public void launch()
     {
         Intents.init();
-        Espresso.onView(withId(R.id.nurse)).perform(click());
+        Espresso.onView(withId(R.id.injection_menu)).perform(click());
         intended(hasComponent(MainActivity.class.getName()));
     }
 

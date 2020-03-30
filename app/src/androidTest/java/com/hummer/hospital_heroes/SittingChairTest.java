@@ -5,6 +5,7 @@ import android.app.Instrumentation;
 import android.view.View;
 
 import com.hummer.hospital_heroes.R;
+import com.hummer.hospital_heroes.cream_minigame.MainMenuForGame;
 
 import org.junit.After;
 import org.junit.Before;
@@ -28,7 +29,7 @@ public class SittingChairTest
     @Rule
     public ActivityTestRule<SittingChair> mActivityTestRule = new ActivityTestRule<SittingChair>(SittingChair.class);
     private SittingChair mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(WaitingRoom.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainMenuForGame.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
@@ -58,7 +59,7 @@ public class SittingChairTest
     {
         Intents.init();
         Espresso.onView(withId(R.id.cream)).perform(click());
-        intended(hasComponent(WaitingRoom.class.getName()));
+        intended(hasComponent(MainMenuForGame.class.getName()));
     }
 
     @After

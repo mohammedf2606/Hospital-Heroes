@@ -33,7 +33,7 @@ public class WaitingRoomTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.timer);
+        View view = mActivity.findViewById(R.id.character);
         assertNotNull(view);
     }
 
