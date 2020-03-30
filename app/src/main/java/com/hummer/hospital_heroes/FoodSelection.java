@@ -23,10 +23,10 @@ public class FoodSelection extends AppActivity implements View.OnClickListener {
 
         setContentView(R.layout.food_selection);
 
-        milk = (Button) findViewById(R.id.milk);
+        milk = (Button) findViewById(R.id.milk_game);
         milk.setOnClickListener(this);
 
-        hash_brown = (Button) findViewById(R.id.hash_browns);
+        hash_brown = (Button) findViewById(R.id.food_game);
         hash_brown.setOnClickListener(this);
 
     }
@@ -36,7 +36,7 @@ public class FoodSelection extends AppActivity implements View.OnClickListener {
         switch (v.getId()) {
 //            case R.id.milk:
 
-            case R.id.hash_browns:
+            case R.id.food_game:
                 Intent food_game = new Intent(FoodSelection.this, MainGameActivity.class);
                 startActivity(food_game);
         }
