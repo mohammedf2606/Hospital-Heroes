@@ -39,4 +39,10 @@
     <string name="background">Background</string>
     <string name="apply_the_cream">Apply the cream!</string>
     <string name="play">Play</string>
+    <string name="character">character</string>
+    <string name="well_done">WELL DONE!</string>
+    <string name="restart">Restart</string>
+    <string name="quit">Quit</string>
+    <string name="thumbs_up">thumbs up</string>
+    <string name="food_selection">Food Selection</string>
 </resources>
