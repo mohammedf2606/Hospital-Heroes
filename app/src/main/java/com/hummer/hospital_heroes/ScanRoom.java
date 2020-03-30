@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class ScanRoom extends Activity implements View.OnClickListener {
+public class ScanRoom extends AppActivity implements View.OnClickListener {
 
     ImageButton scanner;
     ImageView halo_right, halo_left, mother, child;
@@ -23,14 +23,10 @@ public class ScanRoom extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
         setContentView(R.layout.scan_room);
+
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 
         child = findViewById(R.id.child);
         child.setImageResource(Constants.getPlayerStanding());

@@ -2,8 +2,166 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/front_of_hospital"
+        android:alpha="0.5"
+        android:contentDescription="@string/hospital_front" />
+    
+    <ImageView
+        android:id="@+id/character"
+        android:layout_width="200dp"
+        android:layout_height="370dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.35"
+        android:contentDescription="@string/character" />
+
+    <ImageView
+        android:id="@+id/nurse"
+        android:layout_width="217dp"
+        android:layout_height="368dp"
+        android:contentDescription="@string/nurse"
+        android:src="@drawable/radiologist"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <ImageView
+        android:id="@+id/receptionist"
+        android:layout_width="269dp"
+        android:layout_height="403dp"
+        android:contentDescription="@string/reception"
+        android:src="@drawable/receptionist"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <ImageView
+        android:id="@+id/parent"
+        android:layout_width="241dp"
+        android:layout_height="395dp"
+        android:contentDescription="@string/parent"
+        android:src="@drawable/mother_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+
+    <ImageView
+        android:id="@+id/parent2"
+        android:layout_width="244dp"
+        android:layout_height="405dp"
+        android:contentDescription="@string/reception"
+        android:src="@drawable/mother_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <RelativeLayout
+        android:layout_width="600dp"
+        android:layout_height="350dp"
+        android:background="@drawable/round_rect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.9">
+
+        <TextView
+            android:alpha="1"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1.5"
+            android:layout_width="400dp"
+            android:fontFamily="casual"
+            android:layout_height="70dp"
+            android:textAlignment="center"
+            android:text="@string/well_done"
+            android:textColor="#FFFF00"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:alpha="1"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textAlignment="center"
+            android:textColor="#009100"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:translationX="75dp"
+            android:translationY="175dp"
+            android:text="@string/restart"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:translationY="90dp"
+            android:src="@drawable/ic_thumb_up_black_24dp"
+            android:contentDescription="@string/thumbs_up" />
+
+        <ImageButton
+            android:alpha="1"
+            android:background="@drawable/circle"
+            android:src="@drawable/ic_replay_black_24dp"
+            android:id="@+id/restart"
+            android:scaleType="fitXY"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:translationX="100dp"
+            android:translationY="210dp"
+            android:contentDescription="@string/restart" />
+
+        <TextView
+            android:alpha="1"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textAlignment="center"
+            android:textColor="#9A0034"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:translationX="375dp"
+            android:translationY="175dp"
+            android:text="@string/quit"/>
+
+        <ImageButton
+            android:alpha="1"
+            android:id="@+id/quit"
+            android:background="@drawable/circle"
+            android:src="@drawable/ic_clear_black_24dp"
+            android:scaleType="fitXY"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:translationX="400dp"
+            android:translationY="210dp"
+            android:contentDescription="@string/quit" />
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
