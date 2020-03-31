@@ -1,11 +1,13 @@
-package com.hummer.hospital_heroes;
+package com.hummer.hospital_heroes.cream_minigame;
 
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.view.View;
 
+import com.hummer.hospital_heroes.InjectionRoom;
 import com.hummer.hospital_heroes.R;
-import com.hummer.hospital_heroes.food_minigame.MainGameActivity;
+import com.hummer.hospital_heroes.injection_minigame.InjectionMainActivity;
+import com.hummer.hospital_heroes.injection_minigame.InjectionMainMenu;
 
 import org.junit.After;
 import org.junit.Before;
@@ -24,12 +26,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
-public class PreScanTest
-{
+public class MainMenuForGameTest {
+
     @Rule
-    public ActivityTestRule<PreScan> mActivityTestRule = new ActivityTestRule<PreScan>(PreScan.class);
-    private PreScan mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(ScanRoom.class.getName(), null, false);
+    public ActivityTestRule<MainMenuForGame> mActivityTestRule = new ActivityTestRule<>(MainMenuForGame.class);
+    private MainMenuForGame mActivity = null;
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(GameActivity.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
@@ -40,15 +42,15 @@ public class PreScanTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.pre_scan_room);
+        View view = mActivity.findViewById(R.id.playButton);
         assertNotNull(view);
     }
 
     @Test
-    public void onClick()
+    public void nextScene()
     {
-        assertNotNull(mActivity.findViewById(R.id.scan_door));
-        onView(withId(R.id.scan_door)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.playButton));
+        onView(withId(R.id.playButton)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
@@ -58,8 +60,8 @@ public class PreScanTest
     public void launch()
     {
         Intents.init();
-        Espresso.onView(withId(R.layout.pre_scan)).perform(click());
-        intended(hasComponent(ScanRoom.class.getName()));
+        Espresso.onView(withId(R.id.playButton)).perform(click());
+        intended(hasComponent(GameActivity.class.getName()));
     }
 
     @After

@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 public class CharacterSelectionTest {
 
     @Rule
-    public ActivityTestRule<CharacterSelection> mActivityTestRule = new ActivityTestRule<CharacterSelection>(CharacterSelection.class);
+    public ActivityTestRule<CharacterSelection> mActivityTestRule = new ActivityTestRule<>(CharacterSelection.class);
     private CharacterSelection mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(InjectionRoom.class.getName(), null, false);
 

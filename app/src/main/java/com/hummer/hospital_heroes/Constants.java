@@ -13,7 +13,10 @@ import java.util.ArrayList;
 
 public class Constants
 {
-    public Constants() {};
+    public Constants() {
+
+    }
+
     /**
      * The flag for whether the character will have the food procedure or not
      */

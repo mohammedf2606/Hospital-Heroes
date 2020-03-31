@@ -4,8 +4,7 @@ import android.app.Activity;
 import android.app.Instrumentation;
 import android.view.View;
 
-import com.hummer.hospital_heroes.R;
-import com.hummer.hospital_heroes.food_minigame.MainGameActivity;
+import com.hummer.hospital_heroes.rocket_minigame.MainMenu;
 
 import org.junit.After;
 import org.junit.Before;
@@ -24,12 +23,13 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
-public class PreScanTest
-{
+public class StrapToChairTest {
+
+
     @Rule
-    public ActivityTestRule<PreScan> mActivityTestRule = new ActivityTestRule<PreScan>(PreScan.class);
-    private PreScan mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(ScanRoom.class.getName(), null, false);
+    public ActivityTestRule<StrapToChair> mActivityTestRule = new ActivityTestRule<>(StrapToChair.class);
+    private StrapToChair mActivity = null;
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainMenu.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
@@ -40,15 +40,15 @@ public class PreScanTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.pre_scan_room);
+        View view = mActivity.findViewById(R.id.strapping);
         assertNotNull(view);
     }
 
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.scan_door));
-        onView(withId(R.id.scan_door)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.strapping));
+        onView(withId(R.id.strapping)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
@@ -58,8 +58,8 @@ public class PreScanTest
     public void launch()
     {
         Intents.init();
-        Espresso.onView(withId(R.layout.pre_scan)).perform(click());
-        intended(hasComponent(ScanRoom.class.getName()));
+        Espresso.onView(withId(R.id.strapping)).perform(click());
+        intended(hasComponent(MainMenu.class.getName()));
     }
 
     @After
