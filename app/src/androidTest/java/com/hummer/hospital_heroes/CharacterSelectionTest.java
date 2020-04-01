@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.app.Instrumentation;
 import android.view.View;
 
-import com.hummer.hospital_heroes.R;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -23,12 +21,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
-public class GenderSelectionTest
-{
+public class CharacterSelectionTest {
+
     @Rule
-    public ActivityTestRule<GenderSelection> mActivityTestRule = new ActivityTestRule<GenderSelection>(GenderSelection.class);
-    private GenderSelection mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MaleCharSelection.class.getName(), null, false);
+    public ActivityTestRule<CharacterSelection> mActivityTestRule = new ActivityTestRule<>(CharacterSelection.class);
+    private CharacterSelection mActivity = null;
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(InjectionRoom.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
@@ -39,15 +37,15 @@ public class GenderSelectionTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.female_gender_sign);
+        View view = mActivity.findViewById(R.id.boy1);
         assertNotNull(view);
     }
 
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.male_gender_sign));
-        onView(withId(R.id.male_gender_sign)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.girl1));
+        onView(withId(R.id.girl1)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
@@ -57,8 +55,8 @@ public class GenderSelectionTest
     public void launch()
     {
         Intents.init();
-        Espresso.onView(withId(R.id.female_gender_sign)).perform(click());
-        intended(hasComponent(MaleCharSelection.class.getName()));
+        Espresso.onView(withId(R.id.girl2)).perform(click());
+        intended(hasComponent(InjectionRoom.class.getName()));
     }
 
     @After

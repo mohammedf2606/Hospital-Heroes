@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Instrumentation;
 import android.view.View;
 
-import com.hummer.hospital_heroes.injection_minigame.Injection;
+import com.hummer.hospital_heroes.rocket_minigame.MainMenu;
 
 import org.junit.After;
 import org.junit.Before;
@@ -23,12 +23,13 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
-public class MaleCharSelectionTest
-{
+public class StrapToChairTest {
+
+
     @Rule
-    public ActivityTestRule<MaleCharSelection> mActivityTestRule = new ActivityTestRule<MaleCharSelection>(MaleCharSelection.class);
-    private MaleCharSelection mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(InjectionRoom.class.getName(), null, false);
+    public ActivityTestRule<StrapToChair> mActivityTestRule = new ActivityTestRule<>(StrapToChair.class);
+    private StrapToChair mActivity = null;
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainMenu.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
@@ -39,15 +40,15 @@ public class MaleCharSelectionTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.boy2);
+        View view = mActivity.findViewById(R.id.strapping);
         assertNotNull(view);
     }
 
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.boy1));
-        onView(withId(R.id.boy1)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.strapping));
+        onView(withId(R.id.strapping)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
@@ -57,8 +58,8 @@ public class MaleCharSelectionTest
     public void launch()
     {
         Intents.init();
-        Espresso.onView(withId(R.id.boy3)).perform(click());
-        intended(hasComponent(Injection.class.getName()));
+        Espresso.onView(withId(R.id.strapping)).perform(click());
+        intended(hasComponent(MainMenu.class.getName()));
     }
 
     @After
