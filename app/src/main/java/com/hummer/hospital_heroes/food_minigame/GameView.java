@@ -7,9 +7,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 //import com.bumptech.glide.Glide;
@@ -38,7 +40,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         int width = Constants.SCREEN_WIDTH; //1024
-        int height = Constants.SCREEN_HEIGHT; //552
+        int height = Constants.SCREEN_HEIGHT; //600
         bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
         hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), false);
         beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);

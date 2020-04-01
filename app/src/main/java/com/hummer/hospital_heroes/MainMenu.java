@@ -1,9 +1,12 @@
 package com.hummer.hospital_heroes;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 
 import com.hummer.hospital_heroes.injection_minigame.InjectionMainMenu;
@@ -14,6 +17,10 @@ public class MainMenu extends AppActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        DisplayMetrics dp = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getRealMetrics(dp);
+        Constants.setScreenHeight(dp.heightPixels);
+        Constants.setScreenWidth(dp.widthPixels);
         super.onCreate(savedInstanceState);
 
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);

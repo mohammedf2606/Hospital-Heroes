@@ -1,6 +1,7 @@
 package com.hummer.hospital_heroes;
 
 import android.content.res.Resources;
+import android.util.DisplayMetrics;
 
 import java.util.ArrayList;
 
@@ -33,8 +34,16 @@ public class Constants
 
     private static ArrayList<Integer> playerGettingStrapped = new ArrayList<>();
 
-    public final static int SCREEN_HEIGHT = Resources.getSystem().getDisplayMetrics().heightPixels;
-    public final static int SCREEN_WIDTH = Resources.getSystem().getDisplayMetrics().widthPixels;
+    public static int SCREEN_HEIGHT;
+    public static int SCREEN_WIDTH;
+
+    public static void setScreenHeight(int screenHeight) {
+        SCREEN_HEIGHT = screenHeight;
+    }
+
+    public static void setScreenWidth(int screenWidth) {
+        SCREEN_WIDTH = screenWidth;
+    }
 
     /**
      * @return the procedure of the player (food or not i.e. injection).
