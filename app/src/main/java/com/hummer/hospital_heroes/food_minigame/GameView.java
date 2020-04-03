@@ -2,23 +2,24 @@ package com.hummer.hospital_heroes.food_minigame;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
-import android.view.WindowManager;
-import android.widget.ImageView;
-
-//import com.bumptech.glide.Glide;
 import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.R;
+import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
 
+/**
+ * GameView is the surface view for the food mini game
+ *
+ * @author Manav Parikh
+ * @version 1.0
+ */
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Context mContext;
     private MainThread thread;
@@ -26,9 +27,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private FoodSprite beans;
     private Bowl bowl;
     private Bitmap background;
-    private ImageView imageView;
     static int score = 0;
+    private EndGameSticker sticker;
 
+    /**
+     * The constructor for the class 'FoodSprite', used by the layout XML
+     * @param context
+     * @param attributeSet
+     */
     public GameView(Context context, AttributeSet attributeSet){
         super(context, attributeSet);
         this.mContext = context;
@@ -45,6 +51,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), false);
         beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);
         background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background_food), width, height,false);
+        sticker = new EndGameSticker(width, height, getResources());
 
         thread.start();
         thread.setRunning(true);
@@ -84,13 +91,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             beans.drawFood(canvas);
 
             if (score >= 10) {
-                //Bitmap sticker = BitmapFactory.decodeResource(getResources(), R.drawable.sticker_gif);
-                //EndSticker endSticker = new EndSticker(sticker, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
-                //endSticker.draw(canvas);
-
-                Intent plate_activity = new Intent(mContext, PlateActivity.class);
-                mContext.startActivity(plate_activity);
-                thread.setRunning(false);
+                int value = sticker.drawAnimation(canvas);
+                if(value == sticker.getWidth()) {
+                    Intent plate_activity = new Intent(mContext, PlateActivity.class);
+                    mContext.startActivity(plate_activity);
+                    thread.setRunning(false);
+                }
             }
         }
     }

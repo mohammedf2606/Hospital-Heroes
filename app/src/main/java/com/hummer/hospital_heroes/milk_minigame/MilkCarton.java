@@ -13,7 +13,7 @@ class MilkCarton {
     private Bitmap droplet;
     private int X, Y, cX, cY;
     Random rand = new Random();
-    int speed = 8;
+    int speed = 6;
     boolean goRight = true;
     int timeToDrop = 0;
 
@@ -21,7 +21,6 @@ class MilkCarton {
     MilkCarton(Bitmap milk2, Bitmap milk) {
         this.carton = Bitmap.createScaledBitmap(milk2, 170,150, false);
         this.droplet = Bitmap.createScaledBitmap(milk, 120,120, false);
-        double randomFactor = Math.random();
         X = rand.nextInt(Constants.SCREEN_WIDTH - 100);
         Y = 0;
         cX = 0;

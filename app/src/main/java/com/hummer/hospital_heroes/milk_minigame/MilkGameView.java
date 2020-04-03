@@ -12,6 +12,7 @@ import android.view.SurfaceView;
 
 import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.R;
+import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 import com.hummer.hospital_heroes.food_minigame.Bowl;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
 
@@ -21,8 +22,9 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
     private MilkCarton milk;
     private Bowl bowl;
     private Bitmap background;
-    private Bitmap sticker;
     static int score = 0;
+    private EndGameSticker sticker;
+
 
     public MilkGameView(Context context, AttributeSet attributeSet){
         super(context, attributeSet);
@@ -30,7 +32,6 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         getHolder().addCallback(this);
         thread = new MilkMainThread(getHolder(), this);
         setFocusable(true);
-        System.out.println("Milk created");
     }
 
     @Override
@@ -41,7 +42,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         milk = new MilkCarton(BitmapFactory.decodeResource(getResources(), R.drawable.milk2),
                 BitmapFactory.decodeResource(getResources(), R.drawable.milk_droplet));
         background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background_food), width, height,false);
-        sticker = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sticker), 300, 300,false);
+        sticker = new EndGameSticker(width, height, getResources());
 
         thread.setRunning(true);
         thread.start();
@@ -65,7 +66,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
     }
 
     private void updateFrame(int newX, int newY) {
-        if (score < 4 && newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
+        if (score < 11 && newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
             bowl.update(newX - 125, newY);
         }
     }
@@ -78,22 +79,13 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
             bowl.draw(canvas);
             milk.drawFood(canvas);
 
-            if (score >= 3) {
-                //Bitmap sticker = BitmapFactory.decodeResource(getResources(), R.drawable.sticker_gif);
-                //EndSticker endSticker = new EndSticker(sticker, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
-                //endSticker.draw(canvas);
-
-                canvas.drawBitmap(sticker, 0, 0, null);
-
-                try {
-                    thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+            if (score >= 10) {
+                int value = sticker.drawAnimation(canvas);
+                if(value == sticker.getWidth()) {
+                    Intent plate_activity = new Intent(mContext, PlateActivity.class);
+                    mContext.startActivity(plate_activity);
+                    thread.setRunning(false);
                 }
-
-                Intent plate_activity = new Intent(mContext, PlateActivity.class);
-                mContext.startActivity(plate_activity);
-                thread.setRunning(false);
             }
         }
     }
