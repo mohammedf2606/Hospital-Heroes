@@ -48,7 +48,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         int width = Constants.SCREEN_WIDTH; //1024
         int height = Constants.SCREEN_HEIGHT; //600
         bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
-        hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), false);
+        hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown), false);
         beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);
         background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background_food), width, height,false);
         sticker = new EndGameSticker(width, height, getResources());

@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/reception"
         android:alpha="0.4"
-        android:contentDescription="@string/reception" />
+        android:contentDescription="@string/reception"/>
     
     <RelativeLayout
         android:layout_width="wrap_content"
