@@ -27,7 +27,7 @@ public class StarBackground {
      * @param res The resources associated with the package
      */
     public StarBackground(int width, int height, Resources res) {
-        image = BitmapFactory.decodeResource(res, R.drawable.starbackground);
+        image = BitmapFactory.decodeResource(res, R.drawable.star_background);
         image = Bitmap.createScaledBitmap(image, width, height, false);
     }
 

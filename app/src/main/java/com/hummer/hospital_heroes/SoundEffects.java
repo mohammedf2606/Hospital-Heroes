@@ -28,7 +28,6 @@ public class SoundEffects {
 
         amg = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
 
-        System.out.println(amg.getProperty(AudioManager.PROPERTY_OUTPUT_SAMPLE_RATE));
     }
 
     public static void playSound(int sound) {

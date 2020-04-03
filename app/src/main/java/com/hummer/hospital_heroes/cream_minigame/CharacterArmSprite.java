@@ -36,9 +36,9 @@ public class CharacterArmSprite {
      */
     public CharacterArmSprite(int x, int y, Resources resources, boolean whiteArm) {
         if(whiteArm) {
-            image = BitmapFactory.decodeResource(resources, R.drawable.whitearm);
+            image = BitmapFactory.decodeResource(resources, R.drawable.white_arm);
         } else {
-            image = BitmapFactory.decodeResource(resources, R.drawable.blackarm);
+            image = BitmapFactory.decodeResource(resources, R.drawable.black_arm);
         }
 //            image = Bitmap.createScaledBitmap(image, x, y, false);
         xCoord = 0;

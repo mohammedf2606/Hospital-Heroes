@@ -19,6 +19,20 @@
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/injection_room" />
 
+    <ImageView
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_trending_flat_black_24dp"
+        android:rotation="45"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/arrow" />
+
     <RelativeLayout
         android:layout_width="225dp"
         android:layout_height="350dp"
@@ -40,8 +54,8 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.715"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -59,12 +73,13 @@
 
         <ImageButton
             android:id="@+id/cream"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_centerInParent="true"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:src="@drawable/creamtube" />
+            android:src="@drawable/cream_tube"
+            android:contentDescription="@string/cream" />
 
     </RelativeLayout>
 

@@ -39,7 +39,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         int width = Constants.SCREEN_WIDTH;
         int height = Constants.SCREEN_HEIGHT;
         bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
-        milk = new MilkCarton(BitmapFactory.decodeResource(getResources(), R.drawable.milk2),
+        milk = new MilkCarton(BitmapFactory.decodeResource(getResources(), R.drawable.milk),
                 BitmapFactory.decodeResource(getResources(), R.drawable.milk_droplet));
         background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background_food), width, height,false);
         sticker = new EndGameSticker(width, height, getResources());

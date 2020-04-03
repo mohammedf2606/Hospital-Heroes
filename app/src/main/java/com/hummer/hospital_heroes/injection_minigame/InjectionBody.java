@@ -5,7 +5,6 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.Rect;
 
 import com.hummer.hospital_heroes.R;
@@ -27,7 +26,7 @@ public class InjectionBody
     {
         xCoord = x;
         yCoord = y;
-        image = BitmapFactory.decodeResource(res, R.drawable.creamoutline);
+        image = BitmapFactory.decodeResource(res, R.drawable.cream_outline);
         image = Bitmap.createScaledBitmap(image, 100, 100, false);
     }
 
