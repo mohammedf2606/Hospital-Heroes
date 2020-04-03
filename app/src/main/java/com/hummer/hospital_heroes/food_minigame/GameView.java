@@ -2,16 +2,13 @@ package com.hummer.hospital_heroes.food_minigame;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
-import android.view.WindowManager;
 import android.widget.ImageView;
 
 //import com.bumptech.glide.Glide;
@@ -42,7 +39,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         int width = Constants.SCREEN_WIDTH; //1024
         int height = Constants.SCREEN_HEIGHT; //600
         bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
-        hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), false);
+        hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown), false);
         beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);
         background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background_food), width, height,false);
 

@@ -4,7 +4,6 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.widget.ImageView;
 
 import com.hummer.hospital_heroes.R;
 
@@ -32,7 +31,7 @@ public class EndGameSticker {
     public EndGameSticker(int x, int y, Resources resources) {
         xCoord = x;
         yCoord = y;
-        image = BitmapFactory.decodeResource(resources, R.drawable.badgesquare);
+        image = BitmapFactory.decodeResource(resources, R.drawable.badge);
     }
 
     /**
