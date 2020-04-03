@@ -13,7 +13,8 @@
         android:scaleType="fitXY"
         android:src="@drawable/scanner_room_background"
         tools:layout_editor_absoluteX="366dp"
-        tools:layout_editor_absoluteY="223dp" />
+        tools:layout_editor_absoluteY="223dp"
+        android:contentDescription="@string/background" />
 
     <ImageView
         android:id="@+id/mother"
