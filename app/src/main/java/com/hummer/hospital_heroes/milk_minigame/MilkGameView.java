@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.widget.ImageView;
 
 import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.R;
@@ -22,6 +21,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
     private MilkCarton milk;
     private Bowl bowl;
     private Bitmap background;
+    private Bitmap sticker;
     static int score = 0;
 
     public MilkGameView(Context context, AttributeSet attributeSet){
@@ -41,6 +41,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         milk = new MilkCarton(BitmapFactory.decodeResource(getResources(), R.drawable.milk2),
                 BitmapFactory.decodeResource(getResources(), R.drawable.milk_droplet));
         background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background_food), width, height,false);
+        sticker = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sticker), 300, 300,false);
 
         thread.setRunning(true);
         thread.start();
@@ -64,7 +65,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
     }
 
     private void updateFrame(int newX, int newY) {
-        if (score < 11 && newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
+        if (score < 4 && newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
             bowl.update(newX - 125, newY);
         }
     }
@@ -77,10 +78,18 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
             bowl.draw(canvas);
             milk.drawFood(canvas);
 
-            if (score >= 10) {
+            if (score >= 3) {
                 //Bitmap sticker = BitmapFactory.decodeResource(getResources(), R.drawable.sticker_gif);
                 //EndSticker endSticker = new EndSticker(sticker, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
                 //endSticker.draw(canvas);
+
+                canvas.drawBitmap(sticker, 0, 0, null);
+
+                try {
+                    thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 Intent plate_activity = new Intent(mContext, PlateActivity.class);
                 mContext.startActivity(plate_activity);

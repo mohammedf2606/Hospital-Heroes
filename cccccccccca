@@ -1,0 +1,1524 @@
+[33mcommit 34882dc653dd04d3f38ae561a0bc34adc9590a59[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32mmilk-game[m[33m)[m
+Merge: 07e1aa2 64e67be
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 23 12:55:34 2020 +0000
+
+    Merge pull request #24 from mohammedf2606/hotfix/fix-menu-page
+    
+    Rework menu with new rectangular buttons
+
+[33mcommit 64e67be24d7c89b411202798191ca0e9e0f4a7b2[m[33m ([m[1;31morigin/hotfix/fix-menu-page[m[33m)[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 23 12:51:19 2020 +0000
+
+    Rework menu with new rectangular buttons
+
+[33mcommit 07e1aa22d975698a8ec1a69555ed23e9bcd2cc75[m
+Merge: fc0801d 802c498
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Mar 21 19:07:46 2020 +0000
+
+    Merge pull request #23 from mohammedf2606/CreamMinigame
+    
+    Cream minigame
+
+[33mcommit 802c498dddc786d9d0870679bc98e6442642212d[m
+Merge: 2605d90 fc0801d
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Mar 21 18:54:33 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into CreamMinigame
+
+[33mcommit fc0801d26bd7eea53273d409fb6a12c3230f0cb4[m
+Merge: 9031562 da63934
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Mar 21 16:15:51 2020 +0000
+
+    Merge pull request #22 from mohammedf2606/feature/fixing-sound-and-disable-buttons
+    
+    Fixed sound bug on exit and disabled software buttons
+
+[33mcommit da63934522888876ac3991306f8793f5bfcb10f7[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Mar 21 16:12:41 2020 +0000
+
+    Rework activity lifecycle
+
+[33mcommit 375149727b00fd21868af9e1918dd2d83d4c6667[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Mar 21 15:57:56 2020 +0000
+
+    Add null ptr checks
+
+[33mcommit b733632a5a68fef7565a48301051632ef07ef9e1[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Mar 21 15:56:48 2020 +0000
+
+    Some reworks
+
+[33mcommit 94cbe3716ca08c9233a1782868d4de62359ec73e[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Mar 21 15:32:59 2020 +0000
+
+    Add prompt for logging in when back pressed
+
+[33mcommit 9d41cb3a141700b2eccc12b4f088752a878100a4[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Mar 21 14:41:37 2020 +0000
+
+    Try to rework music
+
+[33mcommit 2ba24f6ebe53f6cb3c5d596e46f5ab18e814f793[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Fri Mar 20 19:46:13 2020 +0000
+
+    Refactor duplicate code
+
+[33mcommit b5f10d6f448262eb105b85b5cc1ef53e36901175[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Fri Mar 20 19:33:52 2020 +0000
+
+    Attempt to fix music issue
+
+[33mcommit 903156275763977bf1f83452dc48394a0e56b546[m
+Merge: 6d080cd 35d31df
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Fri Mar 20 19:02:46 2020 +0000
+
+    Merge pull request #21 from mohammedf2606/feature/adding-assets
+    
+    Adding assets
+
+[33mcommit 35d31df4188ae8c9979c693253b161be10f2c185[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Fri Mar 20 18:59:23 2020 +0000
+
+    Add parents and radiologist
+
+[33mcommit 41674e1f89b658c75e706b0e7edffa163e9566e4[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Fri Mar 20 18:58:51 2020 +0000
+
+    Add parents and radiologist
+
+[33mcommit b53ceabd1f0ce406ef89b08ce4f460196629eb6b[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Fri Mar 20 17:26:22 2020 +0000
+
+    Add new receptionist asset
+
+[33mcommit b8d25519e7630ef6b1ec439bf3f1458517a42cd7[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Fri Mar 20 16:10:20 2020 +0000
+
+    Remove excess imports
+
+[33mcommit b48bf874e9c0a4aad96d4d2b7d3cc8ef33ee0478[m
+Merge: 4fbcb7d 6d080cd
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Fri Mar 20 16:06:40 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/adding-assets
+
+[33mcommit 4fbcb7d7e0e61270e2888180ae191413808bc72e[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Fri Mar 20 15:37:27 2020 +0000
+
+    Rework the menu page with new assets
+
+[33mcommit 6d080cd10476dda82d1f8f6c93f0e48c6c56ddf9[m
+Merge: bd5f39c 24511ef
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Mar 19 17:47:28 2020 +0000
+
+    Merge pull request #20 from mohammedf2606/feature/animations
+    
+    Add animations to the transition between activities.
+
+[33mcommit 2605d900740fe0674f84f9992067817cd0a2d46b[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Thu Mar 19 17:40:26 2020 +0000
+
+    Adjust animation values
+
+[33mcommit 24511ef5ed7a88dbe6b082077727463b1fd5df2a[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Thu Mar 19 17:37:06 2020 +0000
+
+    Add animations to the transition between activities.
+
+[33mcommit c0d3b566c2bd1b13a699cb18654427d5fb3fd649[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Thu Mar 19 17:24:46 2020 +0000
+
+    Add transition effect for cream minigame
+
+[33mcommit 0be69c2c0cf75ead7fcf56a7ba2059e10d932b67[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Wed Mar 18 12:43:45 2020 +0000
+
+    Fix scaling for minigames
+
+[33mcommit 33557c9537c90829c10fd32f84c76fb1891f04da[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Wed Mar 18 12:31:16 2020 +0000
+
+    Remove software buttons from all activities
+
+[33mcommit 7aa54b0ed321dbdcd7fa39ca342d532afd762839[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Wed Mar 18 12:19:40 2020 +0000
+
+    Add assets and adjust layouts to injection route
+
+[33mcommit 2eab3101c6c78826b0b703553e5fa73de490983b[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 17 20:55:10 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into RocketMinigame
+    
+    # Conflicts:
+    #       app/build.gradle
+    #       app/src/main/AndroidManifest.xml
+    #       app/src/main/java/com/hummer/hospital_heroes/SoundEffects.java
+    #       app/src/main/java/com/hummer/hospital_heroes/WaitingRoom.java
+    #       app/src/main/java/com/hummer/hospital_heroes/rocketminigame/Asteroid.java
+    #       app/src/main/java/com/hummer/hospital_heroes/rocketminigame/AsteroidManager.java
+    #       app/src/main/java/com/hummer/hospital_heroes/rocketminigame/EndGameSticker.java
+    #       app/src/main/java/com/hummer/hospital_heroes/rocketminigame/GameActivity.java
+    #       app/src/main/java/com/hummer/hospital_heroes/rocketminigame/GameView.java
+    #       app/src/main/java/com/hummer/hospital_heroes/rocketminigame/HouseSprite.java
+    #       app/src/main/java/com/hummer/hospital_heroes/rocketminigame/MainMenu.java
+    #       app/src/main/java/com/hummer/hospital_heroes/rocketminigame/MainThread.java
+    #       app/src/main/java/com/hummer/hospital_heroes/rocketminigame/RocketSprite.java
+    #       app/src/main/java/com/hummer/hospital_heroes/rocketminigame/StarBackground.java
+    #       app/src/main/res/values/strings.xml
+    #       gradle/wrapper/gradle-wrapper.properties
+
+[33mcommit 00b940b072153afb7c3a3613ba592c7201e171c4[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 17 15:49:55 2020 +0000
+
+    Add new waiting room assets
+
+[33mcommit bd5f39c38d640068efccf61b9a9bac265ac6b6a4[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 18:39:29 2020 +0000
+
+    Update gradle
+
+[33mcommit 9b8792220c1b7ab50bc6b2dd1b70f842f224c198[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 14:50:53 2020 +0000
+
+    Remove drawings folder since assets already moved
+
+[33mcommit 144b00beb619423932c25fe66fb70bab9708f733[m
+Merge: 616fbfc 6701955
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 14:44:38 2020 +0000
+
+    Merge pull request #17 from mohammedf2606/feature/integrate-minigames
+    
+    Integrate Minigames
+
+[33mcommit 6701955111db7e0a8c46814792f2f967ec9fc052[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 14:39:57 2020 +0000
+
+    Add more time between frames in waiting room
+
+[33mcommit 198728143edacd587f042669c7149bbb866bc0f0[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 14:35:16 2020 +0000
+
+    Fix bug with waiting room
+
+[33mcommit c136134778aa41d4061be1c51d85d301df53b022[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 14:28:51 2020 +0000
+
+    Fix bug with wrong asset showing
+
+[33mcommit 2e600c9f4333e654a653be9d319b9bd400c20f2f[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 14:22:25 2020 +0000
+
+    Use real asset name
+
+[33mcommit 44e7f118bda0e626316d772d5e2adb5396085024[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 14:21:46 2020 +0000
+
+    Fix imports after package rename
+
+[33mcommit da6fdfab4dabf050e48fe218ba2f34b02a992f99[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 14:19:05 2020 +0000
+
+    Fix manifest
+
+[33mcommit 089988509d8cc3bfe6df0118d060af434df8fd37[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 14:15:10 2020 +0000
+
+    Fix manifest
+
+[33mcommit 8dc12b59551dd3d747558acb9a77120be1416a6a[m
+Merge: b1e7a44 616fbfc
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 13:56:49 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/integrate-minigames
+
+[33mcommit 616fbfc81e5f177edcdbfa342c52afda7a2e8cf9[m
+Merge: 02f41ea fddb5c6
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 13:53:13 2020 +0000
+
+    Merge pull request #16 from mohammedf2606/feature/injection-minigame
+    
+    Injection game
+
+[33mcommit b1e7a4480741c72a6396fe28bca8a0f7f99952d7[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 13:52:38 2020 +0000
+
+    Add new waiting room assets
+
+[33mcommit fddb5c68271caf0cd93342936ff8d03a121260a9[m
+Merge: ec9c4d1 02f41ea
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Mon Mar 16 13:40:04 2020 +0000
+
+    fix conflicts
+
+[33mcommit 0871d205add6130ead6956a49a327e4b62576ba2[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 13:23:26 2020 +0000
+
+    Add music and sound back in
+
+[33mcommit b6b123d9a5941fe6b614a5f4437eca7fc283eca2[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 13:20:02 2020 +0000
+
+    Remove TODO
+
+[33mcommit aff72f50e0128e74a6af512a0b2f81e35d67bd98[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 13:15:02 2020 +0000
+
+    Refactor with new assets and new games
+
+[33mcommit 02f41ea0dfd8bcce43a1d83ce3e467b7bb4c90e1[m
+Merge: 4456bbb 41a03bd
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 12:45:14 2020 +0000
+
+    Merge pull request #15 from mohammedf2606/CreamMinigame
+    
+    Cream minigame
+
+[33mcommit 41a03bd15711c3915ff76a312bd8a9ebabbef04a[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 12:43:58 2020 +0000
+
+    Fix merge conflicts with assets
+
+[33mcommit 46f7dfd91a764570d800ba627e1985a25a00cb26[m
+Merge: e36660c 4456bbb
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 12:39:53 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into CreamMinigame
+
+[33mcommit 4456bbbae6f85df9341afc3e32194c41e430214a[m
+Merge: 50f0eb1 03640b6
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Mar 16 12:32:39 2020 +0000
+
+    Merge pull request #14 from mohammedf2606/feature/food-mini-game
+    
+    Feature/food mini game
+
+[33mcommit 03640b616fbcf6af8b74b79105f3bd06069406ff[m
+Merge: a8cd460 50f0eb1
+Author: Manav Parikh <manavparikh3011@gmail.com>
+Date:   Mon Mar 16 04:45:09 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/food-mini-game
+    Finished plate
+    # Conflicts:
+    #       app/src/main/AndroidManifest.xml
+
+[33mcommit ec9c4d115b0c9c1d2d9898817cdf68793b5396ba[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Sun Mar 15 18:43:51 2020 +0000
+
+    Add game over sound
+
+[33mcommit 9ef58e2625243e743dfabd7513d4b5cbbff95d0c[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Sun Mar 15 18:24:42 2020 +0000
+
+    Add placeholder outline
+
+[33mcommit a8cd46011300705698af74a9aeee9dd420620c64[m
+Author: Manav Parikh <manavparikh3011@gmail.com>
+Date:   Sun Mar 15 16:15:12 2020 +0000
+
+    plate game done without assets
+
+[33mcommit e36660c4c784ef84924c102e315dfd9381885123[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Sat Mar 14 15:31:21 2020 +0000
+
+    Fix minor bugs
+
+[33mcommit 43ebcba1c174e13f3ea58e8484a603ddbfacbaa7[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Sat Mar 14 15:28:37 2020 +0000
+
+    Cream minigame is now fully complete (add background image)
+
+[33mcommit a989603cc5384217b0f0bebae39117d0773fee08[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Fri Mar 13 18:17:31 2020 +0000
+
+    Alter injection size
+
+[33mcommit bc803c7aab0013cbfc6158cffad1eb2b28b8fc2e[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Fri Mar 13 16:01:47 2020 +0000
+
+    Add all assets
+
+[33mcommit 10179e4e15001e9a72f47ec50348f4350dc1c73b[m
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Wed Mar 11 17:41:51 2020 +0000
+
+    Fully annotated each class's methods and constructor
+
+[33mcommit 4fe0ed884f018a7a5380f58ac455578ddf7861b2[m
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Wed Mar 11 15:37:34 2020 +0000
+
+    Add more comments and replace creamoutline with better image.
+
+[33mcommit 50f0eb1b67ec907484baf207cf46b70185eb8499[m
+Merge: ebb18db 803d4b7
+Author: Guangzhong Chen <guangzhong0@gmail.com>
+Date:   Wed Mar 11 15:30:16 2020 +0000
+
+    Merge pull request #13 from mohammedf2606/assets
+    
+    Assets
+
+[33mcommit 803d4b74c1728be61ebada13a292d30c6219b0f6[m[33m ([m[1;31morigin/assets[m[33m)[m
+Author: Chen <k1894236@nmscde005824.client.kcl.ac.uk>
+Date:   Wed Mar 11 15:26:20 2020 +0000
+
+    pushed assets
+
+[33mcommit 62ec05284178cfcee44663362ef749c51336fae8[m
+Merge: b842543 ebb18db
+Author: Chen <k1894236@nmscde005824.client.kcl.ac.uk>
+Date:   Wed Mar 11 15:16:37 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into assets
+
+[33mcommit 8dd6f472b6e06a42db3011230927ef6057377015[m
+Merge: f9350c7 0fcf71d
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Wed Mar 11 14:12:46 2020 +0000
+
+    fix merge conflicts
+
+[33mcommit f9350c785e39b67f4c91b204068a72c5cfae098f[m
+Merge: f7a6476 ebb18db
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Wed Mar 11 13:19:24 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/injection-minigame
+
+[33mcommit f7a6476264b6f84e8d701e9de60d8cda12185615[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Tue Mar 10 21:09:12 2020 +0000
+
+    Fixing bug
+
+[33mcommit b842543ac201330aa245bae88107a4039fbfe819[m
+Author: Guangzhong Chen <guangzhong0@gmail.com>
+Date:   Tue Mar 10 16:49:58 2020 +0000
+
+    Uploaded some work to github
+
+[33mcommit ebb18dbcdec1a25278560f872b8c4fde3c5c520f[m
+Merge: cb2fd61 9ba0828
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 10 16:41:42 2020 +0000
+
+    Merge pull request #12 from mohammedf2606/feature/testing-sound
+    
+    Add sound to game
+
+[33mcommit 9ba0828021263dc1d526b64a5d325140a63ea99e[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 10 16:40:01 2020 +0000
+
+    Fix music playing after app closed
+
+[33mcommit 7f9ead6bf8f85d15687c36238ae28fc826845185[m
+Author: Manav Parikh <manavparikh3011@gmail.com>
+Date:   Tue Mar 10 14:48:34 2020 +0000
+
+    Started plate game and refactored a bit. WIP stuff still on branch, wouldn't recommend anyone else to work on this just yet
+
+[33mcommit 0fcf71d8006d79496bae9ab7539b3b08395144ca[m
+Merge: 6e9e619 8f0817f
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Mon Mar 9 15:12:24 2020 +0000
+
+    Merge branch 'feature/injection-minigame' of https://github.com/mohammedf2606/SEGMajorProject into CreamMinigame
+
+[33mcommit 6e9e6195a074bedfde9a946aff86912102ac63ee[m
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Mon Mar 9 15:01:02 2020 +0000
+
+    Add 'ding' sound to minigame to show progress.
+
+[33mcommit 811c0c72623f790cb5f4e41bd7a5c63fa2b003b6[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Sun Mar 8 00:30:11 2020 +0000
+
+    Fully implement white/black arm depending on the character selection.
+
+[33mcommit 11a4eddaf32d17294c450e7ae6b9a7fd430cd3ab[m
+Merge: 46e2a82 cb2fd61
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Sat Mar 7 18:07:28 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into CreamMinigame
+
+[33mcommit cb2fd615c964b18e84176e674d13797cb2df7320[m
+Merge: 1ad2b40 27590cf
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Mar 7 17:15:57 2020 +0000
+
+    Merge pull request #11 from mohammedf2606/feature/rework-characters-genders
+    
+    Add new characters and rework according to client brief
+
+[33mcommit 27590cffb5ba8774b9dc4b5fb983cfbd2512f185[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Mar 7 17:15:14 2020 +0000
+
+    Add new characters and rework according to client brief
+
+[33mcommit 46e2a826707a87ee790e05b851cd0bb8b147479f[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Sat Mar 7 16:28:32 2020 +0000
+
+    Delete and add new sprites (including black skin arm)
+
+[33mcommit 7525dbab468eb6f3bda1d7ebc82193ae526d0ef7[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Sat Mar 7 15:23:08 2020 +0000
+
+    Remove commented lines and finalize arm sprite.
+
+[33mcommit 9155faf06c3ca544c52f89bf4d73250263ebc9f5[m
+Merge: 7a4d414 9d84db2
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Sat Mar 7 15:02:00 2020 +0000
+
+    Merge branch 'feature/testing-sound' of https://github.com/mohammedf2606/SEGMajorProject into CreamMinigame
+
+[33mcommit 7a4d41451592a3344927c97690f93638359778ee[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Sat Mar 7 15:01:48 2020 +0000
+
+    Remove unnecessary classes.
+
+[33mcommit 8f0817f64336a906bc4a0716962d25cf82024b58[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Fri Mar 6 19:17:29 2020 +0000
+
+    Implement Espresso UI tests
+
+[33mcommit 663ef9b600dd39386201a8074776f76ecbdae4fc[m
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Fri Mar 6 17:52:39 2020 +0000
+
+    Refactor game so that the opacity of cream splatter increases.
+
+[33mcommit d884af5c15d7c8f8f0ae386e6dfcdaf803722817[m
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Fri Mar 6 14:59:16 2020 +0000
+
+    Refactor methods to improve cohesion.
+
+[33mcommit d162450f9379ef8ec89af202b0694e2fc9836168[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Thu Mar 5 19:08:34 2020 +0000
+
+    Fix testing bugs
+
+[33mcommit 8a618665db3361cff974723a5f66b1206c771d06[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Thu Mar 5 18:59:55 2020 +0000
+
+    All tests pass. 1 or 2 maybe fail but will pass when merged with develop
+
+[33mcommit e8b58539254e8f2e273a0e19e8544a03931f63b3[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Thu Mar 5 17:35:32 2020 +0000
+
+    Fix second activity launch bugs
+
+[33mcommit 4ba6bd0ddb50d463fbded012829c6bba8e638292[m
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Thu Mar 5 15:29:25 2020 +0000
+
+    Add squelching sound for when the player begins 'applying' cream
+
+[33mcommit 60eaf262b39e08f7d4eb66e41819236ff8a01424[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Thu Mar 5 14:57:42 2020 +0000
+
+    Implement Instrumentation & Unit Test Classes For Main Game
+
+[33mcommit 9d84db2bb2c1f53fa565b5575d6c92961f6f3676[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Mar 5 12:15:49 2020 +0000
+
+    Remove else statement that causes infinite loop
+
+[33mcommit c71971e1931c7791c1619e56fc7b716b10192da0[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Mar 5 12:05:42 2020 +0000
+
+    Add multiple background music tracks
+
+[33mcommit 5ac5f2f8ed313cf38ef4c048f7ba2f9cafa4c374[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Thu Mar 5 09:27:50 2020 +0000
+
+    Complete documenting constants classes
+
+[33mcommit 8546f83bf5d4d92e411bf14d3b44ee4ed01fd52a[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Thu Mar 5 09:15:32 2020 +0000
+
+    Complete unit tests for constants class
+
+[33mcommit 5a71d5d4e5816f612cbc8eeb677b713eaee49d39[m
+Author: TheMuslimCompSci <fareed.faisal@kcl.ac.uk>
+Date:   Wed Mar 4 21:12:43 2020 +0000
+
+    Finish Main Activity Instrumentation Tests
+
+[33mcommit eefbb53b9abf9cfd1853c67284891119b0e21016[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Wed Mar 4 15:55:00 2020 +0000
+
+    Add Activity Tests
+
+[33mcommit dbd10c524735030f17afde5add64d7554d225f4b[m
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Wed Mar 4 15:48:14 2020 +0000
+
+    Remove unnecessary code.
+
+[33mcommit 9c1b907839552cba061e5beb3000c50739be6af8[m
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Wed Mar 4 15:43:13 2020 +0000
+
+    Rename creamsplatter1,2,3 classes to better more informative names.
+
+[33mcommit fe034319b24fa4a347ab954ad5cc02a3b65b82dc[m
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Wed Mar 4 15:26:58 2020 +0000
+
+    Begin commenting each class' purpose.
+
+[33mcommit 0ba511683c0ddd26cb8b28b98ed758bd6c57fdcc[m
+Merge: 15ec632 70f1a62
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Wed Mar 4 14:13:44 2020 +0000
+
+    Merge branch 'feature/testing-sound' of https://github.com/mohammedf2606/SEGMajorProject into CreamMinigame
+
+[33mcommit 3ee909f5d8e0d3e1f7efb129dd43b779f251f757[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Wed Mar 4 10:58:02 2020 +0000
+
+    Add instrumentation tests
+
+[33mcommit 15ec632864b2d5ea45214493c970981a91748f94[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Tue Mar 3 16:25:51 2020 +0000
+
+    modify assets (rescale creamtube and add new clipart for endgame sticker/badge)
+
+[33mcommit 95abb8f55fec37c0714de6ecc4ee133502b5ec96[m
+Merge: e4f894c 1ad2b40
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Tue Mar 3 15:11:48 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/injection-minigame
+
+[33mcommit e4f894c6eafa88ced62ea99a5ac5287edc1b0006[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Tue Mar 3 15:03:48 2020 +0000
+
+    Add game over sticker
+
+[33mcommit 9e3595550a18f7ca206e41b1f3ed35e98c72bc34[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Tue Mar 3 14:46:34 2020 +0000
+
+    Add background image
+
+[33mcommit 70f1a62180f20b505899a265a085600801a25af7[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 3 13:27:08 2020 +0000
+
+    Fix constant repeating success sound (kind of)
+
+[33mcommit a1cfbb6eed1babff5ed7b83afee941323549a46f[m
+Merge: b886843 1ad2b40
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 3 13:23:39 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/testing-sound
+
+[33mcommit 1ad2b40d3fc71b0d315b9c64827f803a55e93d36[m
+Merge: 582f33e 0f195b5
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 3 13:20:06 2020 +0000
+
+    Merge pull request #10 from mohammedf2606/feature/pre-scan
+    
+    Added the pre scan room
+
+[33mcommit 0f195b5b2753335d17638a012369aed26d6bf82b[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 3 13:18:43 2020 +0000
+
+    Add pre scan room
+
+[33mcommit ce8e0a6c72f01cbff64cb034170aa15b52e2ad62[m
+Merge: 1ce7600 582f33e
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 3 12:48:40 2020 +0000
+
+    Merge remote-tracking branch 'origin/develop' into develop
+
+[33mcommit b8868430ed6991b988db7e9ce9b93647b9812565[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 3 12:45:53 2020 +0000
+
+    Add sound effects
+
+[33mcommit cb61c9f268debce6a89448c8196e141dd149f847[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 3 11:52:28 2020 +0000
+
+    Add background music throughout the game
+
+[33mcommit 778aa5b65092d38e73f8200b6b11864622a36fe2[m
+Merge: 9428e10 582f33e
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Mar 3 11:14:11 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/testing-sound
+
+[33mcommit 040febfb840520e8f479d706903efccc35deec41[m
+Author: JawadZeidan289 <jawadz@live.co.uk>
+Date:   Mon Mar 2 17:13:21 2020 +0000
+
+    Make cream application process quicker.
+
+[33mcommit 33c65eb88bb5a0a5068eb0a5a2b5b1a56356aa9d[m
+Merge: ebd713a 582f33e
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Mon Mar 2 13:08:15 2020 +0000
+
+    Merge remote-tracking branch 'origin/develop' into develop
+
+[33mcommit 582f33ed2b26f5381025427cff324532e1a5f8bb[m
+Merge: 03f73dd efd6dd1
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Mon Mar 2 13:07:02 2020 +0000
+
+    Merge pull request #9 from mohammedf2606/InjectionMinigame
+    
+    Injection minigame
+
+[33mcommit efd6dd117650e00b73d33cfce009687a79c0bd26[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:20:11 2020 +0000
+
+    Add comments
+
+[33mcommit e019bbc69b2515f4d0110a4e6cd9c5e3c2ece888[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:20:07 2020 +0000
+
+    Add comments
+
+[33mcommit d65df6f52383f74862b413570074871d59fa2bf0[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:20:03 2020 +0000
+
+    Add comments
+
+[33mcommit 9b70b1fd5088a15021581617f2734b4463e0070c[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:19:59 2020 +0000
+
+    Add comments
+
+[33mcommit f57448c3f65a188f0a47cea15667ee871b4125b2[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:19:55 2020 +0000
+
+    Add comments
+
+[33mcommit 535d1f31ea0b61f140136c1cf455ff321fa0293a[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:19:51 2020 +0000
+
+    Add comments
+
+[33mcommit 7d5114596b6fa46c5e5754f437b42d5cced4b428[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:19:47 2020 +0000
+
+    Add comments
+
+[33mcommit b51b5568ec09e7ce0b0fb4c8045ac1cf9f8de1db[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:19:43 2020 +0000
+
+    Add comments
+
+[33mcommit 6db6e179149563281685ca7613bb3d572f3ae0eb[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:19:37 2020 +0000
+
+    Add comments
+
+[33mcommit 7c784114bbf563ee4611d7c74e6a6d1e2d33ac0a[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:19:29 2020 +0000
+
+    Add comments
+
+[33mcommit 490deba09010c13192a3ec11c664bb28804280c9[m
+Author: TheMuslimCompSci <45312857+TheMuslimCompSci@users.noreply.github.com>
+Date:   Sat Feb 29 18:19:22 2020 +0000
+
+    Add comments
+
+[33mcommit dbbe2c8fa8599f7856853dea1501b11626a39812[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Fri Feb 28 15:09:58 2020 +0000
+
+    fix android manifest file
+
+[33mcommit e3411b82c480f87cf6bf1a78f0f01f5231db8c7a[m
+Author: Manav Parikh <manavparikh3011@gmail.com>
+Date:   Fri Feb 28 10:57:51 2020 +0000
+
+    gameplay done
+
+[33mcommit 37e5962725500e84523c65cf599702169b07b2df[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Thu Feb 27 17:39:35 2020 +0000
+
+    Refactored splat bitmap appearance location. Also made it darken screen when sticker shows up for effects.
+
+[33mcommit a394483767d5dde9bd43b4dc62813ba92a53174e[m
+Author: Alimahad Mohamed <alimahadmohamed@gmail.com>
+Date:   Wed Feb 26 15:46:23 2020 +0000
+
+    Update method updated
+
+[33mcommit 6f4103344e6b696749209a38e59d66eeaba5fe19[m
+Author: Manav Parikh <manavparikh3011@gmail.com>
+Date:   Wed Feb 26 15:25:24 2020 +0000
+
+    fixed screen size constants and stopped bowl clipping
+
+[33mcommit c2b02e1d89f5260b0bf78ba4709e840e6328f418[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Tue Feb 25 16:51:40 2020 +0000
+
+    Begin adding sound effects to the cream minigame. More specifically the success chime that occurs once the game is finished.
+
+[33mcommit 1eb438334f4c9160e58d5b07584dfafd83c67fbd[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Tue Feb 25 16:25:40 2020 +0000
+
+    link cream minigame to waiting room activity.
+
+[33mcommit 6e134204cc86f595c5ef97929170d12b36f5149e[m
+Merge: 2bc155e 03f73dd
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Tue Feb 25 16:25:29 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into CreamMinigame
+
+[33mcommit 2bc155e4d63c20cbe8b1eaf47bf36a24ff7654b2[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Tue Feb 25 16:01:00 2020 +0000
+
+    add endgame condition plus completion sticker
+
+[33mcommit a743b43bc7c36e3958b05f9b6b695468b5c66b5a[m
+Author: Alimahad Mohamed <alimahadmohamed@gmail.com>
+Date:   Mon Feb 24 14:23:04 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/food-mini-game
+    
+    # Conflicts:
+    #       app/src/main/AndroidManifest.xml
+
+[33mcommit 1ce7600a55d4b5acfe44adf4708ea21a9f51a749[m
+Merge: 8b808fc 03f73dd
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Fri Feb 21 16:46:29 2020 +0000
+
+    Merge remote-tracking branch 'origin/develop' into develop
+
+[33mcommit ebd713a0ca2b7ee576ad1c8ec877aa567e8dda7f[m
+Merge: e291feb 03f73dd
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Fri Feb 21 14:27:16 2020 +0000
+
+    Merge remote-tracking branch 'origin/develop' into develop
+    
+    # Conflicts:
+    #       app/src/main/java/com/hummer/educationalgame/WaitingRoom.java
+
+[33mcommit e291feb70cf5395d0168f8032d6ce2ed3d27600e[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Fri Feb 21 14:26:12 2020 +0000
+
+    Merge branch 'develop' of C:\Users\themu\3D Objects\Computer Science\Y2\SEG\Projects\SEGMajorProject with conflicts.
+
+[33mcommit 33d3fa14a8c8d723f34d71537cfcb6f5c1be0804[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Fri Feb 21 14:22:53 2020 +0000
+
+    Fix integration
+
+[33mcommit 6ebd8b10158ca9a30156bc8183a63783a2cfb7ea[m
+Merge: f5fbeee 03f73dd
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Fri Feb 21 14:07:34 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into InjectionMinigame
+
+[33mcommit f5fbeeee36533d8e0ddb36efc5321fef9db08377[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Fri Feb 21 14:06:41 2020 +0000
+
+    Begin sound implementation
+
+[33mcommit 55bd2074ef57658a8c7a4ba2003746490a74f385[m
+Merge: 6332054 03f73dd
+Author: Alimahad Mohamed <alimahadmohamed@gmail.com>
+Date:   Fri Feb 21 12:14:35 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/food-mini-game
+    
+    # Conflicts:
+    #       app/src/main/AndroidManifest.xml
+
+[33mcommit de02236ba3b861103d30b3a0f65ea2d5ade1243e[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Fri Feb 21 12:11:29 2020 +0000
+
+    add a better quality creamtube sprite and modified variable names
+
+[33mcommit e4bcf762dc015e5559bff04e06da15aa756be130[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Fri Feb 21 10:39:58 2020 +0000
+
+    add progress to cream applying in the form of multiple sprites
+
+[33mcommit 9428e10b03a75279ca0ccac7c1170704e2270d81[m
+Author: Bleon Uka <bleon.u@outlook.com>
+Date:   Thu Feb 20 17:49:57 2020 +0000
+
+    Test for music
+
+[33mcommit 03f73ddb2520020e2ce6af0dfb1a2471c4261a0a[m
+Merge: edfa8ad 82b91f8
+Author: ohffs <43014705+ohffs@users.noreply.github.com>
+Date:   Thu Feb 20 17:13:53 2020 +0000
+
+    Merge pull request #8 from mohammedf2606/hotfix/fix-orientation
+    
+    Fix orientation from changing to portrait from rotating
+
+[33mcommit 82b91f8129e1d27157052f1ef86ebc4de0e380aa[m
+Author: Bleon Uka <bleon.u@outlook.com>
+Date:   Thu Feb 20 17:13:07 2020 +0000
+
+    Fix orientation from changing to portrait from rotating
+
+[33mcommit edfa8ad3337d4ebb8149cc09a6a6ade437889956[m
+Merge: 70849d9 630564f
+Author: ohffs <43014705+ohffs@users.noreply.github.com>
+Date:   Thu Feb 20 16:59:06 2020 +0000
+
+    Merge pull request #7 from mohammedf2606/feature/injection-pregame
+    
+    Integrate all screens up to injection minigame
+
+[33mcommit 630564f87dd3a769ec3d83a951ffd2b6f3a3ed5f[m
+Author: Bleon Uka <bleon.u@outlook.com>
+Date:   Thu Feb 20 16:57:12 2020 +0000
+
+    Add integration for injection minigame
+
+[33mcommit 0498db788a35ca0c39f68ba7d01818850c85bc99[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Wed Feb 19 20:39:26 2020 +0000
+
+    complete collision detection between specified cream area and cream tube itself
+
+[33mcommit ebab6e35d649c2d9951493f01dd7e749c0296ca9[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Wed Feb 19 18:08:24 2020 +0000
+
+    integrated branch 'develop' into branch 'creamminigame'
+
+[33mcommit e3405ce7aa92b1e9197e30a7d80d918a8055a3c8[m
+Merge: 9180adf 70849d9
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Wed Feb 19 18:08:06 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into CreamMinigame
+
+[33mcommit 9180adff698255e2c61403d032363700bb4aca13[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Wed Feb 19 17:53:31 2020 +0000
+
+    add new sprite and remove functions from arm sprite
+
+[33mcommit 70849d908767f8953888f0e29d10213fdce5b5d6[m
+Merge: 5bad32d 5bea903
+Author: ohffs <43014705+ohffs@users.noreply.github.com>
+Date:   Wed Feb 19 17:52:16 2020 +0000
+
+    Merge pull request #6 from mohammedf2606/feature/cream-pregame
+    
+    Cream minigame integration complete
+
+[33mcommit 5bea903eb42556a3ebcb4619495c8e071b67c51f[m
+Author: Bleon Uka <bleon.u@outlook.com>
+Date:   Wed Feb 19 17:49:00 2020 +0000
+
+    Add integration for cream minigame
+    
+    Allows dynamic loading of characters for interactive screens
+
+[33mcommit 1e08ac5d635b91dce347d852dd7a2352c52f2fc8[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Wed Feb 19 17:48:40 2020 +0000
+
+    begin working on collisions with the cream and the arm
+
+[33mcommit a3e650add1bb2163c8d5f52d3a1daaff58da52a7[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Wed Feb 19 15:58:00 2020 +0000
+
+    change bitmap images and make cream tube disappear when screen is not touched
+
+[33mcommit 63320543975d0311a13397d044bc4f796816d7a8[m
+Author: Manav Parikh <manavparikh3011@gmail.com>
+Date:   Wed Feb 19 14:15:14 2020 +0000
+
+    quick hashbrown crop
+
+[33mcommit 8b051e44fb88e96b99954fcdf08e282e6f6712a5[m
+Author: Manav Parikh <manavparikh3011@gmail.com>
+Date:   Wed Feb 19 14:10:04 2020 +0000
+
+    bowl displays correctly
+
+[33mcommit ff92f5a6a85e608ed183c115788ad49c73c3288f[m
+Author: Manav Parikh <manavparikh3011@gmail.com>
+Date:   Wed Feb 19 13:45:33 2020 +0000
+
+    Attempt at merge, bowl not displaying
+
+[33mcommit f31ab523bff257daa68d5eab216c720e70b0db50[m
+Author: Alimahad Mohamed <alimahadmohamed@gmail.com>
+Date:   Tue Feb 18 16:57:35 2020 +0000
+
+    hashbrown slides down screen
+
+[33mcommit a8a5e21ab7201bb61a06b3063d5e3339e8d95e15[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Tue Feb 18 15:47:19 2020 +0000
+
+    Add images
+
+[33mcommit 861383d910ddaf52b99f5a71eaedee5892d01e21[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Tue Feb 18 14:52:21 2020 +0000
+
+    Add female route to injection and food
+    Add placeholder injection room xml layout
+
+[33mcommit 0faaf493620cd54209f424f134a8326a10e3edea[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Tue Feb 18 12:08:18 2020 +0000
+
+    Begin animation & textures implementation
+
+[33mcommit c5f1c75473d3e595ac11ea3d972c0844ee366442[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Tue Feb 18 03:08:51 2020 +0000
+
+    begin working on adding cream to arm in the form of bitmaps
+
+[33mcommit 47958e0919c09bafff1142d61c1af6b462e71d16[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Tue Feb 18 00:00:52 2020 +0000
+
+    Implement scene management
+
+[33mcommit de86727a3a64864a702eca75209b2088cca3b13b[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Mon Feb 17 23:32:52 2020 +0000
+
+    Implement collision detection
+
+[33mcommit 8b808fc9b5927af8368990b231119fa0d86a3ce3[m
+Merge: e0330d4 5bad32d
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Feb 17 18:43:12 2020 +0000
+
+    Merge remote-tracking branch 'origin/develop' into develop
+    
+    # Conflicts:
+    #       app/src/main/res/layout/food_selection.xml
+
+[33mcommit e0330d4c5055377b2771c1a22936f3fb6324a3af[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Feb 17 18:41:10 2020 +0000
+
+    Merge branch 'develop' of C:\Users\Fahim Mohammed\AndroidStudioProjects\SEGMajorProject with conflicts.
+
+[33mcommit d26e28cacf2822a7b20fad1f6cf2d96a29f6216f[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Mon Feb 17 18:40:02 2020 +0000
+
+    add main menu to game
+
+[33mcommit cf2cc4bc63d0980a1179d1c8afb61f2e42a85cf9[m
+Author: Alimahad Mohamed <alimahadmohamed@gmail.com>
+Date:   Mon Feb 17 15:40:09 2020 +0000
+
+    Add activity for integration
+
+[33mcommit 713051971b8461d4288382b0ba59faaea525f5e2[m
+Author: Alimahad Mohamed <alimahadmohamed@gmail.com>
+Date:   Mon Feb 17 15:36:59 2020 +0000
+
+    hashbrown moves about
+
+[33mcommit d1cbb7ccbde7baf2dba25ab436cecd3130dc8e0d[m
+Merge: 272605e 5bad32d
+Author: Alimahad Mohamed <alimahadmohamed@gmail.com>
+Date:   Mon Feb 17 14:47:03 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/food-mini-game
+
+[33mcommit 5bad32d2c04480157e516c0beea49fee0cf9df39[m
+Merge: ff87cf1 a34bf27
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Feb 17 14:46:09 2020 +0000
+
+    Merge pull request #5 from mohammedf2606/feature/food-pregame
+    
+    Created the food selection screen
+
+[33mcommit a34bf274df08ce27aeb86b62c84a2d94bbd2ac90[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Feb 17 14:43:24 2020 +0000
+
+    Add assets to branch
+
+[33mcommit 272605ee0e2053aada7d696aac1d14ab5cc58554[m
+Merge: f10c1c1 ff87cf1
+Author: Alimahad Mohamed <alimahadmohamed@gmail.com>
+Date:   Mon Feb 17 14:42:57 2020 +0000
+
+    Merge branch 'develop' of https://github.com/mohammedf2606/SEGMajorProject into feature/food-mini-game
+
+[33mcommit bc7413a5cfb589530ed98cd1ecfbe13139b5eab3[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Mon Feb 17 14:23:58 2020 +0000
+
+    begin working on the background of the game
+
+[33mcommit 0d1f55e32441ad046e6035283bf2d30b64a2075d[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Feb 17 12:49:57 2020 +0000
+
+    Fix warnings in entire codebase
+
+[33mcommit 6965bcfa68fa60d62655823900296745b23adda9[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Feb 17 12:40:26 2020 +0000
+
+    Setup food minigame pregame without assets
+
+[33mcommit 041e2f3dca6e62591521bbea1634a0778e52677e[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Feb 17 11:52:02 2020 +0000
+
+    Move ids from ImageView to Buttons and add descriptions
+
+[33mcommit ff87cf1770cec7d6d55313ce8895f8b75aef3675[m
+Merge: f15fbb6 275660e
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Mon Feb 17 11:26:03 2020 +0000
+
+    Merge pull request #4 from mohammedf2606/feature/gender
+    
+    Create character selection screens
+
+[33mcommit 87f59733046406e4a0d55e4f6c8bf165369901bf[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Mon Feb 17 10:28:33 2020 +0000
+
+    Begin collision detection implementation
+
+[33mcommit 78ade1a5a3f5fcf6715430b7cc2f8225e04b5efc[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Sun Feb 16 18:50:13 2020 +0000
+
+    Rename body class and add game constants
+
+[33mcommit 9e6b8dbca35c2ab77d6659bbfb8ccf370e16786e[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Sun Feb 16 18:49:25 2020 +0000
+
+    added minor changes for testing
+
+[33mcommit bfe718475250a6c8337d91bdac81d6a877a78aba[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Sun Feb 16 18:45:01 2020 +0000
+
+    Add body to be injected
+
+[33mcommit f3f89f3b24c8d894da4246d5a54c847cbd43956a[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Sun Feb 16 10:11:37 2020 +0000
+
+    Implement basic injection DnD
+
+[33mcommit 308d64546cd10943c259d98dcbd12c9d25af655f[m
+Author: FareedFaisal <47261113+FareedFaisal@users.noreply.github.com>
+Date:   Sat Feb 15 18:00:28 2020 +0000
+
+    Implement game loop
+
+[33mcommit 275660e3ab0532e28d184e46afcc158c15273c3a[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Feb 15 13:58:16 2020 +0000
+
+    Add class for female_character implementation
+
+[33mcommit cacc7b3f1a785c1772d92b89f584773af96da29c[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Feb 15 13:54:11 2020 +0000
+
+    Fix male_characters page to show
+
+[33mcommit ff88eba84240a34940a52829be57907f66ef5735[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Sat Feb 15 13:42:22 2020 +0000
+
+    Add two new pictures for gender selection screen
+
+[33mcommit 3267f97939af89acb1e0c418389139972ca7a9f4[m
+Author: Bleon Uka <bleon.u@outlook.com>
+Date:   Fri Feb 14 14:42:10 2020 +0000
+
+    fixed activity_gender_selection however needs new images.
+
+[33mcommit 4ce5ab818ec48b75b5fc32f3a16dd1f9a84bf4c1[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Thu Feb 13 21:09:47 2020 +0000
+
+    begin working on game loop for the cream minigame
+
+[33mcommit f10c1c110d1dc275786ab4bebe9c87d93d1f9da8[m
+Author: Alimahad Mohamed <alimahadmohamed@gmail.com>
+Date:   Thu Feb 13 16:07:53 2020 +0000
+
+    Template for foodminigame created.
+
+[33mcommit 8099c2da15d46f6fe2c9a1449010aef4d7c379d0[m
+Author: Bleon Uka <bleon.u@outlook.com>
+Date:   Thu Feb 13 14:47:57 2020 +0000
+
+    added id to gender selection
+
+[33mcommit caf254f46a0935a5eaf32c1a018d9a0d0805ab83[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 13 14:38:18 2020 +0000
+
+    Add gender selection screen with placeholder assets
+
+[33mcommit f15fbb6984d64bb4d4247a12501edd41dd4ff5b6[m
+Merge: 975bead 3305e08
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 13 13:39:38 2020 +0000
+
+    Merge pull request #3 from mohammedf2606/feature/reception
+    
+    adds no history
+
+[33mcommit 3305e08a60dd80dd84d42cb6ee5ceb7d4b8c6424[m
+Author: Bleon Uka <bleon.u@outlook.com>
+Date:   Thu Feb 13 13:29:50 2020 +0000
+
+    adds no history
+
+[33mcommit 975bead931947e8ef76c88a9ced357ac45c1de04[m
+Merge: d979cee d8e1a88
+Author: JawadZeidan289 <55697041+JawadZeidan289@users.noreply.github.com>
+Date:   Wed Feb 12 13:48:17 2020 +0000
+
+    Merge pull request #2 from mohammedf2606/msp26-removed-idea
+    
+    Msp26 removed idea
+
+[33mcommit d8e1a88db6a9d54473a362c5d4f08f9683ea96bd[m
+Author: Manav Parikh <manavparikh3011@gmail.com>
+Date:   Wed Feb 12 13:43:54 2020 +0000
+
+    REMOVE IDEA FOLDER
+
+[33mcommit 528622ae4c719d915c1a0cbea1c70facde92e0ca[m
+Author: Manav Parikh <manavparikh3011@gmail.com>
+Date:   Wed Feb 12 13:39:42 2020 +0000
+
+    gitignore idea folder
+
+[33mcommit 223404368968df56d47a0d3289f0647e00df6dba[m
+Author: Zeidan, Jawad (k1891262) <jawad.zeidan@kcl.ac.uk>
+Date:   Tue Feb 11 17:17:24 2020 +0000
+
+    Create initial xml
+
+[33mcommit d979cee44e160c80b3033ffeeb1667be06732524[m
+Merge: a112016 c98a98f
+Author: AliiMohamed <44209176+AliiMohamed@users.noreply.github.com>
+Date:   Tue Feb 11 15:04:54 2020 +0000
+
+    Merge pull request #1 from mohammedf2606/feature/menu-screen
+    
+    completed, but not finalised, the menu and start screen.
+
+[33mcommit c98a98fa486d4111c7b99054aeb7d23edc907798[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Tue Feb 11 15:00:33 2020 +0000
+
+    rearrangs the start screen and the menu screen.
+
+[33mcommit 57e19583919463bf5f5791d1ddce878aeb79c1a3[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Tue Feb 11 14:53:10 2020 +0000
+
+    changes the app specs so that it is compatible with the real device.
+
+[33mcommit cb766654e7e6f39a82e0bfc77ed7a13653ebabc6[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Mon Feb 10 12:43:08 2020 +0000
+
+    ensures everything is uptodate.
+
+[33mcommit 5b5c6a03bccac4336e1ab2d7d825f9d3d80f1b1c[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Sun Feb 9 18:04:43 2020 +0000
+
+    adds an aura to the images in the menu screen.
+
+[33mcommit 7e909c53fd1f3ec6a265702966dfe35f4c06e558[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Sun Feb 9 17:01:29 2020 +0000
+
+    adds a ripple effect when the screen is tapped. this has only been implamented into the start screen and the menu screen.
+
+[33mcommit 1a81e1f4bce947d4f880970560e07c732ec6e593[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Sun Feb 9 15:14:45 2020 +0000
+
+    removed unnecessary files in drawable.
+
+[33mcommit 15bfcd20ae83085bbd62927fb9214c6b7446d350[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Sun Feb 9 15:08:23 2020 +0000
+
+    makes the game transition from the start screen to the menu by tapping anywhere on the screen.in the menu screen the pictures are now buttons which can be pressed to transition to the corresponding scene.
+
+[33mcommit df56d5102726db982afbb4dc476bb0bdf165404d[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Fri Feb 7 15:27:23 2020 +0000
+
+    make view xml instead of hard coded
+
+[33mcommit 484b27cec594c72239eda19491d5f50d03d1ad2f[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Thu Feb 6 17:59:41 2020 +0000
+
+    adds tap to start text
+
+[33mcommit b5090756ce42df9af75794ab6e33102c34e8c4a5[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 17:38:06 2020 +0000
+
+    Attempt to implement TypeFace in a different way
+
+[33mcommit f4a43218003ef077fc41ab554eb0f4564eb92d09[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 16:46:08 2020 +0000
+
+    Try something different
+
+[33mcommit 8d740bdd4cd7cda182f29f5ea41afee47b4172c9[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 16:36:09 2020 +0000
+
+    Try different font file format
+
+[33mcommit b37a735ee5aba77acaf52da3e31d8c2588e789d2[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Thu Feb 6 16:32:33 2020 +0000
+
+    tests if the font is found/exists
+
+[33mcommit c0ea6b74627d8ac1d653fe5f8b2bcf6d0453173e[m
+Merge: 816f0c0 4dd8d58
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 16:16:37 2020 +0000
+
+    Merge branch 'feature/menu-screen' of https://github.com/mohammedf2606/SEGMajorProject into feature/menu-screen
+
+[33mcommit 816f0c022f15b6f6c0fc4f5d2cd406f4944a560d[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 16:15:21 2020 +0000
+
+    Add custom font to text in menu
+
+[33mcommit 4dd8d58b7b08b290236d24ce128559e3932c94f0[m
+Author: Bleon Uka <k1890506@kcl.ac.uk>
+Date:   Thu Feb 6 16:08:02 2020 +0000
+
+    edits title location so that it is 1/5th of the way down the screen.
+
+[33mcommit 73ad9da334abf04b24fa4e7a971438ddaf54ce46[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 15:53:24 2020 +0000
+
+    Change y value of text in menu
+
+[33mcommit f9c042568e00e985d97e000cf4be36cc8140b3d4[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 15:50:04 2020 +0000
+
+    Attempt a different implementation for centre text
+
+[33mcommit d3ce715602f9e57c99e800062aa1ef3e11503048[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 15:46:11 2020 +0000
+
+    Fix missing text by setting text size
+
+[33mcommit d78735f9c578b55d2f6407e8e8eebcd0e8196244[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 15:42:08 2020 +0000
+
+    Add centre text for test
+
+[33mcommit a112016c32bc5bc5ac8e8adb701ed2453a606196[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 15:32:13 2020 +0000
+
+    Add GameObject interface and make initial screen white
+
+[33mcommit 1b5ae6d6fd55047b20af82d8d42c5d265a1d13c9[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Feb 6 15:04:44 2020 +0000
+
+    Change superclass for MainActivity
+
+[33mcommit d4caef0147b1afd996bd616341cde5bf597b4bf3[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Wed Feb 5 17:12:31 2020 +0000
+
+    Fix constructor call of MainThread in GamePanel
+
+[33mcommit acc277a78e542b37775832e51aca170b3e7a5649[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Wed Feb 5 17:11:08 2020 +0000
+
+    Add MainThread for FPS calculation
+
+[33mcommit 01cb69af2aa136e43a406bc19d3353d53eec93c1[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Wed Feb 5 17:07:41 2020 +0000
+
+    Add GamePanel with placeholder update and draw functions
+    
+    Need to setup MainThread for FPS calculation
+
+[33mcommit 89c0dfe0570c014b07307710019de7301dd2be7d[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Wed Feb 5 16:58:40 2020 +0000
+
+    Initalise a new project using Android Studio
+    
+    Changed com.hummer.educationalgame.MainActivity to make initial screen fullscreen
+
+[33mcommit 877a5fdeee4c6e78399f1561f9183f6abc509c3e[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Jan 30 15:44:31 2020 +0000
+
+    Add gitignore using GitHub Android template
+
+[33mcommit 58f7971f85a723aef5a9d6c8e164282ea8a2c1fa[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Jan 30 15:39:57 2020 +0000
+
+    Revert "Initialise an Empty Activity project using Android Studio"
+    
+    This reverts commit d05b74c997483037ae54ae70ff2d067231a8aaa7.
+    
+    Last commit was a test to see if Android Studio can initalise a project to Git
+
+[33mcommit d05b74c997483037ae54ae70ff2d067231a8aaa7[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Wed Jan 29 17:46:37 2020 +0000
+
+    Initialise an Empty Activity project using Android Studio
+    Need to initialise a empty game loop by removing specific setup for Empty Activity Project
+
+[33mcommit 8dc774c9369e5a9b133c5c0ad2cf0da52b50fb73[m
+Author: Fahim Mohammed <mohammedf2606@gmail.com>
+Date:   Thu Jan 16 12:04:57 2020 +0000
+
+    Create README.md

@@ -12,6 +12,7 @@ import com.hummer.hospital_heroes.milk_minigame.MilkGameActivity;
 public class FoodSelection extends AppActivity implements View.OnClickListener {
 
     Button milk, hash_brown, beans;
+    public static boolean isMilk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +34,12 @@ public class FoodSelection extends AppActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.milk:
+                isMilk = true;
                 Intent milk_game = new Intent(FoodSelection.this, MilkGameActivity.class);
                 startActivity(milk_game);
                 break;
             case R.id.hash_browns:
+                isMilk = false;
                 Intent food_game = new Intent(FoodSelection.this, MainGameActivity.class);
                 startActivity(food_game);
                 break;
