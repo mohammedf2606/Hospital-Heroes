@@ -44,4 +44,9 @@
     <string name="thumbs_up">thumbs up</string>
     <string name="food_selection">Food Selection</string>
     <string name="arrow">Arrow</string>
+    <string name="reception">Reception</string>
+    <string name="halo">halo</string>
+    <string name="scanner">scanner</string>
+    <string name="cream">cream</string>
+    <string name="straps">straps</string>
 </resources>

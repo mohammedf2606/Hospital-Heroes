@@ -78,7 +78,8 @@
             android:layout_centerInParent="true"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:src="@drawable/cream_tube" />
+            android:src="@drawable/cream_tube"
+            android:contentDescription="@string/cream" />
 
     </RelativeLayout>
 
