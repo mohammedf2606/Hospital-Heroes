@@ -34,6 +34,7 @@ public class FoodSelectionTest
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -57,7 +58,6 @@ public class FoodSelectionTest
     @Test
     public void launch()
     {
-        Intents.init();
         Espresso.onView(withId(R.id.hash_browns)).perform(click());
         intended(hasComponent(MainGameActivity.class.getName()));
     }
@@ -66,5 +66,6 @@ public class FoodSelectionTest
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

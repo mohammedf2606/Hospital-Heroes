@@ -34,6 +34,7 @@ public class StrapToChairTest {
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -57,7 +58,7 @@ public class StrapToChairTest {
     @Test
     public void launch()
     {
-        Intents.init();
+
         Espresso.onView(withId(R.id.strapping)).perform(click());
         intended(hasComponent(MainMenu.class.getName()));
     }
@@ -66,5 +67,6 @@ public class StrapToChairTest {
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

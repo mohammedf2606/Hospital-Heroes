@@ -33,6 +33,7 @@ public class ReceptionTest
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -56,7 +57,7 @@ public class ReceptionTest
     @Test
     public void launch()
     {
-        Intents.init();
+
         Espresso.onView(withId(R.id.receptionist)).perform(click());
         intended(hasComponent(CharacterSelection.class.getName()));
     }
@@ -65,5 +66,6 @@ public class ReceptionTest
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

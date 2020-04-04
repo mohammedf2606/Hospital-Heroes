@@ -60,6 +60,7 @@ public class InjectionMainMenuTest
         Intents.init();
         Espresso.onView(withId(R.id.playButton)).perform(click());
         intended(hasComponent(InjectionMainActivity.class.getName()));
+        Intents.release();
     }
 
     @After

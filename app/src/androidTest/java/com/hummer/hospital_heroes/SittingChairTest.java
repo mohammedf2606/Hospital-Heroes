@@ -60,6 +60,7 @@ public class SittingChairTest
         Intents.init();
         Espresso.onView(withId(R.id.cream)).perform(click());
         intended(hasComponent(MainMenuForGame.class.getName()));
+        Intents.release();
     }
 
     @After
