@@ -46,4 +46,8 @@ public class GameActivity extends AppActivity {
         Intent waiting_room = new Intent(GameActivity.this, WaitingRoom.class);
         startActivity(waiting_room);
     }
+
+    public GameView getGameView() {
+        return gameView;
+    }
 }
