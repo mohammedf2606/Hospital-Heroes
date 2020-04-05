@@ -51,4 +51,13 @@ public class StarBackground {
         p.setColorFilter(filter);
         canvas.drawBitmap(image, 0, 0, p);
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
+    }
 }

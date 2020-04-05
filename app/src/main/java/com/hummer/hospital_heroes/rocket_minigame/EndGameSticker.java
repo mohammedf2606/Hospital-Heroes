@@ -77,4 +77,13 @@ public class EndGameSticker {
     public int getHeight() {
         return image.getHeight();
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
+    }
 }

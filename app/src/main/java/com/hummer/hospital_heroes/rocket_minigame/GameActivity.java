@@ -41,4 +41,8 @@ public class GameActivity extends AppActivity {
         Intent end_screen = new Intent(GameActivity.this, EndScreen.class);
         startActivity(end_screen);
     }
+
+    public GameView getGameView() {
+        return gameView;
+    }
 }

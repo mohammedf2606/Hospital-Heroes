@@ -1,6 +1,7 @@
 package com.hummer.hospital_heroes.rocket_minigame;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.view.MotionEvent;
@@ -8,6 +9,8 @@ import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 
 import com.hummer.hospital_heroes.SoundEffects;
+
+import java.util.ArrayList;
 
 /**
  * GameView represents the powerhouse class of the package. All
@@ -201,5 +204,30 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         house = new HouseSprite(getResources());
         asteroidManager = new AsteroidManager(getResources());
         sticker = new EndGameSticker(xOfScreen, yOfScreen, getResources());
+    }
+
+    /**
+     * Returns the resolution of the screen as an arraylist
+     */
+    public ArrayList getResolution() {
+        ArrayList<Integer> reso = new ArrayList<Integer>();
+        reso.add(xOfScreen);
+        reso.add(yOfScreen);
+        return reso;
+    }
+
+    /**
+     * Returns all the bitmaps in the game as an arraylist
+     */
+    public ArrayList getBitmaps() {
+        ArrayList<Bitmap> bitmaps = new ArrayList<>();
+        bitmaps.add(starBackground.getBitmap());
+        bitmaps.add(rocket.getBitmap());
+        bitmaps.add(house.getBitmap());
+        bitmaps.add(sticker.getBitmap());
+        for(Asteroid asteroid : asteroidManager.asteroids) {
+            bitmaps.add(asteroid.getBitmap());
+        }
+        return bitmaps;
     }
 }

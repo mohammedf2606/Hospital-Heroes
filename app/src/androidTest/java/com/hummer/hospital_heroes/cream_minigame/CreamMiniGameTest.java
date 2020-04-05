@@ -19,6 +19,7 @@ import androidx.test.espresso.assertion.ViewAssertions;
 import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
+import com.hummer.hospital_heroes.ClickMethods;
 import com.hummer.hospital_heroes.R;
 
 import static androidx.test.espresso.Espresso.onData;
@@ -36,31 +37,10 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import static org.junit.Assert.*;
 
-public class MiniGameTest {
+public class CreamMiniGameTest {
 
     @Rule
     public ActivityTestRule<GameActivity> mActivityTestRule = new ActivityTestRule<>(GameActivity.class);
-
-
-    public static ViewAction clickXY(final int x, final int y){
-        return new GeneralClickAction(
-                Tap.LONG,
-                new CoordinatesProvider() {
-                    @Override
-                    public float[] calculateCoordinates(View view) {
-
-                        final int[] screenPos = new int[2];
-                        view.getLocationOnScreen(screenPos);
-
-                        final float screenX = screenPos[0] + x;
-                        final float screenY = screenPos[1] + y;
-                        float[] coordinates = {screenX, screenY};
-
-                        return coordinates;
-                    }
-                },
-                Press.FINGER);
-    }
 
     @Test
     public void testResolution() {

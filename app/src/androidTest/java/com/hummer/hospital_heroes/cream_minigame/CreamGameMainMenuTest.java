@@ -29,7 +29,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
-public class MainMenuForGameTest {
+public class CreamGameMainMenuTest {
 
     @Rule
     public ActivityTestRule<MainMenuForGame> mActivityTestRule = new ActivityTestRule<>(MainMenuForGame.class);
