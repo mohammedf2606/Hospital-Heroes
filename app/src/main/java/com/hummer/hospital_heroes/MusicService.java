@@ -11,24 +11,18 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * Class that plays background music during the game
+ *
+ * @author Fahim Mohammed
+ * @version 1.0
+ */
 public class MusicService extends Service {
 
     private static MediaPlayer player;
     private static ArrayList<Integer> playlist;
     private static Timer timer;
     private int i = 0;
-
-    public static void pause() {
-        if(player != null) {
-            player.pause();
-        }
-    }
-
-    public static void resume() {
-        if(player != null) {
-            player.start();
-        }
-    }
 
     @Nullable
     @Override
@@ -50,6 +44,9 @@ public class MusicService extends Service {
         return START_STICKY;
     }
 
+    /**
+     * Schedules the background music tracks until the game is stopped
+     */
     private void playNext() {
         timer.schedule(new TimerTask() {
             @Override
@@ -62,6 +59,9 @@ public class MusicService extends Service {
         }, player.getDuration()+100);
     }
 
+    /**
+     * Stop the service
+     */
     public static void stop() {
         if(player != null) {
             player.stop();

@@ -31,7 +31,7 @@ public class MainMenuTest
     @Rule
     public ActivityTestRule<MainMenu> mActivityTestRule = new ActivityTestRule<MainMenu>(MainMenu.class);
     private MainMenu mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainActivity.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(HospitalFront.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
@@ -61,7 +61,7 @@ public class MainMenuTest
     {
         Intents.init();
         Espresso.onView(withId(R.id.injection_menu)).perform(click());
-        intended(hasComponent(MainActivity.class.getName()));
+        intended(hasComponent(HospitalFront.class.getName()));
         Intents.release();
     }
 

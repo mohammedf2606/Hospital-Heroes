@@ -37,11 +37,13 @@ public class EndScreen extends AppActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.restart:
+                SoundEffects.cleanUpIfEnd();
                 stopService(new Intent(EndScreen.this, MusicService.class));
                 Intent start_again = new Intent(EndScreen.this, MainMenu.class);
                 startActivity(start_again);
                 break;
             case R.id.quit:
+                SoundEffects.cleanUpIfEnd();
                 stopService(new Intent(EndScreen.this, MusicService.class));
                 finishAndRemoveTask();
                 break;

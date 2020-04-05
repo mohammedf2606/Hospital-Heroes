@@ -5,6 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Class that represents the reception screen
+ *
+ * @author Fahim Mohammed, Bleon Uka
+ * @version 1.1
+ */
 public class Reception extends AppActivity implements View.OnClickListener{
 
     Button receptionist;

@@ -9,7 +9,9 @@ import com.hummer.hospital_heroes.food_minigame.MainMenuForFood;
 import com.hummer.hospital_heroes.milk_minigame.MainMenuForMilk;
 
 /**
- * Class that represents the screen where the user selects a character
+ * Class that represents the screen where the user selects a game mode:
+ * - Milk game
+ * - Food game
  *
  * @author Fahim Mohammed, Bleon Uka
  * @version 1.3

@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 
 import com.hummer.hospital_heroes.AppActivity;
+import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.R;
 import com.hummer.hospital_heroes.WaitingRoom;
 
@@ -28,10 +29,7 @@ public class GameActivity extends AppActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
-
-        gameView = new GameView(this, displayMetrics.widthPixels, displayMetrics.heightPixels);
+        gameView = new GameView(this, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
 
         overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
 

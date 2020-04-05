@@ -7,7 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppActivity implements View.OnClickListener {
+/**
+ * Class that represents the screen showing the front of the hospital
+ *
+ * @author Fahim Mohammed, Bleon Uka
+ * @version 1.0
+ */
+public class HospitalFront extends AppActivity implements View.OnClickListener {
 
     Button tap_screen_start;
 
@@ -31,7 +37,11 @@ public class MainActivity extends AppActivity implements View.OnClickListener {
             @Override
             public void run() {
                 int timeIntervals = 700;
-                try{Thread.sleep(timeIntervals);}catch (Exception e) {e.printStackTrace();}
+                try {
+                    Thread.sleep(timeIntervals);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -50,7 +60,7 @@ public class MainActivity extends AppActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent reception = new Intent(MainActivity.this, Reception.class);
+        Intent reception = new Intent(HospitalFront.this, Reception.class);
         startActivity(reception);
     }
 }

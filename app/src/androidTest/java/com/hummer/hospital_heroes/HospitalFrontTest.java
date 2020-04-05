@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.app.Instrumentation;
 import android.view.View;
 
-import com.hummer.hospital_heroes.R;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -23,11 +21,11 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
-public class MainActivityTest
+public class HospitalFrontTest
 {
     @Rule
-    public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
-    private MainActivity mActivity = null;
+    public ActivityTestRule<HospitalFront> mActivityTestRule = new ActivityTestRule<HospitalFront>(HospitalFront.class);
+    private HospitalFront mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(Reception.class.getName(), null, false);
 
     @Before

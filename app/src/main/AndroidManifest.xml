@@ -18,7 +18,7 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".HospitalFront"
             android:noHistory="true"/>
         <activity
             android:name=".cream_minigame.MainMenuForGame"
