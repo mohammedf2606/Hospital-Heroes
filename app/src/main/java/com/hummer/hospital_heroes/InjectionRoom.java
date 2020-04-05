@@ -11,6 +11,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+/**
+ * Class that represents the injection room screen
+ *
+ * @author Fahim Mohammed, Bleon Uka
+ * @version 1.2
+ */
 public class InjectionRoom extends AppActivity implements View.OnClickListener {
 
     ImageButton chair;

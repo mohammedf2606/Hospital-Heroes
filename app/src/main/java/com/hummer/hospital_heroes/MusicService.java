@@ -57,9 +57,7 @@ public class MusicService extends Service {
                 player.reset();
                 player = MediaPlayer.create(MusicService.this, playlist.get(++i));
                 player.start();
-                if (playlist.size() > i+1) {
-                    playNext();
-                }
+                playNext();
             }
         }, player.getDuration()+100);
     }
