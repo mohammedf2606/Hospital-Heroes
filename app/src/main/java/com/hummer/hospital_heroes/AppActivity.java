@@ -1,11 +1,17 @@
 package com.hummer.hospital_heroes;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
+/**
+ * Abstract class that sets up each screen's initial state
+ * - Allows the background music to paused when the game is exited
+ * - When the back button is pressed, a password prompt is shown to stop unauthorised users from leaving the app
+ *
+ * @author Fahim Mohammed
+ * @version 1.2
+ */
 public abstract class AppActivity extends Activity {
 
     @Override

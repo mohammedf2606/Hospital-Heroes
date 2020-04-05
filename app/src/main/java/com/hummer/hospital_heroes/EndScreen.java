@@ -6,7 +6,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class EndScreen extends AppActivity implements View.OnClickListener{
+/**
+ * Class that represents the end screen of the game
+ *
+ * @author Fahim Mohammed
+ * @version 1.0
+ */
+public class EndScreen extends AppActivity implements View.OnClickListener {
 
     ImageView character;
     ImageButton restart, quit;
@@ -31,10 +37,12 @@ public class EndScreen extends AppActivity implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.restart:
+                stopService(new Intent(EndScreen.this, MusicService.class));
                 Intent start_again = new Intent(EndScreen.this, MainMenu.class);
                 startActivity(start_again);
                 break;
             case R.id.quit:
+                stopService(new Intent(EndScreen.this, MusicService.class));
                 finishAndRemoveTask();
                 break;
         }

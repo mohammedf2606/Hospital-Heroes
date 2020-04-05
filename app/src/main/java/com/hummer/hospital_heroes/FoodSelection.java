@@ -8,10 +8,15 @@ import android.widget.Button;
 import com.hummer.hospital_heroes.food_minigame.MainMenuForFood;
 import com.hummer.hospital_heroes.milk_minigame.MainMenuForMilk;
 
-
+/**
+ * Class that represents the screen where the user selects a character
+ *
+ * @author Fahim Mohammed, Bleon Uka
+ * @version 1.3
+ */
 public class FoodSelection extends AppActivity implements View.OnClickListener {
 
-    Button milk, hash_brown, beans;
+    Button milk, hash_brown;
     public static boolean isMilk;
 
     @Override
