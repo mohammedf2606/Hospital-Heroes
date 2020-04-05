@@ -15,7 +15,7 @@ public class MusicService extends Service {
 
     private static MediaPlayer player;
     private static ArrayList<Integer> playlist;
-    private Timer timer;
+    private static Timer timer;
     private int i = 0;
 
     public static void pause() {
@@ -66,6 +66,7 @@ public class MusicService extends Service {
         if(player != null) {
             player.stop();
             player.release();
+            timer.cancel();
         }
     }
 
