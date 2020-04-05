@@ -12,6 +12,8 @@ import android.view.SurfaceHolder;
 import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.SoundEffects;
 
+import java.util.ArrayList;
+
 /**
  * GameView represents the powerhouse class of the package. All
  * the processes and logic are processed here, including drawing bitmaps,
@@ -259,5 +261,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void drawInitialImages() {
         background.draw(canvas);
         characterArmSprite.draw(canvas);
+    }
+
+    public ArrayList getResolution() {
+        ArrayList<Integer> reso = new ArrayList<Integer>();
+        reso.add(xOfScreen);
+        reso.add(yOfScreen);
+        return reso;
     }
 }

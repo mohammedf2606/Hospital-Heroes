@@ -33,6 +33,7 @@ public class MainActivityTest
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -56,7 +57,6 @@ public class MainActivityTest
     @Test
     public void launch()
     {
-        Intents.init();
         Espresso.onView(withId(R.id.tap_screen_start)).perform(click());
         intended(hasComponent(Reception.class.getName()));
     }
@@ -65,5 +65,6 @@ public class MainActivityTest
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

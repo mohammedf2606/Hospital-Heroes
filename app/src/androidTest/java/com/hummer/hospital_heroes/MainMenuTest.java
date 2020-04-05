@@ -62,6 +62,7 @@ public class MainMenuTest
         Intents.init();
         Espresso.onView(withId(R.id.injection_menu)).perform(click());
         intended(hasComponent(MainActivity.class.getName()));
+        Intents.release();
     }
 
     @After

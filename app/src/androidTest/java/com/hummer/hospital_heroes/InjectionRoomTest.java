@@ -33,6 +33,7 @@ public class InjectionRoomTest
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -56,7 +57,6 @@ public class InjectionRoomTest
     @Test
     public void launch()
     {
-        Intents.init();
         Espresso.onView(withId(R.id.chair)).perform(click());
         intended(hasComponent(SittingChair.class.getName()));
     }
@@ -65,5 +65,6 @@ public class InjectionRoomTest
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

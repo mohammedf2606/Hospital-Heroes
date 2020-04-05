@@ -34,6 +34,7 @@ public class PreScanTest
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -57,14 +58,15 @@ public class PreScanTest
     @Test
     public void launch()
     {
-        Intents.init();
         Espresso.onView(withId(R.layout.pre_scan)).perform(click());
         intended(hasComponent(ScanRoom.class.getName()));
+        Intents.release();
     }
 
     @After
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }
