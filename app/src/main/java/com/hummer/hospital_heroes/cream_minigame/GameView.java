@@ -1,6 +1,7 @@
 package com.hummer.hospital_heroes.cream_minigame;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -263,10 +264,35 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         characterArmSprite.draw(canvas);
     }
 
+    /**
+     * Returns the resolution of the screen as an arraylist
+     */
     public ArrayList getResolution() {
         ArrayList<Integer> reso = new ArrayList<Integer>();
         reso.add(xOfScreen);
         reso.add(yOfScreen);
         return reso;
+    }
+
+    /**
+     * Returns all the bitmaps in the game as an arraylist
+     */
+    public ArrayList getBitmaps() {
+        ArrayList<Bitmap> bitmaps = new ArrayList<>();
+        bitmaps.add(background.getBitmap());
+        bitmaps.add(characterArmSprite.getBitmap());
+        bitmaps.add(creamSplatter.getBitmap());
+        bitmaps.add(creamTube.getBitmap());
+        bitmaps.add(location1.getBitmap());
+        bitmaps.add(location2.getBitmap());
+        bitmaps.add(sticker.getBitmap());
+        return bitmaps;
+    }
+
+    /**
+     * Returns whether the screen is being touched or not
+     */
+    public boolean isTouchingScreen() {
+        return isTouchingScreen;
     }
 }

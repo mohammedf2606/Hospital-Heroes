@@ -70,4 +70,14 @@ public class CreamOutline {
     public int getYCoord() {
         return yCoord;
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
+    }
+
 }

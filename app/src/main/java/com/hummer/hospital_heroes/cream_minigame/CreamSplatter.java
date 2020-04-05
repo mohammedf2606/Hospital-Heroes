@@ -57,4 +57,14 @@ public class CreamSplatter {
         p.setColorFilter(filter);
         canvas.drawBitmap(image, x, y, p);
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
+    }
+
 }
