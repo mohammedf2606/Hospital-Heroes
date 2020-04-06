@@ -3,7 +3,7 @@ apply plugin: 'jacoco'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.hummer.educationalgame"
         minSdkVersion 22
