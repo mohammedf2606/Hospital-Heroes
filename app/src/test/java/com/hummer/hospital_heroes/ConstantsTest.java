@@ -37,14 +37,25 @@ public class ConstantsTest
     }
 
     /**
+     * Test that the color is correctly initialised.
+     */
+    @Test
+    public void colorTest()
+    {
+        Constants constantsTest = new Constants();
+        constantsTest.setIsBlack(true);
+        assertEquals(true, constantsTest.isBlack());
+    }
+
+    /**
      * Test that the character is correctly initialised.
      */
     @Test
-    public void playerCharacterTest()
+    public void playerChairTest()
     {
         Constants constantsTest = new Constants();
-        constantsTest.setPlayerCharacter(1);
-        assertEquals(1, constantsTest.getPlayerCharacter());
+        constantsTest.setPlayerChair(1);
+        assertEquals(1, constantsTest.getPlayerChair());
     }
 
     /**
@@ -56,5 +67,16 @@ public class ConstantsTest
         Constants constantsTest = new Constants();
         constantsTest.setPlayerSitting(2);
         assertEquals(2, constantsTest.getPlayerSitting());
+    }
+
+    /**
+     * Test that the standing is correctly initialised.
+     */
+    @Test
+    public void playerStandingTest()
+    {
+        Constants constantsTest = new Constants();
+        constantsTest.setPlayerStanding(3);
+        assertEquals(3, constantsTest.getPlayerStanding());
     }
 }

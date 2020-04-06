@@ -13,6 +13,12 @@ import android.widget.LinearLayout;
 
 import com.hummer.hospital_heroes.cream_minigame.*;
 
+/**
+ * Class that represents the character sitting in the injection room
+ *
+ * @author Fahim Mohammed, Bleon Uka
+ * @version 1.0
+ */
 public class SittingChair extends AppActivity implements View.OnClickListener {
 
     ImageButton cream;

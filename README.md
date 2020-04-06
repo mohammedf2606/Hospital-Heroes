@@ -1,4 +1,4 @@
-# Hospital Heroes
+# Hospital Heroes [![Build Status](https://travis-ci.com/mohammedf2606/Hospital-Heroes.svg?token=kRVvDyzqzVuq179Z3mxV&branch=master)](https://travis-ci.com/mohammedf2606/Hospital-Heroes)
 
 Hospital Heroes is an Android educational game aimed at teaching toddlers about the scanning procedure for the pediatric nuclear medical scan. 
 

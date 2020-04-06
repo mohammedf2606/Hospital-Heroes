@@ -2,29 +2,42 @@ package com.hummer.hospital_heroes.food_minigame;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
-import android.widget.ImageView;
-
-//import com.bumptech.glide.Glide;
 import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.R;
+import com.hummer.hospital_heroes.SoundEffects;
+import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
 
+/**
+ * GameView is the surface view for the food mini game
+ *
+ * @author Manav Parikh
+ * @version 1.0
+ */
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Context mContext;
     private MainThread thread;
     private FoodSprite hashbrown;
     private FoodSprite beans;
     private Bowl bowl;
-    private ImageView imageView;
+    private Bitmap background;
     static int score = 0;
+    private EndGameSticker sticker;
+    private boolean victorySoundPlayedAlready = false;
 
+
+    /**
+     * The constructor for the class 'FoodSprite', used by the layout XML
+     * @param context
+     * @param attributeSet
+     */
     public GameView(Context context, AttributeSet attributeSet){
         super(context, attributeSet);
         this.mContext = context;
@@ -35,14 +48,16 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-        int height = Resources.getSystem().getDisplayMetrics().heightPixels;
+        int width = Constants.SCREEN_WIDTH; //1024
+        int height = Constants.SCREEN_HEIGHT; //600
         bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
-        hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown2), false);
+        hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown), false);
         beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);
+        background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background_food), width, height,false);
+        sticker = new EndGameSticker(width, height, getResources());
 
-        thread.setRunning(true);
         thread.start();
+        thread.setRunning(true);
         
     }
 
@@ -69,26 +84,32 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    public void playVictorySound() {
+        victorySoundPlayedAlready = true;
+        SoundEffects.playSound(0);
+    }
+
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
         if(canvas != null){
+            canvas.drawBitmap(background, 0, 0, null);
             bowl.draw(canvas);
             hashbrown.drawFood(canvas);
             beans.drawFood(canvas);
 
             if (score >= 10) {
-                //Bitmap sticker = BitmapFactory.decodeResource(getResources(), R.drawable.sticker_gif);
-                //EndSticker endSticker = new EndSticker(sticker, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
-                //endSticker.draw(canvas);
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                int value = sticker.drawAnimation(canvas);
+
+                if(victorySoundPlayedAlready == false) {
+                    playVictorySound();
                 }
-                Intent plate_activity = new Intent(mContext, PlateActivity.class);
-                mContext.startActivity(plate_activity);
-                thread.setRunning(false);
+
+                if(value == sticker.getWidth()) {
+                    Intent plate_activity = new Intent(mContext, PlateActivity.class);
+                    mContext.startActivity(plate_activity);
+                    thread.setRunning(false);
+                }
             }
         }
     }
@@ -103,6 +124,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         // the view for those.
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                updateFrame((int) x, (int) y);
+                invalidate();
+                break;
             case MotionEvent.ACTION_MOVE:
                 updateFrame((int) x, (int) y);
                 invalidate();

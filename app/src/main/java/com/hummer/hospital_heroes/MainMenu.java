@@ -1,19 +1,30 @@
 package com.hummer.hospital_heroes;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.hummer.hospital_heroes.injection_minigame.InjectionMainMenu;
-
+/**
+ * Class that represents the first screen of the app
+ * Supervisor chooses a game mode dependent on the operation:
+ * - Food branch
+ * - Injection branch
+ *
+ * @author Fahim Mohammed
+ * @version 1.0
+ */
 public class MainMenu extends AppActivity implements View.OnClickListener {
 
     ImageButton injection_menu, food_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        DisplayMetrics dp = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getRealMetrics(dp);
+        Constants.setScreenHeight(dp.heightPixels);
+        Constants.setScreenWidth(dp.widthPixels);
         super.onCreate(savedInstanceState);
 
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
@@ -37,9 +48,9 @@ public class MainMenu extends AppActivity implements View.OnClickListener {
                 Constants.setIsFood(true);
                 break;
         }
-        Intent main_page = new Intent(MainMenu.this, MainActivity.class);
+        Intent main_page = new Intent(MainMenu.this, HospitalFront.class);
         SoundEffects.initSounds(MainMenu.this);
-//        startService(new Intent(MainMenu.this, MusicService.class));
+        startService(new Intent(MainMenu.this, MusicService.class));
         startActivity(main_page);
     }
 }

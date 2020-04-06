@@ -22,6 +22,7 @@ public class EndGameSticker {
     private Bitmap image;
     private int xCoord, yCoord;
     private int width, height;
+    private int speed = 10;
 
     /**
      * The constructor for the class 'EndGameSticker'
@@ -32,7 +33,7 @@ public class EndGameSticker {
     public EndGameSticker(int x, int y, Resources resources) {
         xCoord = x;
         yCoord = y;
-        image = BitmapFactory.decodeResource(resources, R.drawable.badgesquare);
+        image = BitmapFactory.decodeResource(resources, R.drawable.badge);
 //        image = Bitmap.createScaledBitmap(image, 400, 400, false);
     }
 
@@ -52,8 +53,8 @@ public class EndGameSticker {
      * @return  width  the maximum width of the sticker
      */
     public int drawAnimation(Canvas canvas) {
-        width+=10;
-        height+=10;
+        width+=speed;
+        height+=speed;
         if(width > getWidth()) {
             width = getWidth();
             height = getHeight();
@@ -79,4 +80,23 @@ public class EndGameSticker {
     public int getHeight() {
         return image.getHeight();
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
+    }
+
+    /**
+     * Set the speed at which the badge increases in size.
+     *
+     * @param value the value of the speed to be set
+     */
+    public void setSpeed(int value) {
+        speed = value;
+    }
+
 }

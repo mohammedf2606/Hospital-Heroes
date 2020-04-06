@@ -7,6 +7,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 
 import com.hummer.hospital_heroes.AppActivity;
+import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.R;
 
 /**
@@ -25,10 +26,7 @@ public class InjectionMainActivity extends AppActivity
     {
         super.onCreate(savedInstanceState);
 
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
-
-        gamePanel = new InjectionGamePanel(this, displayMetrics.widthPixels, displayMetrics.heightPixels);
+        gamePanel = new InjectionGamePanel(this, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

@@ -31,7 +31,7 @@ public class CreamOutline {
     public CreamOutline(int x, int y, Resources res) {
         xCoord = x;
         yCoord = y;
-        image = BitmapFactory.decodeResource(res, R.drawable.creamoutline);
+        image = BitmapFactory.decodeResource(res, R.drawable.cream_outline);
         image = Bitmap.createScaledBitmap(image, 100, 100, false);
     }
 
@@ -70,4 +70,14 @@ public class CreamOutline {
     public int getYCoord() {
         return yCoord;
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
+    }
+
 }

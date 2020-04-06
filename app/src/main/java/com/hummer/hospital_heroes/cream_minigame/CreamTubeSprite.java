@@ -28,7 +28,7 @@ public class CreamTubeSprite {
      * @param resources The resources associated with the package
      */
     public CreamTubeSprite(Resources resources) {
-        image = BitmapFactory.decodeResource(resources, R.drawable.creamtube);
+        image = BitmapFactory.decodeResource(resources, R.drawable.cream_tube);
 //        image = Bitmap.createScaledBitmap(image, 100, 100, false);
         height = image.getHeight();
         width = image.getWidth();

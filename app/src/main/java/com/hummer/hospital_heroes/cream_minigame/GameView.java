@@ -1,6 +1,7 @@
 package com.hummer.hospital_heroes.cream_minigame;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -11,6 +12,8 @@ import android.view.SurfaceHolder;
 
 import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.SoundEffects;
+
+import java.util.ArrayList;
 
 /**
  * GameView represents the powerhouse class of the package. All
@@ -259,5 +262,79 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void drawInitialImages() {
         background.draw(canvas);
         characterArmSprite.draw(canvas);
+    }
+
+    /**
+     * Returns the resolution of the screen as an arraylist
+     */
+    public ArrayList getResolution() {
+        ArrayList<Integer> reso = new ArrayList<Integer>();
+        reso.add(xOfScreen);
+        reso.add(yOfScreen);
+        return reso;
+    }
+
+    /**
+     * Returns all the bitmaps in the game as an arraylist
+     */
+    public ArrayList getBitmaps() {
+        ArrayList<Bitmap> bitmaps = new ArrayList<>();
+        bitmaps.add(background.getBitmap());
+        bitmaps.add(characterArmSprite.getBitmap());
+        bitmaps.add(creamSplatter.getBitmap());
+        bitmaps.add(creamTube.getBitmap());
+        bitmaps.add(location1.getBitmap());
+        bitmaps.add(location2.getBitmap());
+        bitmaps.add(sticker.getBitmap());
+        return bitmaps;
+    }
+
+    /**
+     * Returns whether the screen is being touched or not
+     */
+    public boolean isTouchingScreen() {
+        return isTouchingScreen;
+    }
+
+    /**
+     * Finishes the game by setting its victory conditions to true
+     */
+    public void finishGame() {
+        fullyAppliedCreamOnPos1 = true;
+        fullyAppliedCreamOnPos2 = true;
+    }
+
+    /**
+     * This method returns the value of the boolean 'gameFinished'
+     * @return gameFinished the boolean that determines whether the game is finished
+     * or not
+     */
+    public boolean isGameFinished() {
+        return gameFinished;
+    }
+
+    /**
+     * This method returns the value of the boolean 'victorySoundPlayedAlready'
+     * @return victorySoundPlayedAlready the boolean that determines whether
+     * the sound has been played already or not
+     */
+    public boolean isVictorySoundPlayedAlready() {
+        return victorySoundPlayedAlready;
+    }
+
+    /**
+     * This method returns the canvas of the game
+     * @return canvas the canvas the game is being painted onto
+     */
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
+    /**
+     * This method returns the endgame sticker that appears
+     * @return sticker the endgame sticker
+     */
+    public EndGameSticker getSticker() {
+        return sticker;
     }
 }

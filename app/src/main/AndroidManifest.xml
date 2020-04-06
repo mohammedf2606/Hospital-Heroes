@@ -18,7 +18,7 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".HospitalFront"
             android:noHistory="true"/>
         <activity
             android:name=".cream_minigame.MainMenuForGame"
@@ -60,7 +60,19 @@
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
+            android:name=".food_minigame.MainMenuForFood"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
             android:name=".plate_minigame.PlateActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".milk_minigame.MilkGameActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".milk_minigame.MainMenuForMilk"
             android:noHistory="true"
             android:screenOrientation="landscape"/>
         <activity
