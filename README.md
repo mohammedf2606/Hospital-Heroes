@@ -31,11 +31,11 @@ Run the app on your device as follows:
 
 ![Target device drop-down menu.](https://developer.android.com/studio/images/run/deploy-run-app.png)
 
-Android Studio will installs your app on you connected device and starts it. 
+Android Studio will install the app on your connected device and automatically launch it. 
 
 ## Running the Tests
 
-When at the root of the source code repository, open terminal and run the command below
+When at the root of the source code repository, open Terminal and run the command below
 
 `gradle test` 
 
