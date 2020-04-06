@@ -5,6 +5,7 @@ android:
     - platform-tools
     - build-tools-29.0.3
     - android-29
+    - sys-img-armeabi-v7a-android-22
 jdk: oraclejdk8
 os:
   - linux
