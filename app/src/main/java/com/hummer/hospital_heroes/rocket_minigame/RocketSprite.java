@@ -68,4 +68,13 @@ public class RocketSprite {
     public Rect getHitbox() {
         return new Rect(xCoord, yCoord, xCoord + image.getWidth(), yCoord + image.getHeight());
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
+    }
 }

@@ -11,10 +11,21 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+/**
+ * Class that creates a dialog whenever the back button is pressed
+ * ALlows only authorised users to leave the app
+ *
+ * @author Fahim Mohammed
+ * @version 1.0
+ */
 public class LoginToApp extends DialogFragment {
 
     public static final String TAG = "LoginDialog";
 
+    /**
+     * Creates a new dialog (acts as a constructor)
+     * @return an instance of the dialog
+     */
     public static LoginToApp newInstance() {
         LoginToApp login = new LoginToApp();
         login.setStyle(STYLE_NO_TITLE, 0);

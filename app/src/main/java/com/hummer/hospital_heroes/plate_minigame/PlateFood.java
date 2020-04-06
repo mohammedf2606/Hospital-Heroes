@@ -11,14 +11,14 @@ class PlateFood {
     private int state = 0;
 
 
-    PlateFood(Bitmap food0, Bitmap food1, Bitmap food2, Bitmap food3, Bitmap food4) {
+    PlateFood(Bitmap img0, Bitmap img1, Bitmap img2, Bitmap img3, Bitmap img4) {
         Y = Constants.SCREEN_HEIGHT/2 - 200;
         X = Constants.SCREEN_WIDTH/2 - 200;
-        this.food0 = Bitmap.createScaledBitmap(food0, 400, 400, false);
-        this.food1 = Bitmap.createScaledBitmap(food1, 400, 400, false);
-        this.food2 = Bitmap.createScaledBitmap(food2, 400, 400, false);
-        this.food3 = Bitmap.createScaledBitmap(food3, 400, 400, false);
-        this.food4 = Bitmap.createScaledBitmap(food4, 400, 400, false);
+        this.food0 = Bitmap.createScaledBitmap(img0, 400, 400, false);
+        this.food1 = Bitmap.createScaledBitmap(img1, 400, 400, false);
+        this.food2 = Bitmap.createScaledBitmap(img2, 400, 400, false);
+        this.food3 = Bitmap.createScaledBitmap(img3, 400, 400, false);
+        this.food4 = Bitmap.createScaledBitmap(img4, 400, 400, false);
     }
 
     boolean drawFood(Canvas canvas) {

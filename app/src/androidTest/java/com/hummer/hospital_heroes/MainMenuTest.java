@@ -31,7 +31,7 @@ public class MainMenuTest
     @Rule
     public ActivityTestRule<MainMenu> mActivityTestRule = new ActivityTestRule<MainMenu>(MainMenu.class);
     private MainMenu mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainActivity.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(HospitalFront.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
@@ -42,15 +42,15 @@ public class MainMenuTest
     @Test
     public void onCreate()
     {
-        View view = mActivity.findViewById(R.id.girl_eating);
+        View view = mActivity.findViewById(R.id.food_menu);
         assertNotNull(view);
     }
 
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.nurse));
-        onView(withId(R.id.nurse)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.injection_menu));
+        onView(withId(R.id.injection_menu)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
@@ -60,8 +60,9 @@ public class MainMenuTest
     public void launch()
     {
         Intents.init();
-        Espresso.onView(withId(R.id.nurse)).perform(click());
-        intended(hasComponent(MainActivity.class.getName()));
+        Espresso.onView(withId(R.id.injection_menu)).perform(click());
+        intended(hasComponent(HospitalFront.class.getName()));
+        Intents.release();
     }
 
     @After

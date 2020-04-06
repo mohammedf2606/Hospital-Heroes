@@ -9,27 +9,38 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import com.hummer.hospital_heroes.FoodSelection;
 import com.hummer.hospital_heroes.PreScan;
 import com.hummer.hospital_heroes.R;
 
 public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
     private Context mContext;
     private PlateFood plateFood;
+    private boolean milk;
 
     public PlateView(Context context, AttributeSet attributeSet){
         super(context, attributeSet);
         this.mContext = context;
         getHolder().addCallback(this);
         setFocusable(true);
+        milk = FoodSelection.isMilk;
     }
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        plateFood = new PlateFood(BitmapFactory.decodeResource(getResources(), R.drawable.food0),
-                BitmapFactory.decodeResource(getResources(), R.drawable.food1),
-                BitmapFactory.decodeResource(getResources(), R.drawable.food2),
-                BitmapFactory.decodeResource(getResources(), R.drawable.food3),
-                BitmapFactory.decodeResource(getResources(), R.drawable.food4));
+        if(milk) {
+            plateFood = new PlateFood(BitmapFactory.decodeResource(getResources(), R.drawable.platemilk0),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.platemilk1),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.platemilk2),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.platemilk3),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.food4));
+        } else {
+            plateFood = new PlateFood(BitmapFactory.decodeResource(getResources(), R.drawable.food0),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.food1),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.food2),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.food3),
+                    BitmapFactory.decodeResource(getResources(), R.drawable.food4));
+        }
         
     }
 

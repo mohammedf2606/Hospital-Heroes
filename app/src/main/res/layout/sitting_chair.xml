@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".HospitalFront">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -78,7 +78,8 @@
             android:layout_centerInParent="true"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:src="@drawable/creamtube" />
+            android:src="@drawable/cream_tube"
+            android:contentDescription="@string/cream" />
 
     </RelativeLayout>
 

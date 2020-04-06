@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 
 import com.hummer.hospital_heroes.AppActivity;
+import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.EndScreen;
 import com.hummer.hospital_heroes.R;
 
@@ -27,10 +28,7 @@ public class GameActivity extends AppActivity {
 
         overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
 
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
-
-        gameView = new GameView(this, displayMetrics.widthPixels, displayMetrics.heightPixels);
+        gameView = new GameView(this, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
 
         setContentView(gameView);
         gameView.setGameActivity(this);
@@ -42,5 +40,9 @@ public class GameActivity extends AppActivity {
     public void nextScene() {
         Intent end_screen = new Intent(GameActivity.this, EndScreen.class);
         startActivity(end_screen);
+    }
+
+    public GameView getGameView() {
+        return gameView;
     }
 }

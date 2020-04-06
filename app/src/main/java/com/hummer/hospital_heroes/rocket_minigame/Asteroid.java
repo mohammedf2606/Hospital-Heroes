@@ -56,4 +56,13 @@ public class Asteroid {
     public Rect getHitbox() {
         return new Rect(x + 20, y + 20, x + image.getWidth() - 20, y + image.getHeight() - 20);
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
+    }
 }

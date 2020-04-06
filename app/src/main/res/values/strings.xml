@@ -18,7 +18,6 @@
     <string name="girl_eating">Girl eating</string>
     <string name="nurse">Nurse</string>
     <string name="hospital_front">Hospital front</string>
-    <string name="reception">Reception</string>
     <string name="timer">Timer</string>
     <string name="chair_with_character">Chair with character</string>
     <string name="hospital_room">Hospital Room</string>
@@ -33,6 +32,11 @@
     <string name="parent">parent</string>
     <string name="dialog_enter_password">Enter password to leave</string>
     <string name="ok">OK</string>
+    <string name="reception">Reception</string>
+    <string name="halo">halo</string>
+    <string name="scanner">scanner</string>
+    <string name="cream">cream</string>
+    <string name="straps">straps</string>
     <string name="cancel">Cancel</string>
     <string name="password">Password</string>
     <string name="login">login</string>
@@ -43,7 +47,8 @@
     <string name="well_done">WELL DONE!</string>
     <string name="restart">Restart</string>
     <string name="quit">Quit</string>
+    <string name="arrow">Arrow</string>
     <string name="thumbs_up">thumbs up</string>
     <string name="food_selection">Food Selection</string>
-    <string name="arrow">Arrow</string>
+    <string name="food_menu">Collect the food!</string>
 </resources>

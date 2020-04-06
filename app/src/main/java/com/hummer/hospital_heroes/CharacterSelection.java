@@ -1,16 +1,18 @@
 package com.hummer.hospital_heroes;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 
-import java.util.ArrayList;
+/**
+ * Class that represents the screen where the user selects a character
+ *
+ * @author Fahim Mohammed, Bleon Uka
+ * @version 1.3
+ */
 
-public class CharacterSelection extends AppActivity implements View.OnClickListener{
+public class CharacterSelection extends AppActivity implements View.OnClickListener {
 
     Button boy1, boy2, girl1, girl2;
 

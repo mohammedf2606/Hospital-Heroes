@@ -5,6 +5,7 @@ import android.app.Instrumentation;
 import android.view.View;
 
 import com.hummer.hospital_heroes.R;
+import com.hummer.hospital_heroes.food_minigame.MainGameActivity;
 
 import org.junit.After;
 import org.junit.Before;
@@ -28,11 +29,12 @@ public class FoodSelectionTest
     @Rule
     public ActivityTestRule<FoodSelection> mActivityTestRule = new ActivityTestRule<FoodSelection>(FoodSelection.class);
     private FoodSelection mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(WaitingRoom.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainGameActivity.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -46,8 +48,8 @@ public class FoodSelectionTest
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.milk));
-        onView(withId(R.id.milk)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.hash_browns));
+        onView(withId(R.id.hash_browns)).perform(click());
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
@@ -56,14 +58,14 @@ public class FoodSelectionTest
     @Test
     public void launch()
     {
-        Intents.init();
-        Espresso.onView(withId(R.id.milk)).perform(click());
-        intended(hasComponent(WaitingRoom.class.getName()));
+        Espresso.onView(withId(R.id.hash_browns)).perform(click());
+        intended(hasComponent(MainGameActivity.class.getName()));
     }
 
     @After
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

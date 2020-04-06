@@ -64,5 +64,14 @@ public class HouseSprite {
     public int getWidth() {
         return image.getWidth();
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
+    }
 }
 

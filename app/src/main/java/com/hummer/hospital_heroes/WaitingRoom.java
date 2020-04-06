@@ -9,6 +9,13 @@ import com.hummer.hospital_heroes.injection_minigame.InjectionMainMenu;
 
 import java.util.ArrayList;
 
+/**
+ * Class that shows the waiting room screen
+ * The clock in the room counts for 45 mins in 5 min intervals
+ *
+ * @author Fahim Mohammed
+ * @version 1.0
+ */
 public class WaitingRoom extends AppActivity {
 
     ImageView waiting_room, character;

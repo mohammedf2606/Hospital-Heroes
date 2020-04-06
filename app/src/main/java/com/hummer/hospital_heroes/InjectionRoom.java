@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +11,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+/**
+ * Class that represents the injection room screen
+ *
+ * @author Fahim Mohammed, Bleon Uka
+ * @version 1.2
+ */
 public class InjectionRoom extends AppActivity implements View.OnClickListener {
 
     ImageButton chair;

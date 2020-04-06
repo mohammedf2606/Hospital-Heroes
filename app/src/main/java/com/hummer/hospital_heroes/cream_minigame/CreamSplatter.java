@@ -13,7 +13,7 @@ import com.hummer.hospital_heroes.R;
 
 /**
  * CreamSplatter is the class that represents the bitmap that is shown when the player
- * hovers over the creamoutline. The opacity of the bitmap increases while the player
+ * hovers over the cream_outline. The opacity of the bitmap increases while the player
  * continues hovering, to represent the progress.
  *
  * @author Jawad Zeidan
@@ -28,7 +28,7 @@ public class CreamSplatter {
      * @param res The resources associated with the package
      */
     public CreamSplatter(Resources res) {
-        image = BitmapFactory.decodeResource(res, R.drawable.creamscaled);
+        image = BitmapFactory.decodeResource(res, R.drawable.cream);
         image = Bitmap.createScaledBitmap(image, 100, 100, false);
     }
 
@@ -57,4 +57,14 @@ public class CreamSplatter {
         p.setColorFilter(filter);
         canvas.drawBitmap(image, x, y, p);
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
+    }
+
 }

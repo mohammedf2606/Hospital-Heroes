@@ -28,11 +28,12 @@ public class ReceptionTest
     @Rule
     public ActivityTestRule<Reception> mActivityTestRule = new ActivityTestRule<Reception>(Reception.class);
     private Reception mActivity = null;
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(GenderSelection.class.getName(), null, false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(CharacterSelection.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -56,14 +57,15 @@ public class ReceptionTest
     @Test
     public void launch()
     {
-        Intents.init();
+
         Espresso.onView(withId(R.id.receptionist)).perform(click());
-        intended(hasComponent(GenderSelection.class.getName()));
+        intended(hasComponent(CharacterSelection.class.getName()));
     }
 
     @After
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

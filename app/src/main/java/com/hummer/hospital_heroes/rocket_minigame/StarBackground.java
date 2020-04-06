@@ -27,7 +27,7 @@ public class StarBackground {
      * @param res The resources associated with the package
      */
     public StarBackground(int width, int height, Resources res) {
-        image = BitmapFactory.decodeResource(res, R.drawable.starbackground);
+        image = BitmapFactory.decodeResource(res, R.drawable.star_background);
         image = Bitmap.createScaledBitmap(image, width, height, false);
     }
 
@@ -50,5 +50,14 @@ public class StarBackground {
         ColorFilter filter = new LightingColorFilter(0xFF7F7F7F, 0x00000000);    // darken
         p.setColorFilter(filter);
         canvas.drawBitmap(image, 0, 0, p);
+    }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return image;
     }
 }
