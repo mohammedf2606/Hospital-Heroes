@@ -12,6 +12,7 @@ import android.view.SurfaceView;
 
 import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.R;
+import com.hummer.hospital_heroes.SoundEffects;
 import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 import com.hummer.hospital_heroes.food_minigame.Bowl;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
@@ -24,6 +25,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
     private Bitmap background;
     static int score = 0;
     private EndGameSticker sticker;
+    private boolean victorySoundPlayedAlready = false;
 
 
     public MilkGameView(Context context, AttributeSet attributeSet){
@@ -71,6 +73,14 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         }
     }
 
+    /**
+     * Plays the 'victory chime' sound whenever called. Only plays it once.
+     */
+    public void playVictorySound() {
+        victorySoundPlayedAlready = true;
+        SoundEffects.playSound(0);
+    }
+
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
@@ -81,6 +91,11 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
 
             if (score >= 10) {
                 int value = sticker.drawAnimation(canvas);
+
+                if(victorySoundPlayedAlready == false) {
+                    playVictorySound();
+                }
+
                 if(value == sticker.getWidth()) {
                     Intent plate_activity = new Intent(mContext, PlateActivity.class);
                     mContext.startActivity(plate_activity);

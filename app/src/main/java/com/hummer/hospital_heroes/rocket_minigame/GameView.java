@@ -35,6 +35,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private AsteroidManager asteroidManager;
     private int xCoord, yCoord;
     private boolean reset = true;
+    private Canvas canvas;
 
     /**
      * Constructor for class 'GameView'
@@ -107,6 +108,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
+        this.canvas = canvas;
         if(canvas != null && reset) {
             starBackground.draw(canvas);
             house.draw(xOfScreen - xOfScreen/4 + 30, yOfScreen/2 + house.getHeight()/2 - 20, canvas);
@@ -229,5 +231,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             bitmaps.add(asteroid.getBitmap());
         }
         return bitmaps;
+    }
+
+    public void finishGame() {
+        rocket.draw(xOfScreen - xOfScreen/4 + 30, yOfScreen/2 + house.getHeight()/2 - 20, canvas);
+    }
+
+    public boolean isGameFinished() {
+        return gameFinished;
     }
 }

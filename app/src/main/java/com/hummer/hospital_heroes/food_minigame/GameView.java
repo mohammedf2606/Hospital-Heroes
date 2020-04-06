@@ -11,6 +11,7 @@ import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.R;
+import com.hummer.hospital_heroes.SoundEffects;
 import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
 
@@ -29,6 +30,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Bitmap background;
     static int score = 0;
     private EndGameSticker sticker;
+    private boolean victorySoundPlayedAlready = false;
+
 
     /**
      * The constructor for the class 'FoodSprite', used by the layout XML
@@ -81,6 +84,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    public void playVictorySound() {
+        victorySoundPlayedAlready = true;
+        SoundEffects.playSound(0);
+    }
+
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
@@ -92,6 +100,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
             if (score >= 10) {
                 int value = sticker.drawAnimation(canvas);
+
+                if(victorySoundPlayedAlready == false) {
+                    playVictorySound();
+                }
+
                 if(value == sticker.getWidth()) {
                     Intent plate_activity = new Intent(mContext, PlateActivity.class);
                     mContext.startActivity(plate_activity);

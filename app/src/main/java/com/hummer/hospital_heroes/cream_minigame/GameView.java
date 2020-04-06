@@ -295,4 +295,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public boolean isTouchingScreen() {
         return isTouchingScreen;
     }
+
+    public void finishGame() {
+        fullyAppliedCreamOnPos1 = true;
+        fullyAppliedCreamOnPos2 = true;
+    }
+
+    public boolean isGameFinished() {
+        return gameFinished;
+    }
 }

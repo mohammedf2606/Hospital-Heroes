@@ -35,6 +35,8 @@ import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentat
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.Assert.*;
 
 public class CreamMiniGameTest {
@@ -56,6 +58,17 @@ public class CreamMiniGameTest {
         onView(withId(R.drawable.injectionroombackground)).perform(longClick());
         Boolean touchingScreen = mActivityTestRule.getActivity().getGameView().isTouchingScreen();
         assertEquals(true, touchingScreen);
+    }
+
+    @Test
+    public void testGameFinished() {
+        GameView game = mActivityTestRule.getActivity().getGameView();
+        game.finishGame();
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        }
+        catch(InterruptedException ex) {}
+        assertTrue(game.isGameFinished());
     }
 
     @Test
