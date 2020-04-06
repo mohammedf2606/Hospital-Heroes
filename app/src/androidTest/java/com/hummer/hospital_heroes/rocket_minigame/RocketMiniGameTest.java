@@ -10,11 +10,13 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.longClick;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class RocketMiniGameTest {
 
@@ -36,6 +38,17 @@ public class RocketMiniGameTest {
 //        Boolean touchingScreen = mActivityTestRule.getActivity().getGameView().isTouchingScreen();
 //        assertEquals(true, touchingScreen);
 //    }
+
+    @Test
+    public void testGameFinished() {
+        GameView game = mActivityTestRule.getActivity().getGameView();
+        game.finishGame();
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        }
+        catch(InterruptedException ex) {}
+        assertTrue(game.isGameFinished());
+    }
 
     @Test
     public void testBitmaps() {
