@@ -9,6 +9,7 @@ import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 
 import com.hummer.hospital_heroes.SoundEffects;
+import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 
 import java.util.ArrayList;
 
@@ -233,11 +234,36 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         return bitmaps;
     }
 
-    public void finishGame() {
-        rocket.draw(xOfScreen - xOfScreen/4 + 30, yOfScreen/2 + house.getHeight()/2 - 20, canvas);
+    /**
+     * Changes the boolean gameFinished to the input parameter
+     * @param value the value the boolean is to be set to
+     */
+    public void setGameFinished(boolean value) {
+        gameFinished = value;
     }
 
-    public boolean isGameFinished() {
-        return gameFinished;
+    /**
+     * This method returns the value of the boolean 'victorySoundPlayedAlready'
+     * @return victorySoundPlayedAlready the boolean that determines whether
+     * the sound has been played already or not
+     */
+    public boolean isVictorySoundPlayedAlready() {
+        return soundPlayedAlready;
+    }
+
+    /**
+     * This method returns the canvas of the game
+     * @return canvas the canvas the game is being painted onto
+     */
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
+    /**
+     * This method returns the endgame sticker that appears
+     * @return sticker the endgame sticker
+     */
+    public EndGameSticker getSticker() {
+        return sticker;
     }
 }

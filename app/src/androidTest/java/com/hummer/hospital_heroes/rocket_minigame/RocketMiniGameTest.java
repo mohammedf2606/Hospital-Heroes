@@ -1,10 +1,12 @@
 package com.hummer.hospital_heroes.rocket_minigame;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 
 import androidx.test.rule.ActivityTestRule;
 
 import com.hummer.hospital_heroes.R;
+import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,6 +18,7 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.longClick;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class RocketMiniGameTest {
@@ -32,22 +35,27 @@ public class RocketMiniGameTest {
         assertEquals(600, y);
     }
 
-//    @Test
-//    public void testClick() {
-//        onView(withId(R.drawable.injectionroombackground)).perform(longClick());
-//        Boolean touchingScreen = mActivityTestRule.getActivity().getGameView().isTouchingScreen();
-//        assertEquals(true, touchingScreen);
-//    }
-
     @Test
     public void testGameFinished() {
         GameView game = mActivityTestRule.getActivity().getGameView();
-        game.finishGame();
+        game.setGameFinished(true);
         try {
             TimeUnit.SECONDS.sleep(1);
         }
         catch(InterruptedException ex) {}
-        assertTrue(game.isGameFinished());
+        assertTrue(game.isVictorySoundPlayedAlready());
+
+        // test if sticker works
+        EndGameSticker sticker = mActivityTestRule.getActivity().getGameView().getSticker();
+        Canvas canvas = mActivityTestRule.getActivity().getGameView().getCanvas();
+        int value = sticker.drawAnimation(canvas);
+        assertEquals(sticker.getWidth(), value);
+    }
+
+    @Test
+    public void testCanvasExists() {
+        Canvas canvas = mActivityTestRule.getActivity().getGameView().getCanvas();
+        assertNotNull(canvas);
     }
 
     @Test

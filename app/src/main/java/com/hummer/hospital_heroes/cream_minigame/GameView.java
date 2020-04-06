@@ -296,12 +296,45 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         return isTouchingScreen;
     }
 
+    /**
+     * Finishes the game by setting its victory conditions to true
+     */
     public void finishGame() {
         fullyAppliedCreamOnPos1 = true;
         fullyAppliedCreamOnPos2 = true;
     }
 
+    /**
+     * This method returns the value of the boolean 'gameFinished'
+     * @return gameFinished the boolean that determines whether the game is finished
+     * or not
+     */
     public boolean isGameFinished() {
         return gameFinished;
+    }
+
+    /**
+     * This method returns the value of the boolean 'victorySoundPlayedAlready'
+     * @return victorySoundPlayedAlready the boolean that determines whether
+     * the sound has been played already or not
+     */
+    public boolean isVictorySoundPlayedAlready() {
+        return victorySoundPlayedAlready;
+    }
+
+    /**
+     * This method returns the canvas of the game
+     * @return canvas the canvas the game is being painted onto
+     */
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
+    /**
+     * This method returns the endgame sticker that appears
+     * @return sticker the endgame sticker
+     */
+    public EndGameSticker getSticker() {
+        return sticker;
     }
 }
