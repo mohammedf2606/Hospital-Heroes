@@ -45,6 +45,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
                 BitmapFactory.decodeResource(getResources(), R.drawable.milk_droplet));
         background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background_food), width, height,false);
         sticker = new EndGameSticker(width, height, getResources());
+        sticker.setSpeed(6);
 
         thread.setRunning(true);
         thread.start();

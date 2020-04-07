@@ -22,7 +22,7 @@ public class EndGameSticker {
     private Bitmap image;
     private int xCoord, yCoord;
     private int width, height;
-    private int speed = 6;
+    private int speed = 10;
 
     /**
      * The constructor for the class 'EndGameSticker'

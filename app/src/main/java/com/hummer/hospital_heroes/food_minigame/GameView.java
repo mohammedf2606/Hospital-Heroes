@@ -55,6 +55,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);
         background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background_food), width, height,false);
         sticker = new EndGameSticker(width, height, getResources());
+        sticker.setSpeed(6);
 
         thread.start();
         thread.setRunning(true);
