@@ -137,6 +137,7 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
                     }
                     Intent nextScene = new Intent(mContext, PreScan.class);
                     mContext.startActivity(nextScene);
+                    thread.setRunning(false);
                 }
             }
         }
