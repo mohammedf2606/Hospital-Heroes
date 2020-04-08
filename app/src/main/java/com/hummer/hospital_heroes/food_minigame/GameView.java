@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
@@ -94,12 +98,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas){
         super.draw(canvas);
         if(canvas != null){
-            canvas.drawBitmap(background, 0, 0, null);
-            bowl.draw(canvas);
-            hashbrown.drawFood(canvas);
-            beans.drawFood(canvas);
-
             if (score >= 10) {
+
+                // draw a darkened background
+                Paint p = new Paint(Color.RED);
+                ColorFilter filter = new LightingColorFilter(0xFF7F7F7F, 0x00000000);    // darken
+                p.setColorFilter(filter);
+                canvas.drawBitmap(background, 0, 0, p);
+
                 int value = sticker.drawAnimation(canvas);
 
                 if(victorySoundPlayedAlready == false) {
@@ -111,6 +117,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     mContext.startActivity(plate_activity);
                     thread.setRunning(false);
                 }
+            } else {
+                canvas.drawBitmap(background, 0, 0, null);
+                bowl.draw(canvas);
+                hashbrown.drawFood(canvas);
+                beans.drawFood(canvas);
             }
         }
     }

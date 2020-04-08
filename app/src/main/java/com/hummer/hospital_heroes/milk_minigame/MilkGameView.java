@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -91,6 +95,13 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
             milk.drawFood(canvas);
 
             if (score >= 10) {
+
+                // draw a darkened background
+                Paint p = new Paint(Color.RED);
+                ColorFilter filter = new LightingColorFilter(0xFF7F7F7F, 0x00000000);    // darken
+                p.setColorFilter(filter);
+                canvas.drawBitmap(background, 0, 0, p);
+
                 int value = sticker.drawAnimation(canvas);
 
                 if(victorySoundPlayedAlready == false) {
