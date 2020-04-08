@@ -167,6 +167,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 if(value == sticker.getWidth()) {
                     // go to next scene
                     gameActivity.nextScene();
+                    thread.setRunning(false);
                 }
             }
         }
