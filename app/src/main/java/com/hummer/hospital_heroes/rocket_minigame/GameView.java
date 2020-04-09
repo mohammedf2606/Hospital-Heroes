@@ -147,6 +147,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     }
                     // go to next scene
                     gameActivity.nextScene();
+                    thread.setRunning(false);
                 }
             }
         }
