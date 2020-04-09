@@ -34,7 +34,6 @@ public class EndGameSticker {
         xCoord = x;
         yCoord = y;
         image = BitmapFactory.decodeResource(resources, R.drawable.badge);
-//        image = Bitmap.createScaledBitmap(image, 400, 400, false);
     }
 
     /**
@@ -53,8 +52,8 @@ public class EndGameSticker {
      * @return  width  the maximum width of the sticker
      */
     public int drawAnimation(Canvas canvas) {
-        width+=speed;
-        height+=speed;
+        width += speed;
+        height += speed;
         if(width > getWidth()) {
             width = getWidth();
             height = getHeight();

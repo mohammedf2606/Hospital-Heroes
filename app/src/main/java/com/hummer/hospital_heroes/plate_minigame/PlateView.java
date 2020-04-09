@@ -69,9 +69,6 @@ public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        float x = event.getX();
-        float y = event.getY();
-
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 update();
