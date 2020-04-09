@@ -117,13 +117,7 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
                     playVictorySound();
                 }
                 int value = sticker.drawAnimation(canvas);
-                if (value == sticker.getWidth())
-                {
-//                    try {
-//                        Thread.sleep(3000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
+                if (value == sticker.getWidth()) {
                     Intent nextScene = new Intent(mContext, PreScan.class);
                     mContext.startActivity(nextScene);
                     thread.setRunning(false);
