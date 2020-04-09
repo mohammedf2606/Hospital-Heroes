@@ -104,7 +104,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
 
                 int value = sticker.drawAnimation(canvas);
 
-                if(victorySoundPlayedAlready == false) {
+                if(!victorySoundPlayedAlready) {
                     playVictorySound();
                 }
 
@@ -127,9 +127,6 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         // the view for those.
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                updateFrame((int) x, (int) y);
-                invalidate();
-                break;
             case MotionEvent.ACTION_MOVE:
                 updateFrame((int) x, (int) y);
                 invalidate();

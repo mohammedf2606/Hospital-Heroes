@@ -99,24 +99,21 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         super.draw(canvas);
         if(canvas != null){
             if (score >= 10) {
-
-                // draw a darkened background
                 Paint p = new Paint(Color.RED);
                 ColorFilter filter = new LightingColorFilter(0xFF7F7F7F, 0x00000000);    // darken
                 p.setColorFilter(filter);
                 canvas.drawBitmap(background, 0, 0, p);
 
                 int value = sticker.drawAnimation(canvas);
-
-                if(victorySoundPlayedAlready == false) {
+                if(!victorySoundPlayedAlready) {
                     playVictorySound();
                 }
-
                 if(value == sticker.getWidth()) {
                     Intent plate_activity = new Intent(mContext, PlateActivity.class);
                     mContext.startActivity(plate_activity);
                     thread.setRunning(false);
                 }
+
             } else {
                 canvas.drawBitmap(background, 0, 0, null);
                 bowl.draw(canvas);
@@ -136,9 +133,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         // the view for those.
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                updateFrame((int) x, (int) y);
-                invalidate();
-                break;
             case MotionEvent.ACTION_MOVE:
                 updateFrame((int) x, (int) y);
                 invalidate();

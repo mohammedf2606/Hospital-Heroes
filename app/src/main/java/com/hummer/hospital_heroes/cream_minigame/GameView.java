@@ -94,23 +94,23 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
      * including whether hitboxes collide, and hence evaluating boolean expressions
      */
     public void update() {
-        if(Rect.intersects(location1.getHitbox(), creamTube.getHitbox()) && isTouchingScreen == true) {
+        if(Rect.intersects(location1.getHitbox(), creamTube.getHitbox()) && isTouchingScreen) {
             progress1+=2;
             alphaPaint.setAlpha(progress1);
             if(progress1 > 255) {
                 alphaPaint.setAlpha(255);
                 fullyAppliedCreamOnPos1 = true;
-                if(dingSoundPlayedAlready == false) {
+                if(!dingSoundPlayedAlready) {
                     playDingSound();
                 }
             }
-        } else if(Rect.intersects(location2.getHitbox(), creamTube.getHitbox()) && isTouchingScreen == true) {
+        } else if(Rect.intersects(location2.getHitbox(), creamTube.getHitbox()) && isTouchingScreen) {
             progress2+=2;
             betaPaint.setAlpha(progress2);
             if(progress2 > 255) {
                 betaPaint.setAlpha(255);
                 fullyAppliedCreamOnPos2 = true;
-                if(dingSoundPlayedAlready == false) {
+                if(!dingSoundPlayedAlready) {
                     playDingSound();
                 }
             }
@@ -160,7 +160,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 //stuff that happens when game is complete
                 int value = sticker.drawAnimation(canvas);
 
-                if(victorySoundPlayedAlready == false) {
+                if(!victorySoundPlayedAlready) {
                     playVictorySound();
                 }
 
