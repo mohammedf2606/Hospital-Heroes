@@ -106,6 +106,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 }
 
                 if(value == sticker.getWidth()) {
+                    // wait a bit
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    // go to next scene
                     Intent plate_activity = new Intent(mContext, PlateActivity.class);
                     mContext.startActivity(plate_activity);
                     thread.setRunning(false);
