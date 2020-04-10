@@ -35,7 +35,7 @@ public class InjectionGamePanelTest {
         InjectionGamePanel game = mActivityTestRule.getActivity().getGamePanel();
         game.setGameOver(true);
         try {
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException ex) {
         }
         assertTrue(game.isVictorySoundPlayedAlready());
