@@ -21,6 +21,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
+/**
+ * The test class for HospitalFront.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class HospitalFrontTest
 {
     @Rule

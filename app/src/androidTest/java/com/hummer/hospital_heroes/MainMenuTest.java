@@ -22,10 +22,12 @@ import static org.junit.Assert.*;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 
-/*
- MainMenu, MainActivity, Reception, GenderSelection, (Fe)MaleCharSelection,
- FoodSelection/InjectionRoom, WaitingRoom, SittingChair, PreScan
-*/
+/**
+ * The test class for MainMenu.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class MainMenuTest
 {
     @Rule
