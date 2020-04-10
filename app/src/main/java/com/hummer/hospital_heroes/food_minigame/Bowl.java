@@ -54,4 +54,13 @@ public class Bowl {
     public void draw(Canvas canvas){
         canvas.drawBitmap(bowlImage, mX, mY, null);
     }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return bowlImage;
+    }
 }

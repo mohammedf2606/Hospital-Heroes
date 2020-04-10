@@ -19,6 +19,8 @@ import com.hummer.hospital_heroes.SoundEffects;
 import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
 
+import java.util.ArrayList;
+
 /**
  * GameView is the surface view for the food mini game
  *
@@ -32,6 +34,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private FoodSprite beans;
     private Bowl bowl;
     private Bitmap background;
+    private Canvas canvas;
     static int score = 0;
     private EndGameSticker sticker;
     private boolean victorySoundPlayedAlready = false;
@@ -98,6 +101,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas){
         super.draw(canvas);
         if(canvas != null){
+            this.canvas = canvas;
             if (score >= 10) {
 
                 // draw a darkened background
@@ -155,4 +159,50 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
         return true;
     }
+
+    /**
+     * Finishes the game by setting its victory conditions to true
+     */
+    public void finishGame() {
+        score = 10;
+    }
+
+    /**
+     * This method returns the value of the boolean 'victorySoundPlayedAlready'
+     * @return victorySoundPlayedAlready the boolean that determines whether
+     * the sound has been played already or not
+     */
+    public boolean isVictorySoundPlayedAlready() {
+        return victorySoundPlayedAlready;
+    }
+
+    /**
+     * This method returns the canvas of the game
+     * @return canvas the canvas the game is being painted onto
+     */
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
+    /**
+     * This method returns the endgame sticker that appears
+     * @return sticker the endgame sticker
+     */
+    public EndGameSticker getSticker() {
+        return sticker;
+    }
+
+    /**
+     * Returns all the bitmaps in the game as an arraylist
+     */
+    public ArrayList getBitmaps() {
+        ArrayList<Bitmap> bitmaps = new ArrayList<>();
+        bitmaps.add(bowl.getBitmap());
+        bitmaps.add(hashbrown.getBitmap());
+        bitmaps.add(beans.getBitmap());
+        bitmaps.add(background);
+        bitmaps.add(sticker.getBitmap());
+        return bitmaps;
+    }
+
 }

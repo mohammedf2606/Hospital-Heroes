@@ -15,4 +15,8 @@ public class MainGameActivity extends AppActivity {
         overridePendingTransition(R.anim.slideinright, R.anim.slideoutright);
         setContentView(R.layout.food_minigame);
     }
+
+    public GameView getGameView() {
+        return gameView;
+    }
 }

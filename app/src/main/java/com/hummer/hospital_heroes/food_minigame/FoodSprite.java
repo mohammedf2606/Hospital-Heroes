@@ -60,6 +60,15 @@ class FoodSprite {
             Y = -60;
         }
      }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return food;
+    }
  }
 
 
