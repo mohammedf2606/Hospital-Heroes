@@ -40,7 +40,7 @@ public class RocketMiniGameTest {
         GameView game = mActivityTestRule.getActivity().getGameView();
         game.setGameFinished(true);
         try {
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(5);
         }
         catch(InterruptedException ex) {}
         assertTrue(game.isVictorySoundPlayedAlready());
