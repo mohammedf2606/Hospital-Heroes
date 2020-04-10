@@ -30,6 +30,9 @@ public class InjectionRoomTest
     private InjectionRoom mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(SittingChair.class.getName(), null, false);
 
+    /**
+     * Initialise the activity before being tested
+     */
     @Before
     public void setUp() throws Exception
     {
@@ -37,6 +40,9 @@ public class InjectionRoomTest
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -44,6 +50,9 @@ public class InjectionRoomTest
         assertNotNull(view);
     }
 
+    /**
+     * Test the button that launches the next activity displays the next screen.
+     */
     @Test
     public void onClick()
     {
@@ -54,6 +63,9 @@ public class InjectionRoomTest
         nextScene.finish();
     }
 
+    /**
+     * Test the view on the next activity shows on screen.
+     */
     @Test
     public void launch()
     {
@@ -61,6 +73,9 @@ public class InjectionRoomTest
         intended(hasComponent(SittingChair.class.getName()));
     }
 
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {

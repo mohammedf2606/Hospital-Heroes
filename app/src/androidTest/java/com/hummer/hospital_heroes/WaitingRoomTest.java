@@ -24,12 +24,18 @@ public class WaitingRoomTest
     private WaitingRoom mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(SittingChair.class.getName(), null, false);
 
+    /**
+     * initialise the activity being tested
+     */
     @Before
     public void setUp() throws Exception
     {
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -37,6 +43,9 @@ public class WaitingRoomTest
         assertNotNull(view);
     }
 
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {

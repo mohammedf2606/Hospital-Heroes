@@ -31,6 +31,9 @@ public class PreScanTest
     private PreScan mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(ScanRoom.class.getName(), null, false);
 
+    /**
+     * Initialise the activity before being tested
+     */
     @Before
     public void setUp() throws Exception
     {
@@ -38,6 +41,9 @@ public class PreScanTest
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -45,6 +51,9 @@ public class PreScanTest
         assertNotNull(view);
     }
 
+    /**
+     * Test the button that launches the next activity displays the next screen.
+     */
     @Test
     public void onClick()
     {
@@ -55,6 +64,9 @@ public class PreScanTest
         nextScene.finish();
     }
 
+    /**
+     * Test the view on the next activity shows on screen.
+     */
     @Test
     public void launch()
     {
@@ -63,6 +75,9 @@ public class PreScanTest
         Intents.release();
     }
 
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {
