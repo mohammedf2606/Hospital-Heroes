@@ -45,16 +45,6 @@ public class MainMenuForMilkTest {
     }
 
     @Test
-    public void nextScene()
-    {
-        assertNotNull(mActivity.findViewById(R.id.playButton));
-        onView(withId(R.id.playButton)).perform(click());
-        Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
-        assertNotNull(nextScene);
-        nextScene.finish();
-    }
-
-    @Test
     public void launch()
     {
         Intents.init();
