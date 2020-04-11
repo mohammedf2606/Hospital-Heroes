@@ -34,6 +34,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private FoodSprite beans;
     private Bowl bowl;
     private Bitmap background;
+    private int width, height;
     private Canvas canvas;
     static int score = 0;
     private EndGameSticker sticker;
@@ -55,8 +56,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        int width = Constants.SCREEN_WIDTH; //1024
-        int height = Constants.SCREEN_HEIGHT; //600
+        this.width = Constants.SCREEN_WIDTH; //1024
+        this.height = Constants.SCREEN_HEIGHT; //600
         bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
         hashbrown = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.hashbrown), false);
         beans = new FoodSprite(BitmapFactory.decodeResource(getResources(), R.drawable.beans), true);
@@ -158,6 +159,16 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 // Do nothing.
         }
         return true;
+    }
+
+    /**
+     * Returns the resolution of the screen as an arraylist
+     */
+    public ArrayList getResolution() {
+        ArrayList<Integer> reso = new ArrayList<Integer>();
+        reso.add(width);
+        reso.add(height);
+        return reso;
     }
 
     /**

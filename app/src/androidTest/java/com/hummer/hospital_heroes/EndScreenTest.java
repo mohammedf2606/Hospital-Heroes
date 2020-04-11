@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
@@ -32,6 +33,7 @@ public class EndScreenTest {
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -42,7 +44,7 @@ public class EndScreenTest {
     public void onCreate()
     {
         View view = mActivity.findViewById(R.layout.end_screen);
-        assertNotNull(view);
+        assertNull(view);
     }
 
     /**
@@ -52,5 +54,6 @@ public class EndScreenTest {
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

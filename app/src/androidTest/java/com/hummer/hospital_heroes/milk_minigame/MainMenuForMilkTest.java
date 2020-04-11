@@ -56,10 +56,8 @@ public class MainMenuForMilkTest {
     @Test
     public void launch()
     {
-
         Espresso.onView(withId(R.id.playButton)).perform(click());
         intended(hasComponent(MilkGameActivity.class.getName()));
-
     }
 
     @After

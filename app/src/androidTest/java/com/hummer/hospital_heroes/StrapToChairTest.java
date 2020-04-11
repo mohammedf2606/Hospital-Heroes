@@ -63,8 +63,8 @@ public class StrapToChairTest {
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.strapping));
-        onView(withId(R.id.strapping)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.strapbackground));
+        perform6clicks();
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
@@ -77,7 +77,7 @@ public class StrapToChairTest {
     public void launch()
     {
 
-        Espresso.onView(withId(R.id.strapping)).perform(click());
+        perform6clicks();
         intended(hasComponent(MainMenu.class.getName()));
     }
 
@@ -89,5 +89,11 @@ public class StrapToChairTest {
     {
         mActivity = null;
         Intents.release();
+    }
+
+    public void perform6clicks() {
+        for(int i = 0; i < 6; i++) {
+            Espresso.onView(withId(R.id.strapbackground)).perform(click());
+        }
     }
 }

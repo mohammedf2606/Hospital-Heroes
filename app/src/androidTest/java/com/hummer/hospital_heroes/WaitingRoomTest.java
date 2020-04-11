@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
 import static androidx.test.espresso.action.ViewActions.click;
@@ -36,6 +37,7 @@ public class WaitingRoomTest
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -56,5 +58,6 @@ public class WaitingRoomTest
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

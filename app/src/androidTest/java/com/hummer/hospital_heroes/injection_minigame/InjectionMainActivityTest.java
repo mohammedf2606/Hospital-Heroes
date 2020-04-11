@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
 import static androidx.test.espresso.Espresso.onView;
@@ -31,6 +32,7 @@ public class InjectionMainActivityTest
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -38,22 +40,13 @@ public class InjectionMainActivityTest
     public void onCreate()
     {
         View view = mActivity.findViewById(R.id.textView2);
-        assertNotNull(view);
-    }
-
-    @Test
-    public void nextScene()
-    {
-        assertNotNull(mActivity.findViewById(R.id.playButton));
-        onView(withId(R.id.playButton)).perform(click());
-        Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
-        assertNotNull(nextScene);
-        nextScene.finish();
+        assertNull(view);
     }
 
     @After
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

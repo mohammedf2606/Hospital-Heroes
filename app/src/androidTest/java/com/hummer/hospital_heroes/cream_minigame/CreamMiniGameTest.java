@@ -2,42 +2,21 @@ package com.hummer.hospital_heroes.cream_minigame;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.view.View;
 
-import androidx.test.espresso.ViewAction;
-import androidx.test.espresso.action.CoordinatesProvider;
-import androidx.test.espresso.action.GeneralClickAction;
-import androidx.test.espresso.action.Press;
-import androidx.test.espresso.action.Tap;
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
 import org.junit.Test;
 
-import androidx.test.espresso.Espresso.*;
-import androidx.test.espresso.assertion.ViewAssertions;
-import androidx.test.espresso.intent.Intents;
-import androidx.test.rule.ActivityTestRule;
-
-import com.hummer.hospital_heroes.ClickMethods;
-import com.hummer.hospital_heroes.R;
-
-import static androidx.test.espresso.Espresso.onData;
-import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.longClick;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.*;
 
 public class CreamMiniGameTest {
 
