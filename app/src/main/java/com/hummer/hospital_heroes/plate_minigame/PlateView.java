@@ -13,6 +13,13 @@ import com.hummer.hospital_heroes.FoodSelection;
 import com.hummer.hospital_heroes.PreScan;
 import com.hummer.hospital_heroes.R;
 
+/**
+ * PlateView is the surface view for the plate mini game which runs after the food/milk games. It
+ * cycles through images which depict food/milk being consumed.
+ *
+ * @author Manav Parikh
+ * @version 1.0
+ */
 public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
     private Context mContext;
     private PlateFood plateFood;
@@ -26,6 +33,11 @@ public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
         milk = FoodSelection.isMilk;
     }
 
+    /**
+     * Initialises required objects when surface is created. The milk boolean is set in the food
+     * selection activity.
+     * @param holder The SurfaceHolder containing PlateView
+     */
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         if(milk) {

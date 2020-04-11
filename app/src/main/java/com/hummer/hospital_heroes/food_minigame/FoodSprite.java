@@ -43,7 +43,7 @@ class FoodSprite {
     }
 
     /**
-     * Update the position of the bowl with the given arguments
+     * Update the position of the food and check for collision with the bowl
      *
      * @param bowlX the X position of the bowl
      * @param bowlY the Y position of the bowl

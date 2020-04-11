@@ -22,7 +22,12 @@ import com.hummer.hospital_heroes.food_minigame.Bowl;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
 
 import java.util.ArrayList;
-
+/**
+ * MilkGameView is the surface view for the food mini game
+ *
+ * @author Manav Parikh
+ * @version 1.0
+ */
 public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback {
     private Context mContext;
     private MilkMainThread thread;
@@ -89,6 +94,10 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         SoundEffects.playSound(0);
     }
 
+    /**
+     * Draws every element of the game onto the canvas, called every tick
+     * @param canvas The Canvas to draw on
+     */
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
@@ -126,9 +135,6 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         float x = event.getX();
         float y = event.getY();
 
-        // Invalidate() is inside the case statements because there are
-        // many other motion events, and we don't want to invalidate
-        // the view for those.
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 updateFrame((int) x, (int) y);

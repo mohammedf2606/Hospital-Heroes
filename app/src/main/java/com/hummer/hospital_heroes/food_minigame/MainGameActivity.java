@@ -7,7 +7,7 @@ import com.hummer.hospital_heroes.R;
 
 /**
  * MainGameActivity represents the class which contains the activity
- * the game runs in. gameView is instantiated in the layout xml.
+ * the game runs in.
  *
  * @author Manav Parikh
  * @version 1.0
