@@ -9,4 +9,4 @@ android:
     - android-29
 jdk: oraclejdk8
 script:
-- ./gradlew build
+- ./gradlew test

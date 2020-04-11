@@ -21,6 +21,10 @@ public class InjectionMainActivity extends AppActivity
 {
     private InjectionGamePanel gamePanel;
 
+    public InjectionGamePanel getGamePanel() {
+        return gamePanel;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

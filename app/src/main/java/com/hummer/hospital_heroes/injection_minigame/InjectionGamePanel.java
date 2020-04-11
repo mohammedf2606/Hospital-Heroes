@@ -2,6 +2,7 @@ package com.hummer.hospital_heroes.injection_minigame;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.Rect;
@@ -15,6 +16,9 @@ import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 import com.hummer.hospital_heroes.cream_minigame.HospitalBackground;
 import com.hummer.hospital_heroes.PreScan;
 import com.hummer.hospital_heroes.SoundEffects;
+import com.hummer.hospital_heroes.rocket_minigame.Asteroid;
+
+import java.util.ArrayList;
 
 /**
  * InjectionGamePanel is the class of the game that represents the game panel. It builds
@@ -62,6 +66,14 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         setFocusable(true);
     }
 
+    /**
+     * Changes the boolean gameFinished to the input parameter
+     * @param value the value the boolean is to be set to
+     */
+    public void setGameOver(boolean value) {
+        gameOver = value;
+    }
+
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
 
@@ -77,6 +89,18 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
         thread.setRunning(true);
         thread.start();
+    }
+
+    /**
+     * Returns all the bitmaps in the game as an arraylist
+     */
+    public ArrayList getBitmaps() {
+        ArrayList<Bitmap> bitmaps = new ArrayList<>();
+        bitmaps.add(background.getBitmap());
+        bitmaps.add(injection.getBitmap());
+        bitmaps.add(injectionArm.getBitmap());
+        bitmaps.add(sticker.getBitmap());
+        return bitmaps;
     }
 
     @Override
@@ -152,6 +176,32 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         return true;
     }
 
+    /**
+     * Returns the resolution of the screen as an arraylist
+     */
+    public ArrayList getResolution() {
+        ArrayList<Integer> reso = new ArrayList<Integer>();
+        reso.add(xOfScreen);
+        reso.add(yOfScreen);
+        return reso;
+    }
+
+    /**
+     * This method returns the endgame sticker that appears
+     * @return sticker the endgame sticker
+     */
+    public EndGameSticker getSticker() {
+        return sticker;
+    }
+
+    /**
+     * This method returns the canvas of the game
+     * @return canvas the canvas the game is being painted onto
+     */
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
     public void update() {
         if (Rect.intersects(injectionBody.getHitbox(), injection.getHitbox()) && movingInjection) {
             gameOver = true;
@@ -165,5 +215,14 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
     public void playVictorySound() {
         victorySoundPlayedAlready = true;
         SoundEffects.playSound(0);
+    }
+
+    /**
+     * This method returns the value of the boolean 'victorySoundPlayedAlready'
+     * @return victorySoundPlayedAlready the boolean that determines whether
+     * the sound has been played already or not
+     */
+    public boolean isVictorySoundPlayedAlready() {
+        return victorySoundPlayedAlready;
     }
 }

@@ -139,6 +139,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     playVictorySound();
                 }
                 if(value == sticker.getWidth()){
+                    // wait a bit
+//                    try {
+//                        Thread.sleep(3000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+                    // go to next scene
                     gameActivity.nextScene();
                     thread.setRunning(false);
                 }

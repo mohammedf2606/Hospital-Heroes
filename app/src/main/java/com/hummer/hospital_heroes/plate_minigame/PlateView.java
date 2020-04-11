@@ -13,11 +13,22 @@ import com.hummer.hospital_heroes.FoodSelection;
 import com.hummer.hospital_heroes.PreScan;
 import com.hummer.hospital_heroes.R;
 
+/**
+ * PlateView is the surface view for the plate mini game which runs after the food/milk games. It
+ * cycles through images which depict food/milk being consumed.
+ *
+ * @author Manav Parikh
+ * @version 1.0
+ */
 public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
     private Context mContext;
     private PlateFood plateFood;
     private boolean milk;
 
+    /**
+     * The constructor for the class.
+     * @param context the current Context
+     */
     public PlateView(Context context, AttributeSet attributeSet){
         super(context, attributeSet);
         this.mContext = context;
@@ -26,6 +37,11 @@ public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
         milk = FoodSelection.isMilk;
     }
 
+    /**
+     * Initialises required objects when surface is created. The milk boolean is set in the food
+     * selection activity and determines what images are chosen.
+     * @param holder The SurfaceHolder containing PlateView
+     */
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         if(milk) {
@@ -52,10 +68,18 @@ public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceDestroyed(SurfaceHolder holder) {
     }
 
+    /**
+     * Update method. Updates the plate.
+     */
     public void update() {
         plateFood.update();
     }
 
+    /**
+     * Draws every element of the game onto the canvas, called every tick. When the game ends,
+     * advances to the next activity
+     * @param canvas The Canvas to draw on
+     */
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
@@ -67,6 +91,10 @@ public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /**
+     * Updates the plate when the screen is tapped
+     * @param event The MotionEvent that occurred
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {

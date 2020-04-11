@@ -43,7 +43,7 @@ class FoodSprite {
     }
 
     /**
-     * Update the position of the bowl with the given arguments
+     * Update the position of the food and check for collision with the bowl
      *
      * @param bowlX the X position of the bowl
      * @param bowlY the Y position of the bowl
@@ -60,6 +60,15 @@ class FoodSprite {
             Y = -60;
         }
      }
+
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
+    public Bitmap getBitmap() {
+        return food;
+    }
  }
 
 

@@ -1,0 +1,77 @@
+package com.hummer.hospital_heroes.milk_minigame;
+
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+
+import androidx.test.rule.ActivityTestRule;
+
+import com.hummer.hospital_heroes.Constants;
+import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
+import com.hummer.hospital_heroes.food_minigame.GameView;
+import com.hummer.hospital_heroes.food_minigame.MainGameActivity;
+
+import org.junit.Rule;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+public class MilkMiniGameTest {
+
+    @Rule
+    public ActivityTestRule<MilkGameActivity> mActivityTestRule = new ActivityTestRule<>(MilkGameActivity.class);
+
+    @Test
+    public void testResolution() {
+        assertEquals(1024, Constants.SCREEN_WIDTH);
+        assertEquals(600, Constants.SCREEN_HEIGHT);
+    }
+
+    @Test
+    public void testGameFinished() {
+        MilkGameView gameView = mActivityTestRule.getActivity().getGameView();
+        gameView.finishGame();
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        }
+        catch(InterruptedException ex) {}
+        assertTrue(gameView.isVictorySoundPlayedAlready());
+
+        // test if sticker works
+        EndGameSticker sticker = gameView.getSticker();
+        Canvas canvas = gameView.getCanvas();
+        int value = sticker.drawAnimation(canvas);
+        assertEquals(sticker.getWidth(), value);
+    }
+
+    @Test
+    public void testCanvasExists() {
+        Canvas canvas = mActivityTestRule.getActivity().getGameView().getCanvas();
+        assertNotNull(canvas);
+    }
+
+    @Test
+    public void testBitmaps() {
+        ArrayList bitmaps = mActivityTestRule.getActivity().getGameView().getBitmaps();
+
+        Bitmap bowl = (Bitmap) bitmaps.get(0);
+        assertEquals(1024, bowl.getWidth());
+        assertEquals(600, bowl.getHeight());
+
+        Bitmap hashBrown = (Bitmap) bitmaps.get(1);
+        assertEquals(1024, hashBrown.getWidth());
+        assertEquals(600, hashBrown.getHeight());
+
+        Bitmap beans = (Bitmap) bitmaps.get(2);
+        assertEquals(100, beans.getWidth());
+        assertEquals(100, beans.getHeight());
+
+        Bitmap background = (Bitmap) bitmaps.get(3);
+        assertEquals(100, background.getWidth());
+        assertEquals(100, background.getHeight());
+    }
+}

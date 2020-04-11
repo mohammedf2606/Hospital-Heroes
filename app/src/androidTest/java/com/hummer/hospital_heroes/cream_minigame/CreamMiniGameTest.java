@@ -53,27 +53,20 @@ public class CreamMiniGameTest {
         assertEquals(600, y);
     }
 
-//    @Test
-//    public void testClick() {
-//        onView(withId(R.drawable.injectionroombackground)).perform(longClick());
-//        Boolean touchingScreen = mActivityTestRule.getActivity().getGameView().isTouchingScreen();
-//        assertEquals(true, touchingScreen);
-//    }
-
     @Test
     public void testGameFinished() {
         GameView game = mActivityTestRule.getActivity().getGameView();
         game.finishGame();
         try {
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(5);
         }
         catch(InterruptedException ex) {}
         assertTrue(game.isGameFinished());
         assertTrue(game.isVictorySoundPlayedAlready());
 
         // test if sticker works
-        EndGameSticker sticker = mActivityTestRule.getActivity().getGameView().getSticker();
-        Canvas canvas = mActivityTestRule.getActivity().getGameView().getCanvas();
+        EndGameSticker sticker = game.getSticker();
+        Canvas canvas = game.getCanvas();
         int value = sticker.drawAnimation(canvas);
         assertEquals(sticker.getWidth(), value);
     }

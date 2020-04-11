@@ -21,6 +21,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
+/**
+ * The test class for ScanRoom.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class ScanRoomTest {
 
 
@@ -29,6 +35,9 @@ public class ScanRoomTest {
     private ScanRoom mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(StrapToChair.class.getName(), null, false);
 
+    /**
+     * Initialise the activity before being tested
+     */
     @Before
     public void setUp() throws Exception
     {
@@ -36,6 +45,9 @@ public class ScanRoomTest {
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -43,6 +55,9 @@ public class ScanRoomTest {
         assertNotNull(view);
     }
 
+    /**
+     * Test the button that launches the next activity displays the next screen.
+     */
     @Test
     public void onClick()
     {
@@ -53,6 +68,9 @@ public class ScanRoomTest {
         nextScene.finish();
     }
 
+    /**
+     * Test the view on the next activity shows on screen.
+     */
     @Test
     public void launch()
     {
@@ -61,6 +79,9 @@ public class ScanRoomTest {
         intended(hasComponent(StrapToChair.class.getName()));
     }
 
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {

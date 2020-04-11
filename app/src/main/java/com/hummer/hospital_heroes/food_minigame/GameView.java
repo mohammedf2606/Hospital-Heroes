@@ -19,6 +19,8 @@ import com.hummer.hospital_heroes.SoundEffects;
 import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
 
+import java.util.ArrayList;
+
 /**
  * GameView is the surface view for the food mini game
  *
@@ -32,24 +34,28 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private FoodSprite beans;
     private Bowl bowl;
     private Bitmap background;
+    private Canvas canvas;
     static int score = 0;
     private EndGameSticker sticker;
     private boolean victorySoundPlayedAlready = false;
 
 
     /**
-     * The constructor for the class 'FoodSprite', used by the layout XML
-     * @param context
-     * @param attributeSet
+     * The constructor for the class. Starts a new thread for the game loop.
+     * @param context the current Context
      */
-    public GameView(Context context, AttributeSet attributeSet){
-        super(context, attributeSet);
+    public GameView(Context context){
+        super(context);
         this.mContext = context;
         getHolder().addCallback(this);
         thread = new MainThread(getHolder(), this);
         setFocusable(true);
     }
 
+    /**
+     * Initialises required objects when surface is created
+     * @param holder The SurfaceHolder containing GameView
+     */
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         int width = Constants.SCREEN_WIDTH; //1024
@@ -76,6 +82,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     }
 
+    /**
+     * Update method. Updates hashbrown and beans if game isn't over
+     */
     public void update() {
         if (score < 11) {
             hashbrown.update(bowl.getX(), bowl.getY());
@@ -83,20 +92,34 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /**
+     * Updates bowl with its new coordinates
+     * @param newX new X coordinate to move to
+     * @param newY new Y coordinate to move to
+     */
     private void updateFrame(int newX, int newY) {
         if (score < 11 && newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
             bowl.update(newX - 125, newY);
         }
     }
 
+    /**
+     * Plays victory sound
+     */
     public void playVictorySound() {
         victorySoundPlayedAlready = true;
         SoundEffects.playSound(0);
     }
 
+    /**
+     * Draws every element of the game onto the canvas, called every tick. When the game ends,
+     * draws a sticker and plays a chime
+     * @param canvas The Canvas to draw on
+     */
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
+        this.canvas = canvas;
         if(canvas != null){
             if (score >= 10) {
                 Paint p = new Paint(Color.RED);
@@ -123,14 +146,15 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /**
+     * Moves bowl whenever a drag or tap is executed on the screen
+     * @param event The MotionEvent that occurred
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
 
-        // Invalidate() is inside the case statements because there are
-        // many other motion events, and we don't want to invalidate
-        // the view for those.
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
             case MotionEvent.ACTION_MOVE:
@@ -142,4 +166,50 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
         return true;
     }
+
+    /**
+     * Finishes the game by setting its victory conditions to true
+     */
+    public void finishGame() {
+        score = 10;
+    }
+
+    /**
+     * This method returns the value of the boolean 'victorySoundPlayedAlready'
+     * @return victorySoundPlayedAlready the boolean that determines whether
+     * the sound has been played already or not
+     */
+    public boolean isVictorySoundPlayedAlready() {
+        return victorySoundPlayedAlready;
+    }
+
+    /**
+     * This method returns the canvas of the game
+     * @return canvas the canvas the game is being painted onto
+     */
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
+    /**
+     * This method returns the endgame sticker that appears
+     * @return sticker the endgame sticker
+     */
+    public EndGameSticker getSticker() {
+        return sticker;
+    }
+
+    /**
+     * Returns all the bitmaps in the game as an arraylist
+     */
+    public ArrayList getBitmaps() {
+        ArrayList<Bitmap> bitmaps = new ArrayList<>();
+        bitmaps.add(bowl.getBitmap());
+        bitmaps.add(hashbrown.getBitmap());
+        bitmaps.add(beans.getBitmap());
+        bitmaps.add(background);
+        bitmaps.add(sticker.getBitmap());
+        return bitmaps;
+    }
+
 }

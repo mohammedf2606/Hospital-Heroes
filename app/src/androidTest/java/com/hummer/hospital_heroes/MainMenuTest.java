@@ -22,10 +22,12 @@ import static org.junit.Assert.*;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 
-/*
- MainMenu, MainActivity, Reception, GenderSelection, (Fe)MaleCharSelection,
- FoodSelection/InjectionRoom, WaitingRoom, SittingChair, PreScan
-*/
+/**
+ * The test class for MainMenu.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class MainMenuTest
 {
     @Rule
@@ -33,12 +35,18 @@ public class MainMenuTest
     private MainMenu mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(HospitalFront.class.getName(), null, false);
 
+    /**
+     * Initialise the activity before being tested
+     */
     @Before
     public void setUp() throws Exception
     {
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -46,6 +54,9 @@ public class MainMenuTest
         assertNotNull(view);
     }
 
+    /**
+     * Test the button that launches the next activity displays the next screen.
+     */
     @Test
     public void onClick()
     {
@@ -56,6 +67,9 @@ public class MainMenuTest
         nextScene.finish();
     }
 
+    /**
+     * Test the view on the next activity shows on screen.
+     */
     @Test
     public void launch()
     {
@@ -65,6 +79,9 @@ public class MainMenuTest
         Intents.release();
     }
 
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {

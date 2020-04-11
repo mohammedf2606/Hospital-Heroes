@@ -37,7 +37,8 @@ Android Studio will install the app on your connected device and automatically l
 
 When at the root of the source code repository, open Terminal and run the command below
 
-`gradle test` 
+- `gradle test` for running unit tests
+- `gradle connectedAndroidTest` for running instrumentation test
 
 ## Built With
 
