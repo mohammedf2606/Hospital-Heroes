@@ -14,7 +14,7 @@ Hospital Heroes is an Android educational game aimed at teaching toddlers about 
 
 #### Setting up an emulator
 
-1. In Android Studio, create an [https://developer.android.com/studio/run/managing-avds#createavd](Android Virtual Device) (AVD) that the emulator can use to install and run your app.
+1. In Android Studio, create an [https://developer.android.com/studio/run/managing-avds](Android Virtual Device (AVD)) that the emulator can use to install and run your app.
 2. When opening the AVD Manager, create a new hardware profile as per the prerequisites above.
 
 #### Setting up a physical device
