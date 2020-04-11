@@ -42,8 +42,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     /**
      * The constructor for the class 'FoodSprite', used by the layout XML
-     * @param context
-     * @param attributeSet
+     * @param context standard parameter for XML constructor
+     * @param attributeSet standard parameter for XML constructor
      */
     public GameView(Context context){
         super(context);
@@ -53,6 +53,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         setFocusable(true);
     }
 
+    /**
+     * Initialises required objects when surface is created
+     * @param holder The SurfaceHolder containing GameView
+     */
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         int width = Constants.SCREEN_WIDTH; //1024
@@ -79,6 +83,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     }
 
+    /**
+     * Update method. Updates hashbrown and beans if game isn't over
+     */
     public void update() {
         if (score < 11) {
             hashbrown.update(bowl.getX(), bowl.getY());
@@ -86,17 +93,29 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /**
+     * Updates bowl with its new coordinates
+     * @param newX new X coordinate to move to
+     * @param newY new Y coordinate to move to
+     */
     private void updateFrame(int newX, int newY) {
         if (score < 11 && newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
             bowl.update(newX - 125, newY);
         }
     }
 
+    /**
+     * Plays victory sound
+     */
     public void playVictorySound() {
         victorySoundPlayedAlready = true;
         SoundEffects.playSound(0);
     }
 
+    /**
+     * Draws every element of the game onto the canvas, called every tick
+     * @param canvas The Canvas to draw on
+     */
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
@@ -117,13 +136,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 }
 
                 if(value == sticker.getWidth()) {
-                    // wait a bit
-//                    try {
-//                        Thread.sleep(3000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-                    // go to next scene
                     Intent plate_activity = new Intent(mContext, PlateActivity.class);
                     mContext.startActivity(plate_activity);
                     thread.setRunning(false);
@@ -137,14 +149,15 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /**
+     * Moves bowl whenever a drag or tap is executed on the screen
+     * @param event The MotionEvent that occurred
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
 
-        // Invalidate() is inside the case statements because there are
-        // many other motion events, and we don't want to invalidate
-        // the view for those.
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 updateFrame((int) x, (int) y);

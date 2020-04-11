@@ -5,6 +5,14 @@ import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.Constants;
 import com.hummer.hospital_heroes.R;
 
+/**
+ * MainGameActivity represents the class which contains the activity
+ * the game runs in. gameView is instantiated in the layout xml.
+ *
+ * @author Manav Parikh
+ * @version 1.0
+ */
+
 public class MainGameActivity extends AppActivity {
 
     private GameView gameView;
