@@ -25,6 +25,10 @@ public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
     private PlateFood plateFood;
     private boolean milk;
 
+    /**
+     * The constructor for the class.
+     * @param context the current Context
+     */
     public PlateView(Context context, AttributeSet attributeSet){
         super(context, attributeSet);
         this.mContext = context;
@@ -35,7 +39,7 @@ public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
 
     /**
      * Initialises required objects when surface is created. The milk boolean is set in the food
-     * selection activity.
+     * selection activity and determines what images are chosen.
      * @param holder The SurfaceHolder containing PlateView
      */
     @Override
@@ -64,10 +68,18 @@ public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceDestroyed(SurfaceHolder holder) {
     }
 
+    /**
+     * Update method. Updates the plate.
+     */
     public void update() {
         plateFood.update();
     }
 
+    /**
+     * Draws every element of the game onto the canvas, called every tick. When the game ends,
+     * advances to the next activity
+     * @param canvas The Canvas to draw on
+     */
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
@@ -79,6 +91,10 @@ public class PlateView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /**
+     * Updates the plate when the screen is tapped
+     * @param event The MotionEvent that occurred
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float x = event.getX();

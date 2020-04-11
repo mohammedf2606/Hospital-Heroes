@@ -41,9 +41,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
 
     /**
-     * The constructor for the class 'FoodSprite', used by the layout XML
-     * @param context standard parameter for XML constructor
-     * @param attributeSet standard parameter for XML constructor
+     * The constructor for the class. Starts a new thread for the game loop.
+     * @param context the current Context
      */
     public GameView(Context context){
         super(context);
@@ -113,7 +112,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     /**
-     * Draws every element of the game onto the canvas, called every tick
+     * Draws every element of the game onto the canvas, called every tick. When the game ends,
+     * draws a sticker and plays a chime
      * @param canvas The Canvas to draw on
      */
     @Override
