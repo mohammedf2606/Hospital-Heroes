@@ -45,8 +45,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
      * @param context
      * @param attributeSet
      */
-    public GameView(Context context, AttributeSet attributeSet){
-        super(context, attributeSet);
+    public GameView(Context context){
+        super(context);
         this.mContext = context;
         getHolder().addCallback(this);
         thread = new MainThread(getHolder(), this);
@@ -100,8 +100,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
+        this.canvas = canvas;
         if(canvas != null){
-            this.canvas = canvas;
             if (score >= 10) {
 
                 // draw a darkened background
@@ -118,11 +118,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
                 if(value == sticker.getWidth()) {
                     // wait a bit
-                    try {
-                        Thread.sleep(3000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        Thread.sleep(3000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                     // go to next scene
                     Intent plate_activity = new Intent(mContext, PlateActivity.class);
                     mContext.startActivity(plate_activity);

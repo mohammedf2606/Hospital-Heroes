@@ -21,6 +21,8 @@ import com.hummer.hospital_heroes.cream_minigame.EndGameSticker;
 import com.hummer.hospital_heroes.food_minigame.Bowl;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
 
+import java.util.ArrayList;
+
 public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback {
     private Context mContext;
     private MilkMainThread thread;
@@ -28,12 +30,13 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
     private Bowl bowl;
     private Bitmap background;
     static int score = 0;
+    private Canvas canvas;
     private EndGameSticker sticker;
     private boolean victorySoundPlayedAlready = false;
 
 
-    public MilkGameView(Context context, AttributeSet attributeSet){
-        super(context, attributeSet);
+    public MilkGameView(Context context){
+        super(context);
         this.mContext = context;
         getHolder().addCallback(this);
         thread = new MilkMainThread(getHolder(), this);
@@ -89,6 +92,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
+        this.canvas = canvas;
         if(canvas != null){
             canvas.drawBitmap(background, 0, 0, null);
             bowl.draw(canvas);
@@ -138,5 +142,49 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
                 // Do nothing.
         }
         return true;
+    }
+
+    /**
+     * Finishes the game by setting its victory conditions to true
+     */
+    public void finishGame() {
+        score = 10;
+    }
+
+    /**
+     * This method returns the value of the boolean 'victorySoundPlayedAlready'
+     * @return victorySoundPlayedAlready the boolean that determines whether
+     * the sound has been played already or not
+     */
+    public boolean isVictorySoundPlayedAlready() {
+        return victorySoundPlayedAlready;
+    }
+
+    /**
+     * This method returns the canvas of the game
+     * @return canvas the canvas the game is being painted onto
+     */
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
+    /**
+     * This method returns the endgame sticker that appears
+     * @return sticker the endgame sticker
+     */
+    public EndGameSticker getSticker() {
+        return sticker;
+    }
+
+    /**
+     * Returns all the bitmaps in the game as an arraylist
+     */
+    public ArrayList getBitmaps() {
+        ArrayList<Bitmap> bitmaps = new ArrayList<>();
+        bitmaps.add(bowl.getBitmap());
+        bitmaps.add(milk.getBitmap());
+        bitmaps.add(background);
+        bitmaps.add(sticker.getBitmap());
+        return bitmaps;
     }
 }

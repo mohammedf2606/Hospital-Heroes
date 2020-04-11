@@ -37,6 +37,7 @@ public class MainMenuForMilkTest {
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -55,15 +56,16 @@ public class MainMenuForMilkTest {
     @Test
     public void launch()
     {
-        Intents.init();
+
         Espresso.onView(withId(R.id.playButton)).perform(click());
         intended(hasComponent(MilkGameActivity.class.getName()));
-        Intents.release();
+
     }
 
     @After
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

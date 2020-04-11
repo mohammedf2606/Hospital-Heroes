@@ -65,8 +65,8 @@ public class CreamMiniGameTest {
         assertTrue(game.isVictorySoundPlayedAlready());
 
         // test if sticker works
-        EndGameSticker sticker = mActivityTestRule.getActivity().getGameView().getSticker();
-        Canvas canvas = mActivityTestRule.getActivity().getGameView().getCanvas();
+        EndGameSticker sticker = game.getSticker();
+        Canvas canvas = game.getCanvas();
         int value = sticker.drawAnimation(canvas);
         assertEquals(sticker.getWidth(), value);
     }

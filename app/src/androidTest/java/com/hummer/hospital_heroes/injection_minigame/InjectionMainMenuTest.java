@@ -34,6 +34,7 @@ public class InjectionMainMenuTest
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -57,15 +58,16 @@ public class InjectionMainMenuTest
     @Test
     public void launch()
     {
-        Intents.init();
+
         Espresso.onView(withId(R.id.playButton)).perform(click());
         intended(hasComponent(InjectionMainActivity.class.getName()));
-        Intents.release();
+
     }
 
     @After
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }
