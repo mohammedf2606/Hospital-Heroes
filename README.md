@@ -6,14 +6,18 @@ Hospital Heroes is an Android educational game aimed at teaching toddlers about 
 
 ### Prerequisites
 
-Android 5
-
-Resolution: 1024 x 600
+- Android 5 (API 22) - Lollipop
+- Resolution: 1024 x 600
+- RAM: 1024 MB
 
 ### Installing
 
-Set up your device as follows:
+#### Setting up an emulator
 
+1. In Android Studio, create an [https://developer.android.com/studio/run/managing-avds#createavd](Android Virtual Device (AVD)) that the emulator can use to install and run your app.
+2. When opening the AVD Manager, create a new hardware profile as per the prerequisites above.
+
+#### Setting up a physical device
 1. Connect your device to your development machine with a USB cable. If you developed on Windows, you might need to [install the appropriate USB driver](https://developer.android.com/studio/run/oem-usb) for your device.
 2. Perform the following steps to enable **USB debugging** in the **Developer** **options** window:
     1. Open the **Settings** app.
@@ -23,7 +27,7 @@ Set up your device as follows:
     5. Return to the previous screen, scroll to the bottom, and tap **Developer options**.
     6. In the **Developer options** window, scroll down to find and enable **USB debugging**.
 
-Run the app on your device as follows:
+#### Running the app
 
 1. In Android Studio, select your app from the run/debug configurations drop-down menu in the toolbar.
 2. In the toolbar, select the device that you want to run your app on from the target device drop-down menu.
