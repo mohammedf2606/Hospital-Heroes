@@ -18,6 +18,10 @@ import com.hummer.hospital_heroes.R;
 
 public class MainMenuForGame extends AppActivity {
 
+    /**
+     *  create the activity that displays the main menu on the screen
+     * @param savedInstanceState the bundle of the activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

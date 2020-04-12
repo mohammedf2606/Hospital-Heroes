@@ -25,6 +25,10 @@ public class InjectionMainActivity extends AppActivity
         return gamePanel;
     }
 
+    /**
+     *  create the activity that displays the game activity on the screen
+     * @param savedInstanceState the bundle of the activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

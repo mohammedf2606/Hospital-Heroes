@@ -3,7 +3,7 @@ package com.hummer.hospital_heroes.injection_minigame;
 import android.graphics.Canvas;
 
 /**
- * InjectionGameObject is one of 2 main interfaces of the game. 
+ * InjectionGameObject is one of the main interfaces of the game.
  *
  * @author Fareed Faisal
  * @version 1.0
