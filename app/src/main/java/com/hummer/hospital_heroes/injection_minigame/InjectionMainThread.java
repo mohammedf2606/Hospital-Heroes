@@ -16,12 +16,20 @@ public class InjectionMainThread extends Thread {
     private boolean running;
     public static Canvas canvas;
 
+    /**
+     * The constructor for the main thread class
+     * @param surfaceHolder The SurfaceHolder the thread is associated with
+     * @param gamePanel The panel object the thread works for
+     */
     public InjectionMainThread(SurfaceHolder surfaceHolder, InjectionGamePanel gamePanel){
         super();
         this.surfaceHolder = surfaceHolder;
         this.gamePanel = gamePanel;
     }
 
+    /**
+     * runs the thread of the game
+     */
     @Override
     public void run(){
         while(running){
@@ -47,6 +55,11 @@ public class InjectionMainThread extends Thread {
         }
     }
 
+    /**
+     * Sets the boolean 'running' to the parameter.
+     *
+     * @param  isRunning  the boolean, true if the thread is running.
+     */
     public void setRunning(boolean isRunning){
         running = isRunning;
     }

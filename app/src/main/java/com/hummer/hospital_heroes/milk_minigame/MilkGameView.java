@@ -32,6 +32,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
     private Context mContext;
     private MilkMainThread thread;
     private MilkCarton milk;
+    private int width, height;
     private Bowl bowl;
     private Bitmap background;
     static int score = 0;
@@ -57,8 +58,8 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
      */
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        int width = Constants.SCREEN_WIDTH;
-        int height = Constants.SCREEN_HEIGHT;
+        this.width = Constants.SCREEN_WIDTH;
+        this.height = Constants.SCREEN_HEIGHT;
         bowl = new Bowl(BitmapFactory.decodeResource(getResources(), R.drawable.bowl), width, height);
         milk = new MilkCarton(BitmapFactory.decodeResource(getResources(), R.drawable.milk),
                 BitmapFactory.decodeResource(getResources(), R.drawable.milk_droplet));
@@ -165,6 +166,16 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
                 // Do nothing.
         }
         return true;
+    }
+
+    /**
+     * Returns the resolution of the screen as an arraylist
+     */
+    public ArrayList getResolution() {
+        ArrayList<Integer> reso = new ArrayList<Integer>();
+        reso.add(width);
+        reso.add(height);
+        return reso;
     }
 
     /**

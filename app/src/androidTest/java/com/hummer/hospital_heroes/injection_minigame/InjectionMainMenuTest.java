@@ -31,6 +31,9 @@ public class InjectionMainMenuTest
     private InjectionMainMenu mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(InjectionMainActivity.class.getName(), null, false);
 
+    /**
+     * This method is called before every test, it initialises the activity
+     */
     @Before
     public void setUp() throws Exception
     {
@@ -38,6 +41,9 @@ public class InjectionMainMenuTest
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * This test checks if the right view is created
+     */
     @Test
     public void onCreate()
     {
@@ -45,6 +51,9 @@ public class InjectionMainMenuTest
         assertNotNull(view);
     }
 
+    /**
+     * This test checks if the right activity shows up once the game is complete
+     */
     @Test
     public void nextScene()
     {
@@ -55,15 +64,19 @@ public class InjectionMainMenuTest
         nextScene.finish();
     }
 
+    /**
+     * This test checks if the right class is launched upon starting the game
+     */
     @Test
     public void launch()
     {
-
         Espresso.onView(withId(R.id.playButton)).perform(click());
         intended(hasComponent(InjectionMainActivity.class.getName()));
-
     }
 
+    /**
+     * This test checks if the right class is launched upon starting the game
+     */
     @After
     public void tearDown() throws Exception
     {

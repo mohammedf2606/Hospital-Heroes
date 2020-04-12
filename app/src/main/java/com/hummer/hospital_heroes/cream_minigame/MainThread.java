@@ -31,6 +31,9 @@ public class MainThread extends Thread {
         this.gameView = gameView;
     }
 
+    /**
+     * runs the thread of the game
+     */
     @Override
     public void run() {
         while(running) {

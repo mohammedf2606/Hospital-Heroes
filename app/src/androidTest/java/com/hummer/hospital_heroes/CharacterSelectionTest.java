@@ -40,6 +40,7 @@ public class CharacterSelectionTest {
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -72,7 +73,6 @@ public class CharacterSelectionTest {
     @Test
     public void launch()
     {
-        Intents.init();
         Espresso.onView(withId(R.id.girl2)).perform(click());
         intended(hasComponent(InjectionRoom.class.getName()));
     }
@@ -84,5 +84,6 @@ public class CharacterSelectionTest {
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

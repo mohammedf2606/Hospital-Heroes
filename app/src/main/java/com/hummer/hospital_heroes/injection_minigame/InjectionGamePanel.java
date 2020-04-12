@@ -49,7 +49,12 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
     private Point injectionPoint;
 
-
+    /**
+     *  set up the game initial screen
+     * @param context the app context for mini game
+     * @param xOfScreen the horizontal size of screen
+     * @param yOfScreen the vertical size of screen
+     */
     public InjectionGamePanel(Context context, int xOfScreen, int yOfScreen) {
         super(context);
         this.mContext = context;
@@ -79,6 +84,10 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
 
     }
 
+    /**
+     *  start the thread and display all objects to begin the game
+     * @param holder the surfaceholder the game is run on
+     */
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         background = new HospitalBackground(xOfScreen, yOfScreen, getResources());
@@ -103,6 +112,10 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         return bitmaps;
     }
 
+    /**
+     *  end the thread of the game when it is complete
+     * @param holder the surfaceholder the game is run on
+     */
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
         boolean retry = true;
@@ -150,6 +163,10 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         }
     }
 
+    /**
+     *  register the input event and perfom the corresponding action in the game
+     * @param event the motion input by user
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
@@ -202,16 +219,27 @@ public class InjectionGamePanel extends SurfaceView implements SurfaceHolder.Cal
         return canvas;
     }
 
+    /**
+     *  update the game activity for when the collision occurs
+     *
+     */
     public void update() {
         if (Rect.intersects(injectionBody.getHitbox(), injection.getHitbox()) && movingInjection) {
             gameOver = true;
         }
     }
 
+    /**
+     * set the main activity of the game
+     * @param activity the bundle of the activity
+     */
     public void setGameActivity(InjectionMainActivity activity) {
         gameActivity = activity;
     }
 
+    /**
+     *  play the success sound for when the game ends
+     */
     public void playVictorySound() {
         victorySoundPlayedAlready = true;
         SoundEffects.playSound(0);

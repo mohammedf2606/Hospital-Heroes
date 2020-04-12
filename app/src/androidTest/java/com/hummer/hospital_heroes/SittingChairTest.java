@@ -43,6 +43,7 @@ public class SittingChairTest
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -75,10 +76,8 @@ public class SittingChairTest
     @Test
     public void launch()
     {
-        Intents.init();
         Espresso.onView(withId(R.id.cream)).perform(click());
         intended(hasComponent(MainMenuForGame.class.getName()));
-        Intents.release();
     }
 
     /**
@@ -88,5 +87,6 @@ public class SittingChairTest
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

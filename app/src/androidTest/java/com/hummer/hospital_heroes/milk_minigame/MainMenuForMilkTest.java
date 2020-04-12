@@ -34,6 +34,9 @@ public class MainMenuForMilkTest {
     private MainMenuForMilk mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MilkGameActivity.class.getName(), null, false);
 
+    /**
+     * This method is called before every test, it initialises the activity
+     */
     @Before
     public void setUp() throws Exception
     {
@@ -41,6 +44,9 @@ public class MainMenuForMilkTest {
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * This test checks if the right view is created
+     */
     @Test
     public void onCreate()
     {
@@ -48,20 +54,27 @@ public class MainMenuForMilkTest {
         assertNotNull(view);
     }
 
+    /**
+     * This test checks if the correct text is displayed
+     */
     @Test
     public void containsText() {
         onView(withText("Collect the food!")).check(ViewAssertions.matches(isDisplayed()));
     }
 
+    /**
+     * This test checks if the right class is launched upon starting the game
+     */
     @Test
     public void launch()
     {
-
         Espresso.onView(withId(R.id.playButton)).perform(click());
         intended(hasComponent(MilkGameActivity.class.getName()));
-
     }
 
+    /**
+     * This test is called after every test, it ends the processes initialised
+     */
     @After
     public void tearDown() throws Exception
     {

@@ -21,6 +21,9 @@ public class InjectionGamePanelTest {
     @Rule
     public ActivityTestRule<InjectionMainActivity> mActivityTestRule = new ActivityTestRule<>(InjectionMainActivity.class);
 
+    /**
+     * This tests checks if the resolution assigned matches 1024x600
+     */
     @Test
     public void testResolution() {
         ArrayList reso = mActivityTestRule.getActivity().getGamePanel().getResolution();
@@ -30,6 +33,9 @@ public class InjectionGamePanelTest {
         assertEquals(600, y);
     }
 
+    /**
+     * This test checks if the right booleans are set once the game is complete
+     */
     @Test
     public void testGameFinished() {
         InjectionGamePanel game = mActivityTestRule.getActivity().getGamePanel();
@@ -47,12 +53,18 @@ public class InjectionGamePanelTest {
         assertEquals(sticker.getWidth(), value);
     }
 
+    /**
+     * This test checks if the canvas exists (is not null)
+     */
     @Test
     public void testCanvasExists() {
         Canvas canvas = mActivityTestRule.getActivity().getGamePanel().getCanvas();
         assertNotNull(canvas);
     }
 
+    /**
+     * This test checks if the bitmaps used have the right dimensions
+     */
     @Test
     public void testBitmaps() {
         ArrayList bitmaps = mActivityTestRule.getActivity().getGamePanel().getBitmaps();

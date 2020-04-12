@@ -41,6 +41,7 @@ public class MainMenuTest
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
@@ -73,10 +74,10 @@ public class MainMenuTest
     @Test
     public void launch()
     {
-        Intents.init();
+
         Espresso.onView(withId(R.id.injection_menu)).perform(click());
         intended(hasComponent(HospitalFront.class.getName()));
-        Intents.release();
+
     }
 
     /**
@@ -86,5 +87,6 @@ public class MainMenuTest
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

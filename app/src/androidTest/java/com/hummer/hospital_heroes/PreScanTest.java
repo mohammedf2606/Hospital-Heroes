@@ -71,17 +71,6 @@ public class PreScanTest
     }
 
     /**
-     * Test the view on the next activity shows on screen.
-     */
-    @Test
-    public void launch()
-    {
-        Espresso.onView(withId(R.layout.pre_scan)).perform(click());
-        intended(hasComponent(ScanRoom.class.getName()));
-        Intents.release();
-    }
-
-    /**
      * Release the activity after being tested
      */
     @After
