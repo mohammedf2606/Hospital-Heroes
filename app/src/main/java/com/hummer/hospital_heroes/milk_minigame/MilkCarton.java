@@ -7,6 +7,12 @@ import com.hummer.hospital_heroes.Constants;
 
 import java.util.Random;
 
+/**
+ * FoodSprite handles the internal logic for the milk carton and its milk droplet
+ *
+ * @author Manav Parikh
+ * @version 1.0
+ */
 class MilkCarton {
 
     private Bitmap carton;
@@ -17,7 +23,11 @@ class MilkCarton {
     boolean goRight = true;
     int timeToDrop = 0;
 
-
+    /**
+     * The constructor for the class 'FoodSprite'
+     * @param milk2 The bitmap containing an image of the carton
+     * @param milk The bitmap containing an image of the milk droplet
+     */
     MilkCarton(Bitmap milk2, Bitmap milk) {
         this.carton = Bitmap.createScaledBitmap(milk2, 170,150, false);
         this.droplet = Bitmap.createScaledBitmap(milk, 120,120, false);
@@ -31,11 +41,24 @@ class MilkCarton {
         return X;
     }
 
+    /**
+     * Draw the carton and droplet on the given canvas
+     *
+     * @param canvas the canvas to draw to
+     */
     void drawFood(Canvas canvas) {
         canvas.drawBitmap(carton, cX, cY, null);
         canvas.drawBitmap(droplet, X, Y, null);
     }
 
+    /**
+     * Update the position of the carton and droplet. The carton moves horizontally across the
+     * view and dispenses a droplet randomly if there isn't one currently in the game area. Also
+     * checks for bowl collision.
+     *
+     * @param bowlX the X position of the bowl
+     * @param bowlY the Y position of the bowl
+     */
     void update(int bowlX, int bowlY) {
         if (timeToDrop == 0) {
             X = cX;

@@ -5,6 +5,12 @@ import android.graphics.Canvas;
 
 import com.hummer.hospital_heroes.Constants;
 
+/**
+ * Handles the internal logic for the states of the plate mini game.
+ *
+ * @author Manav Parikh
+ * @version 1.0
+ */
 class PlateFood {
     private int X, Y;
     private Bitmap food0, food1, food2, food3, food4;
@@ -21,6 +27,10 @@ class PlateFood {
         this.food4 = Bitmap.createScaledBitmap(img4, 400, 400, false);
     }
 
+    /**
+     * Draws food based on the current state
+     * @param canvas The canvas to draw on
+     */
     boolean drawFood(Canvas canvas) {
         switch (state) {
             case 0:

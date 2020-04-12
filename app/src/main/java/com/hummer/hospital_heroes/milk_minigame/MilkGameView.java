@@ -22,7 +22,12 @@ import com.hummer.hospital_heroes.food_minigame.Bowl;
 import com.hummer.hospital_heroes.plate_minigame.PlateActivity;
 
 import java.util.ArrayList;
-
+/**
+ * MilkGameView is the surface view for the food mini game
+ *
+ * @author Manav Parikh
+ * @version 1.0
+ */
 public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback {
     private Context mContext;
     private MilkMainThread thread;
@@ -35,7 +40,10 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
     private EndGameSticker sticker;
     private boolean victorySoundPlayedAlready = false;
 
-
+    /**
+     * The constructor for the class. Starts a new thread for the game loop.
+     * @param context the current Context
+     */
     public MilkGameView(Context context){
         super(context);
         this.mContext = context;
@@ -44,6 +52,10 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         setFocusable(true);
     }
 
+    /**
+     * Initialises required objects when surface is created
+     * @param holder The SurfaceHolder containing GameView
+     */
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         this.width = Constants.SCREEN_WIDTH;
@@ -70,12 +82,20 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
 
     }
 
+    /**
+     * Update method. Updates milk if game isn't over
+     */
     public void update() {
         if (score < 11) {
             milk.update(bowl.getX(), bowl.getY());
         }
     }
 
+    /**
+     * Updates bowl with its new coordinates
+     * @param newX new X coordinate to move to
+     * @param newY new Y coordinate to move to
+     */
     private void updateFrame(int newX, int newY) {
         if (score < 11 && newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
             bowl.update(newX - 125, newY);
@@ -90,6 +110,11 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         SoundEffects.playSound(0);
     }
 
+    /**
+     * Draws every element of the game onto the canvas, called every tick. When the game ends,
+     * draws a sticker and plays a chime
+     * @param canvas The Canvas to draw on
+     */
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
@@ -109,7 +134,7 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
 
                 int value = sticker.drawAnimation(canvas);
 
-                if(victorySoundPlayedAlready == false) {
+                if(!victorySoundPlayedAlready) {
                     playVictorySound();
                 }
 
@@ -122,19 +147,17 @@ public class MilkGameView extends SurfaceView implements SurfaceHolder.Callback 
         }
     }
 
+    /**
+     * Moves bowl whenever a drag or tap is executed on the screen
+     * @param event The MotionEvent that occurred
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
 
-        // Invalidate() is inside the case statements because there are
-        // many other motion events, and we don't want to invalidate
-        // the view for those.
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                updateFrame((int) x, (int) y);
-                invalidate();
-                break;
             case MotionEvent.ACTION_MOVE:
                 updateFrame((int) x, (int) y);
                 invalidate();

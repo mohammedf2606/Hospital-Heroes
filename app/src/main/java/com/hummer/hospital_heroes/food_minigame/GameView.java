@@ -42,9 +42,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
 
     /**
-     * The constructor for the class 'FoodSprite', used by the layout XML
-     * @param context
-     * @param attributeSet
+     * The constructor for the class. Starts a new thread for the game loop.
+     * @param context the current Context
      */
     public GameView(Context context){
         super(context);
@@ -54,6 +53,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         setFocusable(true);
     }
 
+    /**
+     * Initialises required objects when surface is created
+     * @param holder The SurfaceHolder containing GameView
+     */
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         this.width = Constants.SCREEN_WIDTH; //1024
@@ -80,6 +83,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     }
 
+    /**
+     * Update method. Updates hashbrown and beans if game isn't over
+     */
     public void update() {
         if (score < 11) {
             hashbrown.update(bowl.getX(), bowl.getY());
@@ -87,48 +93,51 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /**
+     * Updates bowl with its new coordinates
+     * @param newX new X coordinate to move to
+     * @param newY new Y coordinate to move to
+     */
     private void updateFrame(int newX, int newY) {
         if (score < 11 && newX > 125 && newX < Constants.SCREEN_WIDTH - 125) {
             bowl.update(newX - 125, newY);
         }
     }
 
+    /**
+     * Plays victory sound
+     */
     public void playVictorySound() {
         victorySoundPlayedAlready = true;
         SoundEffects.playSound(0);
     }
 
+    /**
+     * Draws every element of the game onto the canvas, called every tick. When the game ends,
+     * draws a sticker and plays a chime
+     * @param canvas The Canvas to draw on
+     */
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
         this.canvas = canvas;
         if(canvas != null){
             if (score >= 10) {
-
-                // draw a darkened background
                 Paint p = new Paint(Color.RED);
                 ColorFilter filter = new LightingColorFilter(0xFF7F7F7F, 0x00000000);    // darken
                 p.setColorFilter(filter);
                 canvas.drawBitmap(background, 0, 0, p);
 
                 int value = sticker.drawAnimation(canvas);
-
-                if(victorySoundPlayedAlready == false) {
+                if(!victorySoundPlayedAlready) {
                     playVictorySound();
                 }
-
                 if(value == sticker.getWidth()) {
-                    // wait a bit
-//                    try {
-//                        Thread.sleep(3000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-                    // go to next scene
                     Intent plate_activity = new Intent(mContext, PlateActivity.class);
                     mContext.startActivity(plate_activity);
                     thread.setRunning(false);
                 }
+
             } else {
                 canvas.drawBitmap(background, 0, 0, null);
                 bowl.draw(canvas);
@@ -138,19 +147,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /**
+     * Moves bowl whenever a drag or tap is executed on the screen
+     * @param event The MotionEvent that occurred
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
 
-        // Invalidate() is inside the case statements because there are
-        // many other motion events, and we don't want to invalidate
-        // the view for those.
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                updateFrame((int) x, (int) y);
-                invalidate();
-                break;
             case MotionEvent.ACTION_MOVE:
                 updateFrame((int) x, (int) y);
                 invalidate();
