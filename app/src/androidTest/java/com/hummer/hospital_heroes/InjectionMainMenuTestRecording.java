@@ -29,6 +29,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.is;
 
+/**
+ * Record test for injection menu screen
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class InjectionMainMenuTestRecording {

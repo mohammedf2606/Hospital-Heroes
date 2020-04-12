@@ -28,6 +28,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.is;
 
+/**
+ * Record test for strapping screen
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class StrapToChairTestRecording {
