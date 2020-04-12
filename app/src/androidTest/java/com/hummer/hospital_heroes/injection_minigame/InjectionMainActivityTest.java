@@ -29,6 +29,9 @@ public class InjectionMainActivityTest
     private InjectionMainActivity mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(PreScan.class.getName(), null, false);
 
+    /**
+     * This method is called before every test, it initialises the activity
+     */
     @Before
     public void setUp() throws Exception
     {
@@ -36,6 +39,9 @@ public class InjectionMainActivityTest
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * This test checks if the right view is created
+     */
     @Test
     public void onCreate()
     {
@@ -43,6 +49,9 @@ public class InjectionMainActivityTest
         assertNull(view);
     }
 
+    /**
+     * This test is called after every test, it ends the processes initialised
+     */
     @After
     public void tearDown() throws Exception
     {
