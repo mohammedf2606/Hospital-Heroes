@@ -1,6 +1,6 @@
 # Hospital Heroes [![Build Status](https://travis-ci.com/mohammedf2606/Hospital-Heroes.svg?token=kRVvDyzqzVuq179Z3mxV&branch=master)](https://travis-ci.com/mohammedf2606/Hospital-Heroes)
 
-Hospital Heroes is an Android educational game aimed at teaching toddlers about the scanning procedure for the pediatric nuclear medical scan. 
+Hospital Heroes is an Android educational game aimed at teaching toddlers about the scanning procedure for the paediatric gamma gastric scan. 
 
 ## Getting Started
 
@@ -41,7 +41,8 @@ Android Studio will install the app on your connected device and automatically l
 
 When at the root of the source code repository, open Terminal and run the command below
 
-`gradle test` 
+- `gradle test` for running unit tests
+- `gradle connectedAndroidTest` for running instrumentation test
 
 ## Built With
 

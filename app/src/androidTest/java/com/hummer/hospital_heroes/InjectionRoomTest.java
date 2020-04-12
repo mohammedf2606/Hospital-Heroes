@@ -23,6 +23,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
+/**
+ * The test class for InjectionrRoom.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class InjectionRoomTest
 {
     @Rule
@@ -30,6 +36,9 @@ public class InjectionRoomTest
     private InjectionRoom mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(SittingChair.class.getName(), null, false);
 
+    /**
+     * Initialise the activity before being tested
+     */
     @Before
     public void setUp() throws Exception
     {
@@ -37,6 +46,9 @@ public class InjectionRoomTest
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -44,6 +56,9 @@ public class InjectionRoomTest
         assertNotNull(view);
     }
 
+    /**
+     * Test the button that launches the next activity displays the next screen.
+     */
     @Test
     public void onClick()
     {
@@ -54,6 +69,9 @@ public class InjectionRoomTest
         nextScene.finish();
     }
 
+    /**
+     * Test the view on the next activity shows on screen.
+     */
     @Test
     public void launch()
     {
@@ -61,6 +79,9 @@ public class InjectionRoomTest
         intended(hasComponent(SittingChair.class.getName()));
     }
 
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {

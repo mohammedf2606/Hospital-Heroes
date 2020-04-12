@@ -23,6 +23,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
+/**
+ * The test class for StrapToChair.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class StrapToChairTest {
 
 
@@ -31,6 +37,9 @@ public class StrapToChairTest {
     private StrapToChair mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainMenu.class.getName(), null, false);
 
+    /**
+     * Initialise the activity being tested
+     */
     @Before
     public void setUp() throws Exception
     {
@@ -38,6 +47,9 @@ public class StrapToChairTest {
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -45,28 +57,43 @@ public class StrapToChairTest {
         assertNotNull(view);
     }
 
+    /**
+     * Test the button that launches the next activity displays the next screen.
+     */
     @Test
     public void onClick()
     {
-        assertNotNull(mActivity.findViewById(R.id.strapping));
-        onView(withId(R.id.strapping)).perform(click());
+        assertNotNull(mActivity.findViewById(R.id.strapbackground));
+        perform6clicks();
         Activity nextScene = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(nextScene);
         nextScene.finish();
     }
 
+    /**
+     * Test the view on the next activity shows on screen.
+     */
     @Test
     public void launch()
     {
 
-        Espresso.onView(withId(R.id.strapping)).perform(click());
+        perform6clicks();
         intended(hasComponent(MainMenu.class.getName()));
     }
 
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {
         mActivity = null;
         Intents.release();
+    }
+
+    public void perform6clicks() {
+        for(int i = 0; i < 6; i++) {
+            Espresso.onView(withId(R.id.strapbackground)).perform(click());
+        }
     }
 }

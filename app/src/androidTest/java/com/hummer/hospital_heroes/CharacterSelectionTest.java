@@ -21,6 +21,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
+/**
+ * The test class for CharacterSelection.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class CharacterSelectionTest {
 
     @Rule
@@ -28,12 +34,19 @@ public class CharacterSelectionTest {
     private CharacterSelection mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(InjectionRoom.class.getName(), null, false);
 
+    /**
+     * initialise the activity before being tested
+     */
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -41,6 +54,9 @@ public class CharacterSelectionTest {
         assertNotNull(view);
     }
 
+    /**
+     * Test the button that launches the next activity displays the next screen.
+     */
     @Test
     public void onClick()
     {
@@ -51,17 +67,23 @@ public class CharacterSelectionTest {
         nextScene.finish();
     }
 
+    /**
+     * Test the view on the next activity shows on screen.
+     */
     @Test
     public void launch()
     {
-        Intents.init();
         Espresso.onView(withId(R.id.girl2)).perform(click());
         intended(hasComponent(InjectionRoom.class.getName()));
     }
 
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

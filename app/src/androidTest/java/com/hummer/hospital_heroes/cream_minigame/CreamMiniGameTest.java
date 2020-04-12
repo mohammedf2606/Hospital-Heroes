@@ -2,48 +2,30 @@ package com.hummer.hospital_heroes.cream_minigame;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.view.View;
 
-import androidx.test.espresso.ViewAction;
-import androidx.test.espresso.action.CoordinatesProvider;
-import androidx.test.espresso.action.GeneralClickAction;
-import androidx.test.espresso.action.Press;
-import androidx.test.espresso.action.Tap;
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
 import org.junit.Test;
 
-import androidx.test.espresso.Espresso.*;
-import androidx.test.espresso.assertion.ViewAssertions;
-import androidx.test.espresso.intent.Intents;
-import androidx.test.rule.ActivityTestRule;
-
-import com.hummer.hospital_heroes.ClickMethods;
-import com.hummer.hospital_heroes.R;
-
-import static androidx.test.espresso.Espresso.onData;
-import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.longClick;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.*;
 
 public class CreamMiniGameTest {
 
     @Rule
     public ActivityTestRule<GameActivity> mActivityTestRule = new ActivityTestRule<>(GameActivity.class);
 
+    /**
+     * This tests checks if the resolution assigned matches 1024x600
+     */
     @Test
     public void testResolution() {
         ArrayList reso = mActivityTestRule.getActivity().getGameView().getResolution();
@@ -53,37 +35,39 @@ public class CreamMiniGameTest {
         assertEquals(600, y);
     }
 
-//    @Test
-//    public void testClick() {
-//        onView(withId(R.drawable.injectionroombackground)).perform(longClick());
-//        Boolean touchingScreen = mActivityTestRule.getActivity().getGameView().isTouchingScreen();
-//        assertEquals(true, touchingScreen);
-//    }
-
+    /**
+     * This test checks if the right booleans are set once the game is complete
+     */
     @Test
     public void testGameFinished() {
         GameView game = mActivityTestRule.getActivity().getGameView();
         game.finishGame();
         try {
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(5);
         }
         catch(InterruptedException ex) {}
         assertTrue(game.isGameFinished());
         assertTrue(game.isVictorySoundPlayedAlready());
 
         // test if sticker works
-        EndGameSticker sticker = mActivityTestRule.getActivity().getGameView().getSticker();
-        Canvas canvas = mActivityTestRule.getActivity().getGameView().getCanvas();
+        EndGameSticker sticker = game.getSticker();
+        Canvas canvas = game.getCanvas();
         int value = sticker.drawAnimation(canvas);
         assertEquals(sticker.getWidth(), value);
     }
 
+    /**
+     * This test checks if the canvas exists (is not null)
+     */
     @Test
     public void testCanvasExists() {
         Canvas canvas = mActivityTestRule.getActivity().getGameView().getCanvas();
         assertNotNull(canvas);
     }
 
+    /**
+     * This test checks if the bitmaps used have the right dimensions
+     */
     @Test
     public void testBitmaps() {
         ArrayList bitmaps = mActivityTestRule.getActivity().getGameView().getBitmaps();

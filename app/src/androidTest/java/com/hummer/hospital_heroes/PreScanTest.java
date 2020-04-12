@@ -24,6 +24,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
+/**
+ * The test class for PreScan.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class PreScanTest
 {
     @Rule
@@ -31,6 +37,9 @@ public class PreScanTest
     private PreScan mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(ScanRoom.class.getName(), null, false);
 
+    /**
+     * Initialise the activity before being tested
+     */
     @Before
     public void setUp() throws Exception
     {
@@ -38,6 +47,9 @@ public class PreScanTest
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -45,6 +57,9 @@ public class PreScanTest
         assertNotNull(view);
     }
 
+    /**
+     * Test the button that launches the next activity displays the next screen.
+     */
     @Test
     public void onClick()
     {
@@ -55,14 +70,9 @@ public class PreScanTest
         nextScene.finish();
     }
 
-    @Test
-    public void launch()
-    {
-        Espresso.onView(withId(R.layout.pre_scan)).perform(click());
-        intended(hasComponent(ScanRoom.class.getName()));
-        Intents.release();
-    }
-
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {

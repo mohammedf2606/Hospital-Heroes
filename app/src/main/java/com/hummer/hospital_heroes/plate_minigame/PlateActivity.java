@@ -7,6 +7,13 @@ import android.view.View;
 import com.hummer.hospital_heroes.AppActivity;
 import com.hummer.hospital_heroes.R;
 
+/**
+ * PlateActivity represents the class which contains the activity
+ * the plate game runs in.
+ *
+ * @author Manav Parikh
+ * @version 1.0
+ */
 public class PlateActivity extends AppActivity {
 
     private PlateView plateView;

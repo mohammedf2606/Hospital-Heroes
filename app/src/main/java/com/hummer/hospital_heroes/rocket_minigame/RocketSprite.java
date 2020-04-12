@@ -19,7 +19,7 @@ public class RocketSprite {
     private int xCoord, yCoord;
 
     /**
-     * Constructor for the class 'HouseSprite'
+     * Constructor for the class 'RocketSprite'
      * @param res Resources object used to produce Bitmap image
      */
     public RocketSprite(Resources res) {

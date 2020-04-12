@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
 import static androidx.test.espresso.action.ViewActions.click;
@@ -17,6 +18,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
+/**
+ * The test class for WaitingRoom.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class WaitingRoomTest
 {
     @Rule
@@ -24,12 +31,19 @@ public class WaitingRoomTest
     private WaitingRoom mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(SittingChair.class.getName(), null, false);
 
+    /**
+     * initialise the activity being tested
+     */
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -37,9 +51,13 @@ public class WaitingRoomTest
         assertNotNull(view);
     }
 
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

@@ -24,6 +24,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
+/**
+ * The test class for SittingChair.
+ *
+ * @author Fareed Faisal
+ * @version 1.0
+ */
 public class SittingChairTest
 {
     @Rule
@@ -31,12 +37,19 @@ public class SittingChairTest
     private SittingChair mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MainMenuForGame.class.getName(), null, false);
 
+    /**
+     * Initialise the activity  being tested
+     */
     @Before
     public void setUp() throws Exception
     {
+        Intents.init();
         mActivity = mActivityTestRule.getActivity();
     }
 
+    /**
+     * Test the view of the activity is displayed on screen.
+     */
     @Test
     public void onCreate()
     {
@@ -44,6 +57,9 @@ public class SittingChairTest
         assertNotNull(view);
     }
 
+    /**
+     * Test the button that launches the next activity displays the next screen.
+     */
     @Test
     public void onClick()
     {
@@ -54,18 +70,23 @@ public class SittingChairTest
         nextScene.finish();
     }
 
+    /**
+     * Test the view on the next activity shows on screen.
+     */
     @Test
     public void launch()
     {
-        Intents.init();
         Espresso.onView(withId(R.id.cream)).perform(click());
         intended(hasComponent(MainMenuForGame.class.getName()));
-        Intents.release();
     }
 
+    /**
+     * Release the activity after being tested
+     */
     @After
     public void tearDown() throws Exception
     {
         mActivity = null;
+        Intents.release();
     }
 }

@@ -23,6 +23,10 @@ public class Injection implements InjectionGameObject
     private int height, width;
     private int x, y;
 
+    /**
+     * Constructor for the class sets up sprite
+     * @param resources Resources object used to produce Bitmap image
+     */
     public Injection(Resources resources)
     {
         image = BitmapFactory.decodeResource(resources, R.drawable.butterfly);
@@ -31,6 +35,12 @@ public class Injection implements InjectionGameObject
         width = image.getWidth();
     }
 
+    /**
+     * Draw method to display butterfly
+     * @param xCoord The initial x-coordinate of the sprite
+     * @param yCoord The initial y-coordinate of the sprite
+     * @param canvas The canvas to be drawn on
+     */
     @Override
     public void draw(Canvas canvas, int xCoord, int yCoord)
     {
@@ -45,27 +55,40 @@ public class Injection implements InjectionGameObject
 
     }
 
-    public void update(Point point)
-    {
-    //    injection.set(point.x - injection.width()/2, point.y - injection.height()/2, point.x + injection.width()/2, point.y + injection.height()/2);
-    }
-
+    /**
+     * Returns the bitmap image.
+     *
+     * @return  image  the bitmap image
+     */
     public Bitmap getBitmap() {
         return image;
     }
 
+    /**
+     * Returns the height of the bitmap image
+     *
+     * @return  image.getHeight()  the height of the bitmap image
+     */
     public int getHeight() {
         return height;
     }
 
+    /**
+     * Returns the width of the bitmap image
+     *
+     * @return  image.getWidth()  the width of the bitmap image
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     * Returns the hitbox of the bitmap. Used for collisions.
+     *
+     * @return  Rect  the rectangular hitbox of the image
+     */
     public Rect getHitbox() {
         return new Rect(x, y, x + width, y + height);
     }
-
-    //public Rect getInjection() { return injection; }
 
 }
